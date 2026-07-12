@@ -30,7 +30,6 @@
       "旱地森林支持加速器"],
     ["About", "Acerca de", "À propos", "О платформе", "نبذة", "关于"],
     ["Why Drylands", "Por qué las tierras secas", "Pourquoi les terres arides", "Почему засушливые земли", "لماذا الأراضي الجافة", "为何关注旱地"],
-    ["Map", "Mapa", "Carte", "Карта", "الخريطة", "地图"],
     ["Library", "Biblioteca", "Bibliothèque", "Библиотека", "المكتبة", "资源库"],
     ["Research", "Investigación", "Recherche", "Исследования", "البحوث", "研究"],
     ["Transparency & Data Policy",
