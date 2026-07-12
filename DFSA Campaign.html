@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Programme &amp; Advocacy" name="The Dryland Forest Support Accelerator · From Belém to Antalya" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Dryland Forest Support Accelerator · From Belém to Antalya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+:root{
+  --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+  --forest:#477E59; --forest-deep:#2F5A3F; --forest-soft:#8FB59B;
+  --tropic:#10623B; --tropic-lush:#1E7D4F;
+  --cream:#F5F2E8; --paper-2:#ECE7D7; --sage:#C3DABA; --surface:#FFFFFF;
+  --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+  --amber:#F8B133; --amber-deep:#D8901A; --water:#3F8FCB; --bark:#754C29; --ochre:#C8843C;
+  --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+  --r-pill:999px; --r-sm:8px; --r-md:14px; --r-lg:22px;
+  --shadow-sm:0 1px 3px rgba(36,31,27,.07),0 1px 2px rgba(36,31,27,.05);
+  --shadow-md:0 10px 30px rgba(36,31,27,.12),0 3px 8px rgba(36,31,27,.07);
+  --shadow-lg:0 30px 70px rgba(36,31,27,.22);
+  --font-serif:"Merriweather", Georgia, serif;
+  --font-display:"Oswald","Merriweather",sans-serif;
+  --font-body:"Merriweather", Georgia, serif;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{ font-family:var(--font-body); color:var(--ink); background:var(--cream);
+  background-image:url("assets/grain-tile.png"); background-size:320px; -webkit-font-smoothing:antialiased; }
+a{ color:inherit; text-decoration:none; }
+::selection{ background:var(--amber); color:var(--ink); }
+.wrap{ max-width:1180px; margin:0 auto; padding:0 32px; }
+
+/* display helpers */
+.disp{ font-family:var(--font-display); text-transform:uppercase; line-height:.95; letter-spacing:.01em; }
+.kick{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.2em; font-weight:600;
+  font-size:13px; display:inline-flex; align-items:center; gap:12px; }
+.kick::before{ content:""; width:30px; height:2px; background:currentColor; display:inline-block; }
+
+/* reveal */
+.rv{ opacity:0; transform:translateY(26px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+.rv.in{ opacity:1; transform:none; }
+@media(prefers-reduced-motion:reduce){ .rv{ opacity:1; transform:none; transition:none; } }
+
+/* ============================================================ NAV */
+.nav{ position:sticky; top:0; z-index:80; background:rgba(245,242,232,.82);
+  backdrop-filter:blur(12px); border-bottom:1px solid var(--hairline); }
+.nav .wrap{ display:flex; align-items:center; gap:26px; height:66px; }
+.nav .wm{ display:flex; align-items:center; gap:12px; margin-right:auto; }
+.nav .wm img{ height:30px; }
+.nav .wm b{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.06em;
+  font-size:15px; font-weight:700; color:var(--bark); line-height:1; }
+.nav .wm small{ display:block; font-family:var(--font-display); letter-spacing:.13em; font-size:9px;
+  color:var(--ink-3); margin-top:3px; font-weight:500; }
+.nav .lk{ display:flex; gap:2px; }
+.nav .lk a{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.08em;
+  font-size:12px; font-weight:500; color:var(--ink-2); padding:9px 13px; border-radius:var(--r-pill);
+  transition:background .15s, color .15s; }
+.nav .lk a:hover{ background:rgba(116,76,41,.1); color:var(--bark); }
+.nav .cta{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.07em; font-weight:600;
+  font-size:12.5px; color:var(--ink-on-dark); background:var(--clay); padding:11px 20px; border-radius:var(--r-pill);
+  transition:background .15s, transform .15s; }
+.nav .cta:hover{ background:var(--clay-deep); transform:translateY(-1px); }
+@media(max-width:900px){ .nav .lk{ display:none; } }
+
+/* ============================================================ HERO */
+.hero{ position:relative; overflow:hidden; color:var(--ink-on-dark);
+  background:
+    radial-gradient(120% 90% at 12% 8%, rgba(16,98,59,.0) 0%, rgba(16,98,59,.0) 36%, rgba(16,98,59,.55) 70%),
+    linear-gradient(112deg, #0E5836 0%, #16683F 24%, #4E7E3E 46%, #9A7B36 64%, #C8843C 82%, #B4543F 100%); }
+.hero::after{ content:""; position:absolute; inset:0; background:url("assets/grain-tile.png"); background-size:300px;
+  opacity:.10; mix-blend-mode:overlay; pointer-events:none; }
+.hero .wrap{ position:relative; z-index:2; min-height:88vh; display:grid; grid-template-columns:1.18fr .82fr;
+  gap:30px; align-items:center; padding:54px 32px 70px; }
+.hero .route{ display:flex; align-items:center; gap:14px; font-family:var(--font-display); text-transform:uppercase;
+  letter-spacing:.14em; font-size:12.5px; font-weight:600; color:rgba(251,248,239,.92); margin-bottom:26px; }
+.hero .route .pin{ display:inline-flex; align-items:center; gap:7px; }
+.hero .route .pin i{ width:15px; height:15px; }
+.hero .route .arc{ flex:none; width:54px; height:14px; opacity:.8; }
+.hero h1{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; line-height:1.16;
+  font-size:clamp(42px,5.4vw,78px); letter-spacing:.004em; text-shadow:0 2px 30px rgba(0,0,0,.18); }
+.hero h1 .em{ color:var(--amber); }
+.hero .sub{ font-size:clamp(18px,2vw,23px); line-height:1.55; color:rgba(251,248,239,.94); max-width:36ch;
+  margin-top:22px; font-weight:300; }
+.hero .sub b{ font-weight:700; color:#fff; }
+.hero .btns{ display:flex; flex-wrap:wrap; gap:14px; margin-top:34px; }
+.hero .btn{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.06em; font-weight:600;
+  font-size:14px; padding:15px 26px; border-radius:var(--r-pill); display:inline-flex; align-items:center; gap:10px;
+  transition:transform .15s, box-shadow .15s, background .15s; }
+.hero .btn i{ width:17px; height:17px; }
+.hero .btn.p{ background:var(--amber); color:var(--ink); box-shadow:0 10px 30px rgba(248,177,51,.34); }
+.hero .btn.p:hover{ transform:translateY(-2px); box-shadow:0 16px 40px rgba(248,177,51,.46); }
+.hero .btn.s{ background:rgba(251,248,239,.13); color:#fff; border:1.5px solid rgba(251,248,239,.4); }
+.hero .btn.s:hover{ background:rgba(251,248,239,.22); }
+.hero .globe{ position:relative; }
+.hero .globe img{ width:118%; max-width:560px; margin-left:-4%; display:block;
+  filter:drop-shadow(0 34px 60px rgba(0,0,0,.4)); }
+.hero .tagchip{ position:absolute; font-family:var(--font-display); text-transform:uppercase; letter-spacing:.06em;
+  font-size:11.5px; font-weight:600; background:rgba(20,16,12,.42); backdrop-filter:blur(6px);
+  border:1px solid rgba(251,248,239,.28); color:#fff; padding:8px 14px; border-radius:var(--r-pill); white-space:nowrap; }
+.hero .tagchip.t1{ top:14%; right:2%; } .hero .tagchip.t2{ bottom:20%; left:-4%; }
+.scrollcue{ position:absolute; left:50%; bottom:22px; transform:translateX(-50%); z-index:3; color:rgba(251,248,239,.7);
+  font-family:var(--font-display); text-transform:uppercase; letter-spacing:.16em; font-size:10px; text-align:center; }
+.scrollcue i{ width:18px; height:18px; display:block; margin:6px auto 0; animation:bob 1.8s ease-in-out infinite; }
+@keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(6px); } }
+@media(max-width:860px){
+  .hero .wrap{ grid-template-columns:1fr; min-height:0; padding:40px 32px 60px; }
+  .hero .globe{ order:-1; max-width:340px; } .hero .tagchip{ display:none; }
+}
+
+/* ============================================================ STRIP */
+.strip{ background:var(--bark); color:var(--ink-on-dark); }
+.strip .wrap{ display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
+  padding:20px 32px; text-align:center; }
+.strip p{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.08em; font-weight:500;
+  font-size:14px; color:rgba(251,248,239,.9); }
+.strip p b{ color:var(--amber); font-weight:700; }
+
+/* ============================================================ SECTION BASE */
+section.band{ padding:96px 0; position:relative; }
+.lede{ font-family:var(--font-serif); font-size:clamp(22px,2.6vw,30px); line-height:1.4; font-weight:300;
+  color:var(--ink); max-width:24ch; }
+h2.sec{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; line-height:1.06;
+  font-size:clamp(32px,4vw,54px); letter-spacing:.006em; margin-top:16px; text-wrap:balance; }
+.secintro{ font-size:18px; line-height:1.7; color:var(--ink-2); max-width:62ch; margin-top:26px; }
+
+/* ============================================================ BATON (COP30 -> COP31) */
+.baton{ background:var(--surface); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); }
+.cops{ display:grid; grid-template-columns:1fr auto 1fr; gap:0; margin-top:48px; align-items:stretch; }
+.copcard{ padding:40px 38px; border-radius:var(--r-lg); position:relative; overflow:hidden; color:var(--ink-on-dark); }
+.copcard.c30{ background:linear-gradient(150deg, #0E5836, #1E7D4F); }
+.copcard.c31{ background:linear-gradient(150deg, #B4543F, #C8843C); }
+.copcard .yr{ font-family:var(--font-display); font-weight:700; font-size:15px; letter-spacing:.12em;
+  text-transform:uppercase; opacity:.85; }
+.copcard h3{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; font-size:34px;
+  line-height:.98; margin-top:8px; }
+.copcard .loc{ font-family:var(--font-serif); font-style:italic; font-size:17px; opacity:.92; margin-top:4px; }
+.copcard .div{ height:1px; background:rgba(251,248,239,.28); margin:22px 0 18px; }
+.copcard .mech{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.05em; font-weight:600;
+  font-size:13px; padding:7px 14px; border-radius:var(--r-pill); background:rgba(251,248,239,.16);
+  display:inline-flex; align-items:center; gap:8px; }
+.copcard .mech i{ width:15px; height:15px; }
+.copcard p{ font-size:15px; line-height:1.62; color:rgba(251,248,239,.94); margin-top:18px; }
+.copcard p b{ color:#fff; }
+.copcard .ico{ position:absolute; right:-14px; top:-14px; width:120px; height:120px; opacity:.13; }
+.batonmid{ display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0 26px; gap:10px; min-width:120px; }
+.batonmid .line{ width:2px; flex:1; background:linear-gradient(#1E7D4F, #C8843C); }
+.batonmid .orb{ width:58px; height:58px; border-radius:50%; background:var(--cream); border:2px solid var(--border);
+  display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-md); flex:none; }
+.batonmid .orb i{ width:26px; height:26px; color:var(--bark); }
+.batonmid .lbl{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.1em; font-size:10px;
+  font-weight:600; color:var(--ink-3); text-align:center; }
+@media(max-width:860px){
+  .cops{ grid-template-columns:1fr; gap:18px; }
+  .batonmid{ flex-direction:row; padding:4px 0; } .batonmid .line{ height:2px; width:40px; flex:none; }
+}
+.turkiye{ margin-top:34px; background:var(--paper-2); border:1px solid var(--border); border-radius:var(--r-lg);
+  padding:32px 36px; display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center; }
+.turkiye .big{ font-family:var(--font-display); font-weight:700; color:var(--bark); line-height:.9; text-align:center; }
+.turkiye .big .n{ font-size:60px; line-height:1; } .turkiye .big .u{ font-size:18px; letter-spacing:.04em; }
+.turkiye .big .sub{ font-family:var(--font-serif); font-style:italic; font-size:13px; color:var(--ink-3);
+  margin-top:12px; max-width:15ch; }
+.turkiye .tx h4{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.04em; font-weight:700;
+  font-size:21px; color:var(--ink); }
+.turkiye .tx p{ font-size:15.5px; line-height:1.62; color:var(--ink-2); margin-top:10px; }
+@media(max-width:680px){ .turkiye{ grid-template-columns:1fr; gap:18px; text-align:center; }
+  .turkiye .big .sub{ margin:8px auto 0; } }
+
+/* ============================================================ STAKES */
+.stakes{ background:linear-gradient(165deg, #2F5A3F, #1d3d2a); color:var(--ink-on-dark); }
+.stakes h2.sec{ color:#fff; } .stakes .lede{ color:#fff; }
+.stakes .secintro{ color:rgba(251,248,239,.82); }
+.statrow{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin-top:54px; }
+.stat{ padding:6px 22px; border-left:1px solid rgba(251,248,239,.2); }
+.stat:first-child{ border-left:0; }
+.stat .n{ font-family:var(--font-display); font-weight:700; font-size:clamp(40px,4.6vw,60px); line-height:.92;
+  color:var(--amber); }
+.stat .n small{ font-size:.42em; color:#fff; margin-left:2px; }
+.stat .l{ font-size:14px; line-height:1.5; color:rgba(251,248,239,.86); margin-top:12px; }
+@media(max-width:760px){ .statrow{ grid-template-columns:1fr 1fr; gap:24px 8px; } }
+.gaps{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:54px; }
+.gap{ background:rgba(251,248,239,.07); border:1px solid rgba(251,248,239,.18); border-radius:var(--r-lg);
+  padding:30px 28px; transition:background .2s, transform .2s; }
+.gap:hover{ background:rgba(251,248,239,.12); transform:translateY(-3px); }
+.gap .gi{ width:50px; height:50px; border-radius:13px; background:rgba(248,177,51,.16); color:var(--amber);
+  display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.gap .gi i{ width:26px; height:26px; }
+.gap .gt{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.06em; font-weight:700;
+  font-size:19px; color:#fff; }
+.gap p{ font-size:14.5px; line-height:1.6; color:rgba(251,248,239,.8); margin-top:11px; }
+@media(max-width:760px){ .gaps{ grid-template-columns:1fr; } }
+
+/* ============================================================ TFFF PARALLEL */
+.parallel .head2{ display:grid; grid-template-columns:1.1fr .9fr; gap:30px; align-items:end; }
+@media(max-width:820px){ .parallel .head2{ grid-template-columns:1fr; gap:14px; } }
+.vs{ margin-top:56px; display:grid; grid-template-columns:1fr 76px 1fr; gap:0; align-items:stretch; }
+@media(max-width:880px){ .vs{ grid-template-columns:1fr; gap:18px; } }
+.vscard{ border-radius:var(--r-lg); padding:38px 34px; position:relative; box-shadow:var(--shadow-md); }
+.vscard.tfff{ background:linear-gradient(160deg,#10623B,#1E7D4F); color:var(--ink-on-dark); }
+.vscard.dfsm{ background:var(--surface); border:1px solid var(--border); }
+.vscard .tag{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.12em; font-weight:600;
+  font-size:12px; display:inline-flex; align-items:center; gap:9px; padding:7px 14px; border-radius:var(--r-pill); }
+.vscard.tfff .tag{ background:rgba(251,248,239,.16); color:#fff; }
+.vscard.dfsm .tag{ background:rgba(200,132,60,.16); color:var(--bark); }
+.vscard .tag i{ width:14px; height:14px; }
+.vscard h3{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; font-size:30px;
+  line-height:.98; margin:18px 0 4px; }
+.vscard.dfsm h3{ color:var(--bark); }
+.vscard .full{ font-family:var(--font-serif); font-style:italic; font-size:15px; }
+.vscard.tfff .full{ color:rgba(251,248,239,.85); } .vscard.dfsm .full{ color:var(--ink-3); }
+.vscard dl{ margin-top:24px; display:grid; gap:0; }
+.vscard .r{ padding:15px 0; border-top:1px solid; display:grid; grid-template-columns:96px 1fr; gap:16px; align-items:start; }
+.vscard.tfff .r{ border-color:rgba(251,248,239,.2); }
+.vscard.dfsm .r{ border-color:var(--hairline); }
+.vscard .k{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.07em; font-weight:600;
+  font-size:11px; padding-top:2px; }
+.vscard.tfff .k{ color:var(--amber); } .vscard.dfsm .k{ color:var(--clay); }
+.vscard .v{ font-size:14.5px; line-height:1.55; }
+.vscard.tfff .v{ color:rgba(251,248,239,.94); } .vscard.dfsm .v{ color:var(--ink); }
+.vscard .v b{ font-weight:700; }
+.vsmid{ display:flex; align-items:center; justify-content:center; }
+.vsmid .eq{ width:60px; height:60px; border-radius:50%; background:var(--cream); border:2px solid var(--border);
+  display:flex; align-items:center; justify-content:center; box-shadow:var(--shadow-md);
+  font-family:var(--font-display); font-weight:700; font-size:14px; color:var(--bark); text-transform:uppercase; letter-spacing:.04em; }
+@media(max-width:880px){ .vsmid .eq{ margin:0 auto; } }
+.vsnote{ margin-top:26px; background:var(--paper-2); border-left:4px solid var(--clay); border-radius:0 var(--r-md) var(--r-md) 0;
+  padding:22px 26px; font-size:15.5px; line-height:1.65; color:var(--ink-2); }
+.vsnote b{ color:var(--bark); }
+
+/* ============================================================ WHAT IS DFSA */
+.cat{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; margin-top:52px;
+  border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; background:var(--surface); }
+.catstep{ padding:34px 32px; border-left:1px solid var(--hairline); position:relative; }
+.catstep:first-child{ border-left:0; }
+.catstep .num{ font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:.1em;
+  color:var(--ink-3); }
+.catstep h4{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; font-size:25px;
+  margin:6px 0 0; display:flex; align-items:center; gap:12px; }
+.catstep h4 i{ width:24px; height:24px; }
+.catstep.s1 h4{ color:var(--water); } .catstep.s2 h4{ color:var(--clay); } .catstep.s3 h4{ color:var(--forest); }
+.catstep p{ font-size:14.5px; line-height:1.62; color:var(--ink-2); margin-top:14px; }
+@media(max-width:820px){ .cat{ grid-template-columns:1fr; } .catstep{ border-left:0; border-top:1px solid var(--hairline); } .catstep:first-child{ border-top:0; } }
+
+.builton{ margin-top:30px; background:var(--forest-deep); color:var(--ink-on-dark); border-radius:var(--r-lg);
+  padding:40px 40px; display:grid; grid-template-columns:1fr 1.1fr; gap:40px; align-items:center; }
+.builton .l h4{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.03em; font-weight:700;
+  font-size:24px; color:#fff; line-height:1.05; }
+.builton .l p{ font-size:15px; line-height:1.62; color:rgba(251,248,239,.82); margin-top:14px; }
+.builton .grid4{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.bstat{ background:rgba(251,248,239,.08); border-radius:var(--r-md); padding:20px 20px; }
+.bstat .n{ font-family:var(--font-display); font-weight:700; font-size:34px; color:var(--amber); line-height:.9; }
+.bstat .n small{ font-size:.46em; color:#fff; }
+.bstat .l{ font-size:12.5px; line-height:1.4; color:rgba(251,248,239,.82); margin-top:8px; }
+@media(max-width:820px){ .builton{ grid-template-columns:1fr; gap:24px; } }
+
+.offers{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:30px; }
+.offer{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-md); padding:22px 20px;
+  box-shadow:var(--shadow-sm); transition:transform .18s, box-shadow .18s; }
+.offer:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.offer .oi{ width:42px; height:42px; border-radius:11px; background:var(--sage); color:var(--forest-deep);
+  display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+.offer .oi i{ width:22px; height:22px; }
+.offer h5{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.03em; font-weight:600;
+  font-size:14px; color:var(--ink); line-height:1.2; }
+.offer p{ font-size:12.5px; line-height:1.5; color:var(--ink-2); margin-top:8px; }
+@media(max-width:900px){ .offers{ grid-template-columns:1fr 1fr; } }
+@media(max-width:520px){ .offers{ grid-template-columns:1fr; } }
+
+/* ============================================================ CALL TO ACTION */
+.callband{ background:var(--surface); border-top:1px solid var(--hairline); }
+.asks{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:50px; }
+.ask{ border:1px solid var(--border); border-radius:var(--r-lg); padding:32px 30px; background:var(--cream);
+  position:relative; overflow:hidden; }
+.ask .edge{ position:absolute; left:0; top:0; bottom:0; width:5px; }
+.ask .who{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.06em; font-weight:700;
+  font-size:19px; display:flex; align-items:center; gap:12px; }
+.ask .who i{ width:22px; height:22px; }
+.ask ul{ list-style:none; margin-top:18px; display:grid; gap:13px; }
+.ask li{ font-size:14.5px; line-height:1.55; color:var(--ink-2); padding-left:26px; position:relative; }
+.ask li::before{ content:""; position:absolute; left:0; top:7px; width:13px; height:13px; border-radius:50%;
+  border:3px solid var(--accent); }
+@media(max-width:820px){ .asks{ grid-template-columns:1fr; } }
+
+/* ============================================================ FINAL CTA */
+.finalcta{ background:linear-gradient(125deg,#B4543F,#C8843C 70%,#D8901A); color:var(--ink-on-dark);
+  position:relative; overflow:hidden; }
+.finalcta::after{ content:""; position:absolute; inset:0; background:url("assets/grain-tile.png"); background-size:300px;
+  opacity:.1; mix-blend-mode:overlay; }
+.finalcta .wrap{ position:relative; z-index:2; text-align:center; padding:96px 32px; }
+.finalcta .kick{ color:rgba(251,248,239,.9); justify-content:center; }
+.finalcta h2{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; line-height:.96;
+  font-size:clamp(38px,5.4vw,72px); margin-top:18px; text-shadow:0 2px 24px rgba(0,0,0,.18); }
+.finalcta h2 .em{ color:#fff; -webkit-text-stroke:0; }
+.finalcta p{ font-size:20px; line-height:1.6; color:rgba(251,248,239,.94); max-width:54ch; margin:22px auto 0; font-weight:300; }
+.finalcta .btns{ display:flex; gap:16px; justify-content:center; flex-wrap:wrap; margin-top:38px; }
+.finalcta .btn{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.06em; font-weight:600;
+  font-size:14.5px; padding:16px 30px; border-radius:var(--r-pill); display:inline-flex; align-items:center; gap:10px;
+  transition:transform .15s, box-shadow .15s; }
+.finalcta .btn i{ width:18px; height:18px; }
+.finalcta .btn.p{ background:#fff; color:var(--clay-deep); box-shadow:var(--shadow-md); }
+.finalcta .btn.p:hover{ transform:translateY(-2px); }
+.finalcta .btn.s{ background:rgba(0,0,0,.16); color:#fff; border:1.5px solid rgba(251,248,239,.5); }
+.finalcta .btn.s:hover{ background:rgba(0,0,0,.26); }
+
+/* ============================================================ FOOTER */
+footer{ background:var(--ink); color:var(--ink-on-dark); padding:60px 0 44px; }
+footer .top{ display:grid; grid-template-columns:1.5fr 1fr; gap:36px; align-items:start; }
+footer .ft{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.03em; font-weight:700;
+  font-size:24px; color:var(--amber); line-height:1.05; }
+footer .top p{ font-size:14px; line-height:1.62; color:rgba(251,248,239,.66); margin-top:14px; max-width:52ch; }
+footer .anchor{ font-size:13px; line-height:1.6; color:rgba(251,248,239,.6); }
+footer .anchor b{ color:rgba(251,248,239,.92); font-weight:700; display:block; font-family:var(--font-display);
+  text-transform:uppercase; letter-spacing:.06em; font-size:12px; margin-bottom:8px; }
+footer .chips{ display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+footer .chips span{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.07em; font-weight:600;
+  font-size:11.5px; color:rgba(251,248,239,.8); padding:7px 13px; border:1px solid rgba(251,248,239,.22); border-radius:var(--r-pill); }
+footer .rule{ height:1px; background:rgba(251,248,239,.14); margin:34px 0 22px; }
+footer .fine{ font-size:11.5px; line-height:1.6; color:rgba(251,248,239,.4); font-style:italic; }
+@media(max-width:760px){ footer .top{ grid-template-columns:1fr; gap:24px; } }
+
+/* ============================================================ REFERENCES */
+.refs{ background:var(--surface); border-top:1px solid var(--hairline); }
+.refs .secintro{ margin-bottom:10px; }
+.apa-refs{ list-style:none; padding:0; margin:.6rem 0 0; font-size:15px; line-height:1.6; color:var(--ink-2); max-width:80ch; }
+.apa-refs li{ padding-left:1.6em; text-indent:-1.6em; margin:0 0 .7rem; }
+.apa-refs a{ color:var(--clay); text-decoration:none; word-break:break-word; }
+.apa-refs a:hover{ text-decoration:underline; }
+</style>
+
+<link rel="stylesheet" href="drip-harmonize.css">
+  <link rel="icon" type="image/png" href="assets/globe.png">
+  <link rel="stylesheet" href="drip-topbar.css">
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav">
+  <div class="wrap">
+    <a class="wm" href="#top">
+      <img src="assets/logo-color.png" alt="DSL-IP — Drylands Sustainable Landscapes Impact Programme">
+      <b>DFSA<small>Dryland Forest Support Accelerator</small></b>
+    </a>
+    <nav class="lk">
+      <a href="#baton">Belém → Antalya</a>
+      <a href="#stakes">The stakes</a>
+      <a href="#parallel">The TFFF parallel</a>
+      <a href="#mechanism">The mechanism</a>
+      <a href="#call">The call</a>
+    </nav>
+    <a class="cta" href="#call">Endorse the call</a>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<a id="top"></a>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="route">
+        <span class="pin"><i data-lucide="map-pin"></i>COP30 · Belém</span>
+        <svg class="arc" viewBox="0 0 54 14" fill="none"><path d="M1 13 C 16 1, 38 1, 53 13" stroke="rgba(251,248,239,.7)" stroke-width="1.5" stroke-dasharray="3 3"/><path d="M49 9 l4 4 l-5 1" stroke="rgba(251,248,239,.7)" stroke-width="1.5" fill="none"/></svg>
+        <span class="pin"><i data-lucide="map-pin"></i>COP31 · Antalya</span>
+      </div>
+      <h1 class="disp">The tropics<br>got their fund.<br><span class="em">Now the drylands.</span></h1>
+      <p class="sub">At COP30 in the Amazon, the world built a mechanism to keep <b>tropical forests</b> standing.
+        At COP31 in Türkiye – a dryland nation – it is time for the forests of the world's drylands to get theirs:
+        the <b>Dryland Forest Support Accelerator</b> (DFSA), FAO's dedicated technical and financing accelerator for dryland forests.</p>
+      <div class="btns">
+        <a class="btn p" href="#parallel"><i data-lucide="git-compare-arrows"></i>See the parallel</a>
+        <a class="btn s" href="#call"><i data-lucide="pen-line"></i>Join the call to action</a>
+      </div>
+    </div>
+    <div class="globe">
+      <img src="assets/globe.png" alt="A globe split between degraded dryland and restored landscape, cradled in a hand">
+      <span class="tagchip t1">28% of the world's forests</span>
+      <span class="tagchip t2">1 billion+ people</span>
+    </div>
+  </div>
+  <div class="scrollcue">Scroll<i data-lucide="chevron-down"></i></div>
+</section>
+
+<!-- ===================== STRIP ===================== -->
+<section class="strip">
+  <div class="wrap"><p>Dryland forests receive only a <b>fraction</b> of global conservation finance – yet more than <b>25 percent</b> are already degraded.</p></div>
+</section>
+
+<!-- ===================== BATON: COP30 -> COP31 ===================== -->
+<section class="band baton" id="baton">
+  <div class="wrap">
+    <p class="kick" style="color:var(--bark)">A baton passed between two COPs</p>
+    <h2 class="sec rv" style="color:var(--ink)">From the rainforest to the drylands</h2>
+    <p class="secintro rv">The momentum is already moving. In Belém, the Amazon hosted a breakthrough in how the world
+      finances standing forests. One year on, the climate summit travels to Antalya – in a country that is two-thirds
+      arid and a global leader in dryland restoration. The drylands' moment has arrived.</p>
+
+    <div class="cops">
+      <div class="copcard c30 rv">
+        <svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M12 2c3 4 5 7 5 11a5 5 0 0 1-10 0c0-4 2-7 5-11z"/></svg>
+        <div class="yr">November 2025</div>
+        <h3>COP30<br>Belém, Brazil</h3>
+        <div class="loc">The Amazon · tropical forests</div>
+        <div class="div"></div>
+        <span class="mech"><i data-lucide="trees"></i>Launched: the TFFF</span>
+        <p>Brazil unveiled the <b>Tropical Forests Forever Facility</b> (TFFF) – a results-based fund that pays countries to
+          keep tropical forest standing (TFFF, 2025; World Resources Institute, 2025). A landmark in how the world values living forests.</p>
+      </div>
+
+      <div class="batonmid rv">
+        <div class="line"></div>
+        <div class="orb"><i data-lucide="move-right"></i></div>
+        <div class="lbl">The baton<br>passes</div>
+        <div class="line"></div>
+      </div>
+
+      <div class="copcard c31 rv">
+        <svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M12 2c3 4 5 7 5 11a5 5 0 0 1-10 0c0-4 2-7 5-11z"/></svg>
+        <div class="yr">November 2026</div>
+        <h3>COP31<br>Antalya, Türkiye</h3>
+        <div class="loc">A dryland nation · dryland forests</div>
+        <div class="div"></div>
+        <span class="mech"><i data-lucide="sun"></i>The moment for: the DFSA</span>
+        <p>Hosted by a country around 65 percent arid or semi-arid, COP31 is the natural stage to launch the drylands' answer:
+          a <b>Dryland Forest Support Accelerator</b> for the forests climate finance forgot.</p>
+      </div>
+    </div>
+
+    <div class="turkiye rv">
+      <div class="big">
+        <div class="n">2.2 <span class="u">million ha</span></div>
+        <div class="sub">restored by Türkiye, 2019–2025</div>
+      </div>
+      <div class="tx">
+        <h4>Why Türkiye makes the case</h4>
+        <p>Türkiye has emerged as a global leader in dryland forestry – committing to restore 2.3 million hectares by
+          2030 under the Bonn Challenge (Bonn Challenge, n.d.), lifting forest cover from 26 percent to 30 percent of its land despite around
+          65 percent being arid or semi-arid, and training forestry practitioners from some 25 countries through its
+          International Forestry Training Centre. It also serves on the FAO Committee on Forestry (COFO) Working Group on
+          Dryland Forests and Agrosilvopastoral Systems (FAO, n.d.). The host of COP31 is living proof that dryland forests can be restored at scale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STAKES ===================== -->
+<section class="band stakes" id="stakes">
+  <div class="wrap">
+    <p class="kick" style="color:var(--amber)">Why dryland forests – why now</p>
+    <h2 class="sec rv">The forests climate finance forgot</h2>
+    <p class="secintro rv">Dryland forests, woodlands and the billions of trees outside forests are a nexus solution –
+      delivering climate resilience, biodiversity and livelihoods at once. Drylands cover around 41 percent of
+      Earth's land surface and hold more than a quarter of the world's forests, yet they are systematically
+      under-recognized, underfinanced and inadequately monitored across every global agenda (FAO, 2019).</p>
+
+    <div class="statrow">
+      <div class="stat rv"><div class="n">41<small>%</small></div><div class="l">of the Earth's land surface is drylands</div></div>
+      <div class="stat rv"><div class="n">28<small>%</small></div><div class="l">of the world's forests are dryland forests</div></div>
+      <div class="stat rv"><div class="n">1<small>billion+</small></div><div class="l">people depend on them for their livelihoods</div></div>
+      <div class="stat rv"><div class="n">25<small>%</small></div><div class="l">are already degraded – and the pressure is rising</div></div>
+    </div>
+
+    <div class="gaps">
+      <div class="gap rv">
+        <div class="gi"><i data-lucide="landmark"></i></div>
+        <div class="gt">The policy gap</div>
+        <p>No dedicated global mechanism coordinates dryland forest action across regions. They are weakly reflected in
+          Nationally Determined Contributions (NDCs), National Adaptation Plans (NAPs), National Biodiversity Strategies
+          and Action Plans (NBSAPs) and Land Degradation Neutrality (LDN) targets, with governance fragmented across
+          sectors.</p>
+      </div>
+      <div class="gap rv">
+        <div class="gi"><i data-lucide="coins"></i></div>
+        <div class="gt">The finance gap</div>
+        <p>Investment stays short-term and project-based. Private capital is scarce – held back by perceived risk,
+          missing early-stage finance and the absence of investor pipelines for regenerative dryland enterprises.</p>
+      </div>
+      <div class="gap rv">
+        <div class="gi"><i data-lucide="book-open"></i></div>
+        <div class="gt">The knowledge gap</div>
+        <p>Proven sustainable land management (SLM) and sustainable forest management (SFM) solutions exist but are not
+          exchanged across similar biomes. Data and monitoring gaps cause degradation and restoration needs to be
+          systematically underestimated.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TFFF PARALLEL ===================== -->
+<section class="band parallel" id="parallel">
+  <div class="wrap">
+    <div class="head2">
+      <div>
+        <p class="kick" style="color:var(--clay)">The TFFF parallel</p>
+        <h2 class="sec rv" style="color:var(--ink)">If tropical forests have the TFFF,<br>drylands need the DFSA</h2>
+      </div>
+      <p class="secintro rv" style="margin-top:0">The TFFF proved a principle the world had long resisted: that
+        keeping forests standing is worth paying for, at scale, with the Global South in the lead. The DFSA carries that
+        same logic into the drylands – adapted to ecosystems where the threat is degradation, not just deforestation.</p>
+    </div>
+
+    <div class="vs">
+      <div class="vscard tfff rv">
+        <span class="tag"><i data-lucide="trees"></i>The tropical model</span>
+        <h3>TFFF</h3>
+        <div class="full">Tropical Forests Forever Facility · launched COP30, Belém</div>
+        <dl>
+          <div class="r"><div class="k">Ecosystem</div><div class="v">Humid <b>tropical and subtropical</b> forests</div></div>
+          <div class="r"><div class="k">Core idea</div><div class="v">A large <b>results-based fund</b> that pays countries per hectare of forest kept standing</div></div>
+          <div class="r"><div class="k">Threat</div><div class="v">Primarily <b>deforestation</b> – clearing of intact forest</div></div>
+          <div class="r"><div class="k">Driven by</div><div class="v">The <b>Global South</b>, led by Brazil as host</div></div>
+          <div class="r"><div class="k">Debut</div><div class="v">COP30 · Belém · the Amazon · 2025</div></div>
+        </dl>
+      </div>
+
+      <div class="vsmid"><div class="eq rv">for<br>drylands</div></div>
+
+      <div class="vscard dfsm rv">
+        <span class="tag"><i data-lucide="sun"></i>The dryland answer</span>
+        <h3>DFSA</h3>
+        <div class="full">Dryland Forest Support Accelerator · FAO-anchored</div>
+        <dl>
+          <div class="r"><div class="k">Ecosystem</div><div class="v"><b>Dryland</b> forests, woodlands and agrosilvopastoral systems</div></div>
+          <div class="r"><div class="k">Core idea</div><div class="v">FAO's <b>technical-support and financing mechanism</b> – mobilizing blended, programmatic finance and de-risking private investment</div></div>
+          <div class="r"><div class="k">Threat</div><div class="v">Primarily <b>degradation</b> – and the cycle of land loss, drought and poverty</div></div>
+          <div class="r"><div class="k">Driven by</div><div class="v"><b>Country-led</b>, anchored in FAO's COFO Working Group</div></div>
+          <div class="r"><div class="k">Debut</div><div class="v">COP31 · Antalya · the drylands · 2026</div></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="vsnote rv">
+      <b>An honest distinction.</b> The two are not identical instruments. The TFFF is a single results-based payment
+      fund; the DFSA is a broader, FAO-anchored support accelerator that combines coordination, technical assistance and
+      finance mobilization – building investor pipelines and blended finance rather than a single per-hectare payment.
+      What they share is the breakthrough idea: a <b>dedicated global mechanism</b>, country-driven and built for a
+      whole biome that the world had been financing in fragments.
+    </div>
+  </div>
+</section>
+
+<!-- ===================== THE MECHANISM ===================== -->
+<section class="band" id="mechanism" style="background:var(--paper-2); border-top:1px solid var(--hairline);">
+  <div class="wrap">
+    <p class="kick" style="color:var(--bark)">What the DFSA is</p>
+    <h2 class="sec rv" style="color:var(--ink)">A dedicated mechanism,<br>not another project</h2>
+    <p class="secintro rv">The DFSA is the direct operational response to the <b>Call to Action on Dryland Forests</b>.
+      It works through a simple, demand-driven cycle – and transforms dryland landscapes from extractive to regenerative
+      management through three mutually reinforcing pillars.</p>
+
+    <div class="cat">
+      <div class="catstep s1 rv">
+        <div class="num">01 · EVIDENCE</div>
+        <h4><i data-lucide="search"></i>Collect</h4>
+        <p>Close critical data gaps on the extent, status and trends of dryland forests through comprehensive
+          assessments – strengthening the evidence base to guide decisions and target investment.</p>
+      </div>
+      <div class="catstep s2 rv">
+        <div class="num">02 · IMPLEMENTATION</div>
+        <h4><i data-lucide="sprout"></i>Act</h4>
+        <p>Put proven SLM and SFM practices to work at landscape scale – translating evidence into action and using
+          South–South exchange to accelerate uptake across biomes and regions.</p>
+      </div>
+      <div class="catstep s3 rv">
+        <div class="num">03 · LEARNING</div>
+        <h4><i data-lucide="activity"></i>Track</h4>
+        <p>Monitor progress towards sustainable management and restoration with harmonized indicators and participatory
+          systems – assessing what works, at what scale, and feeding it back into global policy.</p>
+      </div>
+    </div>
+
+    <div class="builton rv">
+      <div class="l">
+        <h4>Built on a proven foundation</h4>
+        <p>The DFSA doesn't start from scratch. It leverages the Global Environment Facility (GEF) Dryland Sustainable
+          Landscapes Impact Program (DSL-IP; Global Environment Facility, n.d.), FAO's first global assessment of trees and forests in drylands (FAO, 2019), and 80 years of forestry
+          experience – under a Multi-Donor Trust Fund structure linking national action to global support.</p>
+      </div>
+      <div class="grid4">
+        <div class="bstat"><div class="n">USD 104<small> million</small></div><div class="l">GEF-7 DSL-IP architecture to build on</div></div>
+        <div class="bstat"><div class="n">11</div><div class="l">countries already operating across three regions</div></div>
+        <div class="bstat"><div class="n">3</div><div class="l">communities of practice ready to onboard members</div></div>
+        <div class="bstat"><div class="n">80<small> years</small></div><div class="l">of FAO forestry and natural-resource expertise</div></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:var(--font-display); text-transform:uppercase; font-weight:700; font-size:22px; color:var(--ink); margin-top:54px; letter-spacing:.03em;">What members gain access to</h3>
+    <div class="offers">
+      <div class="offer rv"><div class="oi"><i data-lucide="users-round"></i></div><h5>Communities of practice</h5><p>Thematic exchange on LDN, SLM, SFM and gender-responsiveness.</p></div>
+      <div class="offer rv"><div class="oi"><i data-lucide="globe-2"></i></div><h5>Regional exchange</h5><p>Operational regional exchange mechanisms (REMs) for South–South cooperation and demand-driven technical assistance.</p></div>
+      <div class="offer rv"><div class="oi"><i data-lucide="database"></i></div><h5>Knowledge hubs and tools</h5><p>Robust networks and technical expertise in natural resource management (NRM).</p></div>
+      <div class="offer rv"><div class="oi"><i data-lucide="leaf"></i></div><h5>Forest genetic resources</h5><p>Conservation and use of native dryland trees and seed systems.</p></div>
+      <div class="offer rv"><div class="oi"><i data-lucide="graduation-cap"></i></div><h5>Capacity development</h5><p>Training for farmers, foresters and land-user groups.</p></div>
+      <div class="offer rv"><div class="oi"><i data-lucide="satellite"></i></div><h5>Monitoring and learning</h5><p>From remote sensing to household behaviour change.</p></div>
+      <div class="offer rv"><div class="oi"><i data-lucide="store"></i></div><h5>Green value chains</h5><p>Business incubation and market linkages for dryland products.</p></div>
+      <div class="offer rv"><div class="oi"><i data-lucide="flame"></i></div><h5>Global Fire Hub</h5><p>Tools to confront rising drought-driven fire risk.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CALL TO ACTION ===================== -->
+<section class="band callband" id="call">
+  <div class="wrap">
+    <p class="kick" style="color:var(--clay)">What we are calling for</p>
+    <h2 class="sec rv" style="color:var(--ink)">A coordinated global response</h2>
+    <p class="secintro rv">The Call to Action on Dryland Forests urges governments, donors, international organizations
+      and private partners to act collectively and decisively. Here is what each is asked to do.</p>
+
+    <div class="asks">
+      <div class="ask rv" style="--accent:var(--forest)">
+        <span class="edge" style="background:var(--forest)"></span>
+        <div class="who" style="color:var(--forest-deep)"><i data-lucide="landmark"></i>Governments</div>
+        <ul>
+          <li>Endorse the Call to Action as a shared framework for dryland forests.</li>
+          <li>Integrate dryland forests into NDCs, NAPs, NBSAPs and LDN targets.</li>
+          <li>Prioritize them in national planning and budgets, with intersectoral coordination.</li>
+          <li>Engage the DFSA to advance country-led priorities and collective learning.</li>
+        </ul>
+      </div>
+      <div class="ask rv" style="--accent:var(--clay)">
+        <span class="edge" style="background:var(--clay)"></span>
+        <div class="who" style="color:var(--clay-deep)"><i data-lucide="coins"></i>Donors and international financial institutions</div>
+        <ul>
+          <li>Provide predictable, multiyear, programmatic financing – beyond short-term projects.</li>
+          <li>Align support with country-led priorities and the DFSA's objectives.</li>
+          <li>Invest in data, monitoring and reporting that unlock results-based finance.</li>
+          <li>De-risk private capital to build investor pipelines for dryland enterprises.</li>
+        </ul>
+      </div>
+      <div class="ask rv" style="--accent:var(--water)">
+        <span class="edge" style="background:var(--water)"></span>
+        <div class="who" style="color:var(--water)"><i data-lucide="globe"></i>UN and conventions</div>
+        <ul>
+          <li>Strengthen coherence and joint programming across UN agencies.</li>
+          <li>Convention on Biological Diversity (CBD): integrate dryland forests into restoration (Target 2) and sustainable use (Target 10).</li>
+          <li>UN Framework Convention on Climate Change (UNFCCC): recognize, finance and monitor dryland forests in climate action.</li>
+          <li>UN Convention to Combat Desertification (UNCCD): recognize them as a priority ecosystem within LDN implementation.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="finalcta">
+  <div class="wrap">
+    <p class="kick">The road to Antalya</p>
+    <h2 class="disp">Belém paid for the rainforest.<br><span class="em">Let Antalya pay for the drylands.</span></h2>
+    <p>Dryland forests are indispensable for global climate, biodiversity and land-restoration goals. With coordinated
+      leadership, adequate investment, and the DFSA, the international community can unlock their full potential – for
+      people, nature and climate. The time to act is now.</p>
+    <div class="btns">
+      <a class="btn p" href="#top"><i data-lucide="pen-line"></i>Endorse the Call to Action</a>
+      <a class="btn s" href="#parallel"><i data-lucide="share-2"></i>Share the parallel</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REFERENCES ===================== -->
+<section class="band refs" id="references">
+  <div class="wrap">
+    <p class="kick" style="color:var(--bark)">References</p>
+    <h2 class="sec rv" style="color:var(--ink)">Sources</h2>
+    <p class="secintro rv">Verified external sources for the facts cited above. Programme-specific figures (fund sizes, member
+      counts and other DFSA / Call-to-Action numbers) are drawn from internal briefing documents, as noted in the footer,
+      and are not externally published.</p>
+    <ol class="apa-refs rv">
+      <li>Bonn Challenge. (n.d.). <em>Turkey</em>. IUCN. Retrieved June 24, 2026, from <a href="https://www.bonnchallenge.org/pledges/turkey" target="_blank" rel="noopener">https://www.bonnchallenge.org/pledges/turkey</a></li>
+      <li>FAO. (n.d.). <em>Working Group on Dryland Forests and Agrosilvopastoral Systems</em>. Food and Agriculture Organization of the United Nations. Retrieved June 24, 2026, from <a href="https://www.fao.org/dryland-forestry/working-group/en/" target="_blank" rel="noopener">https://www.fao.org/dryland-forestry/working-group/en/</a></li>
+      <li>FAO. (2019). <em>Trees, forests and land use in drylands: The first global assessment</em>. Food and Agriculture Organization of the United Nations. <a href="https://www.fao.org/interactive/dryland-assessment/en/" target="_blank" rel="noopener">https://www.fao.org/interactive/dryland-assessment/en/</a></li>
+      <li>Global Environment Facility. (n.d.). <em>Sustainable Forest Management Impact Program on Dryland Sustainable Landscapes</em>. Retrieved June 24, 2026, from <a href="https://www.thegef.org/projects-operations/projects/10206" target="_blank" rel="noopener">https://www.thegef.org/projects-operations/projects/10206</a></li>
+      <li>Tropical Forest Forever Facility [TFFF]. (2025). <em>The Tropical Forest Forever Facility</em>. <a href="https://tfff.earth/" target="_blank" rel="noopener">https://tfff.earth/</a></li>
+      <li>World Resources Institute. (2025, November 6). <em>Statement: Brazil launches Tropical Forests Forever Facility</em>. <a href="https://www.wri.org/news/statement-brazil-launches-tropical-forests-forever-facility" target="_blank" rel="noopener">https://www.wri.org/news/statement-brazil-launches-tropical-forests-forever-facility</a></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="ft">Dryland Forest Support Accelerator</div>
+        <p>FAO's dedicated technical-support and financing mechanism for dryland forests – built on the GEF Dryland
+          Sustainable Landscapes Impact Program and the FAO Global Dryland Forest Assessment, in partnership with
+          countries and the Rio Conventions.</p>
+        <div class="chips">
+          <span>FAO</span><span>GEF</span><span>COFO Working Group</span><span>UNCCD</span><span>CBD</span><span>UNFCCC</span><span>DSL-IP</span>
+        </div>
+      </div>
+      <div class="anchor">
+        <b>Anchored in</b>
+        The FAO COFO Working Group on Dryland Forests and Agrosilvopastoral Systems – chaired by Zimbabwe, with
+        country leadership from Türkiye and Peru, and 11 DSL-IP countries across Africa and Asia.
+      </div>
+    </div>
+    <div class="rule"></div>
+    <p class="fine">An advocacy campaign in support of the Call to Action on Dryland Forests. Built on the DFSA concept
+      note, the DSL-IP design system, and public information on COP30 and COP31 and the Tropical Forests Forever Facility.
+      Figures are drawn from the Call to Action and DFSA briefing documents and may be refined as the accelerator is finalized.</p>
+  </div>
+</footer>
+
+<script>
+  // scroll reveals
+  const io = new IntersectionObserver((es)=>{ es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} }); }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.rv').forEach((el,i)=>{ el.style.transitionDelay=(Math.min(i%4,3)*60)+'ms'; io.observe(el); });
+  if(window.lucide) lucide.createIcons();
+</script>
+  <script src="drip-i18n.js"></script>
+</body>
+</html>

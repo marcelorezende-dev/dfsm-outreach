@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Buttons, pills & tags" subtitle="Primary / CTA / ghost actions, pills, tags and kickers" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buttons, pills &amp; tags — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+<style>
+  .btn{ font-family:var(--font-sans); font-weight:600; font-size:14px; border:none; cursor:pointer;
+    border-radius:var(--r-pill); padding:11px 24px; transition:background .15s, transform .15s; text-decoration:none; display:inline-flex; align-items:center; gap:8px; }
+  .btn-primary{ background:var(--forest); color:#fff; } .btn-primary:hover{ background:var(--forest-deep); }
+  .btn-cta{ background:var(--amber); color:#3a2408; } .btn-cta:hover{ background:#ffc658; }
+  .btn-ghost{ background:transparent; color:var(--forest-deep); border:1.5px solid var(--forest-soft); }
+  .btn-ghost:hover{ background:var(--sage); }
+  .btn-link{ background:none; color:var(--forest-deep); font-weight:600; padding:6px 2px; border-bottom:1.5px solid var(--forest-soft); border-radius:0; }
+  .pill{ display:inline-flex; align-items:center; gap:8px; font-family:var(--font-sans); font-size:13px;
+    color:var(--ink-2); background:var(--surface); border:1px solid var(--border); border-radius:var(--r-pill); padding:8px 15px; }
+  .tag{ display:inline-flex; align-items:center; font-family:var(--font-sans); font-weight:600; font-size:11.5px;
+    letter-spacing:.04em; text-transform:uppercase; color:var(--forest-deep); background:var(--sage); border-radius:var(--r-pill); padding:5px 12px; }
+  .tag.clay{ color:#fff; background:var(--clay); }
+  .row-demo{ display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">Components</p>
+  <h1 class="ds-title">Buttons, pills &amp; tags</h1>
+  <p class="ds-lede">Actions are pill-shaped (<code>--r-pill</code>). Green is the default action, amber is the single high-emphasis call-to-action, ghost is secondary. Pills and tags carry status and metadata.</p>
+
+  <div class="ds-sec">
+    <h2>Buttons</h2>
+    <p class="caption">One amber CTA per view at most — it is the loudest thing on the page.</p>
+    <div class="frame pad"><div class="row-demo">
+      <a class="btn btn-primary" href="#">Explore the library</a>
+      <a class="btn btn-cta" href="#">Become a partner</a>
+      <a class="btn btn-ghost" href="#">Read the brief</a>
+      <a class="btn btn-link" href="#">What are drylands? →</a>
+    </div></div>
+    <div class="tok">
+      <div class="row"><span class="demo" style="width:30px;height:30px;border-radius:8px;background:var(--forest);flex:none"></span><div class="info"><div class="nm">Primary</div><div class="val">--forest → --forest-deep</div></div></div>
+      <div class="row"><span class="demo" style="width:30px;height:30px;border-radius:8px;background:var(--amber);flex:none"></span><div class="info"><div class="nm">CTA</div><div class="val">--amber · ink #3a2408</div></div></div>
+      <div class="row"><span class="demo" style="width:30px;height:30px;border-radius:8px;background:transparent;border:1.5px solid var(--forest-soft);flex:none"></span><div class="info"><div class="nm">Ghost</div><div class="val">--forest-soft border</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Pills</h2>
+    <p class="caption">Neutral metadata chips — "at a glance" facts, filters, counts.</p>
+    <div class="frame pad"><div class="row-demo">
+      <span class="pill">🌍 41% of Earth's land</span>
+      <span class="pill">📄 246 resources</span>
+      <span class="pill">🗺 5 focus biomes</span>
+    </div></div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Tags &amp; kickers</h2>
+    <p class="caption">Uppercase category tags (<code>.tag</code>) and section kickers (<code>.dsl-kicker</code> / <code>.dsl-eyebrow</code>).</p>
+    <div class="frame pad"><div class="row-demo">
+      <span class="tag">Assessment &amp; Evidence</span>
+      <span class="tag clay">Pillar 03</span>
+      <span class="dsl-kicker">What are drylands</span>
+      <span class="dsl-eyebrow">Assessment &amp; Evidence</span>
+    </div></div>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Components · tokens in <a href="../colors_and_type.css">colors_and_type.css</a></div>
+</div>
+</body>
+</html>

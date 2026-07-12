@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Platform &amp; Tools" name="Regional Exchange Mechanisms (REM)" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regional Exchange Mechanisms (REM) | DSL-IP</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; font-style:italic; src:url('fonts/Poppins-400-italic.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{
+ --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+ --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+ --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+ --amber:#F8B133; --gold:#E8C13C; --teal:#33B193; --leaf:#68A260; --bark:#754C29; --water:#3E7CB1;
+ --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+ --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+ --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+ --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{ font-family:var(--serif); line-height:1.7; color:var(--ink-2); background:var(--cream); -webkit-font-smoothing:antialiased; }
+
+/* HEADER */
+header{ background:var(--forest); color:var(--ink-on-dark); padding:3.4rem 2rem 3rem; text-align:left;
+ border-bottom:6px solid var(--amber); position:relative; overflow:hidden; }
+.header-inner{ max-width:1160px; margin:0 auto; position:relative; z-index:2; }
+header .brand-logo{ height:60px; width:auto; filter:brightness(0) invert(1); margin-bottom:1.6rem; opacity:.96; }
+header .eyebrow{ font-family:var(--serif); font-style:italic; font-size:1rem; color:#F2C9A8; margin-bottom:.55rem; }
+header h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.01em;
+ font-size:2.55rem; line-height:1.18; margin:0; color:#fff; max-width:22ch; }
+header h1 span{ color:#F2C9A8; font-weight:400; white-space:nowrap; }
+header .lede{ font-family:var(--serif); font-size:1.14rem; line-height:1.6; color:#EAF1E6; max-width:760px; margin-top:1.5rem; }
+.header-tags{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.7rem; }
+.header-tags span{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem;
+ font-weight:600; color:#fff; background:rgba(251,248,239,.16); padding:.45rem 1rem; border-radius:999px; }
+
+/* NAV */
+nav{ background:var(--forest-deep); padding:.5rem 1rem; position:sticky; top:0; z-index:100;
+ box-shadow:0 2px 8px rgba(36,31,27,.18); }
+nav ul{ list-style:none; display:flex; justify-content:center; flex-wrap:wrap; max-width:1160px; margin:0 auto; gap:.1rem; }
+nav a{ color:#EAF1E6; text-decoration:none; padding:.65rem 1rem; display:block; transition:background .25s,color .25s;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.09em; font-size:.8rem; border-radius:6px; }
+nav a:hover{ background:rgba(251,248,239,.14); color:#fff; }
+
+/* CONTAINER + SECTIONS */
+.container{ max-width:1160px; margin:0 auto; padding:2.5rem 2rem; }
+section{ background:var(--surface); margin:2rem 0; padding:2.6rem; border-radius:16px;
+ border:1px solid var(--border); box-shadow:var(--shadow-md); scroll-margin-top:80px; }
+
+/* HEADINGS */
+h2{ font-family:var(--serif); font-weight:900; color:var(--ink); font-size:2rem; line-height:1.12; margin-bottom:1.3rem;
+ padding-bottom:.7rem; border-bottom:1px solid var(--hairline); position:relative; }
+h2::after{ content:""; position:absolute; left:0; bottom:-1px; width:64px; height:3px; background:var(--clay); border-radius:2px; }
+h2 .kicker{ display:block; font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em;
+ font-size:.8rem; color:var(--clay); margin-bottom:.5rem; }
+h3{ font-family:var(--serif); font-weight:700; color:var(--forest); font-size:1.42rem; line-height:1.28; margin:1.9rem 0 1rem; }
+h4{ font-family:var(--serif); font-weight:700; color:var(--clay-deep); font-size:1.14rem; margin:1.1rem 0 .5rem; }
+section > p{ margin:1rem 0; }
+section > p:first-of-type{ margin-top:0; }
+.lead{ font-size:1.12rem; color:var(--ink); line-height:1.66; }
+
+/* CALLOUTS */
+.callout{ padding:1.5rem 1.6rem; margin:1.7rem 0; border-radius:12px; background:var(--surface);
+ border:1px solid var(--border); border-top:4px solid var(--ink-3); box-shadow:var(--shadow-sm); }
+.callout.concept{ background:#FBF9F2; border-top-color:var(--clay); }
+.callout.definition{ background:rgba(195,218,186,.30); border-top-color:var(--forest); }
+.callout.warning{ background:rgba(248,177,51,.12); border-top-color:var(--amber); }
+.callout.success{ background:rgba(71,126,89,.10); border-top-color:var(--forest); }
+.callout-title{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.1em;
+ font-size:.92rem; margin-bottom:.7rem; color:var(--ink); }
+.callout.concept .callout-title{ color:var(--clay-deep); }
+.callout.definition .callout-title{ color:var(--forest-deep); }
+.callout.warning .callout-title{ color:#9A6A12; }
+.callout.success .callout-title{ color:var(--forest-deep); }
+.callout p{ color:var(--ink-2); margin:.5rem 0 0; }
+.callout p:first-of-type{ margin-top:0; }
+.callout strong{ color:var(--ink); }
+
+/* CARD GRID */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin:2rem 0; }
+.card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.6rem;
+ box-shadow:var(--shadow-md); transition:transform .25s ease, box-shadow .25s ease; }
+.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.card h4{ color:var(--ink); margin-top:0; margin-bottom:.7rem; padding-bottom:.5rem; border-bottom:1px solid var(--hairline); line-height:1.25; }
+.card p{ font-size:.96rem; color:var(--ink-2); }
+.card .num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:1.1rem; }
+
+/* TABLES */
+table{ width:100%; border-collapse:collapse; margin:1.8rem 0; font-size:.95rem;
+ background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+th{ background:var(--forest); color:var(--ink-on-dark); padding:.95rem 1rem; text-align:left;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.82rem; }
+td{ padding:.85rem 1rem; border-bottom:1px solid var(--hairline); color:var(--ink-2); vertical-align:top; }
+tr:last-child td{ border-bottom:0; }
+tbody tr:nth-child(even){ background:rgba(236,231,215,.5); }
+tbody tr:hover{ background:rgba(195,218,186,.22); }
+td strong{ color:var(--ink); }
+.num-cell{ font-family:var(--sans); font-weight:600; text-align:right; white-space:nowrap; }
+.total-row td{ background:var(--sage); font-weight:700; color:var(--ink); border-top:2px solid var(--forest); }
+.table-caption{ font-size:.86rem; color:var(--ink-3); font-style:italic; margin:-.6rem 0 1.8rem; }
+
+/* LISTS */
+ul,ol{ margin:1rem 0 1rem 1.5rem; }
+li{ margin:.5rem 0; line-height:1.7; color:var(--ink-2); }
+li strong{ color:var(--ink); }
+.clean{ list-style:none; margin-left:0; }
+.clean li{ padding-left:1.7rem; position:relative; }
+.clean li::before{ content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; border-radius:50%; background:var(--clay); }
+
+/* TABS */
+.tabs{ display:flex; border-bottom:1px solid var(--border); margin:2rem 0 0; flex-wrap:wrap; gap:.2rem; }
+.tab-button{ background:transparent; border:none; padding:.9rem 1.3rem; cursor:pointer;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.85rem;
+ color:var(--ink-3); transition:all .25s; border-bottom:3px solid transparent; }
+.tab-button:hover{ color:var(--ink); }
+.tab-button.active{ color:var(--forest); border-bottom-color:var(--clay); }
+.tab-button .tnum{ font-weight:700; color:var(--clay); margin-right:.35em; }
+.tab-content{ display:none; padding:1.8rem 0 .5rem; animation:fade .26s ease-out; }
+.tab-content.active{ display:block; }
+@keyframes fade{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+.module-meta{ display:flex; flex-wrap:wrap; gap:.5rem; margin:.4rem 0 1.2rem; }
+.module-meta .chip{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.07em; font-size:.72rem; font-weight:600;
+ color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25); padding:.35rem .85rem; border-radius:999px; }
+
+/* EXPANDABLE */
+.expandable{ margin:1.1rem 0; border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+.expandable-header{ background:var(--paper-2); padding:1rem 1.2rem; cursor:pointer; font-family:var(--sans);
+ font-weight:600; text-transform:uppercase; letter-spacing:.05em; font-size:.86rem; color:var(--forest-deep);
+ display:flex; justify-content:space-between; align-items:center; gap:1rem; transition:background .25s; }
+.expandable-header:hover{ background:var(--sage); }
+.expandable-content{ display:none; padding:1.2rem 1.3rem; background:#FBF9F2; }
+.expandable-content.active{ display:block; }
+.expandable-content p:first-child{ margin-top:0; }
+.expand-icon{ transition:transform .3s; color:var(--clay); font-size:1.2rem; line-height:1; }
+.expandable-header.open .expand-icon{ transform:rotate(45deg); }
+
+/* STATS */
+.stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1.3rem; margin:2rem 0; }
+.stat-box{ background:var(--surface); border:1px solid var(--border); padding:1.5rem 1.4rem; border-radius:14px;
+ text-align:left; box-shadow:var(--shadow-sm); border-top:4px solid var(--forest); }
+.stat-box .stat-eyebrow{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--ink-3); }
+.stat-value{ font-family:var(--sans); font-weight:700; font-size:2rem; line-height:1.08; margin:.35rem 0 .3rem; color:var(--clay); }
+.stat-label{ font-size:.9rem; color:var(--ink-2); }
+
+/* FIGURE PLACEHOLDER */
+.fig{ margin:2rem 0; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow-sm); }
+.fig-frame{ background:
+  repeating-linear-gradient(135deg, rgba(71,126,89,.07) 0 12px, rgba(207,113,93,.06) 12px 24px);
+  min-height:200px; display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem; }
+.fig-frame span{ font-family:"Courier New",monospace; font-size:.82rem; color:var(--ink-3); letter-spacing:.02em; max-width:46ch; line-height:1.6; }
+.fig-cap{ padding:.9rem 1.2rem; font-size:.86rem; color:var(--ink-2); border-top:1px solid var(--hairline); background:#FBF9F2; }
+.fig-cap b{ color:var(--ink); font-family:var(--sans); text-transform:uppercase; letter-spacing:.05em; font-size:.78rem; font-weight:600; }
+
+/* TIMELINE / FLOW */
+.flow{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0; margin:2rem 0; }
+.flow-step{ position:relative; padding:1.3rem 1.2rem; background:#FBF9F2; border:1px solid var(--border); }
+.flow-step:not(:last-child){ border-right:0; }
+.flow-step .fs-num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:.9rem; letter-spacing:.05em; }
+.flow-step .fs-title{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.04em; font-weight:600; color:var(--forest-deep); font-size:.92rem; margin:.3rem 0 .4rem; }
+.flow-step p{ font-size:.88rem; color:var(--ink-2); margin:0; }
+
+/* UTILITIES */
+.highlight{ background:rgba(248,177,51,.32); padding:.05rem .3rem; border-radius:3px; }
+.bold-green{ color:var(--forest); font-weight:bold; }
+.bold-brown{ color:var(--clay-deep); font-weight:bold; }
+.pillar-badge{ display:inline-block; background:var(--forest); color:#fff; padding:.4rem 1rem; border-radius:999px;
+ font-family:var(--sans); text-transform:uppercase; letter-spacing:.07em; font-size:.76rem; font-weight:600; margin:.25rem .25rem .25rem 0; }
+.pillar-badge.clay{ background:var(--clay); }
+.tick{ color:var(--forest); font-weight:bold; }
+.cross{ color:var(--clay-deep); font-weight:bold; }
+.footnote{ font-size:.74rem; vertical-align:super; color:var(--clay); text-decoration:none; }
+.references-section{ background:#FBF9F2; }
+.reference-item{ margin:.85rem 0; padding-left:1.8rem; text-indent:-1.8rem; line-height:1.55; color:var(--ink-2); font-size:.9rem; }
+.reference-item a{ color:var(--clay); text-decoration:none; }
+.reference-item a:hover{ text-decoration:underline; }
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+
+/* FOOTER */
+footer{ background:var(--forest-deep); color:#EAF1E6; text-align:center; padding:2.8rem 2rem; margin-top:3rem; line-height:1.9; }
+footer p{ max-width:900px; margin:0 auto; }
+footer a{ color:#F2C9A8; text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+footer .foot-rule{ width:60px; height:3px; background:var(--amber); margin:1.4rem auto; border:0; border-radius:2px; }
+
+@media (max-width:768px){
+ header{ padding:2.2rem 1.3rem; } header h1{ font-size:1.9rem; }
+ nav ul{ flex-direction:column; } nav a{ padding:.55rem 1rem; }
+ .container{ padding:1.3rem; } section{ padding:1.5rem; } h2{ font-size:1.5rem; }
+ .stats-grid,.grid,.two-col{ grid-template-columns:1fr; }
+ .tabs{ flex-direction:column; } .tab-button{ width:100%; text-align:left; }
+ .flow-step{ border-right:1px solid var(--border) !important; }
+}
+
+/* TIMELINE (DFSM milestones) */
+.timeline{ margin:2rem 0 1rem; border-left:3px solid var(--sage); padding-left:0; }
+.tl-item{ position:relative; padding:0 0 1.4rem 1.8rem; }
+.tl-item::before{ content:""; position:absolute; left:-9px; top:.35rem; width:15px; height:15px; border-radius:50%; background:var(--clay); border:3px solid var(--surface); box-shadow:0 0 0 1px var(--clay); }
+.tl-item:last-child{ padding-bottom:0; }
+.tl-year{ font-family:var(--sans); font-weight:700; color:var(--forest); font-size:1.05rem; letter-spacing:.02em; line-height:1.2; }
+.tl-body{ font-size:.98rem; color:var(--ink-2); margin-top:.15rem; }
+.tl-body b{ color:var(--ink); }
+@media (max-width:768px){ .tl-item{ padding-left:1.4rem; } }
+
+</style>
+<style>
+.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
+.drip-topbar *{box-sizing:border-box;}
+.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+.drip-topbar .db-dm span{color:#F8B133;}
+.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+.drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;text-transform:none;letter-spacing:normal;}
+.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+.drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
+@media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
+</style>
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+<header data-screen-label="Header">
+ <div class="header-inner">
+  <img class="brand-logo" src="assets/logo-color.png" alt="DSL-IP — Drylands Sustainable Landscapes Impact Programme">
+  <p class="eyebrow">Drylands Sustainable Landscapes Impact Programme &middot; Global Coordination Project</p>
+  <h1>Regional Exchange Mechanisms <span>(REM)</span></h1>
+  <p class="lede">The connective tissue of the DSL-IP &mdash; three regional platforms that turn eleven separate country projects into one coordinated programme, channelling global best practice to the field and carrying field-tested solutions back up to where decisions are made.</p>
+  <div class="header-tags"><span>3 Regional Mechanisms</span><span>11 Child Projects</span><span>3 Communities of Practice</span><span>FAO &middot; IUCN &middot; WOCAT</span></div>
+ </div>
+</header>
+<nav>
+ <ul>
+  <li><a href="#summary">Summary</a></li>
+  <li><a href="#challenge">The Challenge</a></li>
+  <li><a href="#architecture">Architecture</a></li>
+  <li><a href="#regions">The Three REMs</a></li>
+  <li><a href="#cops">Communities of Practice</a></li>
+  <li><a href="#docking">Country Docking</a></li>
+  <li><a href="#flow">Knowledge Flow</a></li>
+  <li><a href="#themes">Core Themes</a></li>
+  <li><a href="#outcomes">Outcomes</a></li>
+  <li><a href="#engage">Engage</a></li>
+ </ul>
+</nav>
+<div class="container">
+
+<section id="summary" data-screen-label="Summary">
+ <h2><span class="kicker">Coordination Note &middot; At a Glance</span>What the REM is</h2>
+ <p class="lead">The eleven child projects of the DSL-IP are part of one global impact programme: individually they contribute to a common goal, but only coordination keeps them pulling in the same direction. The Regional Exchange Mechanisms are the decentralized arm of FAO's Global Coordination Project (GCP) &mdash; regional outposts that bridge the local and national to the regional and global, and back again, so that investments are prioritized, best practice is shared, and impact is achieved at scale.</p>
+
+ <div class="stats-grid">
+  <div class="stat-box"><div class="stat-eyebrow">Mechanisms</div><div class="stat-value">3</div><div class="stat-label">REMs &mdash; Central Asia, W/E Africa, Southern Africa</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Child projects</div><div class="stat-value">11</div><div class="stat-label">countries across three eco-regions</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Communities of Practice</div><div class="stat-value">3</div><div class="stat-label">LDN planning &middot; SLM/SFM &amp; value chains &middot; gender</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Coordinated by</div><div class="stat-value">GCP</div><div class="stat-label">FAO Global Coordination Project, HQ Rome</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Country bilaterals</div><div class="stat-value">2 wks</div><div class="stat-label">standing cadence with the wider GCP</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Strategy</div><div class="stat-value">1</div><div class="stat-label">core theme per country champion</div></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">In one sentence</div>
+  <p>The REM is the child projects' <strong>first responder and directory point</strong> &mdash; working in-ward to connect them to in-house technical assistance, and out-ward to amplify and upscale their practices within borders, beyond their region, and up to the highest decision-making arenas &mdash; so that the whole becomes greater than the sum of eleven parts.</p>
+ </div>
+
+ <h3>The three REMs at a glance</h3>
+ <div class="grid">
+  <div class="card"><h4><span class="num">REM 1</span> &nbsp;Central Asia</h4><p>IUCN-led, anchored in the <strong>CACILM</strong> initiative. Kazakhstan and Mongolia, with sustainable pasture and drought management at the core.</p></div>
+  <div class="card"><h4><span class="num">REM 2</span> &nbsp;West &amp; East Africa</h4><p>IUCN-led, aligned with the GEF-6 Resilient Food Systems Hub and the <strong>Great Green Wall</strong>. Kenya and Burkina Faso.</p></div>
+  <div class="card"><h4><span class="num">REM 3</span> &nbsp;Southern Africa</h4><p>FAO-led, aligned with <strong>SADC</strong> and the Great Green Wall South. The seven Miombo-Mopane countries.</p></div>
+  <div class="card" style="background:rgba(71,126,89,.08); border-style:dashed;"><h4 style="color:var(--forest-deep); border:0;">One programme</h4><p>Each REM mirrors a regional cluster of projects &mdash; but all three leverage existing platforms rather than duplicating them, complementing what is already there.</p></div>
+ </div>
+
+ <h3>Keywords</h3>
+ <div class="header-tags" style="margin-top:.6rem;">
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Regional coordination</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Knowledge management</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">South-South cooperation</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Communities of Practice</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Transboundary themes</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Scaling up, out &amp; deep</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Country docking</span>
+ </div>
+</section>
+
+<section id="challenge" data-screen-label="The Challenge">
+ <h2><span class="kicker">The Challenge</span>Why coordination, not just projects</h2>
+ <p>Eleven countries running eleven projects against shared dryland challenges could easily become eleven disconnected efforts &mdash; each rediscovering the same lessons, missing the synergies, and leaving transboundary issues unaddressed. The DSL-IP was designed to avoid exactly this. To <strong>maintain unity of purpose</strong>, the programme needed a mechanism that ensures every project prioritizes its investments, draws on global best practice, and feeds its own lessons back into the collective.</p>
+
+ <div class="callout warning">
+  <div class="callout-title">Business as usual vs. integration</div>
+  <p>Familiar approaches &mdash; Farmer Field Schools, Community Seed Banks, green value chains &mdash; can be run piecemeal, in isolation from one another. Each delivers outputs, but they are <strong>short-term, scattered, low in cost-efficiency, and their impact is invisible</strong>. Run instead as an integrated, clustered and layered package &mdash; from household to community to landscape &mdash; the same approaches deliver outputs that are tangible, sustainable, cost-efficient and visible at scale. The REM exists to make the integrated choice the default.</p>
+ </div>
+
+ <h3>Three shared management challenges</h3>
+ <p>Across the dry landscapes, the child projects identified the same interlinked constraints &mdash; the common denominator being the health of the landscapes and forests, and therefore Land Degradation Neutrality.</p>
+ <table>
+  <thead><tr><th style="width:33%;">Common management challenge</th><th>Desired action (per project documents)</th></tr></thead>
+  <tbody>
+   <tr><td><strong>Decline in agricultural productivity</strong> and increased pressure on forests</td><td>Implement SLM/SFM practices, promoting biodiversity through Farmer Field Schools and Community Seed Banks &mdash; improving the productivity of land and forests</td></tr>
+   <tr><td><strong>Lack of integrated extension services</strong> and knowledge</td><td>Access to technical support for integrated extension through the FFS approach &mdash; ecosystem-based approaches that respect the sovereignty of soils and environment</td></tr>
+   <tr><td><strong>Limited market access</strong> and investment</td><td>Market incubation support for improved access and investment &mdash; market-based investments that promote the improvement of land and forests</td></tr>
+  </tbody>
+ </table>
+ <p class="table-caption">The common denominator across challenges and actions is the improvement of the health of the dry landscapes and forests &mdash; contributing to LDN. Landscape-level challenges require landscape-level strategies.</p>
+
+ <div class="callout concept">
+  <div class="callout-title">The GCP's three functions</div>
+  <p>To keep eleven projects coherent, the Global Coordination Project ensures child projects (i) <strong>prioritize their investments</strong> for efficient use of constrained budgets; (ii) gain <strong>access to global best practice</strong> for strong technical outputs; and (iii) have <strong>platforms to disseminate</strong> their own best practices. It executes all three through the REMs, while FAO country offices provide operational support on the ground.</p>
+ </div>
+</section>
+<section id="architecture" data-screen-label="Architecture">
+ <h2><span class="kicker">How It Works</span>The architecture of coordination</h2>
+ <p>The Global Coordination Project is based at FAO headquarters, but the issues it addresses are regionally specific &mdash; so it operates through a <strong>strongly decentralized structure</strong>. The REMs are, in effect, the regional outposts of the GCP, responding to regionally specific needs while keeping every project connected to the global whole.</p>
+
+ <div class="flow">
+  <div class="flow-step"><div class="fs-num">Global</div><div class="fs-title">GCP &middot; FAO HQ</div><p>Sets the programmatic framework, mobilizes technical knowledge hubs, runs global working groups and the M&amp;E dashboard. Executing partners: IUCN and CDE/WOCAT.</p></div>
+  <div class="flow-step"><div class="fs-num">Regional</div><div class="fs-title">The three REMs</div><p>The extended arm of the GCP &mdash; bridging local/national to regional/global and back, coordinating exchange, capacity development and scaling within each eco-region.</p></div>
+  <div class="flow-step"><div class="fs-num">National</div><div class="fs-title">Child projects &amp; PMUs</div><p>Eleven country projects deliver on the ground, supported operationally by FAO country offices and programmatically by their REM.</p></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">The REM &middot; an extended arm and a two-way street</div>
+  <p>The REM is the first focal point for countries to tap into everything the Global Impact Program offers. It works <strong>in-ward</strong>, redirecting countries toward in-house technical assistance, and <strong>out-ward</strong>, amplifying and upscaling their practices within borders, beyond their region, and toward higher decision-making arenas. Each REM also covers neighbouring non-IP countries that share dryland conditions &mdash; creating opportunities for transboundary collaboration and scaling out.</p>
+ </div>
+
+ <h3>Three components, one logical framework</h3>
+ <p>The REM's work delivers the three components of the GCP, aligned to a single logical framework.</p>
+ <div class="grid">
+  <div class="card"><h4><span class="num">Component 1</span></h4><p><strong>Programmatic prioritization &amp; coordination</strong> &mdash; region-wide coordination and informed prioritization of investments, ensuring projects are sequenced, targeted and free of duplication, and that transboundary issues are addressed.</p></div>
+  <div class="card"><h4><span class="num">Component 2</span></h4><p><strong>Capacity development, knowledge management &amp; outreach</strong> &mdash; linking projects to knowledge hubs and Communities of Practice, ensuring lessons flow both ways and stakeholders are engaged at every level.</p></div>
+  <div class="card"><h4><span class="num">Component 3</span></h4><p><strong>Programme-wide monitoring &amp; adaptive management</strong> &mdash; harmonized, linked M&amp;E systems at project, regional and programme levels, supporting adaptive management and standardized reporting on GEF-7 core and LDN indicators.</p></div>
+ </div>
+
+ <div class="fig">
+  <div class="fig-frame"><span>[ FIGURE PLACEHOLDER ]<br>Relations between the GCP, REMs and child projects &mdash; and the circular Knowledge Management, Capacity Development &amp; Outreach structure</span></div>
+  <div class="fig-cap"><b>Figure 1</b> &nbsp; The GCP&ndash;REM&ndash;child-project relationship. Drop the DSL-IP organigram artwork into this frame.</div>
+ </div>
+</section>
+
+<section id="regions" data-screen-label="The Three REMs">
+ <h2><span class="kicker">Regional Outposts</span>The three Regional Exchange Mechanisms</h2>
+ <p>Based on the geographic distribution of the eleven DSL-IP countries, three REMs were established &mdash; for Central Asia, the Sahel/East Africa, and the Miombo-Mopane ecoregion of Southern Africa. Each leverages an existing regional knowledge platform with similar coverage and objectives, complementing rather than duplicating ongoing efforts.</p>
+ <div class="tab-scope">
+  <div class="tabs">
+   <button class="tab-button active" onclick="openTab(event,'rem3')"><span class="tnum">REM 3</span>Southern Africa</button>
+   <button class="tab-button" onclick="openTab(event,'rem2')"><span class="tnum">REM 2</span>West &amp; East Africa</button>
+   <button class="tab-button" onclick="openTab(event,'rem1')"><span class="tnum">REM 1</span>Central Asia</button>
+  </div>
+  <div id="rem3" class="tab-content active">
+   <h3>REM 3 &middot; Southern Africa &mdash; the Miombo-Mopane cluster</h3>
+   <div class="module-meta"><span class="chip">FAO-led (REA)</span><span class="chip">SADC &amp; Great Green Wall South</span><span class="chip">SRAP</span></div>
+   <p>Led by FAO as Regional Executive Agency, REM 3 aligns its interventions with the Southern African Development Community and the Great Green Wall Initiative South under the Sub-Regional Action Programme to Combat Desertification &mdash; coordinated with FAO's sub-regional office to give a synchronized catalytic effect for up- and out-scaling.</p>
+   <ul class="clean">
+    <li><strong>Countries:</strong> Angola, Botswana, Malawi, Mozambique, Namibia, Tanzania, Zimbabwe &mdash; in the Miombo-Mopane mixed land-use systems.</li>
+    <li><strong>Regional Management Team</strong> hosted by FAO's Sub-regional Office for Southern Africa, with a full-time Regional Coordinator and a core team of technical experts.</li>
+    <li><strong>Anchor:</strong> the wider Miombo-Mopane woodlands span 12 dryland countries, all with national LDN targets &mdash; a natural canvas for transboundary scaling.</li>
+   </ul>
+  </div>
+  <div id="rem2" class="tab-content">
+   <h3>REM 2 &middot; West &amp; East Africa &mdash; the Sahel cluster</h3>
+   <div class="module-meta"><span class="chip">IUCN-led (OPA)</span><span class="chip">GEF-6 Resilient Food Systems Hub</span><span class="chip">Great Green Wall</span></div>
+   <p>Coordinated by IUCN under an Operational Partner Agreement, REM 2 works closely with the Regional Hub of the GEF-6 Resilient Food Systems project &mdash; which the DSL-IP child projects in Kenya and Burkina Faso are already part of &mdash; and aligns with the African Union's Great Green Wall Initiative.</p>
+   <ul class="clean">
+    <li><strong>Countries:</strong> Kenya and Burkina Faso, plus neighbouring countries sharing similar dryland conditions.</li>
+    <li><strong>Core themes:</strong> rangeland and grazing management, drought management, eco-tourism, agro-sylvo-pastoral value chains and gender-responsive land-use planning.</li>
+    <li><strong>Leverage:</strong> the RFS Hub's cross-project coordination, learning and programmatic monitoring.</li>
+   </ul>
+  </div>
+  <div id="rem1" class="tab-content">
+   <h3>REM 1 &middot; Central Asia</h3>
+   <div class="module-meta"><span class="chip">IUCN-led (OPA)</span><span class="chip">CACILM knowledge hub</span></div>
+   <p>Coordinated by IUCN, REM 1 works closely with the knowledge hub of the <strong>Central Asian Countries Initiative for Land Management (CACILM)</strong>, which shares the DSL-IP's objective: to restore, maintain and enhance the productive functions of the land while preserving its ecological functions and improving the well-being of those who depend on it.</p>
+   <ul class="clean">
+    <li><strong>Countries:</strong> Kazakhstan and Mongolia.</li>
+    <li><strong>Core themes:</strong> sustainable pasture management, conservation agriculture, drought and salinity management &mdash; with strong emphasis on drought-resistant seed systems and multi-stakeholder land-use platforms.</li>
+    <li><strong>Leverage:</strong> CACILM best practices and SLM knowledge platforms (WOCAT, TECA), with resource mobilization toward GEF-8 and GCF.</li>
+   </ul>
+  </div>
+ </div>
+</section>
+<section id="cops" data-screen-label="Communities of Practice">
+ <h2><span class="kicker">Where Knowledge Lives</span>Three Communities of Practice</h2>
+ <p>The GCP links the child projects' components to three <strong>Communities of Practice (CoPs)</strong> &mdash; each a cluster of technical knowledge hubs and a mirrored &ldquo;support stream&rdquo; of GCP focal points, giving every project a virtual open door. The CoPs follow the DSL-IP's programmatic components, and each is the home of one of the programme's signature methodologies.</p>
+ <div class="grid">
+  <div class="card"><h4><span class="num">CoP 1</span> &nbsp;LDN Assessment &amp; Decision-Making</h4><p>Moving from integrated landscape assessment to integrated land-use plans for informed LDN decisions. Connected to the Monitoring, Evaluation &amp; Learning (MEL) Working Group. &nbsp;<a href="ILAM Integrated Landscape Assessment Methodology.html" style="color:var(--clay); font-weight:600; text-decoration:none;">ILAM &rarr;</a></p></div>
+  <div class="card"><h4><span class="num">CoP 2</span> &nbsp;Good SLM/SFM Practices &amp; Value Chains</h4><p>The One Country Champion, One Core Theme approach &mdash; rolling out the Integrated Capacity Development &amp; Implementation Plan and its technical support. &nbsp;<a href="SLPF Sustainable Landscape Production Framework.html" style="color:var(--clay); font-weight:600; text-decoration:none;">SLPF &rarr;</a></p></div>
+  <div class="card"><h4><span class="num">CoP 3</span> &nbsp;Gender Responsiveness &amp; Women's Empowerment</h4><p>Backstopping on gender mainstreaming across all components, linked to FAO's <strong>WeCaN</strong> community for women's empowerment in dryland regions.</p></div>
+ </div>
+
+ <div class="callout success">
+  <div class="callout-title">Knowledge hubs behind the CoPs</div>
+  <p>Each CoP mobilizes named technical partners: <strong>Farmer Field Schools</strong> with the International Institute of Rural Reconstruction (IIRR); <strong>Community Seed Banks</strong> with the Community Technology Development Trust (CTDT) and the International Treaty on Plant Genetic Resources; <strong>green value chains</strong> through the Forest &amp; Farm Facility with IIED; and gender through IUCN and WeCaN &mdash; all leveraging FAO's 80 years of forest and natural-resource management.</p>
+ </div>
+
+ <p>Crucially, the REM's support is not generic. Each support stream reviews the terms of reference for country consultants against FAO's best-practice guides, aligns annual work and budget plans with the latest science, provides direct technical backstopping on demand, and connects project staff to counterparts in the relevant knowledge hubs &mdash; a standing, demand-driven service rather than a one-off training.</p>
+</section>
+
+<section id="docking" data-screen-label="Country Docking">
+ <h2><span class="kicker">Onboarding</span>Country docking &mdash; how a project plugs in</h2>
+ <p>Every child project enters the programme through a structured <strong>country docking</strong> process, guided by the REM Coordinator. It aligns the GCP's programmatic assistance directly with the country's own implementation framework &mdash; its work and budget plans &mdash; so support is always geared to the project's own targets.</p>
+ <div class="flow">
+  <div class="flow-step"><div class="fs-num">01</div><div class="fs-title">Inception &amp; launch</div><p>Countries are supported from the inception workshop and official launch, once PMU staff are hired with GCP and REA support.</p></div>
+  <div class="flow-step"><div class="fs-num">02</div><div class="fs-title">Capacity needs assessment</div><p>A tailored, sequenced assessment identifies capacity needs at country and regional level within the CoPs and the chosen core theme.</p></div>
+  <div class="flow-step"><div class="fs-num">03</div><div class="fs-title">Dock with the working groups</div><p>Projects join two standing groups &mdash; MEL (Monitoring, Evaluation &amp; Learning) and KCO (Knowledge, Capacity &amp; Outreach) &mdash; their virtual open door to the GCP and knowledge hubs.</p></div>
+  <div class="flow-step"><div class="fs-num">04</div><div class="fs-title">Tailored capacity development</div><p>Based on the docking template, a tailored programme of workshops, learning webinars and technical backstopping is rolled out.</p></div>
+ </div>
+ <div class="callout concept">
+  <div class="callout-title">One Country Champion, One Core Theme</div>
+  <p>At the heart of docking is the choice of a single <strong>core theme</strong> each country will champion &mdash; a green value chain or income-generating opportunity that links directly to SLM/SFM good practice. Themes are screened against three criteria: a clear <strong>LDN linkage</strong>; <strong>livelihood and gender</strong> benefits; and <strong>potential to scale</strong> up, out and deep. Support concentrates on two landscape pockets with the strongest social capital, then outscales through the integrated land-management process &mdash; turning the DSL-IP into a constellation of trainers-of-trainers on integrated forest and land management.</p>
+ </div>
+</section>
+
+<section id="flow" data-screen-label="Knowledge Flow">
+ <h2><span class="kicker">The Circular Logic</span>A two-way street: up, out and deep</h2>
+ <p>The REM's defining feature is a <strong>circular knowledge flow</strong> that integrates knowledge management, capacity development and stakeholder engagement into one programmatic logic. It begins and ends with the benefit of communities.</p>
+ <div class="flow">
+  <div class="flow-step"><div class="fs-num">Start</div><div class="fs-title">Country level</div><p>Common management challenges are identified from project design and ongoing consultations &mdash; the starting point of the flow.</p></div>
+  <div class="flow-step"><div class="fs-num">Bridge</div><div class="fs-title">Through the REM</div><p>The project's first responder bridges local and national to regional and global, assessing cross-pollination opportunities and networks to leverage.</p></div>
+  <div class="flow-step"><div class="fs-num">Capture</div><div class="fs-title">Document &amp; scale</div><p>Evidence-based good practices are captured via MEV-CAM and the WOCAT database, then outscaled within and beyond regional boundaries.</p></div>
+  <div class="flow-step"><div class="fs-num">Return</div><div class="fs-title">To decision-makers &amp; back</div><p>Validated practices flow to the decision-making level for recognition, then back to the country &mdash; empowering national, sub-national and local levels.</p></div>
+ </div>
+ <div class="callout definition">
+  <div class="callout-title">Scaling in three directions</div>
+  <p>The flow is designed to scale <strong>up</strong> (into policy and decision-making), <strong>out</strong> (across countries and borders through South-South exchange), and <strong>deep</strong> (transforming the dominant paradigms of dryland management among policymakers and practitioners). Continuous over the programme's five years, it makes the REM a crucial element in reaching impact at scale.</p>
+ </div>
+</section>
+<section id="themes" data-screen-label="Core Themes">
+ <h2><span class="kicker">One Country, One Theme</span>Country core themes &amp; champions</h2>
+ <p>Each country champions a core theme tied to its common management challenges, with a cross-learning group of peer countries facing similar issues. In Southern Africa, the shared challenges are the decline in agricultural productivity with rising pressure on dryland forest; lack of integrated extension; and lack of market access and sustainable finance.</p>
+ <table>
+  <thead><tr><th style="width:16%;">Country</th><th>Core theme (value chain / income opportunity)</th><th style="width:30%;">Cross-learning group</th></tr></thead>
+  <tbody>
+   <tr><td><strong>Angola</strong></td><td>SLM / NUS &mdash; Hyacinth bean, African yam bean, Jinguenga <span style="color:var(--ink-3);">(tbc)</span></td><td>&mdash;</td></tr>
+   <tr><td><strong>Botswana</strong></td><td>Sustainable tourism; SLM / NUS &mdash; Morama bean, Bambara, Kwengwe</td><td>Zimbabwe, Namibia, Angola, Tanzania, Mozambique</td></tr>
+   <tr><td><strong>Malawi</strong></td><td>Integrated Energy &amp; Food Systems (pigeon pea &amp; maize)</td><td>Mozambique</td></tr>
+   <tr><td><strong>Namibia</strong></td><td>SLM / SFM &mdash; FSC charcoal (invasive bush); NUS &mdash; pearl millet</td><td>Angola, Zimbabwe, Botswana</td></tr>
+   <tr><td><strong>Tanzania</strong></td><td>SLM / SFM &mdash; Miombo honey; sustainable beekeeping; NUS</td><td>Malawi, Angola</td></tr>
+   <tr><td><strong>Zimbabwe</strong></td><td>SFM &mdash; Baobab / Marula; SLM / NUS &mdash; Bambara groundnut, finger millet</td><td>Angola, Tanzania</td></tr>
+   <tr><td><strong>Mozambique</strong></td><td>Protected Areas &amp; buffer-zone management</td><td>Mongolia, Zimbabwe, Namibia</td></tr>
+   <tr><td><strong>Kenya</strong> <span style="color:var(--ink-3); font-size:.85em;">REM 2</span></td><td>Rangeland management; drought management; eco-tourism development</td><td>Kazakhstan, Mongolia, Tanzania, Burkina Faso, Botswana</td></tr>
+   <tr><td><strong>Burkina Faso</strong> <span style="color:var(--ink-3); font-size:.85em;">REM 2</span></td><td>Rangeland &amp; grazing management; agro-sylvo-pastoral value chains; gender-responsive land-use planning</td><td>Kenya, Kazakhstan, Mongolia, Tanzania</td></tr>
+   <tr><td><strong>Mongolia</strong> <span style="color:var(--ink-3); font-size:.85em;">REM 1</span></td><td>Sustainable pasture management <span style="color:var(--ink-3);">(tbc)</span></td><td>Kenya, Burkina Faso, Tanzania, Kazakhstan</td></tr>
+   <tr><td><strong>Kazakhstan</strong> <span style="color:var(--ink-3); font-size:.85em;">REM 1</span></td><td>Sustainable pasture management / grazing with trees (saxaul value chain)</td><td>Mongolia, Tanzania, Kenya, Burkina Faso</td></tr>
+  </tbody>
+ </table>
+ <p class="table-caption">Table 1. Country core themes, champions and cross-learning groups (selected entries; some themes to be confirmed through MEL consultations). NUS = neglected and underutilized species.</p>
+</section>
+
+<section id="outcomes" data-screen-label="REM Outcomes">
+ <h2><span class="kicker">What the REM Delivers</span>Six outcomes</h2>
+ <p>The REM's mandate is expressed as six outcomes, each carried out by the Regional Executive Agency in support of the DSL-IP's overall objective &mdash; to avoid, reduce and reverse degradation through sustainable management of production landscapes.</p>
+ <div class="grid">
+  <div class="card"><h4><span class="num">01</span> Collaboration &amp; coordination</h4><p>New and strengthened synergies among projects, enhanced efficiencies, and avoidance of duplication &mdash; through regular coordination calls, shared events and joint working groups.</p></div>
+  <div class="card"><h4><span class="num">02</span> Transboundary themes</h4><p>Programmatic prioritization of broader transboundary themes for future integrated investment programmes, informed by regional stocktaking and studies.</p></div>
+  <div class="card"><h4><span class="num">03</span> Tailored capacity development</h4><p>Projects access targeted capacity development within the CoPs and their core themes, positioned to share evidence as country champions.</p></div>
+  <div class="card"><h4><span class="num">04</span> Knowledge access &amp; exchange</h4><p>Good practices captured with CDE/WOCAT and FAO MEV-CAM, and shared through South-South exchanges and regional platforms.</p></div>
+  <div class="card"><h4><span class="num">05</span> Impacts scaled out</h4><p>Integrated landscape management promoted through supranational policy-setting bodies, in and beyond IP countries.</p></div>
+  <div class="card"><h4><span class="num">06</span> Regional M&amp;E</h4><p>Centralized advisory support and collation of results, reporting on GEF-7 core and LDN indicators for adaptive management.</p></div>
+ </div>
+</section>
+
+<section id="engage" data-screen-label="Engage & Sources">
+ <h2><span class="kicker">Engage</span>How countries access support &mdash; and what's already there</h2>
+ <p>The REM Coordinator is the first focal point for countries to tap into the Global Impact Program. Access is deliberately low-friction and continuous.</p>
+ <div class="grid">
+  <div class="card"><h4>On-demand support</h4><p>Ad-hoc meetings and technical backstopping whenever a project needs them &mdash; a standing virtual open door.</p></div>
+  <div class="card"><h4>Country bilaterals</h4><p>Standing bilaterals with the wider GCP every <strong>two weeks</strong>, keeping support aligned to live implementation.</p></div>
+  <div class="card"><h4>Regional calls</h4><p>Regional calls every <strong>six months</strong>, plus at least one regional meeting and a private-sector forum each year.</p></div>
+ </div>
+
+ <div class="callout success">
+  <div class="callout-title">Built on what already exists</div>
+  <p>The REMs leverage existing regional knowledge platforms rather than duplicating them &mdash; CACILM in Central Asia, the Resilient Food Systems Hub and Great Green Wall in the Sahel, and SADC's Great Green Wall South in Southern Africa &mdash; complementing ongoing efforts and connecting them to a global programme. Sustainability is built in from the start: lessons and successful approaches are designed to continue being shared <strong>beyond the lifecycle of the country projects</strong>.</p>
+ </div>
+
+ <h3>The methodologies the REM delivers</h3>
+ <div class="grid">
+  <div class="card"><h4>ILAM</h4><p>The Integrated Landscape Assessment Methodology &mdash; supporting countries in creating integrated land-use plans for LDN. &nbsp;<a href="ILAM Integrated Landscape Assessment Methodology.html" style="color:var(--clay); text-decoration:none;">Read &rarr;</a></p></div>
+  <div class="card"><h4>SLPF</h4><p>The Sustainable Landscape Production Framework &mdash; evidence-based SLM/SFM and green value chains via FFPOs. &nbsp;<a href="SLPF Sustainable Landscape Production Framework.html" style="color:var(--clay); text-decoration:none;">Read &rarr;</a></p></div>
+  <div class="card"><h4>DFSM</h4><p>The Dryland Forest Support Mechanism &mdash; scaling finance and coordination for dryland forests, built on this foundation. &nbsp;<a href="DFSM Summary.html" style="color:var(--clay); text-decoration:none;">Read &rarr;</a></p></div>
+ </div>
+
+ <h3>Sources &amp; partners</h3>
+ <div class="two-col">
+  <div>
+   <h4>The programme</h4>
+   <ul class="clean">
+    <li><strong>FAO DSL-IP</strong> &mdash; <a href="https://www.fao.org/in-action/drylands-sustainable-landscapes" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">fao.org · DSL-IP</a></li>
+    <li><strong>IUCN</strong> &mdash; <a href="https://www.iucn.org" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">iucn.org</a> &nbsp;|&nbsp; <strong>WOCAT</strong> &mdash; <a href="https://www.wocat.net" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">wocat.net</a></li>
+    <li><strong>CACILM</strong> &mdash; <a href="https://www.fao.org/in-action/cacilm-2" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">fao.org · CACILM</a></li>
+   </ul>
+  </div>
+  <div>
+   <h4>Regional platforms</h4>
+   <ul class="clean">
+    <li><strong>Great Green Wall</strong> &mdash; <a href="https://www.unccd.int/our-work/ggwi" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">unccd.int · GGWI</a></li>
+    <li><strong>SADC</strong> &mdash; <a href="https://www.sadc.int" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">sadc.int</a> &nbsp;|&nbsp; <strong>GEF</strong> &mdash; <a href="https://www.thegef.org" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">thegef.org</a></li>
+    <li><strong>UNCCD &middot; LDN</strong> &mdash; <a href="https://www.unccd.int" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">unccd.int</a></li>
+   </ul>
+  </div>
+ </div>
+
+ <div class="callout definition" style="margin-top:1.6rem;">
+  <div class="callout-title">Why it matters</div>
+  <p>Continuous knowledge sharing, capacity development and stakeholder engagement over five years &mdash; the REM is the crucial element that turns eleven country projects into a single, multi-level, multi-scale effort to reach impact at scale, starting and ending with the benefit of dryland communities.</p>
+ </div>
+</section>
+</div>
+<footer>
+ <p><strong>Regional Exchange Mechanisms (REM)</strong></p>
+ <p>Drylands Sustainable Landscapes Impact Programme (DSL-IP) &middot; Global Coordination Project &middot; Led by FAO with IUCN and CDE/WOCAT</p>
+ <hr class="foot-rule">
+ <p>Three regional mechanisms: Central Asia (CACILM) &middot; West &amp; East Africa (Sahel / Great Green Wall) &middot; Southern Africa (Miombo-Mopane / SADC)</p>
+ <p style="margin-top:1rem; opacity:.9;">&copy; 2026 FAO &middot; DSL-IP. Suggested citation: FAO. 2026. <em>The Regional Exchange Mechanisms (REM) of the DSL-IP</em>. Rome, FAO.</p>
+</footer>
+<script>
+function openTab(evt, tabName){
+ var i, tabcontent, tabbuttons, scope = evt.currentTarget.closest('.tab-scope') || document;
+ tabcontent = scope.getElementsByClassName("tab-content");
+ for(i=0;i<tabcontent.length;i++){ tabcontent[i].classList.remove("active"); }
+ tabbuttons = scope.getElementsByClassName("tab-button");
+ for(i=0;i<tabbuttons.length;i++){ tabbuttons[i].classList.remove("active"); }
+ scope.querySelector('#'+tabName).classList.add("active");
+ evt.currentTarget.classList.add("active");
+}
+document.querySelectorAll('nav a').forEach(link => {
+ link.addEventListener('click', function(e){
+  e.preventDefault();
+  const target = document.querySelector(this.getAttribute('href'));
+  if(target){ const y = target.getBoundingClientRect().top + window.pageYOffset - 64; window.scrollTo({ top:y, behavior:'smooth' }); }
+ });
+});
+</script>
+<script src="drip-home.js"></script>
+<script src="drip-i18n.js"></script>
+</body>
+</html>

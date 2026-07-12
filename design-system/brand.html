@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Brand" name="Brand & logos" subtitle="DFSA wordmark, DSL-IP program logo, FAO & GEF lockups" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand &amp; logos — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+<style>
+  .logo-cell{ background:var(--surface); border:1px solid var(--hairline); border-radius:var(--r-md);
+    padding:24px; box-shadow:var(--shadow-sm); display:flex; align-items:center; justify-content:center; min-height:118px; }
+  .logo-cell img{ max-width:100%; max-height:88px; height:auto; width:auto; }
+  .logo-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
+  .cap{ font-size:12px; color:var(--ink-3); margin:9px 2px 0; line-height:1.4; }
+  .cap b{ color:var(--ink-2); font-weight:600; }
+  .wm{ font-family:var(--font-display); font-weight:800; text-transform:uppercase; font-size:56px; letter-spacing:.04em; color:var(--forest-deep); line-height:1; }
+  .wm .dot{ color:var(--amber); }
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">Brand</p>
+  <h1 class="ds-title">Brand &amp; logos</h1>
+  <p class="ds-lede">DFSA runs on a <b>temporary identity adopted from DSL-IP</b> while its own design language is developed. The wordmark is the primary mark on-screen; the DSL-IP program logo carries provenance; FAO and GEF appear as the anchoring institutions.</p>
+
+  <div class="ds-sec">
+    <h2>DFSA wordmark</h2>
+    <p class="caption">Display face, uppercase, forest-deep, with the amber dot. The dot is the one fixed accent.</p>
+    <div class="logo-cell" style="justify-content:flex-start"><span class="wm">DFSA<span class="dot">.</span></span></div>
+    <p class="cap"><b>Use</b> — top-bar brand and page heroes. Never recolour the letters; the dot is always <code>--amber #F8B133</code>.</p>
+  </div>
+
+  <div class="ds-sec">
+    <h2>DSL-IP program logo</h2>
+    <div class="logo-grid">
+      <div>
+        <div class="logo-cell"><img src="../assets/logo-full.png" alt="DSL-IP full logo — wordmark with split-globe emblem"></div>
+        <p class="cap"><b>logo-full.png</b> — wordmark + split-globe emblem. The primary program logo; used in the page hero lockup.</p>
+      </div>
+      <div>
+        <div class="logo-cell"><img src="../assets/logo-color.png" alt="DSL-IP wordmark logo"></div>
+        <p class="cap"><b>logo-color.png</b> — wordmark only (no emblem). For tight horizontal spaces.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Institutional lockups</h2>
+    <div class="logo-grid">
+      <div>
+        <div class="logo-cell"><img src="../assets/logo-header.png" alt="FAO — Food and Agriculture Organization of the United Nations"></div>
+        <p class="cap"><b>logo-header.png</b> — FAO. The convening organisation.</p>
+      </div>
+      <div>
+        <div class="logo-cell"><img src="../assets/gef-logo.png" alt="Global Environment Facility"></div>
+        <p class="cap"><b>gef-logo.png</b> — GEF. The financing partner (GEF-7 DSL-IP).</p>
+      </div>
+    </div>
+    <p class="ds-note"><b>Note.</b> This identity is interim. The authentic DSL-IP display face (DermawanRough, letterpress-condensed) is baked into the logo art; on-screen large display currently substitutes Oswald where the font is not embedded. Full spec: <span class="inline-code">DRIP/DFSA-IDENTITY.md</span>.</p>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Brand · assets in <a href="../assets/">DRIP/assets/</a></div>
+</div>
+</body>
+</html>

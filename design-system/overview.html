@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Overview" name="Read me first" subtitle="What the DFSA design system is, how it's structured, and how to use it" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overview — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+<style>
+  .toc{ display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; }
+  .toc a{ display:block; text-decoration:none; background:var(--surface); border:1px solid var(--hairline);
+    border-radius:var(--r-md); padding:16px 17px; box-shadow:var(--shadow-sm); transition:transform .15s, box-shadow .15s, border-color .15s; }
+  .toc a:hover{ transform:translateY(-2px); box-shadow:var(--shadow-md); border-color:var(--forest-soft); }
+  .toc .g{ font-family:var(--font-sans); font-weight:600; font-size:10.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--clay); }
+  .toc .t{ font-family:var(--font-serif); font-weight:700; font-size:16px; color:var(--ink); margin:5px 0 3px; }
+  .toc .d{ font-size:12px; color:var(--ink-3); line-height:1.4; }
+  .pillars{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; margin-top:6px; }
+  .pillars .p{ background:var(--paper-2); border:1px solid var(--hairline); border-radius:var(--r-sm); padding:10px 12px; font-size:12.5px; color:var(--ink-2); }
+  .pillars .p b{ display:block; color:var(--ink); font-family:var(--font-sans); font-size:11px; text-transform:uppercase; letter-spacing:.06em; margin-bottom:2px; }
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">DFSA Design System</p>
+  <h1 class="ds-title">Read me first</h1>
+  <p class="ds-lede">This is the living design system for the <b>Dryland Forest Support Accelerator</b> platform — the tokens, type, components and page inventory that keep ~35 pages coherent. It is a <b>temporary identity adopted from DSL-IP</b> while the DFSA design language is developed.</p>
+
+  <div class="ds-sec">
+    <h2>How it's organised</h2>
+    <p class="h2note">Every card in the Design-System pane starts with a first-line <code>&lt;!-- @dsCard group="…" --&gt;</code> marker. Four families:</p>
+    <div class="pillars">
+      <div class="p"><b>Foundations</b> Colour · type · spacing, radii &amp; elevation</div>
+      <div class="p"><b>Components</b> Top bar · buttons · cards · hero · language switcher</div>
+      <div class="p"><b>Brand</b> Wordmark · DSL-IP / FAO / GEF logos</div>
+      <div class="p"><b>Pages</b> Every live page, grouped by area</div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Single source of truth</h2>
+    <p class="h2note">All tokens and the three type families live in one file.</p>
+    <p class="ds-note"><span class="inline-code">DRIP/colors_and_type.css</span> defines every colour, the type families &amp; scale, and the radius / shadow / spacing steps as CSS custom properties. <b>Always reference a token</b> (<code>var(--forest)</code>, <code>var(--r-md)</code>) rather than a raw value, so a future rebrand propagates from one place. Component cards link this file directly, so they always show the real, current values.</p>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Cards in this system</h2>
+    <div class="toc">
+      <a href="colors.html"><span class="g">Foundations</span><div class="t">Colour</div><div class="d">Brand, surfaces, ink, accents, semantic tokens</div></a>
+      <a href="typography.html"><span class="g">Foundations</span><div class="t">Typography</div><div class="d">Three voices, the scale, .dsl-* classes</div></a>
+      <a href="space-elevation.html"><span class="g">Foundations</span><div class="t">Spacing, radii &amp; elevation</div><div class="d">4px step, four radii, three shadows</div></a>
+      <a href="topbar.html"><span class="g">Components</span><div class="t">Top bar</div><div class="d">Sticky brand + pill nav, deep clay</div></a>
+      <a href="buttons.html"><span class="g">Components</span><div class="t">Buttons, pills &amp; tags</div><div class="d">Primary / CTA / ghost, pills, tags</div></a>
+      <a href="cards.html"><span class="g">Components</span><div class="t">Cards</div><div class="d">Library, feature &amp; rail cards</div></a>
+      <a href="hero.html"><span class="g">Components</span><div class="t">Hero / DSL-IP lockup</div><div class="d">Light page banner: name + logo</div></a>
+      <a href="language-switcher.html"><span class="g">Components</span><div class="t">Language switcher</div><div class="d">Six-flag switcher via drip-i18n.js</div></a>
+      <a href="brand.html"><span class="g">Brand</span><div class="t">Brand &amp; logos</div><div class="d">Wordmark, DSL-IP, FAO, GEF</div></a>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Working rules</h2>
+    <div class="uses">
+      <div class="use-col do"><h3>Do</h3><ul>
+        <li>Compose from tokens and the documented components.</li>
+        <li>Keep the top bar identical on every page (see the Top bar card).</li>
+        <li>Mirror English copy edits into <code>drip-i18n.js</code> rows.</li>
+      </ul></div>
+      <div class="use-col dont"><h3>Don't</h3><ul>
+        <li>Introduce off-palette colours or one-off type sizes.</li>
+        <li>Fork component markup per page.</li>
+        <li>Treat this identity as final — it is interim (see Brand).</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · source of truth <a href="../colors_and_type.css">colors_and_type.css</a> · spec <a href="../DFSA-IDENTITY.md">DFSA-IDENTITY.md</a></div>
+</div>
+</body>
+</html>

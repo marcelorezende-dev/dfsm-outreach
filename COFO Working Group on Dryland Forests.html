@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Programme &amp; Advocacy" name="COFO Working Group on Dryland Forests &amp;amp; Agrosilvopastoral Systems" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COFO Working Group on Dryland Forests &amp; Agrosilvopastoral Systems | DRIP</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; font-style:italic; src:url('fonts/Poppins-400-italic.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{
+ --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+ --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+ --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+ --amber:#F8B133; --gold:#E8C13C; --teal:#33B193; --leaf:#68A260; --bark:#754C29; --water:#3E7CB1;
+ --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+ --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+ --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+ --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{ font-family:var(--serif); line-height:1.7; color:var(--ink-2); background:var(--cream); -webkit-font-smoothing:antialiased; }
+
+/* HEADER */
+header{ background:var(--forest); color:var(--ink-on-dark); padding:3.4rem 2rem 3rem; text-align:left;
+ border-bottom:6px solid var(--amber); position:relative; overflow:hidden; }
+.header-inner{ max-width:1160px; margin:0 auto; position:relative; z-index:2; }
+header .brand-logo{ height:60px; width:auto; filter:brightness(0) invert(1); margin-bottom:1.6rem; opacity:.96; }
+header .eyebrow{ font-family:var(--serif); font-style:italic; font-size:1rem; color:#F2C9A8; margin-bottom:.55rem; }
+header h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.01em;
+ font-size:2.55rem; line-height:1.18; margin:0; color:#fff; max-width:24ch; }
+header h1 span{ color:#F2C9A8; font-weight:400; }
+header .lede{ font-family:var(--serif); font-size:1.14rem; line-height:1.6; color:#EAF1E6; max-width:780px; margin-top:1.5rem; }
+.header-tags{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.7rem; }
+.header-tags span{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem;
+ font-weight:600; color:#fff; background:rgba(251,248,239,.16); padding:.45rem 1rem; border-radius:999px; }
+
+/* NAV */
+nav.secnav{ background:var(--forest-deep); padding:.5rem 1rem; position:sticky; top:0; z-index:100;
+ box-shadow:0 2px 8px rgba(36,31,27,.18); }
+nav.secnav ul{ list-style:none; display:flex; justify-content:center; flex-wrap:wrap; max-width:1160px; margin:0 auto; gap:.1rem; }
+nav.secnav a{ color:#EAF1E6; text-decoration:none; padding:.65rem 1rem; display:block; transition:background .25s,color .25s;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.09em; font-size:.8rem; border-radius:6px; }
+nav.secnav a:hover{ background:rgba(251,248,239,.14); color:#fff; }
+
+/* CONTAINER + SECTIONS */
+.container{ max-width:1160px; margin:0 auto; padding:2.5rem 2rem; }
+section{ background:var(--surface); margin:2rem 0; padding:2.6rem; border-radius:16px;
+ border:1px solid var(--border); box-shadow:var(--shadow-md); scroll-margin-top:80px; }
+
+/* HEADINGS */
+h2{ font-family:var(--serif); font-weight:900; color:var(--ink); font-size:2rem; line-height:1.12; margin-bottom:1.3rem;
+ padding-bottom:.7rem; border-bottom:1px solid var(--hairline); position:relative; }
+h2::after{ content:""; position:absolute; left:0; bottom:-1px; width:64px; height:3px; background:var(--clay); border-radius:2px; }
+h2 .kicker{ display:block; font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em;
+ font-size:.8rem; color:var(--clay); margin-bottom:.5rem; }
+h3{ font-family:var(--serif); font-weight:700; color:var(--forest); font-size:1.42rem; line-height:1.28; margin:1.9rem 0 1rem; }
+h4{ font-family:var(--serif); font-weight:700; color:var(--clay-deep); font-size:1.14rem; margin:1.1rem 0 .5rem; }
+section > p{ margin:1rem 0; }
+section > p:first-of-type{ margin-top:0; }
+.lead{ font-size:1.12rem; color:var(--ink); line-height:1.66; }
+
+/* CALLOUTS */
+.callout{ padding:1.5rem 1.6rem; margin:1.7rem 0; border-radius:12px; background:var(--surface);
+ border:1px solid var(--border); border-top:4px solid var(--ink-3); box-shadow:var(--shadow-sm); }
+.callout.concept{ background:#FBF9F2; border-top-color:var(--clay); }
+.callout.definition{ background:rgba(195,218,186,.30); border-top-color:var(--forest); }
+.callout.warning{ background:rgba(248,177,51,.12); border-top-color:var(--amber); }
+.callout.success{ background:rgba(71,126,89,.10); border-top-color:var(--forest); }
+.callout-title{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.1em;
+ font-size:.92rem; margin-bottom:.7rem; color:var(--ink); }
+.callout.concept .callout-title{ color:var(--clay-deep); }
+.callout.definition .callout-title{ color:var(--forest-deep); }
+.callout.warning .callout-title{ color:#9A6A12; }
+.callout.success .callout-title{ color:var(--forest-deep); }
+.callout p{ color:var(--ink-2); margin:.5rem 0 0; }
+.callout p:first-of-type{ margin-top:0; }
+.callout strong{ color:var(--ink); }
+
+/* CARD GRID */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin:2rem 0; }
+.card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.6rem;
+ box-shadow:var(--shadow-md); transition:transform .25s ease, box-shadow .25s ease; }
+.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.card h4{ color:var(--ink); margin-top:0; margin-bottom:.7rem; padding-bottom:.5rem; border-bottom:1px solid var(--hairline); line-height:1.25; }
+.card p{ font-size:.96rem; color:var(--ink-2); }
+.card .num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:1.1rem; }
+
+/* TABLES */
+table{ width:100%; border-collapse:collapse; margin:1.8rem 0; font-size:.95rem;
+ background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+th{ background:var(--forest); color:var(--ink-on-dark); padding:.95rem 1rem; text-align:left;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.82rem; }
+td{ padding:.85rem 1rem; border-bottom:1px solid var(--hairline); color:var(--ink-2); vertical-align:top; }
+tr:last-child td{ border-bottom:0; }
+tbody tr:nth-child(even){ background:rgba(236,231,215,.5); }
+tbody tr:hover{ background:rgba(195,218,186,.22); }
+td strong{ color:var(--ink); }
+.table-caption{ font-size:.86rem; color:var(--ink-3); font-style:italic; margin:-.6rem 0 1.8rem; }
+
+/* LISTS */
+ul,ol{ margin:1rem 0 1rem 1.5rem; }
+li{ margin:.5rem 0; line-height:1.7; color:var(--ink-2); }
+li strong{ color:var(--ink); }
+.clean{ list-style:none; margin-left:0; }
+.clean li{ padding-left:1.7rem; position:relative; }
+.clean li::before{ content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; border-radius:50%; background:var(--clay); }
+
+/* TABS */
+.tabs{ display:flex; border-bottom:1px solid var(--border); margin:2rem 0 0; flex-wrap:wrap; gap:.2rem; }
+.tab-button{ background:transparent; border:none; padding:.9rem 1.3rem; cursor:pointer;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.85rem;
+ color:var(--ink-3); transition:all .25s; border-bottom:3px solid transparent; }
+.tab-button:hover{ color:var(--ink); }
+.tab-button.active{ color:var(--forest); border-bottom-color:var(--clay); }
+.tab-button .tnum{ font-weight:700; color:var(--clay); margin-right:.35em; }
+.tab-content{ display:none; padding:1.8rem 0 .5rem; animation:fade .26s ease-out; }
+.tab-content.active{ display:block; }
+@keyframes fade{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+.module-meta{ display:flex; flex-wrap:wrap; gap:.5rem; margin:.4rem 0 1.2rem; }
+.module-meta .chip{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.07em; font-size:.72rem; font-weight:600;
+ color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25); padding:.35rem .85rem; border-radius:999px; }
+
+/* STATS */
+.stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1.3rem; margin:2rem 0; }
+.stat-box{ background:var(--surface); border:1px solid var(--border); padding:1.5rem 1.4rem; border-radius:14px;
+ text-align:left; box-shadow:var(--shadow-sm); border-top:4px solid var(--forest); }
+.stat-box .stat-eyebrow{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--ink-3); }
+.stat-value{ font-family:var(--sans); font-weight:700; font-size:2rem; line-height:1.08; margin:.35rem 0 .3rem; color:var(--clay); }
+.stat-label{ font-size:.9rem; color:var(--ink-2); }
+
+/* FLOW */
+.flow{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0; margin:2rem 0; }
+.flow-step{ position:relative; padding:1.3rem 1.2rem; background:#FBF9F2; border:1px solid var(--border); }
+.flow-step:not(:last-child){ border-right:0; }
+.flow-step .fs-num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:.9rem; letter-spacing:.05em; }
+.flow-step .fs-title{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.04em; font-weight:600; color:var(--forest-deep); font-size:.92rem; margin:.3rem 0 .4rem; }
+.flow-step p{ font-size:.88rem; color:var(--ink-2); margin:0; }
+
+/* UTILITIES */
+.highlight{ background:rgba(248,177,51,.32); padding:.05rem .3rem; border-radius:3px; }
+.pillar-badge{ display:inline-block; background:var(--forest); color:#fff; padding:.4rem 1rem; border-radius:999px;
+ font-family:var(--sans); text-transform:uppercase; letter-spacing:.07em; font-size:.76rem; font-weight:600; margin:.25rem .25rem .25rem 0; }
+.pillar-badge.clay{ background:var(--clay); }
+.references-section{ background:#FBF9F2; }
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+
+/* FOOTER */
+footer{ background:var(--forest-deep); color:#EAF1E6; text-align:center; padding:2.8rem 2rem; margin-top:3rem; line-height:1.9; }
+footer p{ max-width:900px; margin:0 auto; }
+footer a{ color:#F2C9A8; text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+footer .foot-rule{ width:60px; height:3px; background:var(--amber); margin:1.4rem auto; border:0; border-radius:2px; }
+
+/* TIMELINE */
+.timeline{ margin:2rem 0 1rem; border-left:3px solid var(--sage); padding-left:0; }
+.tl-item{ position:relative; padding:0 0 1.4rem 1.8rem; }
+.tl-item::before{ content:""; position:absolute; left:-9px; top:.35rem; width:15px; height:15px; border-radius:50%; background:var(--clay); border:3px solid var(--surface); box-shadow:0 0 0 1px var(--clay); }
+.tl-item.key::before{ background:var(--amber); box-shadow:0 0 0 1px var(--amber); }
+.tl-item:last-child{ padding-bottom:0; }
+.tl-year{ font-family:var(--sans); font-weight:700; color:var(--forest); font-size:1.05rem; letter-spacing:.02em; line-height:1.2; }
+.tl-body{ font-size:.98rem; color:var(--ink-2); margin-top:.15rem; }
+.tl-body b{ color:var(--ink); }
+
+@media (max-width:768px){
+ header{ padding:2.2rem 1.3rem; } header h1{ font-size:1.9rem; }
+ nav.secnav ul{ flex-direction:column; } nav.secnav a{ padding:.55rem 1rem; }
+ .container{ padding:1.3rem; } section{ padding:1.5rem; } h2{ font-size:1.5rem; }
+ .stats-grid,.grid,.two-col{ grid-template-columns:1fr; }
+ .tabs{ flex-direction:column; } .tab-button{ width:100%; text-align:left; }
+ .flow-step{ border-right:1px solid var(--border) !important; }
+ .tl-item{ padding-left:1.4rem; }
+}
+</style>
+<style>
+/* ---- page-specific: governance org-chart + world map + member roster ---- */
+.org{ max-width:760px; margin:2rem auto 1rem; }
+.org-node{ background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:.95rem 1.2rem;
+ box-shadow:var(--shadow-sm); text-align:center; }
+.org-node .on-k{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.08em; font-size:.68rem; color:var(--ink-3); }
+.org-node .on-t{ font-family:var(--serif); font-weight:700; color:var(--ink); font-size:1.04rem; line-height:1.25; margin-top:.15rem; }
+.org-node .on-s{ font-size:.84rem; color:var(--ink-2); margin-top:.25rem; }
+.org-node.context{ background:transparent; border-style:dashed; box-shadow:none; }
+.org-node.parent{ background:var(--forest); border-color:var(--forest-deep); }
+.org-node.parent .on-t{ color:#fff; } .org-node.parent .on-k{ color:#CFE3D3; } .org-node.parent .on-s{ color:#EAF1E6; }
+.org-node.self{ border:2px solid var(--clay); background:#FBF9F2; }
+.org-node.self .on-t{ color:var(--clay-deep); }
+.org-conn{ width:2px; height:24px; background:var(--border-strong); margin:0 auto; }
+.org-conn.dash{ background:repeating-linear-gradient(var(--border-strong) 0 4px, transparent 4px 8px); }
+.org-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin:0; }
+.org-row.out .org-node{ border-style:dashed; background:#FBF9F2; }
+.org-cap{ font-size:.82rem; color:var(--ink-3); font-style:italic; text-align:center; margin-top:.4rem; }
+@media (max-width:680px){ .org-row{ grid-template-columns:1fr; } }
+
+/* world map */
+.mapwrap{ margin:1.6rem 0 .6rem; border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:var(--shadow-sm); }
+.worldmap{ position:relative; width:100%; aspect-ratio:2 / 1; min-height:220px;
+ background:
+  repeating-linear-gradient(to right, rgba(36,31,27,.04) 0 1px, transparent 1px 8.3333%),
+  repeating-linear-gradient(to bottom, rgba(36,31,27,.04) 0 1px, transparent 1px 16.6667%),
+  linear-gradient(180deg,#E2ECEC,#D4E4E2); }
+.worldsvg{ position:absolute; inset:0; width:100%; height:100%; display:block; z-index:1; pointer-events:none; }
+.worldsvg path{ fill:#E6D9B4; stroke:rgba(110,84,44,.34); stroke-width:.8; stroke-linejoin:round; vector-effect:non-scaling-stroke; }
+.worldmap .equator{ position:absolute; left:0; right:0; top:50%; height:1px; background:rgba(62,124,177,.30); z-index:0; }
+.worldmap .mdot{ position:absolute; width:9px; height:9px; border-radius:50%; background:var(--forest);
+ transform:translate(-50%,-50%); box-shadow:0 0 0 2px rgba(245,242,232,.9); cursor:default; transition:transform .15s; z-index:2; }
+.worldmap .mdot:hover{ transform:translate(-50%,-50%) scale(1.55); z-index:6; }
+.worldmap .mdot.chair{ width:16px; height:16px; background:var(--clay); box-shadow:0 0 0 3px rgba(245,242,232,.95),0 0 0 6px rgba(207,113,93,.35); z-index:4; }
+.worldmap .mdot.vice{ width:13px; height:13px; background:var(--amber); box-shadow:0 0 0 3px rgba(245,242,232,.95),0 0 0 5px rgba(248,177,51,.4); z-index:3; }
+.maplegend{ display:flex; flex-wrap:wrap; gap:1.2rem; align-items:center; margin:.4rem 0 0; font-family:var(--sans); font-size:.82rem; color:var(--ink-2); }
+.maplegend span{ display:inline-flex; align-items:center; gap:.45rem; }
+.maplegend i{ width:12px; height:12px; border-radius:50%; display:inline-block; box-shadow:0 0 0 2px rgba(245,242,232,.9); }
+.maplegend i.member{ background:var(--forest); } .maplegend i.chair{ background:var(--clay); } .maplegend i.vice{ background:var(--amber); }
+
+/* member roster */
+.roster{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.3rem; margin:1.6rem 0; }
+.region{ background:#FBF9F2; border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.4rem; box-shadow:var(--shadow-sm); }
+.region h4{ margin:0 0 .2rem; color:var(--forest-deep); display:flex; align-items:baseline; justify-content:space-between; gap:.5rem; border:0; padding:0; }
+.region h4 .rc{ font-family:var(--sans); font-weight:700; font-size:.8rem; color:var(--clay); }
+.region .chips{ display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.7rem; }
+.region .chip{ font-family:var(--sans); font-size:.8rem; color:var(--ink-2); background:var(--surface);
+ border:1px solid var(--border); padding:.3rem .7rem; border-radius:999px; white-space:nowrap; }
+.region .chip.officer{ font-weight:600; color:var(--clay-deep); border-color:var(--clay-soft); background:rgba(207,113,93,.08); }
+.region .chip .star{ color:var(--amber); }
+
+/* interactive timeline */
+.itl{ margin:1.6rem 0 0; outline:none; }
+.itl:focus-visible{ box-shadow:0 0 0 3px rgba(207,113,93,.35); border-radius:12px; }
+.itl-rail{ position:relative; overflow-x:auto; padding:6px 10px 4px; -webkit-overflow-scrolling:touch; }
+.itl-track{ position:relative; min-width:680px; height:104px; }
+.itl-line{ position:absolute; left:5%; right:5%; top:50px; height:3px; background:var(--sage); border-radius:2px; }
+.itl-line .fill{ position:absolute; left:0; top:0; bottom:0; width:0; background:var(--clay-soft); border-radius:2px; transition:width .3s ease; }
+.itl-node{ position:absolute; top:0; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center;
+ cursor:pointer; background:none; border:0; padding:0; font-family:var(--sans); }
+.itl-node .yr{ font-weight:700; font-size:.8rem; color:var(--ink-2); margin-bottom:8px; white-space:nowrap; transition:color .2s; }
+.itl-node .dot{ width:15px; height:15px; border-radius:50%; background:var(--surface); border:3px solid var(--forest-soft);
+ box-shadow:var(--shadow-sm); transition:transform .2s, border-color .2s, background .2s; }
+.itl-node.session .dot{ border-color:var(--clay); width:20px; height:20px; }
+.itl-node.upcoming .dot{ border-style:dashed; border-color:var(--ink-3); background:#FBF9F2; }
+.itl-node .lbl{ font-size:.62rem; text-transform:uppercase; letter-spacing:.04em; color:var(--ink-3); margin-top:8px;
+ max-width:84px; text-align:center; line-height:1.25; overflow-wrap:anywhere; }
+.itl-node:hover .dot{ transform:scale(1.18); }
+.itl-node:hover .yr{ color:var(--ink); }
+.itl-node.active .dot{ background:var(--clay); border-color:var(--clay-deep); transform:scale(1.22); }
+.itl-node.active .yr{ color:var(--clay-deep); }
+.itl-node.active .lbl{ color:var(--clay-deep); }
+.itl-panel{ margin-top:1.2rem; background:#FBF9F2; border:1px solid var(--border); border-top:4px solid var(--clay);
+ border-radius:12px; padding:1.5rem 1.6rem; box-shadow:var(--shadow-sm); animation:fade .26s ease-out; }
+.itl-panel .pk{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.1em; font-size:.72rem; font-weight:600; color:var(--clay-deep); }
+.itl-panel h3{ margin:.3rem 0 .25rem; color:var(--ink); border:0; padding:0; }
+.itl-panel .meta{ font-family:var(--sans); font-size:.86rem; color:var(--ink-2); margin-bottom:.7rem; }
+.itl-panel .meta b{ color:var(--ink); }
+.itl-panel ul{ margin:.5rem 0 0 1.3rem; }
+.itl-panel li{ font-size:.96rem; }
+.itl-hint{ font-size:.82rem; color:var(--ink-3); font-style:italic; margin-top:.7rem; }
+@media (max-width:768px){ .itl-node .lbl{ display:none; } .itl-track{ height:74px; } }
+</style>
+
+<link rel="stylesheet" href="drip-harmonize.css">
+  <link rel="icon" type="image/png" href="assets/globe.png">
+  <link rel="stylesheet" href="drip-topbar.css">
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+<header data-screen-label="Header">
+ <div class="header-inner">
+  <img class="brand-logo" src="assets/logo-color.png" alt="DSL-IP — Drylands Sustainable Landscapes Impact Programme">
+  <p class="eyebrow">FAO Committee on Forestry (COFO) &middot; Subsidiary Body &middot; Governance</p>
+  <h1>Working Group on Dryland Forests <span>and Agrosilvopastoral Systems</span></h1>
+  <p class="lede">The inter-governmental expert group of the FAO Committee on Forestry that reads the state of the world's dryland forests, advises COFO on what to do about them, helps steer the GEF-7 DSL-IP &ndash; and, at its very first session in 2019, called for the creation of the platform you are reading now: <strong style="color:#fff;">DRIP</strong>.</p>
+  <div class="header-tags"><span>Subsidiary body of COFO</span><span>Established 2016</span><span>68+ member countries</span><span>Four sessions · 2019&ndash;2025</span><span>Multi-Year Work Plan 2024&ndash;2027</span></div>
+ </div>
+</header>
+<nav class="secnav">
+ <ul>
+  <li><a href="#summary">At a glance</a></li>
+  <li><a href="#cofo">Relation to COFO</a></li>
+  <li><a href="#history">History</a></li>
+  <li><a href="#mandate">Mandate</a></li>
+  <li><a href="#how">How it works</a></li>
+  <li><a href="#members">Membership</a></li>
+  <li><a href="#secretariat">Secretariat</a></li>
+  <li><a href="#work">Work plan</a></li>
+  <li><a href="#drip">DRIP origin</a></li>
+  <li><a href="#engage">Engage</a></li>
+ </ul>
+</nav>
+<div class="container">
+
+<section id="summary" data-screen-label="At a glance">
+ <h2><span class="kicker">Governance note &middot; At a glance</span>What the Working Group is</h2>
+ <p class="lead">The Committee on Forestry (COFO) Working Group on Dryland Forests and Agrosilvopastoral Systems is a <strong>subsidiary body of COFO</strong> &ndash; an inter-governmental, multi-stakeholder expert group that works to protect and restore drylands, enhance local livelihoods and boost resilience, recognising the need for the integrated development of forests, trees and livestock.</p>
+
+ <div class="stats-grid">
+  <div class="stat-box"><div class="stat-eyebrow">Status</div><div class="stat-value">Subsidiary</div><div class="stat-label">body of COFO under Rule XXXI&middot;10</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Established</div><div class="stat-value">2016</div><div class="stat-label">at COFO's 23rd session; ToR adopted</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Sessions held</div><div class="stat-value">4</div><div class="stat-label">2019 · 2021 · 2023 · 2025</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Member countries</div><div class="stat-value">68+</div><div class="stat-label">COFO members with drylands or interest</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Latest session</div><div class="stat-value">2025</div><div class="stat-label">Ulaanbaatar, Mongolia (4th Session)</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Next session</div><div class="stat-value">Zimbabwe</div><div class="stat-label">5th Session, expected 2027</div></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">In one sentence</div>
+  <p>The Working Group is COFO's <strong>standing expert eye on the drylands</strong> &ndash; it reviews their status and trends, advises and reports to the Committee on Forestry, promotes the scaling-up of good restoration practice, and provides the inter-governmental governance that anchors FAO's dryland work, from the GEF-7 DSL-IP to DRIP itself.</p>
+ </div>
+
+ <h3>Keywords</h3>
+ <div class="header-tags" style="margin-top:.6rem;">
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Inter-governmental governance</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Dryland forests</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Agrosilvopastoral systems</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">COFO subsidiary body</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Land Degradation Neutrality</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">South-South cooperation</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">UN Decade on Ecosystem Restoration</span>
+ </div>
+</section>
+
+<section id="cofo" data-screen-label="Relation to COFO">
+ <h2><span class="kicker">Where it sits</span>Its relation to COFO</h2>
+ <p>The Working Group does not stand alone. It is a <strong>subsidiary body of the FAO Committee on Forestry</strong> &ndash; established at COFO's 23rd session (2016) on the basis of Rule XXXI, paragraph 10 of the General Rules of the Organization, and operating in accordance with the General Rules and COFO's own Rules of Procedure. It is, in effect, the Committee's dedicated technical organ for drylands: it reviews the field and reports up, and the Committee guides its work and adopts its recommendations.</p>
+
+ <div class="org">
+  <div class="org-node context"><div class="on-k">FAO governance</div><div class="on-t">FAO Conference &amp; Council</div><div class="on-s">The Organization's supreme governing bodies</div></div>
+  <div class="org-conn"></div>
+  <div class="org-node parent"><div class="on-k">Parent body</div><div class="on-t">Committee on Forestry (COFO)</div><div class="on-s">FAO's most senior forestry statutory body &ndash; sets the global forestry agenda</div></div>
+  <div class="org-conn"></div>
+  <div class="org-node self"><div class="on-k">Subsidiary body &middot; established 2016</div><div class="on-t">Working Group on Dryland Forests &amp; Agrosilvopastoral Systems</div><div class="on-s">Reviews &amp; reports to COFO &middot; makes recommendations &middot; guided by the Committee</div></div>
+  <div class="org-conn"></div>
+  <div class="org-row">
+   <div class="org-node"><div class="on-k">Leadership</div><div class="on-t">Steering Committee</div><div class="on-s">Chair + two Vice-Chairs, acting during &amp; between sessions</div></div>
+   <div class="org-node"><div class="on-k">Support</div><div class="on-t">Secretariat</div><div class="on-s">Secretary appointed by the Director-General &middot; FAO Forestry Division</div></div>
+   <div class="org-node"><div class="on-k">Membership</div><div class="on-t">68+ member countries</div><div class="on-s">COFO members in, or interested in, drylands</div></div>
+  </div>
+  <div class="org-conn dash"></div>
+  <div class="org-row out">
+   <div class="org-node"><div class="on-k">Guides</div><div class="on-t">GEF-7 DSL-IP</div><div class="on-s">Holds a seat on the DSL-IP Global Steering Committee</div></div>
+   <div class="org-node"><div class="on-k">Stewards</div><div class="on-t">DRIP &amp; FERM</div><div class="on-s">Called for DRIP in 2019; supports its testing for LDN monitoring</div></div>
+   <div class="org-node"><div class="on-k">Reports to</div><div class="on-t">COFO sessions</div><div class="on-s">Status, trends &amp; recommendations on dryland forests</div></div>
+  </div>
+  <p class="org-cap">Figure 1 &middot; Where the Working Group sits in FAO's forestry governance &ndash; and what it feeds.</p>
+ </div>
+
+ <div class="callout concept">
+  <div class="callout-title">Why a dedicated Working Group?</div>
+  <p>At its inaugural session, FAO's Assistant Director-General for Forestry noted that the Working Group's expertise and knowledge would help COFO and its members <strong>make better-informed policies and take further action</strong> on the sustainable management of drylands and agrosilvopastoral systems. As a subsidiary body, it gives the Committee a standing, expert channel into a fragile ecosystem that covers 41 percent of the Earth's land surface &ndash; and a programmatic anchor for coherence and coordination across the dryland regions, including the GEF-7 DSL-IP and its global component. The Chair of COFO's 28th Session has described it as <strong>FAO's only subsidiary intersectoral technical body dedicated to drylands</strong> &ndash; a verdict confirmed by an independent review endorsed by COFO in 2024.</p>
+ </div>
+</section>
+
+<section id="history" data-screen-label="History">
+ <h2><span class="kicker">A short history</span>From a call for assessment to a global expert group</h2>
+ <p>The Working Group grew out of COFO's recognition, in the mid-2010s, that drylands were under-assessed and under-invested. Its story tracks the maturing of FAO's whole dryland agenda &ndash; from the first global assessment, to the DSL-IP Impact Program, to the monitoring tools the Group itself called into being. <strong>Four sessions</strong> have been held since 2019 &ndash; Rome, Tanzania (virtual), Amman and Ulaanbaatar &ndash; with a fifth due in Zimbabwe.</p>
+
+ <div class="itl" id="wgTimeline" tabindex="0" role="group" aria-label="Interactive timeline of the Working Group">
+  <div class="itl-rail"><div class="itl-track" id="itlTrack">
+   <div class="itl-line"><span class="fill" id="itlFill"></span></div>
+  </div></div>
+  <div class="itl-panel" id="itlPanel"></div>
+  <p class="itl-hint">Tap a point on the timeline &ndash; or focus it and use the &larr; &rarr; arrow keys &ndash; to open each session and milestone. The larger clay markers are full Sessions of the Working Group.</p>
+ </div>
+</section>
+
+<section id="mandate" data-screen-label="Mandate">
+ <h2><span class="kicker">Terms of Reference</span>Mandate &ndash; what it is asked to do</h2>
+ <p>The Working Group's Terms of Reference, adopted by COFO, set four core functions. In short: <strong>review and report; build understanding; promote good practice; and account back to the Committee.</strong></p>
+ <div class="grid">
+  <div class="card"><h4><span class="num">a</span> &nbsp;Review and report</h4><p>Review and report to COFO on the <strong>status, trends, issues and developments</strong> in dryland forests and agrosilvopastoral systems &ndash; and make recommendations to the Committee.</p></div>
+  <div class="card"><h4><span class="num">b</span> &nbsp;Build understanding</h4><p>As guided by the Committee, contribute to developing a <strong>comprehensive understanding</strong> of dryland forests and agrosilvopastoral systems &ndash; and of the people who depend on them.</p></div>
+  <div class="card"><h4><span class="num">c</span> &nbsp;Promote good practice</h4><p>Promote the <strong>scaling-up of good practices</strong> for the protection, sustainable management and restoration of drylands, enhancing environmental and socio-economic resilience and sustainable livelihoods.</p></div>
+  <div class="card"><h4><span class="num">d</span> &nbsp;Account back</h4><p>Report to the Committee on <strong>any other of its activities</strong>, in accordance with COFO's Rules of Procedure.</p></div>
+ </div>
+
+ <h3>The activities behind the mandate</h3>
+ <ul class="clean">
+  <li><strong>Assess and follow</strong> the status of dryland forests and agrosilvopastoral systems, and feed it into well-informed decision-making and policy.</li>
+  <li><strong>Advise on capacity development</strong> needs for the sustainable management, restoration, assessment and monitoring of these systems.</li>
+  <li><strong>Identify tools and approaches</strong> appropriate for drylands, and support their dissemination and adoption.</li>
+  <li><strong>Share knowledge and lessons</strong> on sustainable management, restoration and monitoring &ndash; and promote their uptake into policy, investment and implementation.</li>
+  <li><strong>Identify opportunities for collaboration</strong> and scaling-up within COFO, with other FAO technical committees and with partners.</li>
+  <li><strong>Provide advice</strong> in support of the SDGs and the Rio Conventions &ndash; the UNCCD, the Convention on Biological Diversity, and the UNFCCC.</li>
+  <li>Undertake such <strong>other tasks</strong> as may be delegated to it by the Committee.</li>
+ </ul>
+
+ <h3>Why drylands &ndash; the stakes behind the mandate</h3>
+ <p>Drylands cover about <strong>41 percent of the Earth's land surface</strong> (48 percent if presumed drylands are included) and are home to some of the planet's most fragile and threatened ecosystems. Their share of the global whole is far larger than their reputation suggests:</p>
+ <div class="stats-grid">
+  <div class="stat-box"><div class="stat-eyebrow">of world food production</div><div class="stat-value">60%</div><div class="stat-label">comes from drylands</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">of the world's livestock</div><div class="stat-value">50%</div><div class="stat-label">is raised in drylands</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">of soil organic carbon</div><div class="stat-value">30%</div><div class="stat-label">is held in dryland soils</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">of the world's forests</div><div class="stat-value">27%</div><div class="stat-label">are dryland forests</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">of the world's people</div><div class="stat-value">25%</div><div class="stat-label">live in drylands</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">of global land</div><div class="stat-value">41%</div><div class="stat-label">is drylands (48% with presumed)</div></div>
+ </div>
+ <p class="table-caption">Drylands as a share of the world total. Sources: FAO 2019; IUCN 2018.</p>
+</section>
+
+<section id="how" data-screen-label="How it works">
+ <h2><span class="kicker">How it works</span>The mechanics of an inter-governmental body</h2>
+ <p>The Working Group runs on the quiet machinery set out in its Rules of Procedure &ndash; sessions, officers, a steering committee and a secretariat &ndash; designed so that an expert group spread across dozens of countries can still speak with one voice to COFO.</p>
+
+ <div class="flow">
+  <div class="flow-step"><div class="fs-num">01</div><div class="fs-title">Sessions</div><p>Normally <strong>one session every two years</strong>, convened by the Director-General in consultation with the Chairperson. A majority of members forms a quorum.</p></div>
+  <div class="flow-step"><div class="fs-num">02</div><div class="fs-title">Officers</div><p>At each session the Group elects a <strong>Chairperson and two Vice-Chairs</strong>, mindful of regional rotation and gender balance. They may not run for consecutive re-election.</p></div>
+  <div class="flow-step"><div class="fs-num">03</div><div class="fs-title">Steering Committee</div><p>The Chair and two Vice-Chairs <strong>act as a Steering Committee</strong> during and between sessions &ndash; facilitating consultation on agendas, formats and preparations.</p></div>
+  <div class="flow-step"><div class="fs-num">04</div><div class="fs-title">Secretariat</div><p>A <strong>Secretary appointed by the Director-General</strong> services the Group's work &ndash; based in FAO's Forestry Division, reachable at Drylands-WGCOFO@fao.org.</p></div>
+  <div class="flow-step"><div class="fs-num">05</div><div class="fs-title">Report up</div><p>The Group's reports and recommendations flow to <strong>COFO and its members</strong>, all FAO Member Nations, observers and interested international organizations.</p></div>
+ </div>
+
+ <div class="grid">
+  <div class="card"><h4>Membership</h4><p>Open to all Members of COFO whose territories lie wholly or partly in drylands &ndash; or who are interested in contributing. Each Member designates a representative from appropriate sectors and disciplines.</p></div>
+  <div class="card"><h4>Voting and decisions</h4><p>Each Member has one vote. Decisions are ascertained by the Chairperson; on the request of one or more Members, the Group resorts to a vote under the General Rules.</p></div>
+  <div class="card"><h4>Observers</h4><p>Inter-governmental and non-governmental organizations attend as observers and were endorsed to <strong>provide notes and advice</strong> during discussions &ndash; IUCN, the GEF, the UNCCD, ICARDA, WWF, CGIAR and others.</p></div>
+  <div class="card"><h4>Between sessions</h4><p>The Steering Committee keeps the Group moving &ndash; consulting members, shaping the next agenda, and coordinating closely with the DSL-IP Global Steering Committee.</p></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">A two-way relationship with the Impact Program</div>
+  <p>The Group's Steering Committee holds a seat on the <strong>DSL-IP Global Steering Committee</strong> &ndash; alongside IUCN, the World Bank, WWF and WOCAT &ndash; so that guidance flows down into the eleven country (child) projects and lessons flow back up into COFO. Members are invited to dock their national dryland units with the child projects and to join the project Steering Committees in their own countries, keeping a continuous two-way flow of information between the field and the Committee.</p>
+ </div>
+</section>
+
+<section id="members" data-screen-label="Membership">
+ <h2><span class="kicker">Who's in it</span>Membership and global footprint</h2>
+ <p>Membership is open to all Committee on Forestry members whose territories are situated wholly or partly in drylands, or who are interested in contributing to the Group's objectives &ndash; <strong>68+ countries in all</strong>. The map below plots member nations that have nominated experts across the Group's four sessions (2019&ndash;2025), with the <strong>current</strong> Chair and Vice-Chairs highlighted.</p>
+
+ <div class="mapwrap">
+  <div class="worldmap" id="worldmap" role="img" aria-label="Schematic world map of Working Group member countries, with the current Chair (Zimbabwe) and Vice-Chairs (Peru, Türkiye) highlighted">
+   <svg class="worldsvg" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path d="M375,83 L417,56 444,56 439,39 375,33 339,39 347,56 361,78 Z"/>
+    <path d="M33,67 L83,56 144,56 236,50 272,47 322,83 356,119 314,125 306,136 292,153 278,181 250,169 231,178 231,200 208,194 194,186 175,158 156,139 156,117 139,100 111,86 83,86 42,83 Z"/>
+    <path d="M250,200 L267,219 283,228 272,214 258,205 Z"/>
+    <path d="M283,228 L300,219 333,225 361,250 378,258 403,272 392,292 389,314 367,328 339,347 319,369 306,389 294,394 297,375 303,353 303,333 306,300 289,289 275,267 278,244 Z"/>
+    <path d="M453,208 L456,192 472,172 483,150 506,147 531,158 556,161 569,161 594,169 603,189 619,217 642,217 633,236 614,256 611,281 611,294 597,311 589,322 575,344 556,347 547,331 533,297 525,267 525,242 511,233 481,236 467,225 Z"/>
+    <path d="M620,286 L626,284 636,297 631,320 624,308 Z"/>
+    <path d="M472,147 L475,128 489,117 506,108 514,103 522,92 514,83 533,69 556,56 578,53 611,61 653,56 689,61 708,50 750,42 792,36 861,50 944,56 972,67 994,61 944,83 933,106 897,125 875,153 839,167 833,186 800,200 792,222 778,228 772,217 750,189 722,208 714,228 708,200 686,181 658,181 661,186 647,206 625,214 619,217 597,172 594,164 600,150 578,136 556,139 536,125 508,131 492,139 Z"/>
+    <path d="M883,150 L894,136 889,128 872,156 Z"/>
+    <path d="M828,233 L839,228 850,211 844,200 Z"/>
+    <path d="M817,311 L839,300 861,283 881,283 894,281 906,303 925,328 917,353 897,358 875,347 861,339 844,344 819,344 Z"/>
+   </svg>
+   <span class="equator" aria-hidden="true"></span>
+  </div>
+ </div>
+ <div class="maplegend">
+  <span><i class="chair"></i> Chairperson &ndash; Zimbabwe</span>
+  <span><i class="vice"></i> Vice-Chairs &ndash; Peru &amp; Türkiye</span>
+  <span><i class="member"></i> Member country</span>
+  <span style="color:var(--ink-3);font-style:italic;">Schematic positions (equirectangular) &ndash; for orientation, not survey-accurate.</span>
+ </div>
+
+ <h3>Member countries, by region</h3>
+ <p>The roster below names member nations that have nominated experts across the Group's sessions. A <span style="color:var(--clay-deep);font-weight:600;">★ marked entry</span> denotes a country that has held the Chair or a Vice-Chair (2019&ndash;2025).</p>
+ <div class="roster" id="roster"></div>
+
+ <div class="callout success">
+  <div class="callout-title">Observers and partners around the table</div>
+  <p>Beyond its members, the Group draws on a wide circle of <strong>observer states</strong> (among them Botswana, Colombia, Iraq, Kazakhstan, Maldives, Namibia, Qatar, Somalia, Syria, Togo, Uganda and Viet Nam) and <strong>institutional observers</strong> &ndash; IUCN, the Global Environment Facility (GEF), the UNCCD, ICARDA, ICBA, CIFOR&ndash;ICRAF, ILRI, the International Land Coalition, SADC, the League of Arab States, WWF, CGIAR, Bioversity&ndash;CIAT and GIZ &ndash; who contribute notes, advice and technical validation during sessions.</p>
+ </div>
+</section>
+
+<section id="secretariat" data-screen-label="Secretariat & officers">
+ <h2><span class="kicker">Who runs it</span>Secretariat, officers and steering committee</h2>
+ <p>Day to day, the Group is carried by its Secretariat in FAO's Forestry Division; strategically, it is led by an elected Chair and two Vice-Chairs who together form the Steering Committee. Officers rotate at each session, with attention to regional balance and gender.</p>
+
+ <h3>Current officers (elected 2025 &middot; for 2025&ndash;2027)</h3>
+ <div class="grid">
+  <div class="card" style="border-top:4px solid var(--clay);"><h4>Chairperson</h4><p><strong>Mr Lewis Radzire</strong> &ndash; Zimbabwe.<br>Operations Manager, Forestry Commission of Zimbabwe. (Vice-Chair 2023; Chair from the 4th Session.)</p></div>
+  <div class="card" style="border-top:4px solid var(--amber);"><h4>Vice-Chairperson</h4><p><strong>Mr Jael Odar</strong> &ndash; Peru.<br>Wild Flora Specialist, Directorate of Sustainable Management of Forest Heritage (SERFOR).</p></div>
+  <div class="card" style="border-top:4px solid var(--amber);"><h4>Vice-Chairperson</h4><p><strong>Mr Ümit Turhan</strong> &ndash; Türkiye.<br>Deputy Head of Department, General Directorate of Forestry (Silva Mediterranea Committee).</p></div>
+ </div>
+
+ <h3>The Secretariat</h3>
+ <div class="grid">
+  <div class="card"><h4>Working Group Secretary</h4><p><strong>Ms Houria Djoudi</strong> &ndash; FAO Drylands Officer. Appointed by the Director-General to service the Group's work, from agendas to assessments.</p></div>
+  <div class="card"><h4>Secretariat inbox</h4><p>The Group's standing point of contact: <strong>Drylands-WGCOFO@fao.org</strong> &ndash; for nominations, expressions of interest in advisory groups, and substantive queries.</p></div>
+  <div class="card"><h4>Home division</h4><p>Hosted by <strong>FAO's Forestry Division</strong> (Forestry Policy and Resources Division), which also hosts the DSL-IP Global Coordination Project's Project Management Unit.</p></div>
+ </div>
+
+ <h3>Chairs of the Working Group, session by session</h3>
+ <p>The chair rotates with attention to regional balance and gender; officers may not run for consecutive re-election. Four chairs have led the Group so far &ndash; from Africa, to Europe, to Asia, and back to Africa.</p>
+ <table>
+  <thead><tr><th>Session</th><th>Chairperson</th><th>Vice-Chairpersons</th></tr></thead>
+  <tbody>
+   <tr><td><strong>Inaugural</strong> &middot; Rome 2019</td><td>Ezekiel Mwakalukwa &middot; <em>Tanzania</em></td><td>Chadi Mohanna (Lebanon) &middot; Dominique Louppe (France)</td></tr>
+   <tr><td><strong>2nd</strong> &middot; Virtual 2021</td><td>Anders Malmer &middot; <em>Sweden</em></td><td>Ezekiel Mwakalukwa (Tanzania) &middot; Rana Abu Saada (Jordan)</td></tr>
+   <tr><td><strong>3rd</strong> &middot; Amman 2023</td><td>Batkhuu Nyam-Osor &middot; <em>Mongolia</em></td><td>Humberto Navarro de Mesquita (Brazil) &middot; Lewis Radzire (Zimbabwe)</td></tr>
+   <tr><td><strong>4th</strong> &middot; Ulaanbaatar 2025</td><td>Lewis Radzire &middot; <em>Zimbabwe</em></td><td>Jael Odar (Peru) &middot; Ümit Turhan (Türkiye)</td></tr>
+  </tbody>
+ </table>
+
+ <div class="callout concept">
+  <div class="callout-title">Founding officers (2019)</div>
+  <p>At the Inaugural Session the Group elected <strong>Mr Ezekiel Mwakalukwa (Tanzania)</strong> as its first Chairperson, with <strong>Mr Chadi Mohanna (Lebanon)</strong> and <strong>Mr Dominique Louppe (France)</strong> as Vice-Chairs &ndash; the Steering Committee that carried the Group through its first work plan and the launch of DRIP.</p>
+ </div>
+</section>
+
+<section id="work" data-screen-label="Work plan">
+ <h2><span class="kicker">What it delivers</span>Work plans and outputs</h2>
+ <p>The Group works to a rolling work plan, structured around a handful of work areas and delivered &ldquo;subject to the availability of extra-budgetary resources.&rdquo; Three plans have run so far &ndash; two biennial, then, after an independent review, a single <strong>Multi-Year Work Plan</strong> with milestones reviewed at each session.</p>
+ <div class="tab-scope">
+  <div class="tabs">
+   <button class="tab-button active" onclick="openTab(event,'wp3')"><span class="tnum">2024&ndash;2027</span>Multi-Year (current)</button>
+   <button class="tab-button" onclick="openTab(event,'wp2')"><span class="tnum">2022&ndash;2024</span>Biennial</button>
+   <button class="tab-button" onclick="openTab(event,'wp1')"><span class="tnum">2019&ndash;2021</span>First plan</button>
+  </div>
+  <div id="wp3" class="tab-content active">
+   <h3>Multi-Year Work Plan 2024&ndash;2027 &ndash; three work areas</h3>
+   <div class="module-meta"><span class="chip">Endorsed at the 3rd Session (Amman, 2023)</span><span class="chip">First multiyear plan</span><span class="chip">Reviewed each session</span></div>
+   <p>Following an independent review endorsed by COFO 27 (2024), the Group moved from biennial plans to a single Multi-Year Work Plan, with biennial milestones reviewed at each session and its three work areas mapped directly onto the Terms of Reference.</p>
+   <table>
+    <thead><tr><th style="width:30%;">Work area (per the ToR)</th><th>Headline activities</th></tr></thead>
+    <tbody>
+     <tr><td><strong>1. Review and report to COFO</strong></td><td>Technical advice on the Forest Resources Assessment (FRA) 2025 findings for drylands and agroforestry; a discussion paper on forest&ndash;agriculture linkages for better drought management; the global assessment <em>Enhancing Carbon Sequestration in Drylands through Silvopastoral Systems</em> (with the Alliance of Bioversity&ndash;CIAT and CIRAD).</td></tr>
+     <tr><td><strong>2. Build understanding</strong></td><td>The <strong>Drylands School</strong> programme (three editions, 2023&ndash;2025); supporting the 2026 International Year of Rangelands and Pastoralists with COAG:LI; the &ldquo;Grazing with Trees&rdquo; silvopastoral approach; a resource-mobilization package for donors.</td></tr>
+     <tr><td><strong>3. Promote scaling-up of good practice</strong></td><td>Periodic guidance to the GEF-7 DSL-IP at national, regional and global levels; participatory monitoring through <strong>MEV-CAM</strong> (now in 18+ countries); the <strong>WeCaN</strong> women's community of practice (200 women-led organizations across 31 countries); support to regional initiatives such as Landscape Partnership Asia.</td></tr>
+    </tbody>
+   </table>
+  </div>
+  <div id="wp2" class="tab-content">
+   <h3>Work plan 2022&ndash;2024 &ndash; four work areas</h3>
+   <div class="module-meta"><span class="chip">Adopted at the 2nd Session</span><span class="chip">Subject to extra-budgetary resources</span></div>
+   <table>
+    <thead><tr><th style="width:30%;">Work area</th><th>Headline activities</th></tr></thead>
+    <tbody>
+     <tr><td><strong>1. Transformation of dryland production systems</strong></td><td>A Summer School on transformational approaches; an e-learning programme on SFM/SLM; inputs to a global report on the role of livestock in avoiding land degradation and deforestation.</td></tr>
+     <tr><td><strong>2. Innovative ways to monitor and restore drylands</strong></td><td>Participatory monitoring through MEV-CAM; and <span class="highlight">continued support to the testing of DRIP</span> within the monitoring framework of the UN Decade on Ecosystem Restoration, linked to LDN targets.</td></tr>
+     <tr><td><strong>3. Forest-based livelihoods and post-COVID recovery</strong></td><td>Periodic guidance to the GEF-7 DSL Impact Programme; think-tank consultations on the Humanitarian&ndash;Development&ndash;Peace nexus; a Farmer Field School toolkit on agroforestry.</td></tr>
+     <tr><td><strong>4. Knowledge documentation and sharing</strong></td><td>Guidance on DSL-IP knowledge and outreach; promoting the WeCaN women's community of practice; disseminating Green Urban Oases lessons through South-South cooperation.</td></tr>
+    </tbody>
+   </table>
+  </div>
+  <div id="wp1" class="tab-content">
+   <h3>Work plan 2019&ndash;2021 &ndash; three work areas</h3>
+   <div class="module-meta"><span class="chip">Endorsed at the Inaugural Session</span><span class="chip">First work plan</span></div>
+   <table>
+    <thead><tr><th style="width:30%;">Work area</th><th>Headline activities and results</th></tr></thead>
+    <tbody>
+     <tr><td><strong>1. Advancing assessment and monitoring</strong></td><td>Advice into the First Global Dryland Assessment (launched at COP25, 2019) and the presumed-drylands assessment (completed 2020). A planned Dryland Forest Monitoring Week was cancelled by COVID-19.</td></tr>
+     <tr><td><strong>2. Enhancing partnership and scaling-up</strong></td><td>Close coordination with the GEF-7 DSL-IP Steering Committee; technical advice to the MEV-CAM participatory-video initiative; support to the DSL-IP launch at GLF Africa 2021.</td></tr>
+     <tr><td><strong>3. Strengthening the knowledge base</strong></td><td>Testing of <span class="highlight">DRIP</span> and its integration into FERM (piloted in 25 countries); the climate-resilient drylands publication and policy paper (2021); inputs to global reports and guidelines.</td></tr>
+    </tbody>
+   </table>
+  </div>
+ </div>
+
+ <div class="callout success">
+  <div class="callout-title">Flagship initiatives the Group carries</div>
+  <p>Across both plans, a recognisable set of initiatives recurs: <strong>DRIP</strong>; the first global <strong>Drylands Assessment</strong>; the <strong>DSL-IP</strong> and its policy uptake; <strong>MEV-CAM</strong> (Making Every Voice Count for Adaptive Management); the <strong>WeCaN</strong> women's community of practice; and the e-learning and Summer School on transformative approaches to dryland resilience.</p>
+ </div>
+</section>
+
+<section id="drip" data-screen-label="DRIP origin">
+ <h2><span class="kicker">The origin story</span>The Working Group and DRIP</h2>
+ <p>For this platform, the Working Group is not just one more governance body to document &ndash; it is <strong>where DRIP came from</strong>. The line is direct and on the record.</p>
+
+ <div class="callout concept">
+  <div class="callout-title">DRIP was called for here</div>
+  <p>At its <strong>Inaugural Session in July 2019</strong>, the Working Group considered &ldquo;the development of the platform for documenting and monitoring the different restoration initiatives implemented in dryland forests and agrosilvopastoral systems,&rdquo; advised that it be tested and linked with country data, and recommended that FAO produce a user guide to build countries' capacity to use it. That platform was the <strong>Dryland Restoration Initiative Platform (DRIP)</strong> &ndash; today the <strong>Drylands Restoration Initiatives Platform</strong> you are reading now.</p>
+ </div>
+
+ <p>The relationship did not end with the recommendation. Across <strong>every work plan since</strong>, the Group has continued to steward DRIP's development: FAO tested it and integrated it into the <strong>Framework for Ecosystem Restoration Monitoring (FERM)</strong> for the UN Decade on Ecosystem Restoration; the integrated FERM&ndash;DRIP tools were piloted in 25 countries; and the Group's 2024&ndash;2027 Multi-Year Work Plan commits it to keep promoting DRIP within FERM, linked to Land Degradation Neutrality targets. Tellingly, FAO's own 2023&ndash;2025 session documents now style it the <strong>&ldquo;Dryland Restoration Initiatives Platform (DRIP)&rdquo;</strong> &ndash; the very plural the platform carries today.</p>
+
+ <div class="flow">
+  <div class="flow-step"><div class="fs-num">2016</div><div class="fs-title">Rome Promise</div><p>FAO's Dryland Monitoring Weeks (2015&ndash;16) call for sustainable monitoring and assessment of drylands &ndash; the seed of a reporting tool.</p></div>
+  <div class="flow-step"><div class="fs-num">2019</div><div class="fs-title">The Group calls for DRIP</div><p>At the Inaugural Session, the Working Group recommends DRIP's development and testing, linked to country data and LDN.</p></div>
+  <div class="flow-step"><div class="fs-num">2019&ndash;21</div><div class="fs-title">Tested and integrated</div><p>FAO tests DRIP and folds it into FERM for the UN Decade on Ecosystem Restoration &ndash; piloted across 25 countries.</p></div>
+  <div class="flow-step"><div class="fs-num">2024 &rarr;</div><div class="fs-title">Continued stewardship</div><p>The 2024&ndash;2027 Multi-Year Work Plan commits the Group to keep promoting DRIP within FERM, linked to LDN targets.</p></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">Why this page belongs under Governance</div>
+  <p>DRIP exists because an inter-governmental expert group, reporting to the FAO Committee on Forestry, decided drylands needed a way to document and monitor restoration. This page is the <strong>governance root</strong> of the platform &ndash; the body whose mandate, membership and recommendations give DRIP its legitimacy and its purpose. <a href="DFSA.html#story" style="color:var(--clay); font-weight:600; text-decoration:none;">See how DRIP is being reactivated &rarr;</a></p>
+ </div>
+</section>
+
+<section id="engage" class="references-section" data-screen-label="Engage & Sources">
+ <h2><span class="kicker">Engage</span>Connect and sources</h2>
+ <p>The Working Group is open to the COFO membership and works through its Secretariat. Countries nominate experts; institutions engage as observers; and its documents are public.</p>
+ <div class="grid">
+  <div class="card"><h4>Nominate or express interest</h4><p>Member countries nominate experts (with attention to gender balance); members may express interest in advisory groups via the Secretariat.</p></div>
+  <div class="card"><h4>Secretariat</h4><p><strong>Drylands-WGCOFO@fao.org</strong> &ndash; the standing inbox for the Working Group on Dryland Forests and Agrosilvopastoral Systems.</p></div>
+  <div class="card"><h4>Forum and exchange</h4><p>Connect with practitioners through the FAO Dryland Forests and Agrosilvopastoral Systems Knowledge Exchange Forum on Dgroups. <a href="https://dgroups.org/fao/drylands" target="_blank" rel="noopener" style="color:var(--clay); font-weight:600; text-decoration:none;">Join &rarr;</a></p></div>
+ </div>
+
+ <h3>Sources and further reading</h3>
+ <div class="two-col">
+  <div>
+   <h4>The Working Group</h4>
+   <ul class="clean">
+    <li><strong>COFO Working Group</strong> &ndash; <a href="https://www.fao.org/dryland-forestry/working-group/en/" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">fao.org &middot; working group</a></li>
+    <li><strong>3rd Session (Amman, 2023) &middot; documents</strong> &ndash; <a href="https://www.fao.org/dryland-forestry/working-group/third-session-jordan/official-documents/en/" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">fao.org &middot; 3rd session</a></li>
+    <li><strong>2nd Session (2021) &middot; technical events</strong> &ndash; <a href="https://www.fao.org/dryland-forestry/working-group/second-session/technical-events/en/" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">fao.org &middot; 2nd session</a></li>
+    <li><strong>FAO Committee on Forestry (COFO)</strong> &ndash; <a href="https://www.fao.org/about/meetings/cofo/en/" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">fao.org &middot; COFO</a></li>
+   </ul>
+  </div>
+  <div>
+   <h4>The wider programme</h4>
+   <ul class="clean">
+    <li><strong>FAO DSL-IP</strong> &ndash; <a href="https://www.fao.org/in-action/drylands-sustainable-landscapes" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">fao.org &middot; DSL-IP</a></li>
+    <li><strong>UN Decade on Ecosystem Restoration / FERM</strong> &ndash; <a href="https://www.fao.org/in-action/forest-landscape-restoration-mechanism/our-work/goa/ferm/en/" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">fao.org &middot; FERM</a></li>
+    <li><strong>UNCCD &middot; Land Degradation Neutrality</strong> &ndash; <a href="https://www.unccd.int" target="_blank" rel="noopener" style="color:var(--clay); text-decoration:none;">unccd.int</a></li>
+   </ul>
+  </div>
+ </div>
+ <p class="table-caption" style="margin-top:1.4rem;">Drawn from the public documents of the COFO Working Group on Dryland Forests and Agrosilvopastoral Systems &ndash; the reports of the Inaugural (2019), Second (2021), Third (Amman, 2023) and Fourth (Ulaanbaatar, 2025) Sessions, the Terms of Reference and Rules of Procedure, the biennial and Multi-Year work plans, the 2023 independent review, and the DRIP information note. Figures on drylands: FAO (2019), IUCN (2018).</p>
+
+ <div class="callout definition" style="margin-top:1.4rem;">
+  <div class="callout-title">Related on this platform</div>
+  <p><a href="REM Regional Exchange Mechanism.html" style="color:var(--clay); font-weight:600; text-decoration:none;">Regional Exchange Mechanism (REM)</a> &middot; <a href="DSL-IP Financial Architecture.html" style="color:var(--clay); font-weight:600; text-decoration:none;">Financial architecture</a> &middot; <a href="dsl-ip-monitoring/DSL-IP Monitoring System.html" style="color:var(--clay); font-weight:600; text-decoration:none;">Monitoring system</a> &middot; <a href="DRIP Map.html" style="color:var(--clay); font-weight:600; text-decoration:none;">The DRIP Map</a></p>
+ </div>
+</section>
+</div>
+<footer>
+ <p><strong>COFO Working Group on Dryland Forests and Agrosilvopastoral Systems</strong></p>
+ <p>A subsidiary body of the FAO Committee on Forestry &middot; Secretariat: Drylands-WGCOFO@fao.org &middot; Hosted by FAO's Forestry Division</p>
+ <hr class="foot-rule">
+ <p>Established 2016 (COFO 23) &middot; Sessions: Rome 2019 &middot; Tanzania 2021 &middot; Amman 2023 &middot; Ulaanbaatar 2025 &middot; Zimbabwe 2027 &middot; The body that called for DRIP</p>
+ <p style="margin-top:1rem; opacity:.9;">Documented on DRIP from the public COFO Working Group records. &copy; FAO. Suggested citation: FAO. <em>COFO Working Group on Dryland Forests and Agrosilvopastoral Systems</em>. Rome, FAO.</p>
+</footer>
+<script>
+/* ---- member roster + world map ---- */
+var MEMBERS = [
+ /* current officers, 2025–2027 */
+ { n:'Zimbabwe', x:58.3, y:60.6, role:'chair', office:true, reg:'af' },
+ { n:'Peru', x:28.9, y:55.6, role:'vice', office:true, reg:'lac' },
+ { n:'Türkiye', x:59.7, y:28.3, role:'vice', office:true, reg:'eu' },
+ /* past office-holders */
+ { n:'United Republic of Tanzania', x:59.7, y:53.5, office:true, reg:'af' },
+ { n:'Sweden', x:54.2, y:15.6, office:true, reg:'eu' },
+ { n:'Mongolia', x:78.9, y:23.9, office:true, reg:'ap' },
+ { n:'Brazil', x:35.6, y:55.6, office:true, reg:'lac' },
+ { n:'Lebanon', x:59.9, y:31.2, office:true, reg:'ne' },
+ { n:'France', x:50.6, y:23.9, office:true, reg:'eu' },
+ { n:'Jordan', x:60.0, y:32.8, office:true, reg:'ne' },
+ /* members */
+ { n:'Algeria', x:50.8, y:34.4, reg:'af' },
+ { n:'Angola', x:54.9, y:56.7, reg:'af' },
+ { n:'Burkina Faso', x:49.6, y:43.3, reg:'af' },
+ { n:'Cameroon', x:53.3, y:47.2, reg:'af' },
+ { n:'Chad', x:55.3, y:41.7, reg:'af' },
+ { n:'Egypt', x:58.3, y:35.0, reg:'af' },
+ { n:'Eritrea', x:60.8, y:41.4, reg:'af' },
+ { n:'Gambia', x:45.7, y:42.5, reg:'af' },
+ { n:'Kenya', x:60.4, y:49.7, reg:'af' },
+ { n:'Liberia', x:47.4, y:46.4, reg:'af' },
+ { n:'Madagascar', x:63.1, y:60.6, reg:'af' },
+ { n:'Mauritania', x:47.2, y:38.9, reg:'af' },
+ { n:'Morocco', x:48.3, y:32.2, reg:'af' },
+ { n:'Mozambique', x:59.7, y:60.0, reg:'af' },
+ { n:'Niger', x:52.2, y:40.3, reg:'af' },
+ { n:'Nigeria', x:52.2, y:44.7, reg:'af' },
+ { n:'Senegal', x:46.0, y:42.0, reg:'af' },
+ { n:'South Sudan', x:58.3, y:46.1, reg:'af' },
+ { n:'Tunisia', x:52.5, y:31.1, reg:'af' },
+ { n:'Iran', x:64.7, y:32.2, reg:'ne' },
+ { n:'Kuwait', x:63.3, y:33.7, reg:'ne' },
+ { n:'Oman', x:65.8, y:38.3, reg:'ne' },
+ { n:'Saudi Arabia', x:62.5, y:36.7, reg:'ne' },
+ { n:'Yemen', x:63.3, y:41.4, reg:'ne' },
+ { n:'Australia', x:87.2, y:63.9, reg:'ap' },
+ { n:'China', x:79.2, y:30.6, reg:'ap' },
+ { n:'Japan', x:88.3, y:30.0, reg:'ap' },
+ { n:'Philippines', x:83.9, y:42.8, reg:'ap' },
+ { n:'Republic of Korea', x:85.5, y:29.7, reg:'ap' },
+ { n:'Georgia', x:62.1, y:26.7, reg:'eu' },
+ { n:'Slovenia', x:54.1, y:24.4, reg:'eu' },
+ { n:'Spain', x:49.0, y:27.8, reg:'eu' },
+ { n:'Uzbekistan', x:67.8, y:26.9, reg:'eu' },
+ { n:'Argentina', x:32.2, y:68.9, reg:'lac' },
+ { n:'Ecuador', x:28.3, y:50.8, reg:'lac' },
+ { n:'Guatemala', x:25.0, y:41.4, reg:'lac' },
+ { n:'Mexico', x:21.7, y:37.2, reg:'lac' }
+];
+(function(){
+ var map = document.getElementById('worldmap');
+ MEMBERS.forEach(function(m){
+  var d = document.createElement('span');
+  d.className = 'mdot ' + (m.role || 'member');
+  d.style.left = m.x + '%'; d.style.top = m.y + '%';
+  d.title = m.n + (m.role==='chair' ? ' – Chairperson' : m.role==='vice' ? ' – Vice-Chairperson' : '');
+  map.appendChild(d);
+ });
+ var REGIONS = [
+  { id:'af', name:'Africa' },
+  { id:'ne', name:'Near East' },
+  { id:'ap', name:'Asia &amp; Pacific' },
+  { id:'eu', name:'Europe &amp; Central Asia' },
+  { id:'lac', name:'Latin America &amp; Caribbean' }
+ ];
+ var roster = document.getElementById('roster');
+ REGIONS.forEach(function(r){
+  var list = MEMBERS.filter(function(m){ return m.reg === r.id; })
+                    .sort(function(a,b){ return a.n.localeCompare(b.n); });
+  var chips = list.map(function(m){
+   var off = !!(m.office || m.role);
+   return '<span class="chip' + (off ? ' officer' : '') + '">' + (off ? '<span class="star">★</span> ' : '') + m.n + '</span>';
+  }).join('');
+  var el = document.createElement('div');
+  el.className = 'region';
+  el.innerHTML = '<h4>' + r.name + ' <span class="rc">' + list.length + '</span></h4>' +
+                 '<div class="chips">' + chips + '</div>';
+  roster.appendChild(el);
+ });
+})();
+
+/* ---- interactive timeline ---- */
+(function(){
+ var track = document.getElementById('itlTrack');
+ var panel = document.getElementById('itlPanel');
+ var fill  = document.getElementById('itlFill');
+ var wrap  = document.getElementById('wgTimeline');
+ if(!track || !panel) return;
+
+ var T = [
+  { y:'2014', kind:'milestone', lbl:'COFO calls for action', pk:'Origin · COFO 22',
+    title:'COFO calls for action on drylands',
+    meta:'<b>2014</b> &middot; 22nd Session of the Committee on Forestry',
+    points:['COFO calls for greater action on, and investment in, the assessment, monitoring, sustainable management and restoration of drylands.',
+            'It requests FAO to undertake the first global assessment of dryland forests, rangelands and agrosilvopastoral systems.'] },
+  { y:'2016', kind:'milestone', lbl:'Working Group established', pk:'Establishment · COFO 23',
+    title:'The Working Group is established',
+    meta:'<b>2016</b> &middot; 23rd Session of the Committee on Forestry',
+    points:['COFO establishes the Working Group as a subsidiary body under Rule XXXI&middot;10 of the General Rules of the Organization.',
+            'Its Terms of Reference are adopted; preliminary findings of the global drylands assessment are released.'] },
+  { y:'2019', kind:'session', lbl:'Inaugural · Rome', pk:'Inaugural Session · Rome',
+    title:'Inaugural Session',
+    meta:'<b>16&ndash;17 July 2019</b> &middot; FAO HQ, Rome &middot; 20 member countries, 2 IGOs, 2 NGOs',
+    points:['Elects its first Chair, <b>Ezekiel Mwakalukwa (Tanzania)</b>; Vice-Chairs Chadi Mohanna (Lebanon) and Dominique Louppe (France).',
+            'Recommends the development of <b>DRIP</b> &ndash; the Dryland Restoration Initiative Platform &ndash; to track restoration towards Land Degradation Neutrality.',
+            'Endorses the first work plan (2019&ndash;2021). Tanzania offers to host the next session.'] },
+  { y:'Dec 2019', kind:'milestone', lbl:'First global assessment', pk:'Milestone · UNFCCC COP25',
+    title:'First global drylands assessment launched',
+    meta:'<b>December 2019</b> &middot; Madrid',
+    points:['<i>Trees, forests and land use in drylands: the first global assessment</i> is launched at the UN climate conference &ndash; the evidence base the Group was created to advance.'] },
+  { y:'2021', kind:'session', lbl:'2nd · Tanzania (virtual)', pk:'Second Session · Virtual (Tanzania)',
+    title:'Second Session',
+    meta:'<b>17&ndash;18 November 2021</b> &middot; virtual, hosted by Tanzania &middot; 104 participants &ndash; 46 experts from 29 Member Nations + 4 observers',
+    points:['Launches <i>Valuing, restoring and managing presumed drylands</i> (Cerrado, Miombo&ndash;Mopane, Qinghai&ndash;Tibetan Plateau).',
+            'Approves the 2022&ndash;2024 work plan; agrees to support the International Year of Rangelands and Pastoralists 2026.',
+            'Elects <b>Anders Malmer (Sweden)</b> Chair; Vice-Chairs Mwakalukwa (Tanzania) and Rana Abu Saada (Jordan).',
+            'The first DSL-IP Global Steering Committee met two days earlier, on 15 November.'] },
+  { y:'2023', kind:'session', lbl:'3rd · Amman, Jordan', pk:'Third Session · Amman, Jordan',
+    title:'Third Session',
+    meta:'<b>11&ndash;13 September 2023</b> &middot; Amman, Jordan (hybrid), hosted by the Ministry of Agriculture &middot; alongside the 26th Near East Forest &amp; Range Commission &middot; 31 member countries',
+    points:['The <b>first Drylands Summer School</b> runs in parallel (21 champions, 43% women).',
+            'Endorses the Group’s first <b>Multi-Year Work Plan (2024&ndash;2027)</b> &ndash; a shift from biennial to multiyear planning.',
+            'Elects <b>Batkhuu Nyam-Osor (Mongolia)</b> Chair; Vice-Chairs Humberto Navarro de Mesquita (Brazil) and Lewis Radzire (Zimbabwe). Mongolia offers to host the next session.'] },
+  { y:'2024', kind:'milestone', lbl:'Relevance confirmed', pk:'Milestone · COFO 27',
+    title:'Relevance confirmed',
+    meta:'<b>2024</b> &middot; 27th Session of the Committee on Forestry',
+    points:['An independent review of the Group’s relevance and operating modalities is endorsed by COFO &ndash; confirming it as <b>FAO’s only intersectoral technical body dedicated to drylands</b>.',
+            'The 2nd Drylands School is held in Nairobi (September 2024).'] },
+  { y:'2025', kind:'session', lbl:'4th · Ulaanbaatar', pk:'Fourth Session · Ulaanbaatar, Mongolia',
+    title:'Fourth Session',
+    meta:'<b>7&ndash;10 July 2025</b> &middot; Ulaanbaatar, Mongolia (hybrid), hosted by the National Forest Agency &middot; 25 Member Nations',
+    points:['The <b>3rd Drylands School</b> runs in parallel (21 participants, 50% women).',
+            'Marks a milestone towards the 2026 International Year of Rangelands and Pastoralists and UNCCD COP17.',
+            'Elects <b>Lewis Radzire (Zimbabwe)</b> Chair; Vice-Chairs Jael Odar (Peru) and Ümit Turhan (Türkiye). Zimbabwe offers to host the next session; the Group reports again in 2027.'] },
+  { y:'2026', kind:'milestone', lbl:'Year of Rangelands', pk:'Milestone · IYRP 2026',
+    title:'International Year of Rangelands & Pastoralists',
+    meta:'<b>2026</b> &middot; FAO-led, with the COAG Sub-Committee on Livestock (COAG:LI)',
+    points:['The Group mobilizes its cross-regional expertise in support &ndash; promoting innovative, inter-connected sustainable agrosilvopastoral systems and silvopastoralism.'] },
+  { y:'2027', kind:'session', upcoming:true, lbl:'5th · Zimbabwe', pk:'Fifth Session · Zimbabwe (upcoming)',
+    title:'Fifth Session',
+    meta:'<b>Expected 2027</b> &middot; hosted by Zimbabwe',
+    points:['Chaired by <b>Lewis Radzire (Zimbabwe)</b>, elected at the 4th Session.',
+            'The Secretariat will report on implementation of the Multi-Year Work Plan.'] }
+ ];
+ var DEFAULT = 7; /* the 4th Session (2025) */
+
+ var LO = 5, HI = 95; /* inset node range (%) so end labels stay inside the track */
+ var nodes = [];
+ T.forEach(function(d, i){
+  var t = T.length > 1 ? i/(T.length-1) : 0.5;   /* 0..1 along the line */
+  var b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'itl-node ' + d.kind + (d.upcoming ? ' upcoming' : '');
+  b.style.left = (LO + t*(HI - LO)) + '%';
+  b.setAttribute('aria-label', d.y + ' – ' + d.title);
+  b.innerHTML = '<span class="yr">' + d.y + '</span><span class="dot"></span><span class="lbl">' + d.lbl + '</span>';
+  b.addEventListener('click', function(){ select(i); });
+  track.appendChild(b);
+  nodes.push({ el:b, t:t });
+ });
+
+ var cur = -1;
+ function select(i){
+  if(i < 0 || i >= T.length) return;
+  cur = i;
+  nodes.forEach(function(n, j){ n.el.classList.toggle('active', j === i); });
+  fill.style.width = (nodes[i].t * 100) + '%';
+  var d = T[i];
+  var meta = d.meta ? '<div class="meta">' + d.meta + '</div>' : '';
+  var pts = (d.points && d.points.length) ? '<ul>' + d.points.map(function(p){ return '<li>' + p + '</li>'; }).join('') + '</ul>' : '';
+  panel.innerHTML = '<div class="pk">' + d.pk + '</div><h3>' + d.title + '</h3>' + meta + pts;
+ }
+ if(wrap){
+  wrap.addEventListener('keydown', function(e){
+   if(e.key === 'ArrowRight'){ e.preventDefault(); select(Math.min(cur + 1, T.length - 1)); }
+   else if(e.key === 'ArrowLeft'){ e.preventDefault(); select(Math.max(cur - 1, 0)); }
+  });
+ }
+ select(DEFAULT);
+})();
+
+/* ---- tabs ---- */
+function openTab(evt, tabName){
+ var i, tabcontent, tabbuttons, scope = evt.currentTarget.closest('.tab-scope') || document;
+ tabcontent = scope.getElementsByClassName("tab-content");
+ for(i=0;i<tabcontent.length;i++){ tabcontent[i].classList.remove("active"); }
+ tabbuttons = scope.getElementsByClassName("tab-button");
+ for(i=0;i<tabbuttons.length;i++){ tabbuttons[i].classList.remove("active"); }
+ scope.querySelector('#'+tabName).classList.add("active");
+ evt.currentTarget.classList.add("active");
+}
+/* ---- smooth in-page nav ---- */
+document.querySelectorAll('nav.secnav a').forEach(function(link){
+ link.addEventListener('click', function(e){
+  e.preventDefault();
+  var target = document.querySelector(this.getAttribute('href'));
+  if(target){ var y = target.getBoundingClientRect().top + window.pageYOffset - 64; window.scrollTo({ top:y, behavior:'smooth' }); }
+ });
+});
+</script>
+<script src="drip-home.js"></script>
+  <script src="drip-i18n.js"></script>
+</body>
+</html>

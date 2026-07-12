@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Core" name="What are drylands?" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What are drylands? · DFSA</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; font-style:italic; src:url('fonts/Poppins-400-italic.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{
+ --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+ --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+ --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+ --amber:#F8B133; --gold:#E8C13C; --gold-deep:#9A7327;
+ --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+ --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+ --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+ --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+ --r-sm:8px; --r-md:12px; --r-lg:16px;
+ --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --font-serif:"Merriweather",Georgia,serif;
+ --font-display:"DermawanRough","Oswald",sans-serif;
+ /* aridity ramp */
+ --z-presumed:#4E7C59; --z-dsh:#E7C878; --z-sar:#DDA14A; --z-ar:#C87039; --z-har:#9B3B2E;
+}
+html{ scroll-behavior:smooth; }
+body{ background:var(--cream); color:var(--ink); font-family:var(--font-serif); line-height:1.68; -webkit-font-smoothing:antialiased; }
+a{ color:var(--forest-deep); }
+.wrap{ max-width:1080px; margin:0 auto; padding:0 26px; }
+
+/* ---- topbar ---- */
+.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
+.drip-topbar *{box-sizing:border-box;}
+.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+.drip-topbar .db-dm span{color:#F8B133;}
+.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+.drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;text-transform:none;letter-spacing:normal;}
+.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+@media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
+
+/* ---- hero ---- */
+.hero{ background:
+   radial-gradient(1100px 380px at 82% -12%, rgba(110,59,44,.10), transparent 60%),
+   radial-gradient(760px 320px at 6% 8%, rgba(71,126,89,.10), transparent 62%),
+   var(--cream);
+   border-bottom:1px solid var(--hairline); padding:52px 0 40px; }
+.hero .eyebrow{ font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--clay-deep); }
+.hero h1{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; letter-spacing:.005em;
+  font-size:clamp(38px,6.4vw,68px); line-height:.98; color:var(--ink); margin:12px 0 16px; }
+.hero .lede{ max-width:66ch; font-size:18px; color:var(--ink-2); }
+.hero .lede b{ color:var(--ink); }
+.hero .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+.hero .tags span{ font-family:var(--sans); font-size:11.5px; font-weight:500; color:var(--ink-2);
+  background:var(--surface); border:1px solid var(--border); border-radius:999px; padding:5px 12px; }
+
+/* ---- page sub-nav ---- */
+.pagenav{ position:sticky; top:52px; z-index:40; background:rgba(245,242,232,.9); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--hairline); }
+.pagenav ul{ list-style:none; display:flex; flex-wrap:wrap; gap:2px; max-width:1080px; margin:0 auto; padding:8px 20px; }
+.pagenav a{ font-family:var(--sans); font-size:12.5px; font-weight:500; color:var(--ink-2); text-decoration:none;
+  padding:6px 12px; border-radius:999px; transition:.14s; }
+.pagenav a:hover{ background:rgba(36,31,27,.06); color:var(--ink); }
+
+/* ---- sections ---- */
+section{ padding:52px 0; border-bottom:1px solid var(--hairline); }
+.eyebrow2{ font-family:var(--sans); font-size:11px; font-weight:700; letter-spacing:.15em; text-transform:uppercase; color:var(--clay-deep); }
+h2.h{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; font-size:clamp(26px,3.6vw,38px); line-height:1.02; color:var(--ink); margin:9px 0 18px; }
+.lead{ font-size:17px; color:var(--ink-2); max-width:70ch; }
+.lead b{ color:var(--ink); }
+p.body{ font-size:15.5px; color:var(--ink-2); max-width:70ch; margin-top:14px; }
+p.body b{ color:var(--ink); }
+
+/* ---- aridity scale ---- */
+.scale{ margin:26px 0 6px; }
+.scale-bar{ display:flex; height:56px; border-radius:12px; overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--border); }
+.scale-seg{ display:flex; align-items:center; justify-content:center; color:#fff; font-family:var(--sans); font-weight:600;
+  font-size:12px; text-align:center; padding:0 8px; position:relative; }
+.scale-seg small{ display:block; font-weight:500; font-size:10px; opacity:.9; }
+.scale-ticks{ display:flex; margin-top:6px; font-family:var(--sans); font-size:11px; color:var(--ink-3); }
+.scale-note{ font-family:var(--sans); font-size:12.5px; color:var(--ink-2); margin-top:14px; }
+.scale-note b{ color:var(--forest-deep); }
+
+/* ---- zone cards ---- */
+.zgrid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(215px,1fr)); gap:14px; margin-top:26px; }
+.zcard{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:18px; box-shadow:var(--shadow-sm); }
+.zcard .zbar{ height:6px; border-radius:999px; margin-bottom:12px; }
+.zcard h4{ font-family:var(--sans); font-size:15px; font-weight:700; color:var(--ink); }
+.zcard .ai{ font-family:var(--sans); font-size:11.5px; font-weight:600; color:var(--ink-3); margin:2px 0 9px; }
+.zcard p{ font-size:13px; color:var(--ink-2); }
+.zcard .share{ font-family:var(--sans); font-size:11px; color:var(--ink-3); margin-top:10px; padding-top:9px; border-top:1px solid var(--hairline); }
+.zcard .share b{ color:var(--ink); font-size:15px; }
+
+/* ---- callout / clarifier ---- */
+.callout{ display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:26px; border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-sm); }
+.callout > div{ padding:20px 22px; }
+.callout .c-unccd{ background:#FBF8EF; border-right:1px solid var(--hairline); }
+.callout .c-cbd{ background:var(--surface); }
+.callout h5{ font-family:var(--sans); font-size:12px; font-weight:700; letter-spacing:.05em; text-transform:uppercase; color:var(--clay-deep); margin-bottom:8px; }
+.callout p{ font-size:13.5px; color:var(--ink-2); }
+.callout p b{ color:var(--ink); }
+@media(max-width:640px){ .callout{ grid-template-columns:1fr; } .callout .c-unccd{ border-right:none; border-bottom:1px solid var(--hairline); } }
+
+/* ---- presumed feature ---- */
+.presumed-lead{ display:grid; grid-template-columns:1.2fr .9fr; gap:34px; align-items:start; }
+@media(max-width:820px){ .presumed-lead{ grid-template-columns:1fr; gap:20px; } }
+.pquote{ background:linear-gradient(180deg,#F1F5EF,#EAF1E8); border:1px solid rgba(71,126,89,.28); border-left:4px solid var(--forest); border-radius:var(--r-lg); padding:22px 24px; box-shadow:var(--shadow-sm); }
+.pquote p{ font-size:16.5px; line-height:1.55; color:var(--forest-deep); font-weight:400; }
+.pquote .who{ font-family:var(--sans); font-size:11.5px; color:var(--ink-3); margin-top:12px; }
+.regions{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:26px; }
+.rcard{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:18px 18px 16px; box-shadow:var(--shadow-sm); position:relative; overflow:hidden; }
+.rcard::before{ content:""; position:absolute; inset:0 auto 0 0; width:4px; background:var(--forest); }
+.rcard h4{ font-family:var(--sans); font-size:15px; font-weight:700; color:var(--ink); }
+.rcard .geo{ font-family:var(--sans); font-size:11px; color:var(--ink-3); margin:1px 0 10px; }
+.rcard .big{ font-family:var(--font-display); font-size:30px; line-height:1; color:var(--forest-deep); }
+.rcard .big small{ font-family:var(--sans); font-size:12px; color:var(--ink-3); font-weight:500; }
+.rcard p{ font-size:12.5px; color:var(--ink-2); margin-top:10px; }
+
+/* ---- big map ---- */
+.mapfig{ margin-top:20px; }
+#drymapFull{ position:relative; height:min(66vh,620px); min-height:440px; border-radius:var(--r-lg); border:1px solid var(--border); box-shadow:var(--shadow-md); overflow:hidden; z-index:0; }
+.mapcap{ font-family:var(--sans); font-size:11.5px; color:var(--ink-3); margin-top:11px; line-height:1.5; }
+.statrail{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; margin-top:22px; background:var(--border); border:1px solid var(--border); border-radius:var(--r-lg); overflow:hidden; }
+.stat{ background:var(--surface); padding:18px 16px; text-align:center; }
+.stat .n{ font-family:var(--font-display); font-size:34px; line-height:1; color:var(--clay-deep); }
+.stat .n span{ font-size:18px; }
+.stat .l{ font-family:var(--sans); font-size:11.5px; color:var(--ink-2); margin-top:7px; line-height:1.35; }
+
+/* ---- role cards ---- */
+.rolegrid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px; margin-top:26px; }
+.role{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:20px; box-shadow:var(--shadow-sm); }
+.role .ic{ width:40px; height:40px; border-radius:11px; display:grid; place-items:center; background:rgba(71,126,89,.12); color:var(--forest-deep); margin-bottom:12px; }
+.role .ic i{ width:20px; height:20px; }
+.role h4{ font-family:var(--sans); font-size:15px; font-weight:700; color:var(--ink); }
+.role p{ font-size:13.5px; color:var(--ink-2); margin-top:7px; }
+
+/* ---- trends ---- */
+.trend-row{ display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start; padding:16px 0; border-bottom:1px solid var(--hairline); }
+.trend-row:last-child{ border-bottom:none; }
+.trend-row .tn{ font-family:var(--font-display); font-size:30px; line-height:1; color:var(--clay-deep); min-width:120px; }
+.trend-row .tn small{ display:block; font-family:var(--sans); font-size:11px; color:var(--ink-3); font-weight:500; margin-top:3px; }
+.trend-row .tt h4{ font-family:var(--sans); font-size:15px; font-weight:600; color:var(--ink); }
+.trend-row .tt p{ font-size:13.5px; color:var(--ink-2); margin-top:5px; max-width:74ch; }
+
+/* ---- references ---- */
+.refs{ list-style:none; margin-top:20px; }
+.refs li{ font-size:13.5px; color:var(--ink-2); padding:12px 0; border-bottom:1px solid var(--hairline); max-width:82ch; }
+.refs li:last-child{ border-bottom:none; }
+.refs b{ color:var(--ink); }
+.refs a{ word-break:break-word; }
+.srcnote{ font-family:var(--sans); font-size:12px; color:var(--ink-3); margin-top:20px; background:#FBF8EF; border:1px solid var(--hairline); border-radius:var(--r-md); padding:14px 16px; max-width:82ch; }
+
+/* ---- footer ---- */
+footer{ background:#2A211C; color:#E9E1D4; padding:46px 0 40px; }
+footer .wrap{ text-align:center; }
+footer .fmark{ font-family:var(--font-display); text-transform:uppercase; font-size:30px; letter-spacing:.02em; color:#F5F2E8; }
+footer .fmark span{ color:var(--amber); }
+footer p{ font-family:var(--sans); font-size:13px; color:rgba(233,225,212,.72); margin-top:8px; }
+footer .frule{ width:64px; height:2px; background:rgba(233,225,212,.28); border:none; margin:20px auto; }
+footer a{ color:var(--gold); }
+</style>
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Assessment &amp; Evidence · DFSA interpretation</p>
+    <h1>What are drylands?</h1>
+    <p class="lede">Drylands are defined by water scarcity, not by heat: places where the land loses more water to evaporation and plant transpiration than the rain returns. This page sets out how those boundaries are drawn, why DFSA also embraces the <b>&ldquo;presumed drylands&rdquo;</b> — dry forests and woodlands that behave as drylands even where rainfall is higher — and what that fuller footprint means for the accelerator&rsquo;s mandate.</p>
+    <div class="tags"><span>Aridity index · P/PET</span><span>UNEP-WCMC 2007</span><span>UNCCD &amp; CBD</span><span>Presumed drylands · FAO WP30</span></div>
+  </div>
+</header>
+
+<nav class="pagenav">
+  <ul>
+    <li><a href="#definition">The aridity index</a></li>
+    <li><a href="#zones">The four zones</a></li>
+    <li><a href="#presumed">Presumed drylands</a></li>
+    <li><a href="#map">The global map</a></li>
+    <li><a href="#role">Role &amp; value</a></li>
+    <li><a href="#trends">Trends</a></li>
+    <li><a href="#references">References</a></li>
+  </ul>
+</nav>
+
+<!-- ============ 1 · DEFINITION ============ -->
+<section id="definition">
+  <div class="wrap">
+    <p class="eyebrow2">01 · The definition</p>
+    <h2 class="h">A boundary drawn by water</h2>
+    <p class="lead">The world&rsquo;s drylands are delineated by the <b>aridity index (AI)</b> — the ratio of average annual precipitation to potential evapotranspiration (<b>P/PET</b>). Where that ratio falls below <b>0.65</b>, rainfall supplies less than about two-thirds of the water the atmosphere and vegetation could evaporate, and the land is classed as dryland. It is a measure of moisture deficit, which is why cool high plateaus and hot deserts alike can both be drylands.</p>
+    <p class="body">The United Nations (UNEP, 1992) and the UNCCD adopted the AI &lt; 0.65 threshold, and in 2007 the UN Environment Programme&rsquo;s World Conservation Monitoring Centre (UNEP-WCMC) mapped the world&rsquo;s drylands, subdividing them into four zones by how dry they are. That map — the one shown further down this page — remains the reference used by FAO&rsquo;s global drylands assessments.</p>
+
+    <div class="scale">
+      <div class="scale-bar">
+        <div class="scale-seg" style="flex:6.25;background:var(--z-har)">Hyper-arid<small>&lt; 0.05</small></div>
+        <div class="scale-seg" style="flex:18.75;background:var(--z-ar)">Arid<small>0.05–0.20</small></div>
+        <div class="scale-seg" style="flex:37.5;background:var(--z-sar)">Semi-arid<small>0.20–0.50</small></div>
+        <div class="scale-seg" style="flex:18.75;background:var(--z-dsh);color:#5c4a1f">Dry sub-humid<small>0.50–0.65</small></div>
+        <div class="scale-seg" style="flex:18.75;background:var(--z-presumed)">Presumed<small>&ge; 0.65, dryland features</small></div>
+      </div>
+      <div class="scale-ticks"><span style="margin-left:auto">drier &nbsp;&larr;&nbsp; aridity index (P/PET) &nbsp;&rarr;&nbsp; wetter</span></div>
+      <p class="scale-note">The four UNCCD/UNEP-WCMC zones run from true desert to the near-humid margin at 0.65. <b>Presumed drylands sit just past that line</b> — technically wetter, but dryland in character. DFSA works across the whole span.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2 · THE FOUR ZONES ============ -->
+<section id="zones">
+  <div class="wrap">
+    <p class="eyebrow2">02 · The aridity zones</p>
+    <h2 class="h">Four zones of dryness</h2>
+    <p class="lead">UNEP-WCMC (2007) divides drylands into four aridity zones. Together they cover roughly <b>6.1 billion hectares — about 41% of the Earth&rsquo;s land surface</b>. The two conventions that govern dryland policy draw their lines slightly differently across these zones.</p>
+    <div class="zgrid">
+      <div class="zcard">
+        <div class="zbar" style="background:var(--z-har)"></div>
+        <h4>Hyper-arid</h4><div class="ai">AI &lt; 0.05</div>
+        <p>True desert. Dominated by the Sahara and the Arabian Desert, with sparse, specialised life and almost no rain-fed production.</p>
+        <div class="share"><b>16%</b> of dryland area</div>
+      </div>
+      <div class="zcard">
+        <div class="zbar" style="background:var(--z-ar)"></div>
+        <h4>Arid</h4><div class="ai">AI 0.05 – 0.20</div>
+        <p>Sparse vegetation, long dry seasons and thin, erosion-prone soils; the zone most exposed to desertification.</p>
+        <div class="share"><b>25%</b> of dryland area</div>
+      </div>
+      <div class="zcard">
+        <div class="zbar" style="background:var(--z-sar)"></div>
+        <h4>Semi-arid</h4><div class="ai">AI 0.20 – 0.50</div>
+        <p>Grasslands, savannas and open woodlands where rainfall is low and highly seasonal — the heartland of pastoral and agro-pastoral livelihoods.</p>
+        <div class="share"><b>37%</b> of dryland area</div>
+      </div>
+      <div class="zcard">
+        <div class="zbar" style="background:var(--z-dsh)"></div>
+        <h4>Dry sub-humid</h4><div class="ai">AI 0.50 – 0.65</div>
+        <p>The least dry zone — Sudanian savanna, tree steppes and prairie. <b>Most dryland forests occur here.</b></p>
+        <div class="share"><b>22%</b> of dryland area</div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="c-unccd">
+        <h5>UNCCD — the desertification lens</h5>
+        <p>The UN Convention to Combat Desertification defines drylands as <b>arid, semi-arid and dry sub-humid</b> lands, and <b>excludes hyper-arid deserts</b> — desertification is degradation of land that could otherwise be productive, so the driest deserts fall outside its scope.</p>
+      </div>
+      <div class="c-cbd">
+        <h5>CBD — the biodiversity lens</h5>
+        <p>The Convention on Biological Diversity&rsquo;s Programme of Work on Dry and Sub-humid Lands takes a wider view: it <b>includes hyper-arid deserts</b>, and in 2010 formally recognised additional areas with dryland features — the <b>presumed drylands</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 · PRESUMED DRYLANDS ============ -->
+<section id="presumed">
+  <div class="wrap">
+    <p class="eyebrow2">03 · The DFSA interpretation</p>
+    <h2 class="h">Presumed drylands</h2>
+    <div class="presumed-lead">
+      <div>
+        <p class="lead">Some landscapes are wetter than the 0.65 threshold, yet unmistakably dryland in behaviour: marked dry seasons, fire-shaped vegetation, dry forests and woodlands on poor soils. UNEP-WCMC (2007) mapped these as <b>&ldquo;presumed included&rdquo;</b> in the dryland definition, and the CBD adopted them. FAO calls them <b>presumed drylands</b> — areas with an aridity index at or above 0.65 but bearing the features of drylands.</p>
+        <p class="body">They are far from marginal. Presumed drylands add <b>1,075 million hectares</b> — taking global dryland cover from 41% to <b>48% of the Earth&rsquo;s land surface</b>. They hold about <b>322 million hectares of forest</b>, and trees are present across roughly half of their area. Most lie in <b>Africa (36%), Asia (27%) and South America (24%)</b>, concentrated in three great landscapes.</p>
+        <p class="body"><b>DFSA counts these as drylands.</b> Excluding them would write off exactly the dry forests and agrosilvopastoral systems the accelerator exists to support — and the communities who depend on them. Recognising them widens the map of where dryland forest action is needed, and where investment can secure land degradation neutrality before these landscapes tip.</p>
+      </div>
+      <div class="pquote">
+        <p>&ldquo;Areas with an aridity index equal to or above 0.65 but having dryland characteristics — based on precipitation, duration of dry season, occurrence of fires, or vegetation types.&rdquo;</p>
+        <div class="who">— Definition of &ldquo;presumed drylands&rdquo;, UNEP-WCMC (2007); FAO Forestry Working Paper 30 (2022)</div>
+      </div>
+    </div>
+
+    <div class="regions">
+      <div class="rcard">
+        <h4>The Cerrado</h4><div class="geo">Brazil · South America</div>
+        <div class="big">174<small> M ha</small></div>
+        <p>The world&rsquo;s most biodiverse savanna and Brazil&rsquo;s &ldquo;birthplace of waters&rdquo; — dry forest, savanna and gallery forest under intense agricultural pressure.</p>
+      </div>
+      <div class="rcard">
+        <h4>Miombo–Mopane woodlands</h4><div class="geo">Southern &amp; Eastern Africa</div>
+        <div class="big">266<small> M ha</small></div>
+        <p>A transboundary belt from Angola to Tanzania across eight countries — seasonally dry woodlands that underpin the livelihoods of tens of millions.</p>
+      </div>
+      <div class="rcard">
+        <h4>Qinghai–Tibetan Plateau</h4><div class="geo">China · Central &amp; East Asia</div>
+        <div class="big">153<small> M ha</small></div>
+        <p>&ldquo;The roof of the world&rdquo; — alpine grasslands and rangelands, a vast carbon store and the source of Asia&rsquo;s great rivers.</p>
+      </div>
+    </div>
+    <p class="body" style="margin-top:20px;">Together these three regions hold <b>592 million hectares</b> — slightly over <b>55% of all presumed drylands</b> worldwide.</p>
+  </div>
+</section>
+
+<!-- ============ 4 · THE GLOBAL MAP ============ -->
+<section id="map">
+  <div class="wrap">
+    <p class="eyebrow2">04 · The global map</p>
+    <h2 class="h">Where the drylands are</h2>
+    <p class="lead">The interactive map below shows the four aridity zones and, in green, the presumed drylands that DFSA also counts. Hover any zone — on the map or in the legend — to inspect its aridity range and which conventions include it.</p>
+    <figure class="mapfig">
+      <div id="drymapFull"></div>
+      <figcaption class="mapcap">Aridity zones from the UNEP-WCMC (2007) global dryland delineation; presumed drylands after FAO Forestry Working Paper 30 (2022). Polygons generalised for web display. Base map &copy; CARTO / OpenStreetMap. Boundaries are indicative and do not imply any endorsement or position by FAO.</figcaption>
+    </figure>
+    <div class="statrail">
+      <div class="stat"><div class="n">41<span>%</span></div><div class="l">of land is dryland by aridity index</div></div>
+      <div class="stat"><div class="n">48<span>%</span></div><div class="l">once presumed drylands are included</div></div>
+      <div class="stat"><div class="n">1,075<span> M ha</span></div><div class="l">added by presumed drylands</div></div>
+      <div class="stat"><div class="n">322<span> M ha</span></div><div class="l">of forest within presumed drylands</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · ROLE & VALUE ============ -->
+<section id="role">
+  <div class="wrap">
+    <p class="eyebrow2">05 · Why they matter</p>
+    <h2 class="h">The role and value of drylands</h2>
+    <p class="lead">Drylands are neither empty nor unproductive. They are home to a large share of humanity and hold a disproportionate share of the world&rsquo;s trees, carbon and agricultural land — which is precisely why their degradation carries such heavy costs.</p>
+    <div class="rolegrid">
+      <div class="role">
+        <div class="ic"><i data-lucide="users"></i></div>
+        <h4>Livelihoods</h4>
+        <p>Dryland forests make up nearly <b>28% of the world&rsquo;s forests</b> and sustain more than <b>a billion people</b> — through pastoralism, agroforestry, fuelwood, wild foods and non-timber forest products.</p>
+      </div>
+      <div class="role">
+        <div class="ic"><i data-lucide="trees"></i></div>
+        <h4>Forests &amp; trees</h4>
+        <p>When forest, other wooded land and trees outside forests are counted, <b>trees are present across roughly half</b> of the presumed drylands alone — a resource base for agrosilvopastoral systems.</p>
+      </div>
+      <div class="role">
+        <div class="ic"><i data-lucide="cloud"></i></div>
+        <h4>Carbon &amp; climate</h4>
+        <p>Dryland soils and vegetation are a major carbon store — soils hold the second-largest carbon pool after the oceans, and their loss undermines climate mitigation.</p>
+      </div>
+      <div class="role">
+        <div class="ic"><i data-lucide="bird"></i></div>
+        <h4>Biodiversity &amp; water</h4>
+        <p>From the Cerrado&rsquo;s 12,000 plant species to the plateau rivers that supply 1.5 billion people, drylands regulate water, host unique species and buffer against drought.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 · TRENDS ============ -->
+<section id="trends">
+  <div class="wrap">
+    <p class="eyebrow2">06 · A moving boundary</p>
+    <h2 class="h">Trends: degradation and a shifting line</h2>
+    <p class="lead">The dryland boundary is not fixed. Climate change is pushing it outward, while land degradation is hollowing out the drylands that already exist — making the presumed drylands both more valuable and more at risk.</p>
+    <div style="margin-top:22px;">
+      <div class="trend-row">
+        <div class="tn">~⅓<small>of global land</small></div>
+        <div class="tt"><h4>Land is already degrading</h4><p>Around one third of the global land area is affected by degradation to some degree, with drylands among the most exposed. The cost of inaction has been assessed at <b>at least three times</b> the cost of restoration in Asia and Africa.</p></div>
+      </div>
+      <div class="trend-row">
+        <div class="tn">→<small>expanding</small></div>
+        <div class="tt"><h4>Aridity is spreading</h4><p>Growing aridity is enlarging the world&rsquo;s drylands and putting more land at the threshold. Presumed drylands are, in FAO&rsquo;s words, areas &ldquo;with dryland characteristics and at greater risk of becoming drylands in the near future&rdquo; — a frontier worth securing now.</p></div>
+      </div>
+      <div class="trend-row">
+        <div class="tn">LDN<small>the target</small></div>
+        <div class="tt"><h4>A priority for land degradation neutrality</h4><p>Because they are still relatively tree-rich and biodiverse, presumed drylands offer high returns on restoration and sustainable management — a priority for LDN commitments and the UN Decade on Ecosystem Restoration (2021–2030).</p></div>
+      </div>
+    </div>
+    <p class="body" style="margin-top:22px;">This is why the boundary interpretation matters operationally. Drawing the line at 0.65 alone would leave the Cerrado, the Miombo–Mopane woodlands and the Qinghai–Tibetan Plateau outside the dryland agenda. By working across the fuller, presumed-inclusive footprint, DFSA targets action where dryland forests are most extensive, most valuable and most at risk.</p>
+  </div>
+</section>
+
+<!-- ============ 7 · REFERENCES ============ -->
+<section id="references" style="border-bottom:none;">
+  <div class="wrap">
+    <p class="eyebrow2">07 · Sources</p>
+    <h2 class="h">References</h2>
+    <ul class="refs">
+      <li>Haddad, F.F., Blicharska, M., Westerberg, V., Riccardi, T. &amp; Costa, L. 2022. <b>Valuing, restoring and managing &ldquo;presumed drylands&rdquo;: Cerrado, Miombo–Mopane woodlands and the Qinghai–Tibetan Plateau.</b> Forestry Working Paper No. 30. Rome, FAO. <a href="https://doi.org/10.4060/cc0110en" target="_blank" rel="noopener">https://doi.org/10.4060/cc0110en</a></li>
+      <li>FAO. 2019. <b>Trees, forests and land use in drylands: the first global assessment.</b> Rome. <a href="https://www.fao.org/documents/card/en/c/ca7148en" target="_blank" rel="noopener">fao.org/documents/card/en/c/ca7148en</a></li>
+      <li>UNEP-WCMC. 2007. <b>A spatial analysis approach to the global delineation of dryland areas of relevance to the CBD Programme of Work on Dry and Sub-humid Lands.</b> Cambridge, UK.</li>
+      <li>UNEP. 1992. <b>World Atlas of Desertification.</b> United Nations Environment Programme.</li>
+      <li>United Nations Convention to Combat Desertification (UNCCD) — definition of drylands (aridity index &lt; 0.65, excluding hyper-arid). Convention on Biological Diversity (CBD) — Programme of Work on Dry and Sub-humid Lands.</li>
+      <li>FAO. 2021. <b>The State of the World&rsquo;s Land and Water Resources for Food and Agriculture — Systems at breaking point.</b> Rome.</li>
+    </ul>
+    <p class="srcnote"><b>About the map data.</b> The interactive maps on this platform render the UNEP-WCMC (2007) global dryland delineation (<code>drylands_UNCCD_CBD_july2014</code>), the same dataset underpinning FAO&rsquo;s global drylands assessments. Polygons have been generalised for fast web display; class boundaries are indicative and not suitable for measurement. Aridity classes: hyper-arid, arid, semi-arid, dry sub-humid, and presumed drylands.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fmark">DFSA<span>.</span></div>
+    <p>Dryland Forest Support Accelerator — the knowledge platform of the dryland forests agenda</p>
+    <hr class="frule">
+    <p>Built on the GEF-7 Drylands Sustainable Landscapes Impact Program (DSL-IP) · A programme led by FAO</p>
+    <p style="margin-top:10px;"><a href="DFSA.html">Return to the DFSA home</a> · <a href="Library.html">Browse the Library</a></p>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/drylands-data.js"></script>
+<script src="assets/dryland-map.js"></script>
+<script>
+  if (window.lucide) lucide.createIcons();
+  (function(){
+    function init(){
+      if(!window.L || !window.DRYLANDS_GEO || !window.DFSADrylandMap){ return setTimeout(init, 120); }
+      DFSADrylandMap({ el:'drymapFull', center:[20,10], zoom:1.7, minZoom:1, maxZoom:7, scrollZoom:false, legend:true, compact:false });
+    }
+    init();
+  })();
+</script>
+<script src="drip-home.js"></script>
+<script src="drip-i18n.js"></script>
+</body>
+</html>

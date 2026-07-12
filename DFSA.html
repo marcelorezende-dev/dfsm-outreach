@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Core" name="DFSA — Dryland Forest Support Accelerator" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DFSA — Dryland Forest Support Accelerator · DSL-IP</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:var(--font-body);
+    -webkit-font-smoothing:antialiased; }
+  body::before{ content:''; position:fixed; inset:0; z-index:-2; pointer-events:none;
+    background:linear-gradient(180deg, #ece5d5 0%, var(--cream) 24%, var(--cream) 70%, #ece5d5 100%); }
+  body::after{ content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.32;
+    background-image:url("assets/paper-texture.png"); background-size:520px; }
+  .page{ max-width:1180px; margin:0 auto; padding:0 40px; }
+  section{ padding:62px 0; border-top:1px solid var(--hairline); scroll-margin-top:66px; }
+
+  /* ===== topbar (shared with drylands.html) ===== */
+  .drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+   background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
+   font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
+  .drip-topbar *{box-sizing:border-box;}
+  .drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+  .drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+  .drip-topbar .db-dm span{color:#F8B133;}
+  .drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+  .drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+  .drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;text-transform:none;letter-spacing:normal;}
+  .drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+  .drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+  .drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+  @media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
+
+  /* ===== become-a-partner ===== */
+  .partner{ background:linear-gradient(160deg,#3f8f8a 0%,var(--forest) 48%,var(--forest-deep) 100%); color:var(--ink-on-dark);
+    border-radius:var(--r-lg); padding:42px 44px; position:relative; overflow:hidden; }
+  .partner .pgrain{ position:absolute; inset:0; opacity:.14; mix-blend-mode:soft-light; background-image:url("assets/grain-tile.png"); background-size:300px; pointer-events:none; }
+  .partner h3{ font-family:var(--font-serif); font-weight:900; font-size:30px; margin:0 0 12px; color:#fff; position:relative; }
+  .partner p{ font-family:var(--font-body); font-size:17px; line-height:1.6; color:rgba(251,248,239,.94); max-width:64ch; margin:0 0 22px; position:relative; }
+  .partner .pways{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 26px; position:relative; }
+  .partner .pway{ background:rgba(251,248,239,.1); border:1px solid rgba(251,248,239,.22); border-radius:var(--r-md); padding:16px 18px; }
+  .partner .pway i{ width:20px; height:20px; color:var(--amber); }
+  .partner .pway h4{ font-family:var(--font-serif); font-weight:700; font-size:17px; margin:9px 0 5px; color:#fff; }
+  .partner .pway p{ font-size:13.5px; line-height:1.5; margin:0; color:rgba(251,248,239,.82); }
+  .partner .pbtns{ display:flex; gap:12px; flex-wrap:wrap; position:relative; }
+  .partner .pbtn{ font-family:var(--sans); font-weight:600; font-size:14px; text-decoration:none; border-radius:var(--r-pill); padding:11px 20px; }
+  .partner .pbtn.primary{ background:var(--amber); color:#3a2408; }
+  .partner .pbtn.ghost{ background:rgba(251,248,239,.12); color:#fff; border:1px solid rgba(251,248,239,.3); }
+  @media(max-width:760px){ .partner .pways{ grid-template-columns:1fr; } }
+  .kick{ font-family:var(--sans); font-weight:600; text-transform:uppercase; font-size:13px; letter-spacing:.14em; color:var(--forest); }
+  .sec-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:30px; }
+  .sec-num{ font-family:var(--sans); font-weight:600; font-size:13px; letter-spacing:.16em; color:var(--clay);
+    border:1px solid var(--clay-soft); border-radius:var(--r-pill); padding:4px 12px; }
+  .sec-title{ font-family:var(--font-serif); font-weight:900; font-size:var(--t-h2); line-height:1.12; margin:0; letter-spacing:-.01em; }
+  .lede{ font-family:var(--font-body); font-size:19px; line-height:1.65; color:var(--ink-2); max-width:66ch; }
+  b,strong{ color:var(--ink); font-weight:700; }
+  i[data-lucide]{ width:1em; height:1em; vertical-align:-.125em; }
+
+  /* ===== hero (DSL-IP lockup) ===== */
+  .hero{ position:relative; overflow:hidden; border-top:none; color:var(--ink);
+    background:
+      radial-gradient(1100px 380px at 82% -12%, rgba(110,59,44,.10), transparent 60%),
+      radial-gradient(760px 320px at 6% 8%, rgba(71,126,89,.10), transparent 62%),
+      var(--cream);
+    border-bottom:1px solid var(--hairline); }
+  .hero .page{ position:relative; z-index:2; padding-top:44px; padding-bottom:46px; text-align:center; }
+  .wordmark{ display:flex; align-items:baseline; justify-content:center; gap:16px; }
+  .wordmark h1{ font-family:var(--font-display); font-weight:700; text-transform:uppercase;
+    font-size:clamp(46px,8.4vw,104px); line-height:.9; letter-spacing:.02em; margin:0; color:var(--forest-deep); }
+  .wordmark h1 .dot{ color:var(--amber); }
+  .hero .expand{ font-family:var(--font-serif); font-weight:400; font-style:italic; font-size:clamp(17px,2.4vw,25px);
+    color:var(--clay-deep); margin:12px 0 0; letter-spacing:.01em; }
+  .hero .dslip{ margin:34px 0 0; }
+  .hero .dslip img{ height:clamp(66px,10vw,112px); width:auto; max-width:min(90vw,720px); }
+  .hero .dslip small{ display:block; margin-top:13px; font-family:var(--font-sans); font-size:11.5px;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); }
+  .ataglance{ display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+  .ataglance .g{ display:flex; align-items:center; gap:9px; background:rgba(251,248,239,.1); border:1px solid rgba(251,248,239,.24);
+    border-radius:var(--r-pill); padding:8px 15px; font-family:var(--sans); font-size:13px; color:#fff; }
+  .ataglance .g i{ width:15px; height:15px; color:var(--amber); }
+  .ataglance .g b{ color:#fff; } .ataglance .g span{ color:rgba(251,248,239,.7); }
+
+  /* ===== activation tracker ===== */
+  .track{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; position:relative; margin-top:10px; }
+  .track .ph{ position:relative; padding:0 26px; }
+  .track .ph:not(:last-child)::after{ content:''; position:absolute; top:19px; right:-1px; width:2px; height:calc(100% - 19px); }
+  .track .dotrow{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .track .pdot{ width:38px; height:38px; border-radius:50%; flex:none; display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); font-size:20px; color:#fff; }
+  .track .pdot i{ width:18px; height:18px; }
+  .track .pbar{ height:4px; flex:1; border-radius:3px; }
+  .track .ph1 .pdot{ background:var(--ink-3); } .track .ph1 .pbar{ background:var(--ink-3); }
+  .track .ph2 .pdot{ background:var(--clay); box-shadow:0 0 0 6px rgba(207,113,93,.18); } .track .ph2 .pbar{ background:var(--clay); }
+  .track .ph3 .pdot{ background:var(--surface); border:2px dashed var(--forest-soft); color:var(--forest); } .track .ph3 .pbar{ background:var(--forest-soft); }
+  .track .pstat{ font-family:var(--sans); font-weight:600; text-transform:uppercase; font-size:11px; letter-spacing:.1em; }
+  .track .ph1 .pstat{ color:var(--ink-3); } .track .ph2 .pstat{ color:var(--clay-deep); } .track .ph3 .pstat{ color:var(--forest); }
+  .track h3{ font-family:var(--font-serif); font-weight:700; font-size:22px; margin:0 0 8px; }
+  .track p{ font-family:var(--font-body); font-size:14.5px; line-height:1.6; color:var(--ink-2); margin:0; }
+  .track .ph{ border-left:1px solid var(--hairline); } .track .ph:first-child{ border-left:none; }
+
+  /* ===== library ===== */
+  .libgroup{ margin-top:34px; }
+  .libgroup:first-child{ margin-top:0; }
+  .lg-head{ display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .lg-head i{ width:18px; height:18px; color:var(--clay); }
+  .lg-head h3{ font-family:var(--sans); font-weight:600; text-transform:uppercase; font-size:13px; letter-spacing:.1em; color:var(--ink); margin:0; }
+  .lg-head .ln{ flex:1; height:1px; background:var(--hairline); }
+  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .lcard{ display:flex; flex-direction:column; text-decoration:none; color:inherit; background:var(--surface);
+    border:1px solid var(--border); border-radius:var(--r-lg); padding:22px 22px 18px; box-shadow:var(--shadow-sm);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; position:relative; overflow:hidden; }
+  .lcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--forest-soft); }
+  .lcard .ic{ width:42px; height:42px; border-radius:var(--r-md); display:flex; align-items:center; justify-content:center;
+    background:var(--sage); color:var(--forest-deep); margin-bottom:14px; }
+  .lcard .ic i{ width:21px; height:21px; }
+  .lcard.tool .ic{ background:rgba(63,143,203,.14); color:var(--water); }
+  .lcard.story .ic{ background:var(--blush); color:var(--clay-deep); }
+  .lcard h4{ font-family:var(--font-serif); font-weight:700; font-size:19px; margin:0 0 4px; line-height:1.2; }
+  .lcard .meta{ font-family:var(--sans); font-weight:600; font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); margin-bottom:9px; }
+  .lcard p{ font-family:var(--font-body); font-size:13.5px; line-height:1.55; color:var(--ink-2); margin:0 0 14px; flex:1; }
+  .lcard .open{ font-family:var(--sans); font-weight:600; font-size:12.5px; color:var(--forest); display:flex; align-items:center; gap:5px; }
+  .lcard.tool .open{ color:var(--water); } .lcard.story .open{ color:var(--clay-deep); }
+  .lcard .open i{ width:14px; height:14px; transition:transform .18s ease; }
+  .lcard:hover .open i{ transform:translateX(3px); }
+  .lcard .badge{ position:absolute; top:14px; right:14px; font-family:var(--sans); font-weight:600; font-size:10px;
+    letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--amber); color:var(--ink); border-radius:var(--r-pill); padding:3px 9px; }
+
+  /* ===== wiring (KM structure) ===== */
+  .wiring{ display:grid; grid-template-columns:1.1fr .9fr; gap:30px; align-items:center; }
+  .wnote{ font-family:var(--font-body); font-size:16px; line-height:1.7; color:var(--ink-2); }
+  .wnote p{ margin:0 0 16px; } .wnote .pull{ font-family:var(--font-serif); font-weight:700; color:var(--ink); font-size:19px; line-height:1.4; }
+  .wsteps{ display:flex; flex-direction:column; gap:10px; }
+  .wstep{ display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--r-md); padding:16px 18px; box-shadow:var(--shadow-sm); }
+  .wstep .wi{ width:34px; height:34px; flex:none; border-radius:50%; background:var(--forest); color:#fff;
+    display:flex; align-items:center; justify-content:center; } .wstep .wi i{ width:17px; height:17px; }
+  .wstep h5{ font-family:var(--sans); font-weight:600; font-size:14px; margin:0 0 3px; color:var(--ink); }
+  .wstep p{ font-family:var(--font-body); font-size:13.5px; line-height:1.5; color:var(--ink-2); margin:0; }
+
+  /* ===== 7 pillars ===== */
+  .pillars{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .pcard{ position:relative; text-align:left; cursor:pointer; background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--r-lg); padding:18px 18px 16px; box-shadow:var(--shadow-sm); font:inherit; color:inherit;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; overflow:hidden; }
+  .pcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+  .pcard .pi{ width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:11px; color:#fff; }
+  .pcard .pi i{ width:19px; height:19px; }
+  .pcard .pn{ font-family:var(--font-serif); font-weight:700; font-size:16px; line-height:1.2; margin:0 0 5px; color:var(--ink); }
+  .pcard .pd{ font-family:var(--font-body); font-size:12px; line-height:1.45; color:var(--ink-2); margin:0 0 13px; }
+  .pcard .pf{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .pcard .cnt{ font-family:var(--sans); font-size:11px; font-weight:600; color:var(--ink-3); }
+  .pcard .opn{ font-family:var(--sans); font-size:11.5px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
+  .pcard .opn i{ width:13px; height:13px; }
+  .pcard .strip{ position:absolute; left:0; top:0; bottom:0; width:4px; }
+  .pcard.active{ border-color:transparent; box-shadow:0 0 0 2px var(--pc), var(--shadow-md); }
+  /* ===== library filter ===== */
+  .filterbar{ display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 26px; }
+  .fchip{ font-family:var(--sans); font-weight:600; font-size:12.5px; padding:7px 14px; border-radius:var(--r-pill);
+    border:1.4px solid var(--border-strong); background:transparent; color:var(--ink-2); cursor:pointer; transition:.15s; display:inline-flex; align-items:center; gap:7px; }
+  .fchip:hover{ color:var(--ink); border-color:var(--ink-3); }
+  .fchip .sw{ width:9px; height:9px; border-radius:50%; }
+  .fchip.on{ color:#fff; border-color:transparent; }
+  .libgroup.empty{ display:none; }
+  .hidden{ display:none !important; }
+
+  /* ===== funding ===== */
+  section.fund{ background:var(--bark); background-image:linear-gradient(180deg,#5a3a20,#3f2914); color:var(--ink-on-dark); }
+  .fund .sec-title, .fund .lede{ color:var(--ink-on-dark); } .fund .sec-num{ color:var(--amber); border-color:rgba(248,177,51,.5); }
+  .fgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:30px; }
+  .fcard{ background:rgba(251,248,239,.06); border:1px solid rgba(251,248,239,.16); border-radius:var(--r-lg); padding:22px 22px 18px; }
+  .fcard .fi{ width:40px; height:40px; border-radius:var(--r-md); background:rgba(248,177,51,.18); color:var(--amber);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px; } .fcard .fi i{ width:20px; height:20px; }
+  .fcard h4{ font-family:var(--font-serif); font-weight:700; font-size:19px; margin:0 0 8px; color:#fff; }
+  .fcard p{ font-family:var(--font-body); font-size:13.5px; line-height:1.6; color:rgba(251,248,239,.86); margin:0; }
+  .fcard a{ color:var(--amber); font-weight:600; text-decoration:none; }
+  .fcard.lead{ background:rgba(248,177,51,.12); border-color:rgba(248,177,51,.4); }
+  /* light variant for the Transparency section (cream bg) */
+  #transparency .fcard{ background:var(--paper-2); border-color:var(--border); }
+  #transparency .fcard h4{ color:var(--ink); }
+  #transparency .fcard p{ color:var(--ink-2); }
+  #transparency .fcard .fi{ background:rgba(71,126,89,.12); color:var(--forest); }
+  #transparency .fcard a:not(.grbtn){ color:var(--clay-deep); }
+  #transparency .fgrid{ grid-template-columns:repeat(2,1fr); }
+  #transparency .fcard{ display:flex; flex-direction:column; }
+  #transparency .fcard .grbtn{ align-self:flex-start; margin-top:auto; white-space:nowrap; }
+
+  /* ===== footer / disclaimer ===== */
+  .foot{ padding:40px 0 64px; }
+  .disc{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .disc-col{ background:var(--paper-2); border:1px solid var(--border); border-radius:var(--r-lg); padding:22px 24px; }
+  .disc-col.grievance{ background:var(--surface); border-color:var(--clay-soft); }
+  .disc-col .kick{ display:block; margin-bottom:9px; }
+  .disc-col p{ font-family:var(--font-body); font-size:13.5px; line-height:1.62; color:var(--ink-2); margin:0; }
+  .grbtn{ display:inline-block; margin-top:14px; font-family:var(--sans); font-weight:600; font-size:13px;
+    color:var(--ink-on-dark); background:var(--clay); border-radius:var(--r-pill); padding:9px 17px; text-decoration:none; }
+  .grbtn:hover{ background:var(--clay-deep); }
+  .grnote{ font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--ink-3) !important; margin-top:10px !important; }
+  .credits{ display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:30px; padding-top:24px; border-top:1px solid var(--border); flex-wrap:wrap; }
+  .credits .cred{ display:flex; align-items:center; gap:14px; font-family:var(--sans); font-size:15px; color:var(--ink-2); }
+  .credits .cred b{ color:var(--ink); font-weight:700; }
+  .credits .gef{ height:46px; width:auto; }
+  .endnote{ font-family:var(--font-body); font-size:12.5px; color:var(--ink-3); margin:20px 0 0; line-height:1.5; }
+  @media(max-width:600px){ .credits{ justify-content:flex-start; } }
+
+  @media(max-width:980px){ .cards,.fgrid{ grid-template-columns:1fr 1fr; } .track{ grid-template-columns:1fr; }
+    .track .ph{ border-left:none; border-top:1px solid var(--hairline); padding:20px 0 0; margin-top:14px; }
+    .track .ph:first-child{ border-top:none; margin-top:0; padding-top:0; } .wiring{ grid-template-columns:1fr; } }
+  @media(max-width:680px){ .page{ padding:0 22px; } .cards,.fgrid,.disc{ grid-template-columns:1fr; } #transparency .fgrid{ grid-template-columns:1fr; } }
+
+  /* ===== constellation entry modal ===== */
+  .cnmodal{ position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:24px;
+    background:rgba(12,10,7,0.62); backdrop-filter:blur(4px); }
+  .cnmodal.show{ display:flex; }
+  .cnbox{ position:relative; max-width:520px; width:100%; background:linear-gradient(165deg,#21503a,#16382a);
+    color:var(--ink-on-dark); border:1px solid rgba(248,177,51,.4); border-radius:var(--r-lg);
+    padding:38px 38px 30px; box-shadow:0 30px 80px rgba(0,0,0,.5); overflow:hidden; }
+  .cnbox .cnglow{ position:absolute; right:-60px; top:-60px; width:200px; height:200px; border-radius:50%;
+    background:radial-gradient(circle,rgba(248,177,51,.35),transparent 70%); pointer-events:none; }
+  .cnbox .cnkick{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em;
+    font-size:12px; color:var(--amber); position:relative; }
+  .cnbox h3{ font-family:var(--font-serif); font-weight:900; font-size:27px; line-height:1.15; margin:10px 0 14px; color:#fff; position:relative; }
+  .cnbox p{ font-family:var(--font-body); font-size:15.5px; line-height:1.62; color:rgba(251,248,239,.92); margin:0; position:relative; }
+  .cnbox p b{ color:#fff; }
+  .cnbtns{ display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; position:relative; }
+  .cnbtn{ font-family:var(--sans); font-weight:600; font-size:14px; text-decoration:none; border-radius:var(--r-pill); padding:12px 22px; transition:.15s; }
+  .cnbtn.primary{ background:var(--amber); color:#3a2408; } .cnbtn.primary:hover{ background:#ffc658; }
+  .cnbtn.ghost{ background:rgba(251,248,239,.12); color:#fff; border:1px solid rgba(251,248,239,.32); } .cnbtn.ghost:hover{ background:rgba(251,248,239,.2); }
+  .cnx{ position:absolute; top:12px; right:15px; background:none; border:none; color:rgba(251,248,239,.7); font-size:26px; line-height:1; cursor:pointer; }
+  .cnx:hover{ color:#fff; }
+
+  /* ===== content shell + sticky right rail ===== */
+  .shell{ max-width:1180px; margin:0 auto; padding:48px 40px 28px; display:grid;
+    grid-template-columns:minmax(0,1fr) 300px; gap:32px; align-items:start; }
+  .mainflow{ display:flex; flex-direction:column; gap:20px; min-width:0; }
+  .mainflow > section{ margin:0; padding:36px 40px; border:1px solid var(--border); border-radius:22px;
+    background:var(--surface); box-shadow:0 1px 3px rgba(44,42,36,.05); scroll-margin-top:80px; }
+  .mainflow > section.fund{ background:linear-gradient(165deg,#5a3a20,#3f2914); border-color:rgba(248,177,51,.22); }
+  .mainflow .page{ max-width:none; padding:0; margin:0; }
+  .mainflow .pillars{ grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+  .mainflow .cards{ grid-template-columns:repeat(auto-fit,minmax(208px,1fr)); }
+
+  .rail{ position:sticky; top:78px; display:flex; flex-direction:column; gap:16px;
+    max-height:calc(100vh - 92px); overflow-y:auto; overflow-x:hidden; scrollbar-width:thin; padding-right:3px; }
+  .rail::-webkit-scrollbar{ width:6px; } .rail::-webkit-scrollbar-thumb{ background:var(--border-strong); border-radius:3px; }
+  .railcard{ background:var(--surface); border:1px solid var(--border); border-radius:18px;
+    padding:19px 20px 17px; box-shadow:0 1px 3px rgba(44,42,36,.05); }
+  .railcard .rlabel{ font-family:var(--sans); font-weight:600; text-transform:uppercase; font-size:11px;
+    letter-spacing:.12em; color:var(--ink-3); margin:0 0 13px; display:flex; align-items:center; gap:7px; }
+  .railcard .rlabel i{ width:14px; height:14px; color:var(--clay); }
+  .railcard.spot{ background:linear-gradient(160deg,#3f8f8a,var(--forest-deep)); color:var(--ink-on-dark); border-color:transparent; }
+  .railcard.spot .rlabel{ color:rgba(251,248,239,.72); } .railcard.spot .rlabel i{ color:var(--amber); }
+  .railcard.spot h4{ font-family:var(--font-serif); font-weight:800; font-size:21px; line-height:1.12; margin:0 0 8px; color:#fff; }
+  .railcard.spot p{ font-family:var(--font-body); font-size:13px; line-height:1.5; color:rgba(251,248,239,.9); margin:0 0 15px; }
+  .railcard.spot .rgo{ display:inline-flex; align-items:center; gap:6px; font-family:var(--sans); font-weight:600;
+    font-size:12.5px; text-decoration:none; background:var(--amber); color:#3a2408; border-radius:var(--r-pill); padding:8px 15px; }
+  .railcard.spot .rgo i{ width:14px; height:14px; }
+  .railcard.spot .soon{ margin:13px 0 0; font-family:var(--sans); font-weight:600; font-size:11.5px;
+    letter-spacing:.04em; color:var(--amber); display:flex; align-items:center; gap:6px; }
+  .railcard.spot .soon::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--amber); flex:none; }
+  .rlinks{ display:flex; flex-direction:column; gap:1px; }
+  .rlinks a{ display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink);
+    font-family:var(--sans); font-size:13.5px; font-weight:600; padding:9px 10px; border-radius:11px; transition:background .14s; }
+  .rlinks a:hover{ background:var(--paper-2); }
+  .rlinks a > i{ width:17px; height:17px; color:var(--forest); flex:none; }
+  .rlinks a .rtxt{ display:flex; flex-direction:column; line-height:1.25; }
+  .rlinks a .rsub{ font-size:11px; color:var(--ink-3); font-weight:400; margin-top:1px; }
+  .rrecent{ display:flex; flex-direction:column; gap:12px; }
+  .rrecent a{ text-decoration:none; color:inherit; display:block; }
+  .rrecent a .rd{ font-family:var(--sans); font-size:10px; font-weight:700; color:var(--clay-deep);
+    letter-spacing:.06em; text-transform:uppercase; }
+  .rrecent a h5{ font-family:var(--font-serif); font-weight:700; font-size:14.5px; margin:2px 0 0; line-height:1.25; color:var(--ink); }
+  .rrecent a:hover h5{ color:var(--forest); }
+  .railcard.rcta{ background:var(--blush); border-color:var(--clay-soft); }
+  .railcard.rcta h4{ font-family:var(--font-serif); font-weight:800; font-size:17px; margin:0 0 6px; color:var(--ink); }
+  .railcard.rcta p{ font-family:var(--font-body); font-size:12.5px; line-height:1.5; color:var(--ink-2); margin:0 0 13px; }
+  .railcard.rcta a{ display:inline-flex; align-items:center; gap:6px; font-family:var(--sans); font-weight:600;
+    font-size:12.5px; text-decoration:none; background:var(--clay); color:#fff; border-radius:var(--r-pill); padding:8px 15px; }
+  .railcard.rcta a i{ width:14px; height:14px; }
+  .rmore{ display:inline-flex; align-items:center; gap:5px; margin-top:13px; font-family:var(--sans);
+    font-weight:600; font-size:12px; color:var(--forest); text-decoration:none; }
+  .rmore i{ width:13px; height:13px; } .rmore:hover{ color:var(--forest-deep); }
+  @media(max-width:980px){
+    .shell{ grid-template-columns:1fr; padding:32px 22px 18px; gap:20px; }
+    .rail{ position:static; max-height:none; overflow:visible; padding-right:0; }
+    .mainflow > section{ padding:28px 24px; }
+  }
+
+  /* ===== about: lineage + lenses ===== */
+  .story-div{ height:1px; background:var(--hairline); margin:32px 0 26px; }
+  .subhead{ font-family:var(--font-serif); font-weight:800; font-size:21px; color:var(--ink); margin:0 0 12px; }
+  .story-prose p{ font-family:var(--font-body); font-size:15px; line-height:1.7; color:var(--ink-2); margin:0 0 14px; max-width:76ch; }
+  .story-prose p:last-child{ margin-bottom:0; }
+  .lineage{ position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin:26px 0 4px; }
+  .lineage::before{ content:''; position:absolute; top:6px; left:10%; right:10%; height:2px; background:var(--hairline); }
+  .lineage .mil{ padding:0 12px 0 0; }
+  .lineage .dot{ width:14px; height:14px; border-radius:50%; background:var(--forest-soft);
+    box-shadow:0 0 0 4px var(--surface); margin-bottom:12px; }
+  .lineage .mil.now .dot{ background:var(--amber); box-shadow:0 0 0 4px var(--surface), 0 0 0 7px rgba(248,177,51,.22); }
+  .lineage .yr{ font-family:var(--sans); font-weight:700; font-size:12.5px; color:var(--forest-deep); letter-spacing:.02em; }
+  .lineage .ev{ font-family:var(--font-body); font-size:11.5px; line-height:1.4; color:var(--ink-2); margin-top:3px; }
+  .lenses4{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:16px; }
+  .lens4{ background:var(--paper-2); border:1px solid var(--border); border-radius:14px; padding:16px 16px 14px; }
+  .lens4 .li{ width:34px; height:34px; border-radius:9px; background:var(--sage); color:var(--forest-deep);
+    display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
+  .lens4 .li i{ width:17px; height:17px; }
+  .lens4 h5{ font-family:var(--font-serif); font-weight:700; font-size:15px; margin:0 0 4px; color:var(--ink); }
+  .lens4 p{ font-family:var(--font-body); font-size:12px; line-height:1.45; color:var(--ink-2); margin:0; }
+  @media(max-width:760px){ .lineage{ grid-template-columns:1fr 1fr; gap:16px 0; } .lineage::before{ display:none; } .lenses4{ grid-template-columns:1fr 1fr; } }
+
+  @media print{
+    body{ background:#fff; } .shell{ display:block; padding:0; max-width:none; }
+    .rail{ display:none; } .mainflow > section{ break-inside:avoid; box-shadow:none; margin-bottom:14px; }
+    .hero, .mainflow > section.fund{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+
+  /* ===== language switcher (flags) ===== */
+  .langsw{ display:flex; align-items:center; gap:7px; margin-left:6px; }
+  .langsw-ic{ width:16px; height:16px; color:rgba(245,242,232,.6); }
+  .flag{ width:25px; height:17px; padding:0; border:1px solid rgba(251,248,239,.45); border-radius:3px;
+    cursor:pointer; position:relative; overflow:hidden; opacity:.5; transition:opacity .15s ease, transform .15s ease, box-shadow .15s ease;
+    background-size:cover; background-position:center; flex:none; }
+  .flag:hover{ opacity:1; transform:translateY(-1px); }
+  .flag.is-on{ opacity:1; border-color:var(--amber); box-shadow:0 0 0 2px rgba(248,177,51,.55); }
+  .flag-en{ background:
+    linear-gradient(#C8102E,#C8102E) center/100% 30% no-repeat,
+    linear-gradient(#C8102E,#C8102E) center/30% 100% no-repeat,
+    linear-gradient(#fff,#fff) center/100% 58% no-repeat,
+    linear-gradient(#fff,#fff) center/58% 100% no-repeat,
+    #012169; }
+  .flag-es{ background:linear-gradient(#AA151B 0 25%, #F1BF00 25% 75%, #AA151B 75%); }
+  .flag-fr{ background:linear-gradient(90deg,#0055A4 0 33.34%,#fff 33.34% 66.67%,#EF4135 66.67%); }
+  .flag-ru{ background:linear-gradient(#fff 0 33.34%,#0039A6 33.34% 66.67%,#D52B1E 66.67%); }
+  .flag-ar{ background:#137a45 url("assets/flag-ar.png") center/cover no-repeat; }
+  .flag-zh{ background:#DE2910; }
+  .flag-zh::before{ content:'\2605'; position:absolute; left:3px; top:50%; transform:translateY(-50%); color:#FFDE00; font-size:8px; line-height:1; }
+  @media(max-width:880px){ .langsw-ic{ display:none; } .langsw{ margin-left:0; } }
+
+  /* ===== auto-translation popup ===== */
+  .trmodal{ position:fixed; inset:0; z-index:240; display:none; align-items:center; justify-content:center; padding:24px;
+    background:rgba(12,10,7,0.6); backdrop-filter:blur(4px); }
+  .trmodal.show{ display:flex; }
+  .trbox{ position:relative; max-width:480px; width:100%; background:var(--surface); color:var(--ink);
+    border:1px solid var(--border); border-radius:var(--r-lg); padding:34px 36px 28px; box-shadow:var(--shadow-lg); text-align:left; }
+  html[dir="rtl"] .trbox{ text-align:right; }
+  .trbox .trglyph{ width:46px; height:46px; border-radius:var(--r-md); background:var(--sage); color:var(--forest-deep);
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+  .trbox .trglyph i{ width:24px; height:24px; }
+  .trkick{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.13em; font-size:11.5px; color:var(--clay-deep); }
+  .trbox h3{ font-family:var(--font-serif); font-weight:800; font-size:22px; line-height:1.22; margin:8px 0 12px; color:var(--ink); }
+  .trbox p{ font-family:var(--font-body); font-size:14.5px; line-height:1.62; color:var(--ink-2); margin:0; }
+  .trok{ margin-top:22px; font-family:var(--sans); font-weight:600; font-size:14px; cursor:pointer;
+    background:var(--forest); color:#fff; border:none; border-radius:var(--r-pill); padding:11px 24px; transition:background .15s; }
+  .trok:hover{ background:var(--forest-deep); }
+  .trx{ position:absolute; top:12px; right:15px; background:none; border:none; color:var(--ink-3); font-size:24px; line-height:1; cursor:pointer; }
+  html[dir="rtl"] .trx{ right:auto; left:15px; }
+  .trx:hover{ color:var(--ink); }
+
+  /* ===== non-Latin script fallbacks ===== */
+  body.i18n-ar p, body.i18n-ar h1, body.i18n-ar h2, body.i18n-ar h3, body.i18n-ar h4, body.i18n-ar h5,
+  body.i18n-ar a, body.i18n-ar span, body.i18n-ar div, body.i18n-ar button, body.i18n-ar li{
+    font-family:"Geeza Pro","Noto Naskh Arabic","Segoe UI",Tahoma,Arial,sans-serif !important; }
+  body.i18n-zh p, body.i18n-zh h1, body.i18n-zh h2, body.i18n-zh h3, body.i18n-zh h4, body.i18n-zh h5,
+  body.i18n-zh a, body.i18n-zh span, body.i18n-zh div, body.i18n-zh button, body.i18n-zh li{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif !important; }
+  body.i18n-ar .wordmark h1, body.i18n-ar .dm, body.i18n-zh .wordmark h1, body.i18n-zh .dm{ font-family:var(--font-display) !important; }
+  .flag, .flag *{ font-family:inherit !important; }
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#477E59">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#477E59"/>
+    <path d="M600 250 C600 250 735 440 735 535 a135 135 0 1 1 -270 0 C465 440 600 250 600 250 Z"
+      fill="none" stroke="#BFEAF0" stroke-width="22" stroke-linejoin="round"/>
+    <circle cx="600" cy="560" r="46" fill="#F8B133"/>
+  </svg>
+</template>
+
+
+<!-- ============ NAV BANNER (shared topbar, matches drylands.html) ============ -->
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+
+<!-- ============ HERO (DSL-IP lockup) ============ -->
+<header class="hero" id="top">
+  <div class="page">
+    <div class="wordmark">
+      <h1>DFSA<span class="dot">.</span></h1>
+    </div>
+    <p class="expand">Dryland Forest Support Accelerator</p>
+    <div class="dslip">
+      <img src="assets/logo-full.png" alt="Sustainable Forest Management Impact Program on Dryland Sustainable Landscapes (DSL-IP)" />
+      <small>Built on the GEF-7 Dryland Sustainable Landscapes Impact Program (DSL-IP)</small>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+<div class="mainflow">
+
+<!-- ============ 1 · THE ACTIVATION STORY ============ -->
+<section id="story">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">The case for an accelerator</h2>
+    </div>
+    <p class="lede" style="margin-bottom:34px;">Dryland forests cover nearly <b>28% of the world’s forests</b> and sustain the livelihoods of more than <b>a billion people</b> — yet they receive a fraction of global conservation finance, and over <b>25% are already degraded</b>. Agricultural expansion, overexploitation and climate change accelerate feedback loops of forest loss, land degradation and poverty, undermining national LDN targets, NDC commitments and global restoration goals. The DFSA exists to break that cycle — by closing three structural gaps at once.</p>
+
+    <!-- where the drylands are -->
+    <style>
+      #story .dryfig{ margin:6px 0 40px; }
+      #story .dryfig-head{ display:flex; gap:24px; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; margin-bottom:16px; }
+      #story .dryfig-head .subhead{ font-family:var(--sans); font-size:11px; text-transform:uppercase; letter-spacing:.14em; font-weight:700; color:var(--clay-deep); }
+      #story .dryfig-intro{ margin:0; max-width:62ch; font-size:14.5px; line-height:1.6; color:var(--ink-2); }
+      #story .dryfig-link{ display:inline-flex; align-items:center; gap:6px; white-space:nowrap; font-family:var(--sans); font-size:12.5px; font-weight:600; letter-spacing:.01em; text-decoration:none; color:var(--forest-deep); border-bottom:1.5px solid var(--forest-soft); padding-bottom:2px; transition:border-color .18s; }
+      #story .dryfig-link:hover{ border-color:var(--forest-deep); }
+      #story .dryfig-link i{ width:15px; height:15px; }
+      #story .drymap{ position:relative; height:452px; border-radius:var(--r-lg); border:1px solid var(--border); box-shadow:var(--shadow-md); overflow:hidden; z-index:0; }
+      #story .dryfig-cap{ margin-top:10px; font-family:var(--sans); font-size:11px; color:var(--ink-3); line-height:1.5; }
+      #story .dryfig-cap span{ color:var(--ink-3); opacity:.8; }
+      @media(max-width:640px){ #story .drymap{ height:360px; } }
+    </style>
+    <figure class="dryfig">
+      <div class="dryfig-head">
+        <div>
+          <p class="subhead" style="margin:0 0 5px;">Where the drylands are</p>
+          <p class="dryfig-intro">Drylands cover about <b>41% of the Earth&rsquo;s land surface</b>. Add the <b>presumed drylands</b> &mdash; dry forests and woodlands that behave as drylands even where rainfall sits just above the aridity threshold &mdash; and the footprint reaches <b>48%</b>. DFSA works across this fuller definition.</p>
+        </div>
+        <a class="dryfig-link" href="drylands.html">What are drylands? <i data-lucide="arrow-right"></i></a>
+      </div>
+      <div id="drymapHome" class="drymap"></div>
+      <figcaption class="dryfig-cap">Aridity zones: UNEP-WCMC (2007) global dryland delineation. Presumed drylands after FAO Forestry Working Paper 30 (2022). <span>Hover a zone to inspect it &middot; drag to pan &middot; scroll or +/&minus; to zoom.</span></figcaption>
+    </figure>
+
+    <div class="track">
+      <div class="ph ph1">
+        <div class="dotrow"><span class="pdot"><i data-lucide="landmark"></i></span><span class="pbar"></span></div>
+        <div class="pstat">Gap 01 · policy</div>
+        <h3>The Policy Gap</h3>
+        <p>No dedicated global mechanism coordinates dryland forest action across regions — responses stay fragmented and siloed, and dryland forests remain poorly integrated into NDCs, NAPs, NBSAPs and LDN targets.</p>
+      </div>
+      <div class="ph ph2">
+        <div class="dotrow"><span class="pdot"><i data-lucide="coins"></i></span><span class="pbar"></span></div>
+        <div class="pstat">Gap 02 · finance</div>
+        <h3>The Finance Gap</h3>
+        <p>Private investment remains very limited — held back by perceived risk, inadequate early-stage finance and the absence of investor pipelines for regenerative dryland enterprises.</p>
+      </div>
+      <div class="ph ph3">
+        <div class="dotrow"><span class="pdot"><i data-lucide="book-open"></i></span><span class="pbar"></span></div>
+        <div class="pstat">Gap 03 · knowledge</div>
+        <h3>The Knowledge Gap</h3>
+        <p>Proven SLM/SFM solutions exist but are not systematically exchanged across similar biomes — and access to markets, incubation and scaling pathways remains weak.</p>
+      </div>
+    </div>
+
+    <div class="story-div"></div>
+
+    <div class="story-prose">
+      <p class="subhead">Why now — a critical window of opportunity</p>
+      <p>The political momentum is real: the <b>UNFF20 decision on dryland forests</b>, the <b>Call to Action on Dryland Forests</b>, FAO’s <b>Global Drylands Assessment</b> and an established <b>COFO Working Group on Dryland Forests and Agrosilvopastoral Systems</b> give the agenda institutional anchorage. The investment case is proven too — demonstrated agroforestry-business models de-risk and catalyse private-sector engagement at scale through structured investor pipelines.</p>
+      <p>And the accelerator does not start from scratch. It builds on the <b>USD 104 million GEF-7 Drylands Sustainable Landscapes Impact Program</b> operating in 11 countries across three regions, FAO’s first Global Dryland Forest Assessment and 80 years of forestry experience — under a Multi-Donor Trust Fund structure linking national action to global support. Coalition members gain immediate access to the Communities of Practice, Regional Exchange Mechanisms, knowledge hubs, forest genetic resources, capacity development, monitoring tools and green value chains catalogued on this platform.</p>
+    </div>
+
+    <div class="lineage">
+      <div class="mil"><div class="dot"></div><div class="yr">2014</div><div class="ev">COFO Working Group on Dryland Forests established</div></div>
+      <div class="mil"><div class="dot"></div><div class="yr">2019</div><div class="ev">GEF-7 DSL-IP launches across 11 countries</div></div>
+      <div class="mil"><div class="dot"></div><div class="yr">2025</div><div class="ev">UNFF20 decision on dryland forests</div></div>
+      <div class="mil"><div class="dot"></div><div class="yr">2026</div><div class="ev">Call to Action on Dryland Forests</div></div>
+      <div class="mil now"><div class="dot"></div><div class="yr">Now</div><div class="ev">DFSA — the accelerator’s knowledge platform goes live</div></div>
+    </div>
+
+    <p class="subhead" style="margin-top:32px;">The approach — Collect · Act · Track</p>
+    <p class="lede" style="font-size:15px; margin:0; max-width:76ch;">A transformational, people-centred, integrative and multifunctional approach for long-term action — the direct operational response to the Call to Action on Dryland Forests.</p>
+    <div class="lenses4">
+      <div class="lens4"><span class="li"><i data-lucide="search"></i></span><h5>Collect</h5><p>Close critical data gaps on the extent, status and trends of dryland forests — evidence that improves decisions and targets investment.</p></div>
+      <div class="lens4"><span class="li"><i data-lucide="sprout"></i></span><h5>Act</h5><p>Put proven SLM/SFM practices to work at landscape scale, with South–South exchange and the REMs accelerating uptake across biomes.</p></div>
+      <div class="lens4"><span class="li"><i data-lucide="activity"></i></span><h5>Track</h5><p>Monitor progress with harmonized indicators and participatory systems — what works, under what conditions, at what scale.</p></div>
+      <div class="lens4"><span class="li"><i data-lucide="landmark"></i></span><h5>Institutionalise</h5><p>Move from fragmented, project-based wins to dryland forest action embedded in national systems — anchored in the COFO Working Group.</p></div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ============ 3 · KM WIRING ============ -->
+<section id="wiring">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">Leveraging the DSL-IP knowledge structure</h2>
+    </div>
+    <div class="wiring">
+      <div class="wnote">
+        <p class="pull">DFSA does not start from scratch. It plugs into machinery the Programme has already built.</p>
+        <p>The Global Coordination Project already runs a knowledge-management structure — the Regional Exchange Mechanism, the Communities of Practice, the MEL working group and a participatory dashboard. DFSA becomes the <b>public face and durable memory</b> of that structure: the place its outputs are gathered, connected and kept discoverable long after a given meeting or report.</p>
+        <p>The Platform Map is the connective tissue — every page of DFSA is a node, so adding a new knowledge product is simply lighting up where it belongs in the network.</p>
+      </div>
+      <div class="wsteps">
+        <div class="wstep"><span class="wi"><i data-lucide="git-fork"></i></span><div><h5>Channelled through the REM</h5><p>Regional exchange feeds country knowledge in; DFSA keeps it findable.</p></div></div>
+        <div class="wstep"><span class="wi"><i data-lucide="users-round"></i></span><div><h5>Curated by the Communities of Practice</h5><p>LDN, SLM/SFM and Gender CoPs supply and quality-check the content.</p></div></div>
+        <div class="wstep"><span class="wi"><i data-lucide="activity"></i></span><div><h5>Evidenced by MEL</h5><p>The monitoring system and dashboard keep every claim sourced and current.</p></div></div>
+        <div class="wstep"><span class="wi"><i data-lucide="share-2"></i></span><div><h5>Mapped on the Platform Map</h5><p>Each product takes its place as a node in the living network.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+</div><!-- /.mainflow -->
+
+<aside class="rail">
+  <div class="railcard spot">
+    <p class="rlabel"><i data-lucide="megaphone"></i>Spotlight</p>
+    <h4>A Call to Action on Drylands</h4>
+    <p>Drylands hold a quarter of the world’s forests and sustain over two billion people — yet face mounting degradation. Join the call to protect and restore them.</p>
+    <a class="rgo" href="https://www.fao.org/in-action/dryland-sustainable-landscapes/en" target="_blank" rel="noopener">Read the call <i data-lucide="arrow-up-right"></i></a>
+    <p class="soon">Coming soon at UNCCD COP 17.</p>
+  </div>
+
+  <div class="railcard">
+    <p class="rlabel"><i data-lucide="newspaper"></i>Latest news</p>
+    <div class="rrecent">
+      <a href="https://www.fao.org/in-action/dryland-sustainable-landscapes/news-and-events/news-detail/private-sector-matchmaking-expo-unlocks-new-investment-pathways-for-climate-resilient-landscapes-in-southern-africa/en" target="_blank" rel="noopener"><span class="rd">26 Mar 2026</span><h5>Private sector expo unlocks investment for climate-resilient landscapes</h5></a>
+      <a href="https://www.fao.org/in-action/dryland-sustainable-landscapes/news-and-events/news-detail/multiplying-impacts--how-dsl-ip-data-is-accelerating-forest-landscape-restoration-in-malawi/en" target="_blank" rel="noopener"><span class="rd">18 Mar 2026</span><h5>DSL-IP data accelerates forest restoration in Malawi</h5></a>
+      <a href="https://www.fao.org/in-action/dryland-sustainable-landscapes/news-and-events/news-detail/from-project-tool-to-national-monitoring--how-botswana-is-using-earth-map-to-track-burned-areas/en" target="_blank" rel="noopener"><span class="rd">18 Mar 2026</span><h5>Botswana uses Earth Map to track burned areas</h5></a>
+    </div>
+    <a class="rmore" href="https://www.fao.org/in-action/dryland-sustainable-landscapes/news-and-events/en" target="_blank" rel="noopener">All news on FAO.org <i data-lucide="arrow-up-right"></i></a>
+  </div>
+
+  <div class="railcard">
+    <p class="rlabel"><i data-lucide="link"></i>Useful links</p>
+    <div class="rlinks">
+      <a href="DRIP Map.html"><i data-lucide="map"></i><span class="rtxt">Platform map<span class="rsub">Every page as a network</span></span></a>
+      <a href="https://www.fao.org/in-action/dryland-sustainable-landscapes/knowledge-mgmt/newsletters/en" target="_blank" rel="noopener"><i data-lucide="mail"></i><span class="rtxt">Newsletter<span class="rsub">Read &amp; subscribe</span></span></a>
+      <a href="https://datastudio.google.com/reporting/c3534ae5-ec25-4acf-9380-6e9b5b68dbf1?s=kLzi7SpCTSU" target="_blank" rel="noopener"><i data-lucide="bar-chart-3"></i><span class="rtxt">MEL dashboard<span class="rsub">Live monitoring &amp; evaluation</span></span></a>
+    </div>
+  </div>
+</aside>
+
+</div><!-- /.shell -->
+
+<!-- ============ FOOTER / DISCLAIMER ============ -->
+<!-- ============ 7 · DONORS & COLLABORATORS ============ -->
+<section id="donors">
+  <style>
+    #donors .dc-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:26px; }
+    #donors .dc{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg); padding:24px 18px 18px;
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:11px; min-height:138px;
+      text-decoration:none; box-shadow:var(--shadow-sm); transition:transform .18s ease, box-shadow .18s ease; }
+    #donors .dc:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+    #donors .dc img{ max-height:54px; max-width:84%; object-fit:contain; filter:grayscale(1) opacity(.72); transition:filter .18s ease; }
+    #donors .dc:hover img{ filter:none; }
+    #donors .dc .role{ font-family:var(--sans); font-size:9.5px; text-transform:uppercase; letter-spacing:.12em; color:var(--clay-deep); font-weight:600; }
+    #donors .dc .dc-name{ font-family:var(--sans); font-size:11.5px; font-weight:500; letter-spacing:.02em; color:var(--ink-3); text-align:center; line-height:1.4; }
+    #donors .dc.textmark .tm{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; font-size:20px; line-height:1.05; color:var(--forest-deep); text-align:center; }
+  </style>
+  <div class="page">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Donors &amp; collaborators</h2></div>
+    <p class="lede" style="margin:0; max-width:76ch;">The accelerator is FAO-anchored and delivered with the institutions behind the dryland forests agenda — from its GEF-funded foundation to the governance and community networks that carry it.</p>
+    <div class="dc-grid">
+      <a class="dc" href="https://www.fao.org" target="_blank" rel="noopener">
+        <span class="role">Lead agency</span>
+        <img src="assets/partners/FAO.svg" alt="FAO — Food and Agriculture Organization of the United Nations">
+        <span class="dc-name">Food and Agriculture Organization of the United Nations</span>
+      </a>
+      <a class="dc" href="https://www.thegef.org" target="_blank" rel="noopener">
+        <span class="role">Donor</span>
+        <img src="assets/gef-logo.png" alt="GEF — Global Environment Facility">
+        <span class="dc-name">Global Environment Facility</span>
+      </a>
+      <a class="dc" href="https://iucn.org" target="_blank" rel="noopener">
+        <span class="role">Collaborator</span>
+        <img src="assets/partners/IUCN.svg" alt="IUCN — International Union for Conservation of Nature">
+        <span class="dc-name">International Union for Conservation of Nature</span>
+      </a>
+      <a class="dc textmark" href="https://www.fao.org/dryland-forestry/working-group/en/" target="_blank" rel="noopener">
+        <span class="role">Governance anchor</span>
+        <span class="tm">COFO<br>Working Group</span>
+        <span class="dc-name">on Dryland Forests &amp; Agrosilvopastoral Systems</span>
+      </a>
+      <a class="dc" href="https://www.fao.org/dryland-forestry/wecan-community-practice/en/" target="_blank" rel="noopener">
+        <span class="role">Community of practice</span>
+        <img src="assets/partners/WeCaN.svg" alt="WeCaN — Community of Practice for Women in Dryland Forests">
+        <span class="dc-name">WeCaN — FAO&rsquo;s gender community of practice</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="footer" class="foot">
+  <div class="page">
+    <div class="credits">
+      <div class="cred"><span>Funded by <b>the GEF</b></span></div>
+      <div class="cred right"><span>Led by <b>FAO Drylands Programme</b></span></div>
+    </div>
+    <p class="endnote">DFSA · Dryland Forest Support Accelerator — hosted under the DSL-IP Knowledge Management structure. A project of the DSL-IP, actively overseen by a UN Officer (programme design · complex programme management · AI · rural development); related to the Programme’s behaviour-change research. Pending institutional sign-off.</p>
+  </div>
+</section>
+
+<script>
+  if (window.lucide) lucide.createIcons();
+
+  // calm reveal on scroll (earthy — short rises, no theatrics)
+  const obs = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'none'; obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('section .page > *').forEach(el => {
+    el.style.opacity = 0; el.style.transform = 'translateY(14px)';
+    el.style.transition = 'opacity .5s ease-out, transform .5s ease-out';
+    obs.observe(el);
+  });
+</script>
+
+
+
+
+<!-- ============ AUTO-TRANSLATION NOTICE ============ -->
+<div class="trmodal" id="trModal" role="dialog" aria-modal="true" aria-label="Automated translation notice">
+  <div class="trbox">
+    <button class="trx" id="trClose" aria-label="Close">&times;</button>
+    <span class="trglyph"><i data-lucide="languages"></i></span>
+    <div class="trkick" id="trKick">Automated translation</div>
+    <h3 id="trTitle">This page has been translated automatically</h3>
+    <p id="trBody">These translations were generated automatically and are currently under review. They may contain errors or inaccuracies; where in doubt, the original English text prevails.</p>
+    <button class="trok" id="trOk">Got it</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/drylands-data.js"></script>
+<script src="assets/dryland-map.js"></script>
+<script>
+  (function(){
+    function init(){
+      if(!window.L || !window.DRYLANDS_GEO || !window.DFSADrylandMap){ return setTimeout(init, 120); }
+      DFSADrylandMap({ el:'drymapHome', center:[18,12], zoom:1.4, minZoom:1, maxZoom:6, scrollZoom:false, legend:true, compact:false });
+    }
+    init();
+  })();
+</script>
+<script src="drip-i18n.js"></script>
+</body>
+</html>

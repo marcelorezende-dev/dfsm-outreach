@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Foundations" name="Typography" subtitle="Three type voices, the scale, and the .dsl-* element classes" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Typography — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">Foundations</p>
+  <h1 class="ds-title">Typography</h1>
+  <p class="ds-lede">Three voices: a rough condensed CAPS face for large display, a humanist serif for reading, and a geometric sans for UI, labels and data. Families and the modular scale live as tokens in <span class="inline-code">colors_and_type.css</span>; apply them through the <span class="inline-code">.dsl-*</span> classes.</p>
+
+  <div class="ds-sec">
+    <h2>Families</h2>
+    <p class="h2note">Bundled offline as web-fonts. Set via <code>--font-display</code>, <code>--font-serif</code>/<code>--font-body</code>, <code>--font-sans</code>.</p>
+    <div class="spec">
+      <div class="k"><b>Display</b><code>--font-display</code><br>DermawanRough → Oswald → serif<br>UPPERCASE, large only</div>
+      <div class="sample"><div style="font-family:var(--font-display);text-transform:uppercase;font-size:46px;line-height:.95;color:var(--forest)">Dryland Forests</div></div>
+    </div>
+    <div class="spec">
+      <div class="k"><b>Serif — reading</b><code>--font-serif / --font-body</code><br>Merriweather</div>
+      <div class="sample"><div style="font-family:var(--font-serif);font-size:22px;line-height:1.4;color:var(--ink)">Restoring dryland forests for livelihoods, climate and biodiversity.</div></div>
+    </div>
+    <div class="spec">
+      <div class="k"><b>Sans — UI</b><code>--font-sans</code><br>Poppins → system-ui</div>
+      <div class="sample"><div style="font-family:var(--font-sans);font-size:20px;line-height:1.4;color:var(--ink)">Interface labels, data, kickers and captions.</div></div>
+    </div>
+    <p class="ds-note"><b>Note.</b> The authentic display face is <b>DermawanRough</b> (grunge letterpress condensed, supplied by the brand owner). <b>Oswald</b> is only the fallback substitute; the real texture is baked into the logo art. This is a <b>temporary DFSA identity</b> adopted from DSL-IP while the DFSA design language is developed.</p>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Type scale &amp; element classes</h2>
+    <p class="h2note">1.250 major-third scale, 18px base. Each row renders the live class at its real size.</p>
+
+    <div class="spec"><div class="k"><b>.dsl-display</b><code>--t-display</code><br>clamp(48–88px) · 700 · caps</div><div class="sample"><span class="dsl-display">Accelerator</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-h1</b><code>--t-h1 · 54px</code><br>serif · 900</div><div class="sample"><span class="dsl-h1">The case for an accelerator</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-h2</b><code>--t-h2 · 38px</code><br>serif · 700</div><div class="sample"><span class="dsl-h2">Seven pillars of dryland knowledge</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-h3</b><code>--t-h3 · 27px</code><br>serif · 700</div><div class="sample"><span class="dsl-h3">Assessment &amp; evidence</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-h4</b><code>--t-h4 · 21px</code><br>serif · 700</div><div class="sample"><span class="dsl-h4">Frameworks and tools</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-body-lg</b><code>--t-body-lg · 20px</code><br>serif · 400</div><div class="sample"><span class="dsl-body-lg">Dryland forests cover nearly 28% of the world's forests and sustain more than a billion people.</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-body</b><code>--t-body · 17px</code><br>serif · 400</div><div class="sample"><span class="dsl-body">Yet they receive a fraction of global conservation finance, and over a quarter are already degraded — a gap the accelerator exists to close.</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-small</b><code>--t-small · 14px</code></div><div class="sample"><span class="dsl-small">Source: FAO Forestry Working Paper 30 (2022); UNEP-WCMC (2007).</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-eyebrow</b><code>--t-eyebrow · 15px</code><br>serif italic · clay</div><div class="sample"><span class="dsl-eyebrow">Assessment &amp; Evidence</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-kicker</b><code>--t-small</code><br>sans · 600 · caps · .14em</div><div class="sample"><span class="dsl-kicker">What are drylands</span></div></div>
+    <div class="spec"><div class="k"><b>.dsl-label</b><code>--t-small</code><br>sans · 500</div><div class="sample"><span class="dsl-label">Aridity index 0.05–0.65</span></div></div>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Foundations · tokens in <a href="../colors_and_type.css">colors_and_type.css</a></div>
+</div>
+</body>
+</html>

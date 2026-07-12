@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Foundations" name="Spacing, radii & elevation" subtitle="The 4px spacing step, corner radii, and the three-step shadow scale" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spacing, radii &amp; elevation — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">Foundations</p>
+  <h1 class="ds-title">Spacing, radii &amp; elevation</h1>
+  <p class="ds-lede">Layout rhythm sits on a 4px step; corners use four radii; depth uses a three-step warm shadow scale. All are tokens — compose with them instead of arbitrary values.</p>
+
+  <div class="ds-sec">
+    <h2>Spacing scale</h2>
+    <p class="h2note">4px base step (<code>--sp-1</code> … <code>--sp-8</code>). Bars below are drawn at the real token width.</p>
+    <div style="display:flex;flex-direction:column;gap:9px">
+      <div style="display:flex;align-items:center;gap:14px"><code style="width:120px;font-size:12px;color:var(--ink-2);font-family:ui-monospace,Menlo,monospace">--sp-1 · 4px</code><span style="height:15px;width:4px;background:var(--clay);border-radius:2px"></span></div>
+      <div style="display:flex;align-items:center;gap:14px"><code style="width:120px;font-size:12px;color:var(--ink-2);font-family:ui-monospace,Menlo,monospace">--sp-2 · 8px</code><span style="height:15px;width:8px;background:var(--clay);border-radius:2px"></span></div>
+      <div style="display:flex;align-items:center;gap:14px"><code style="width:120px;font-size:12px;color:var(--ink-2);font-family:ui-monospace,Menlo,monospace">--sp-3 · 12px</code><span style="height:15px;width:12px;background:var(--clay);border-radius:2px"></span></div>
+      <div style="display:flex;align-items:center;gap:14px"><code style="width:120px;font-size:12px;color:var(--ink-2);font-family:ui-monospace,Menlo,monospace">--sp-4 · 16px</code><span style="height:15px;width:16px;background:var(--clay);border-radius:2px"></span></div>
+      <div style="display:flex;align-items:center;gap:14px"><code style="width:120px;font-size:12px;color:var(--ink-2);font-family:ui-monospace,Menlo,monospace">--sp-5 · 24px</code><span style="height:15px;width:24px;background:var(--forest);border-radius:2px"></span></div>
+      <div style="display:flex;align-items:center;gap:14px"><code style="width:120px;font-size:12px;color:var(--ink-2);font-family:ui-monospace,Menlo,monospace">--sp-6 · 32px</code><span style="height:15px;width:32px;background:var(--forest);border-radius:2px"></span></div>
+      <div style="display:flex;align-items:center;gap:14px"><code style="width:120px;font-size:12px;color:var(--ink-2);font-family:ui-monospace,Menlo,monospace">--sp-7 · 48px</code><span style="height:15px;width:48px;background:var(--forest);border-radius:2px"></span></div>
+      <div style="display:flex;align-items:center;gap:14px"><code style="width:120px;font-size:12px;color:var(--ink-2);font-family:ui-monospace,Menlo,monospace">--sp-8 · 64px</code><span style="height:15px;width:64px;background:var(--forest);border-radius:2px"></span></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Corner radii</h2>
+    <p class="h2note">Four steps — small controls, medium cards, large panels, full pills.</p>
+    <div class="tok">
+      <div class="row"><span class="demo radii-demo" style="border-radius:var(--r-sm)"></span><div class="info"><div class="nm">--r-sm</div><div class="val">6px · inputs, chips</div></div></div>
+      <div class="row"><span class="demo radii-demo" style="border-radius:var(--r-md)"></span><div class="info"><div class="nm">--r-md</div><div class="val">12px · cards</div></div></div>
+      <div class="row"><span class="demo radii-demo" style="border-radius:var(--r-lg)"></span><div class="info"><div class="nm">--r-lg</div><div class="val">20px · panels, frames</div></div></div>
+      <div class="row"><span class="demo radii-demo" style="border-radius:var(--r-pill);width:52px"></span><div class="info"><div class="nm">--r-pill</div><div class="val">999px · buttons, tags</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Elevation</h2>
+    <p class="h2note">Warm, low-contrast shadows (tinted with the ink hue) in three steps.</p>
+    <div style="display:flex;gap:26px;flex-wrap:wrap;padding:8px 4px 4px">
+      <div style="text-align:center"><div class="shadow-demo" style="box-shadow:var(--shadow-sm)"></div><div style="font-size:12px;color:var(--ink-2);margin-top:12px;font-family:ui-monospace,Menlo,monospace">--shadow-sm</div><div style="font-size:11px;color:var(--ink-3)">chips, swatches</div></div>
+      <div style="text-align:center"><div class="shadow-demo" style="box-shadow:var(--shadow-md)"></div><div style="font-size:12px;color:var(--ink-2);margin-top:12px;font-family:ui-monospace,Menlo,monospace">--shadow-md</div><div style="font-size:11px;color:var(--ink-3)">cards on hover</div></div>
+      <div style="text-align:center"><div class="shadow-demo" style="box-shadow:var(--shadow-lg)"></div><div style="font-size:12px;color:var(--ink-2);margin-top:12px;font-family:ui-monospace,Menlo,monospace">--shadow-lg</div><div style="font-size:11px;color:var(--ink-3)">popovers, modals</div></div>
+    </div>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Foundations · tokens in <a href="../colors_and_type.css">colors_and_type.css</a></div>
+</div>
+</body>
+</html>

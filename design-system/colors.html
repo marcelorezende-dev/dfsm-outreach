@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Foundations" name="Colour" subtitle="Brand core, surfaces, ink, accents, semantic & status tokens" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Colour — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">Foundations</p>
+  <h1 class="ds-title">Colour</h1>
+  <p class="ds-lede">The DFSA palette is drawn from the DSL-IP brand lockup and the split-globe illustration: warm terracotta and forest green over a speckled paper cream, with a small set of illustration-derived accents. Every colour is a CSS custom property in <span class="inline-code">colors_and_type.css</span> — always reference the token, never a raw hex.</p>
+
+  <div class="ds-sec">
+    <h2>Brand core</h2>
+    <p class="h2note">Primary warm (clay / terracotta) and primary cool (forest green), each with a pressed and a soft variant.</p>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#CF715D"></div><div class="meta"><div class="nm">--clay</div><div class="hex">#CF715D</div><div class="use">Terracotta — primary warm; the program sub-line</div></div></div>
+      <div class="sw"><div class="chip" style="background:#B4543F"></div><div class="meta"><div class="nm">--clay-deep</div><div class="hex">#B4543F</div><div class="use">Pressed / on-light text variant of clay</div></div></div>
+      <div class="sw"><div class="chip" style="background:#E3A293"></div><div class="meta"><div class="nm">--clay-soft</div><div class="hex">#E3A293</div><div class="use">Tints, washes</div></div></div>
+      <div class="sw"><div class="chip" style="background:#477E59"></div><div class="meta"><div class="nm">--forest</div><div class="hex">#477E59</div><div class="use">Forest green — primary; the headline display</div></div></div>
+      <div class="sw"><div class="chip" style="background:#356046"></div><div class="meta"><div class="nm">--forest-deep</div><div class="hex">#356046</div><div class="use">Pressed / deeper green</div></div></div>
+      <div class="sw"><div class="chip" style="background:#8FB59B"></div><div class="meta"><div class="nm">--forest-soft</div><div class="hex">#8FB59B</div><div class="use">Tints</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Surfaces &amp; paper</h2>
+    <p class="h2note">The signature speckled cream and its tinted bands; white for cards and panels.</p>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#F5F2E8"></div><div class="meta"><div class="nm">--cream</div><div class="hex">#F5F2E8</div><div class="use">Signature speckled paper background</div></div></div>
+      <div class="sw"><div class="chip" style="background:#ECE7D7"></div><div class="meta"><div class="nm">--paper-2</div><div class="hex">#ECE7D7</div><div class="use">Slightly deeper paper band</div></div></div>
+      <div class="sw"><div class="chip" style="background:#EDD8CC"></div><div class="meta"><div class="nm">--blush</div><div class="hex">#EDD8CC</div><div class="use">Warm dry-earth tinted band</div></div></div>
+      <div class="sw"><div class="chip" style="background:#C3DABA"></div><div class="meta"><div class="nm">--sage</div><div class="hex">#C3DABA</div><div class="use">Cool restored-land tinted band</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FFFFFF"></div><div class="meta"><div class="nm">--surface</div><div class="hex">#FFFFFF</div><div class="use">Card / panel surface</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Ink &amp; text</h2>
+    <p class="h2note">Warm near-blacks and taupes for text; a warm off-white for text on clay/forest fills.</p>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#241F1B"></div><div class="meta"><div class="nm">--ink</div><div class="hex">#241F1B</div><div class="use">Primary text (warm near-black)</div></div></div>
+      <div class="sw"><div class="chip" style="background:#6B5E54"></div><div class="meta"><div class="nm">--ink-2</div><div class="hex">#6B5E54</div><div class="use">Secondary text (warm taupe)</div></div></div>
+      <div class="sw"><div class="chip" style="background:#9A8C7E"></div><div class="meta"><div class="nm">--ink-3</div><div class="hex">#9A8C7E</div><div class="use">Muted / captions</div></div></div>
+      <div class="sw"><div class="chip" style="background:#FBF8EF"></div><div class="meta"><div class="nm">--ink-on-dark</div><div class="hex">#FBF8EF</div><div class="use">Text on clay / forest fills</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Accents</h2>
+    <p class="h2note">Drawn from the split-globe illustration — use sparingly for data, highlights and iconography.</p>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#F8B133"></div><div class="meta"><div class="nm">--amber</div><div class="hex">#F8B133</div><div class="use">Sun / harvest — the wordmark dot</div></div></div>
+      <div class="sw"><div class="chip" style="background:#E8C13C"></div><div class="meta"><div class="nm">--gold</div><div class="hex">#E8C13C</div><div class="use">Dryland gold</div></div></div>
+      <div class="sw"><div class="chip" style="background:#33B193"></div><div class="meta"><div class="nm">--teal</div><div class="hex">#33B193</div><div class="use">Water-life / restoration</div></div></div>
+      <div class="sw"><div class="chip" style="background:#68A260"></div><div class="meta"><div class="nm">--leaf</div><div class="hex">#68A260</div><div class="use">Canopy mid-green</div></div></div>
+      <div class="sw"><div class="chip" style="background:#4E8D5D"></div><div class="meta"><div class="nm">--olive</div><div class="hex">#4E8D5D</div><div class="use">Foliage</div></div></div>
+      <div class="sw"><div class="chip" style="background:#3F8FCB"></div><div class="meta"><div class="nm">--water</div><div class="hex">#3F8FCB</div><div class="use">Water blue</div></div></div>
+      <div class="sw"><div class="chip" style="background:#754C29"></div><div class="meta"><div class="nm">--bark</div><div class="hex">#754C29</div><div class="use">Tree bark / soil</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Semantic &amp; status</h2>
+    <p class="h2note">Aliases that map intent to brand colour — build against these so a palette change propagates.</p>
+    <div class="sw-grid">
+      <div class="sw"><div class="chip" style="background:#CF715D"></div><div class="meta"><div class="nm">--accent</div><div class="hex">= --clay</div><div class="use">Primary accent</div></div></div>
+      <div class="sw"><div class="chip" style="background:#477E59"></div><div class="meta"><div class="nm">--accent-2</div><div class="hex">= --forest</div><div class="use">Secondary accent</div></div></div>
+      <div class="sw"><div class="chip" style="background:#477E59"></div><div class="meta"><div class="nm">--positive</div><div class="hex">= --forest</div><div class="use">Success / positive</div></div></div>
+      <div class="sw"><div class="chip" style="background:#F8B133"></div><div class="meta"><div class="nm">--warning</div><div class="hex">= --amber</div><div class="use">Warning</div></div></div>
+      <div class="sw"><div class="chip" style="background:#B4543F"></div><div class="meta"><div class="nm">--critical</div><div class="hex">= --clay-deep</div><div class="use">Critical / error</div></div></div>
+      <div class="sw"><div class="chip" style="background:#241F1B24"></div><div class="meta"><div class="nm">--border</div><div class="hex">rgba(36,31,27,.14)</div><div class="use">Default hairline border</div></div></div>
+      <div class="sw"><div class="chip" style="background:#241F1B47"></div><div class="meta"><div class="nm">--border-strong</div><div class="hex">rgba(36,31,27,.28)</div><div class="use">Emphasised border</div></div></div>
+      <div class="sw"><div class="chip" style="background:#241F1B14"></div><div class="meta"><div class="nm">--hairline</div><div class="hex">rgba(36,31,27,.08)</div><div class="use">Faint divider</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Foundations · tokens in <a href="../colors_and_type.css">colors_and_type.css</a></div>
+</div>
+</body>
+</html>

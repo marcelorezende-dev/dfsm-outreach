@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Caatinga (Brazil)" name="The Caatinga Biome – Brazil's white forest" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Caatinga Biome – Brazil's white forest | DRIP</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; font-style:italic; src:url('fonts/Poppins-400-italic.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{
+ --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+ --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+ --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+ --amber:#F8B133; --gold:#E8C13C; --teal:#33B193; --leaf:#68A260; --bark:#754C29; --water:#3E7CB1;
+ --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+ --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+ --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+ --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{ font-family:var(--serif); line-height:1.7; color:var(--ink-2); background:var(--cream); -webkit-font-smoothing:antialiased; }
+
+/* HEADER */
+header{ background:var(--bark); color:var(--ink-on-dark); padding:3.4rem 2rem 3rem; text-align:left;
+ border-bottom:6px solid var(--amber); position:relative; overflow:hidden; }
+.header-inner{ max-width:1160px; margin:0 auto; position:relative; z-index:2; }
+header .brand-logo{ height:60px; width:auto; filter:brightness(0) invert(1); margin-bottom:1.6rem; opacity:.96; }
+header .eyebrow{ font-family:var(--serif); font-style:italic; font-size:1rem; color:#F2C9A8; margin-bottom:.55rem; }
+header h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.01em;
+ font-size:2.55rem; line-height:1.18; margin:0; color:#fff; max-width:24ch; }
+header h1 span{ color:#F2C9A8; font-weight:400; }
+header .lede{ font-family:var(--serif); font-size:1.14rem; line-height:1.6; color:#F3E7DA; max-width:780px; margin-top:1.5rem; }
+.header-tags{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.7rem; }
+.header-tags span{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem;
+ font-weight:600; color:#fff; background:rgba(251,248,239,.16); padding:.45rem 1rem; border-radius:999px; }
+
+/* NAV */
+nav.secnav{ background:#5e3c20; padding:.5rem 1rem; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(36,31,27,.18); }
+nav.secnav ul{ list-style:none; display:flex; justify-content:center; flex-wrap:wrap; max-width:1160px; margin:0 auto; gap:.1rem; }
+nav.secnav a{ color:#F3E7DA; text-decoration:none; padding:.65rem 1rem; display:block; transition:background .25s,color .25s;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.09em; font-size:.8rem; border-radius:6px; }
+nav.secnav a:hover{ background:rgba(251,248,239,.14); color:#fff; }
+
+/* CONTAINER + SECTIONS */
+.container{ max-width:1160px; margin:0 auto; padding:2.5rem 2rem; }
+section{ background:var(--surface); margin:2rem 0; padding:2.6rem; border-radius:16px; border:1px solid var(--border); box-shadow:var(--shadow-md); scroll-margin-top:80px; }
+
+/* HEADINGS */
+h2{ font-family:var(--serif); font-weight:900; color:var(--ink); font-size:2rem; line-height:1.12; margin-bottom:1.3rem; padding-bottom:.7rem; border-bottom:1px solid var(--hairline); position:relative; }
+h2::after{ content:""; position:absolute; left:0; bottom:-1px; width:64px; height:3px; background:var(--clay); border-radius:2px; }
+h2 .kicker{ display:block; font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; color:var(--clay); margin-bottom:.5rem; }
+h3{ font-family:var(--serif); font-weight:700; color:var(--forest); font-size:1.42rem; line-height:1.28; margin:1.9rem 0 1rem; }
+h4{ font-family:var(--serif); font-weight:700; color:var(--clay-deep); font-size:1.14rem; margin:1.1rem 0 .5rem; }
+section > p{ margin:1rem 0; } section > p:first-of-type{ margin-top:0; }
+.lead{ font-size:1.12rem; color:var(--ink); line-height:1.66; }
+
+/* CALLOUTS */
+.callout{ padding:1.5rem 1.6rem; margin:1.7rem 0; border-radius:12px; background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--ink-3); box-shadow:var(--shadow-sm); }
+.callout.concept{ background:#FBF9F2; border-top-color:var(--clay); }
+.callout.definition{ background:rgba(195,218,186,.30); border-top-color:var(--forest); }
+.callout.warning{ background:rgba(248,177,51,.12); border-top-color:var(--amber); }
+.callout.success{ background:rgba(71,126,89,.10); border-top-color:var(--forest); }
+.callout-title{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.1em; font-size:.92rem; margin-bottom:.7rem; color:var(--ink); }
+.callout.concept .callout-title{ color:var(--clay-deep); } .callout.definition .callout-title{ color:var(--forest-deep); }
+.callout.warning .callout-title{ color:#9A6A12; } .callout.success .callout-title{ color:var(--forest-deep); }
+.callout p{ color:var(--ink-2); margin:.5rem 0 0; } .callout p:first-of-type{ margin-top:0; } .callout strong{ color:var(--ink); }
+
+/* CARD GRID */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; margin:2rem 0; }
+.card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.6rem; box-shadow:var(--shadow-md); transition:transform .25s ease, box-shadow .25s ease; }
+.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.card h4{ color:var(--ink); margin-top:0; margin-bottom:.7rem; padding-bottom:.5rem; border-bottom:1px solid var(--hairline); line-height:1.25; }
+.card p{ font-size:.96rem; color:var(--ink-2); }
+.card .num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:1.1rem; }
+.card .sci{ font-style:italic; color:var(--ink-3); font-size:.9em; }
+
+/* TABLES */
+table{ width:100%; border-collapse:collapse; margin:1.8rem 0; font-size:.95rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+th{ background:var(--bark); color:var(--ink-on-dark); padding:.95rem 1rem; text-align:left; font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.82rem; }
+td{ padding:.85rem 1rem; border-bottom:1px solid var(--hairline); color:var(--ink-2); vertical-align:top; }
+tr:last-child td{ border-bottom:0; } tbody tr:nth-child(even){ background:rgba(236,231,215,.5); } tbody tr:hover{ background:rgba(195,218,186,.22); }
+td strong{ color:var(--ink); }
+.table-caption{ font-size:.86rem; color:var(--ink-3); font-style:italic; margin:-.6rem 0 1.8rem; }
+
+/* LISTS */
+ul,ol{ margin:1rem 0 1rem 1.5rem; } li{ margin:.5rem 0; line-height:1.7; color:var(--ink-2); } li strong{ color:var(--ink); }
+.clean{ list-style:none; margin-left:0; } .clean li{ padding-left:1.7rem; position:relative; }
+.clean li::before{ content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; border-radius:50%; background:var(--clay); }
+
+/* STATS */
+.stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.3rem; margin:2rem 0; }
+.stat-box{ background:var(--surface); border:1px solid var(--border); padding:1.5rem 1.4rem; border-radius:14px; text-align:left; box-shadow:var(--shadow-sm); border-top:4px solid var(--bark); }
+.stat-box .stat-eyebrow{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--ink-3); }
+.stat-value{ font-family:var(--sans); font-weight:700; font-size:1.9rem; line-height:1.08; margin:.35rem 0 .3rem; color:var(--clay); }
+.stat-label{ font-size:.9rem; color:var(--ink-2); }
+
+/* FLOW */
+.flow{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0; margin:2rem 0; }
+.flow-step{ position:relative; padding:1.3rem 1.2rem; background:#FBF9F2; border:1px solid var(--border); }
+.flow-step:not(:last-child){ border-right:0; }
+.flow-step .fs-num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:.9rem; letter-spacing:.05em; }
+.flow-step .fs-title{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.04em; font-weight:600; color:var(--forest-deep); font-size:.92rem; margin:.3rem 0 .4rem; }
+.flow-step p{ font-size:.88rem; color:var(--ink-2); margin:0; }
+
+/* LOCATOR MAP */
+.loc{ max-width:330px; margin:1.6rem auto .6rem; border:1px solid var(--border); border-radius:14px;
+ background:linear-gradient(180deg,#E2ECEC,#D4E4E2); box-shadow:var(--shadow-sm); padding:.7rem .7rem .4rem; }
+.loc-svg{ display:block; width:100%; height:auto; }
+.loc-svg .sa{ fill:#E6D9B4; stroke:rgba(110,84,44,.42); stroke-width:1.4; stroke-linejoin:round; }
+.loc-svg .caat{ fill:var(--clay); stroke:#fff; stroke-width:1; }
+.loc-cap{ font-family:var(--sans); font-size:.8rem; color:var(--ink-2); text-align:center; margin:.45rem 0 .2rem; }
+.loc-cap b{ color:var(--clay-deep); }
+
+/* PHOTOS */
+.figure{ margin:1.8rem 0; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow-md); }
+.figure img{ display:block; width:100%; height:auto; }
+.figure figcaption, .figure .fig-cap{ font-family:var(--sans); font-size:.82rem; color:var(--ink-2); padding:.7rem .95rem; line-height:1.5; }
+.figure figcaption .credit, .figure .fig-cap .credit{ display:block; color:var(--ink-3); font-size:.92em; margin-top:.2rem; }
+.figure figcaption .credit a, .figure .fig-cap .credit a{ color:var(--ink-3); text-decoration:none; border-bottom:1px dotted var(--border-strong); }
+.figure figcaption .credit a:hover{ color:var(--clay-deep); }
+.banner img{ height:clamp(220px,40vw,460px); object-fit:cover; }
+.photo-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.3rem; margin:2rem 0; }
+.photo-grid.duo{ grid-template-columns:1fr 1fr; }
+.photo-grid .figure{ margin:0; }
+.photo-grid .figure img{ aspect-ratio:4/3; object-fit:cover; }
+.photo-grid.tall .figure img{ aspect-ratio:3/4; }
+.credits-list{ list-style:none; margin:1rem 0 0; columns:2; column-gap:2rem; }
+.credits-list li{ break-inside:avoid; padding-left:0; font-size:.84rem; color:var(--ink-3); margin:.35rem 0; }
+.credits-list li b{ color:var(--ink-2); font-weight:600; }
+.credits-list a{ color:var(--ink-3); text-decoration:none; border-bottom:1px dotted var(--border-strong); }
+.credits-list a:hover{ color:var(--clay-deep); }
+@media (max-width:768px){ .photo-grid.duo{ grid-template-columns:1fr; } .credits-list{ columns:1; } }
+
+/* iNATURALIST BIODIVERSITY DASHBOARD */
+.inat{ margin:1.6rem 0; }
+.inat-sub{ font-family:var(--sans); font-weight:700; text-transform:uppercase; letter-spacing:.06em; font-size:.82rem; color:var(--clay-deep); margin:1.9rem 0 .9rem; display:flex; align-items:center; gap:.5rem; }
+.inat-sub::after{ content:""; flex:1; height:1px; background:var(--hairline); }
+.inat-bars{ display:flex; flex-direction:column; gap:.5rem; }
+.bar{ display:grid; grid-template-columns:120px 1fr 60px; align-items:center; gap:.7rem; font-family:var(--sans); font-size:.84rem; }
+.bar .bl{ color:var(--ink-2); text-align:right; }
+.bar .bt{ background:var(--paper-2); border-radius:6px; height:15px; overflow:hidden; }
+.bar .bf{ height:100%; background:linear-gradient(90deg,var(--forest-soft),var(--forest)); border-radius:6px; width:0; transition:width 1s cubic-bezier(.2,.7,.2,1); }
+.bar .bv{ color:var(--ink); font-weight:600; text-align:right; font-variant-numeric:tabular-nums; }
+.inat-species{ display:grid; grid-template-columns:repeat(auto-fill,minmax(146px,1fr)); gap:1rem; }
+.sp{ border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow-sm); text-decoration:none; display:block; transition:transform .2s, box-shadow .2s; }
+.sp:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.sp img{ display:block; width:100%; aspect-ratio:1/1; object-fit:cover; background:var(--paper-2); }
+.sp .spb{ padding:.55rem .65rem .7rem; }
+.sp .spc{ font-family:var(--sans); font-weight:600; font-size:.85rem; color:var(--ink); line-height:1.22; }
+.sp .spn{ font-family:var(--serif); font-style:italic; font-size:.8rem; color:var(--ink-2); line-height:1.22; margin-top:.1rem; }
+.sp .spk{ font-family:var(--sans); font-size:.73rem; color:var(--clay-deep); font-weight:600; margin-top:.35rem; }
+.inat-loading{ color:var(--ink-3); font-family:var(--sans); font-size:.88rem; padding:.8rem 0; }
+.inat-loading::before{ content:"◍ "; }
+.inat-err{ background:rgba(248,177,51,.12); border:1px solid rgba(248,177,51,.4); border-radius:10px; padding:.9rem 1.1rem; font-family:var(--sans); font-size:.86rem; color:#7a5a12; }
+.inat-err a{ color:#7a5a12; font-weight:600; }
+.inat-credit{ font-family:var(--sans); font-size:.8rem; color:var(--ink-3); margin-top:1.2rem; line-height:1.5; }
+.inat-credit a{ color:var(--forest-deep); }
+
+/* UTILITIES */
+.highlight{ background:rgba(248,177,51,.32); padding:.05rem .3rem; border-radius:3px; }
+.pillar-badge{ display:inline-block; background:var(--forest); color:#fff; padding:.4rem 1rem; border-radius:999px; font-family:var(--sans); text-transform:uppercase; letter-spacing:.07em; font-size:.76rem; font-weight:600; margin:.25rem .25rem .25rem 0; }
+.references-section{ background:#FBF9F2; }
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+a.inl{ color:var(--clay); font-weight:600; text-decoration:none; } a.inl:hover{ text-decoration:underline; }
+
+/* FOOTER */
+footer{ background:#5e3c20; color:#F3E7DA; text-align:center; padding:2.8rem 2rem; margin-top:3rem; line-height:1.9; }
+footer p{ max-width:900px; margin:0 auto; } footer a{ color:#F2C9A8; text-decoration:none; } footer a:hover{ text-decoration:underline; }
+footer .foot-rule{ width:60px; height:3px; background:var(--amber); margin:1.4rem auto; border:0; border-radius:2px; }
+
+@media (max-width:768px){
+ header{ padding:2.2rem 1.3rem; } header h1{ font-size:1.9rem; }
+ nav.secnav ul{ flex-direction:column; } nav.secnav a{ padding:.55rem 1rem; }
+ .container{ padding:1.3rem; } section{ padding:1.5rem; } h2{ font-size:1.5rem; }
+ .stats-grid,.grid,.two-col{ grid-template-columns:1fr; }
+ .flow-step{ border-right:1px solid var(--border) !important; }
+}
+</style>
+
+<style>.apa-refs{list-style:none;margin:.3rem 0 0;padding:0;font-family:var(--serif);font-size:.92rem;line-height:1.55;} .apa-refs li{padding-left:1.6em;text-indent:-1.6em;margin:0 0 .55rem;color:var(--ink-2);} .apa-refs a{color:var(--clay);text-decoration:none;} .apa-refs a:hover{text-decoration:underline;}</style>
+<link rel="stylesheet" href="drip-harmonize.css">
+  <link rel="icon" type="image/png" href="assets/globe.png">
+  <link rel="stylesheet" href="drip-topbar.css">
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+<header data-screen-label="Header">
+ <div class="header-inner">
+  <img class="brand-logo" src="assets/logo-color.png" alt="DSL-IP — Drylands Sustainable Landscapes Impact Programme">
+  <p class="eyebrow">Knowledge and outreach &middot; Drylands of the world</p>
+  <h1>The Caatinga <span>Brazil's white forest</span></h1>
+  <p class="lede">Brazil's great semi-arid heartland &ndash; the largest seasonally dry tropical forest in the Americas, and a biome found nowhere else on Earth. A land of thorn forest and cactus, of long drought and sudden green, and of some 28 million people who have learned to live with the dry.</p>
+  <div class="header-tags"><span>Exclusively Brazilian</span><span>≈ 845,000 km² · 11% of Brazil</span><span>Semi-arid · seasonally dry forest</span><span>~28 million people</span><span>Highly endemic</span></div>
+ </div>
+</header>
+<nav class="secnav">
+ <ul>
+  <li><a href="#summary">At a glance</a></li>
+  <li><a href="#geography">Where and climate</a></li>
+  <li><a href="#life">Life in the dry forest</a></li>
+  <li><a href="#biodiversity">Live data</a></li>
+  <li><a href="#people">People</a></li>
+  <li><a href="#pressures">Pressures</a></li>
+  <li><a href="#restoration">Restoration</a></li>
+  <li><a href="#management">Sustainable management</a></li>
+  <li><a href="#matters">Why it matters</a></li>
+  <li><a href="#sources">Sources</a></li>
+  <li><a href="#references">References</a></li>
+ </ul>
+</nav>
+<div class="container">
+
+<figure class="figure banner">
+ <img src="assets/caatinga/caatinga-dry-riverbed.jpg" alt="A dry, sandy riverbed winding through grey, leafless Caatinga thorn forest under a bright sky" decoding="async">
+ <div class="fig-cap">The <em>sertão</em> in the dry season &ndash; an intermittent river run dry and the thorn forest stripped to pale bark and bare branches. This is the &ldquo;white forest&rdquo; that gives the biome its name.
+  <span class="credit">Photo: Renato Augusto Martins, <a href="https://commons.wikimedia.org/wiki/File:Rio_seco_na_Caatinga.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span></div>
+</figure>
+
+<section id="summary" data-screen-label="At a glance">
+ <h2><span class="kicker">Biome profile &middot; At a glance</span>What the Caatinga is</h2>
+ <p class="lead">The Caatinga is the semi-arid biome of north-eastern Brazil &ndash; a vast mosaic of dry forest, thorn scrub, cactus and rock that is found <strong>only in Brazil</strong>. It is the country's most overlooked biome and yet one of its richest: a living example of how forests, farmers and livestock share a landscape shaped by drought.</p>
+
+ <div class="stats-grid">
+  <div class="stat-box"><div class="stat-eyebrow">Extent</div><div class="stat-value">≈ 845,000</div><div class="stat-label">km² &ndash; about a tenth of Brazil</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">States it spans</div><div class="stat-value">10</div><div class="stat-label">the Northeast + northern Minas Gerais</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">People</div><div class="stat-value">~28 M</div><div class="stat-label">one of Earth's most populous drylands</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Biome type</div><div class="stat-value">SDTF</div><div class="stat-label">seasonally dry tropical forest &amp; scrub</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Native cover left</div><div class="stat-value">~ half</div><div class="stat-label">the rest cleared or degraded</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Strictly protected</div><div class="stat-value">&lt; 10%</div><div class="stat-label">one of Brazil's least-protected biomes</div></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">In one sentence</div>
+  <p>The Caatinga is Brazil's <strong>only exclusively national biome</strong> &ndash; a uniquely Brazilian dryland of deciduous thorn forest and cactus that turns from grey to green with the rains, sustains tens of millions of people, and holds a biodiversity still being discovered even as it is lost.</p>
+ </div>
+
+ <h3>Keywords</h3>
+ <div>
+  <span class="pillar-badge" style="background:var(--bark);">Semi-arid</span>
+  <span class="pillar-badge" style="background:var(--bark);">Dryland forest</span>
+  <span class="pillar-badge" style="background:var(--bark);">Seasonally dry tropical forest</span>
+  <span class="pillar-badge" style="background:var(--bark);">Endemism</span>
+  <span class="pillar-badge" style="background:var(--bark);">Desertification</span>
+  <span class="pillar-badge" style="background:var(--bark);">Agrosilvopastoral</span>
+  <span class="pillar-badge" style="background:var(--bark);">Land Degradation Neutrality</span>
+ </div>
+</section>
+
+<section id="geography" data-screen-label="Where & climate">
+ <h2><span class="kicker">Place and climate</span>Where it is, and the &ldquo;white forest&rdquo;</h2>
+ <p>The Caatinga occupies the <strong>semi-arid interior of north-eastern Brazil</strong> &ndash; the <em>sertão</em> &ndash; reaching across ten states (Alagoas, Bahia, Ceará, Maranhão, Paraíba, Pernambuco, Piauí, Rio Grande do Norte and Sergipe, plus the north of Minas Gerais). It is hemmed by the Atlantic Forest to the east and grades into the Cerrado savanna to the west and south.</p>
+
+ <div class="loc">
+  <svg class="loc-svg" viewBox="265 210 152 196" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Locator map: the Caatinga lies in north-eastern Brazil, within South America">
+   <path class="sa" d="M283,228 L300,219 333,225 361,250 378,258 403,272 392,292 389,314 367,328 339,347 319,369 306,389 294,394 297,375 303,353 303,333 306,300 289,289 275,267 278,244 Z"/>
+   <path class="caat" d="M383,257 L397,263 404,272 393,284 389,295 378,292 374,275 381,263 Z"/>
+  </svg>
+  <div class="loc-cap">The Caatinga (<b>in clay</b>) within Brazil and South America &ndash; schematic locator.</div>
+ </div>
+
+ <h3>A name that describes the land</h3>
+ <p>&ldquo;Caatinga&rdquo; comes from the Tupi words <em>ka'a</em> (forest) and <em>tinga</em> (white) &ndash; the <strong>&ldquo;white forest.&rdquo;</strong> In the dry season most trees and shrubs drop their leaves at once, and the pale bark and bare branches give the landscape its bleached, silvery look. Then the rains come, and within days the same grey thicket flushes a brilliant green. This switch &ndash; deciduous drought-survival followed by explosive renewal &ndash; is the signature of the biome.</p>
+
+ <figure class="figure">
+  <img src="assets/caatinga/caatinga-green-flowering.jpg" alt="The Caatinga in the rainy season, hills covered in fresh green growth and flowering plants" loading="lazy" decoding="async">
+  <figcaption>The same biome in the rains: within days of the first downpours the &ldquo;white forest&rdquo; greens and flowers. Far from the barren scrub of its reputation, a wet-season Caatinga is one of the most productive dry forests on Earth.
+   <span class="credit">Photo: Anchieta França, <a href="https://commons.wikimedia.org/wiki/File:Caatinga_em_festa!.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span></figcaption>
+ </figure>
+
+ <p>The Caatinga runs on <strong>two seasons, not four</strong>: a short, intense rainy season (the <em>inverno</em>, despite falling in the southern summer) and a long dry season (the <em>verão</em>) that can stretch most of the year. Its rivers reflect this &ndash; most are <strong>intermittent</strong>, flowing only after rain and vanishing into sand for the rest of the year, so the few perennial rivers and the underground water of the sedimentary basins carry enormous weight. Everything that lives here, people included, is organised around storing the wet months to survive the dry.</p>
+
+ <div class="grid">
+  <div class="card"><h4>Semi-arid climate</h4><p>Rainfall is low and erratic &ndash; broadly <strong>300&ndash;800 mm a year</strong>, concentrated in a few months, with a long dry season and recurrent multiyear droughts. High temperatures and high evaporation make water, not heat, the limiting factor.</p></div>
+  <div class="card"><h4>Crystalline and sedimentary ground</h4><p>Much of the Caatinga sits on shallow soils over crystalline basement rock, where rain runs off fast and little is stored &ndash; one reason cisterns and water harvesting matter so much. Sandy sedimentary basins hold more groundwater.</p></div>
+  <div class="card"><h4>A dryland, by definition</h4><p>By the aridity index used for the world's drylands, the Caatinga is a <strong>true dryland</strong> &ndash; not a &ldquo;presumed&rdquo; one &ndash; which places it squarely within the global agenda on dryland forests, desertification and restoration (MMA, 2007).</p></div>
+ </div>
+</section>
+
+<section id="life" data-screen-label="Life in the dry forest">
+ <h2><span class="kicker">Biodiversity</span>Life in the dry forest</h2>
+ <p>For decades the Caatinga was wrongly written off as poor and uniform. It is neither. It is a hotspot of <strong>plants and animals adapted to drought</strong>, with high endemism &ndash; many species live here and nowhere else, and new ones are still being described (Leal et al., 2003). Its flora is layered: cacti and bromeliads that store water, deciduous thorn trees that shed leaves to survive, and deep-rooted species that tap moisture far below the surface.</p>
+
+ <p>By the numbers usually cited, the biome holds on the order of <strong>3,000 plant species</strong> &ndash; hundreds of them found nowhere else &ndash; alongside hundreds of species of birds, reptiles, amphibians, fish and mammals, with bees especially diverse (Leal et al., 2003). Its fauna is tuned to the rains: many reptiles and amphibians spend the dry season dormant and emerge to breed in a rush when the water comes. Two of its birds have become world symbols of both the biome's richness and its peril.</p>
+
+ <div class="photo-grid">
+  <figure class="figure"><img src="assets/caatinga/umbuzeiro.jpg" alt="A large, spreading umbuzeiro tree on dry ground" loading="lazy" decoding="async"><figcaption>Umbuzeiro (<em>Spondias tuberosa</em>) &ndash; the &ldquo;sacred tree of the sertão.&rdquo; <span class="credit">Photo: Fronteira, <a href="https://commons.wikimedia.org/wiki/File:Umbuzeiro_no_Boqueir%C3%A3o_de_Regino,_Paratinga,_janeiro_de_2023.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/caatinga/mandacaru-flower.jpg" alt="A flowering mandacaru columnar cactus" loading="lazy" decoding="async"><figcaption>Mandacaru (<em>Cereus jamacaru</em>) in flower &ndash; folk signal that rain is near. <span class="credit">Photo: Smailtn, <a href="https://commons.wikimedia.org/wiki/File:Cereus_jamacaru_flower.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/caatinga/lear-macaw.jpg" alt="A Lear's macaw, a deep cobalt-blue parrot" loading="lazy" decoding="async"><figcaption>Lear's macaw (<em>Anodorhynchus leari</em>) &ndash; endemic, and dependent on the licuri palm. <span class="credit">Photo: Miguelrangeljr, <a href="https://commons.wikimedia.org/wiki/File:Anodorhynchus_leari_(3_cropped).jpg" target="_blank" rel="noopener">public domain</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/caatinga/spix-macaw.jpg" alt="A Spix's macaw, a pale blue-grey parrot" loading="lazy" decoding="async"><figcaption>Spix's macaw (<em>Cyanopsitta spixii</em>) &ndash; extinct in the wild, now being reintroduced. <span class="credit">Photo: Evan Centanni, <a href="https://commons.wikimedia.org/wiki/File:Spix%27s_Macaw_(Cyanopsitta_spixii)_at_Jurong_Bird_Park_in_Singapore.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/caatinga/three-banded-armadillo.jpg" alt="A Brazilian three-banded armadillo curled into a ball" loading="lazy" decoding="async"><figcaption>Three-banded armadillo (<em>Tolypeutes tricinctus</em>), the <em>tatu-bola</em> &ndash; the biome's flagship. <span class="credit">Photo: Reuber Brandão, <a href="https://commons.wikimedia.org/wiki/File:Tolypeutes_tricinctus_466118804.jpg" target="_blank" rel="noopener">CC BY 4.0</a></span></figcaption></figure>
+ </div>
+
+ <div class="grid">
+  <div class="card"><h4>Umbuzeiro <span class="sci">Spondias tuberosa</span></h4><p>An icon of the Caatinga &ndash; a deep, tuberous root system stores water through the drought, and its tangy <strong>umbu</strong> fruit feeds families and a growing local economy of pulp, jam and juice.</p></div>
+  <div class="card"><h4>Mandacaru and the cacti <span class="sci">Cereus jamacaru</span></h4><p>Columnar cacti &ndash; mandacaru, xique-xique, facheiro &ndash; are living water towers and emergency fodder. The mandacaru in flower is a folk signal that rain is near.</p></div>
+  <div class="card"><h4>The macaws <span class="sci">Anodorhynchus leari · Cyanopsitta spixii</span></h4><p>The Caatinga is the only home of <strong>Lear's macaw</strong> and of <strong>Spix's macaw</strong> &ndash; the latter extinct in the wild and now being reintroduced near Curaçá, Bahia. Their fate tracks the biome's own (Leal et al., 2003).</p></div>
+  <div class="card"><h4>Three-banded armadillo <span class="sci">Tolypeutes tricinctus</span></h4><p>The <em>tatu-bola</em>, which rolls into a perfect ball, is endemic to Brazil's dry biomes and became a global emblem of the Caatinga as the 2014 World Cup mascot &ndash; a flagship for a threatened fauna.</p></div>
+  <div class="card"><h4>Juazeiro <span class="sci">Ziziphus joazeiro</span></h4><p>One of the few trees that stays <strong>green through the dry season</strong>, the juazeiro is a living larder &ndash; shade, fruit and emergency fodder when nothing else is left &ndash; and a fixture of sertão life and song.</p></div>
+  <div class="card"><h4>A fauna tuned to the rains</h4><p>Snakes, lizards, frogs and a remarkable diversity of <strong>bees</strong> wait out the drought and erupt into activity with the first storms. Many are endemic, and the biome's reptiles and amphibians are still being inventoried (Leal et al., 2003).</p></div>
+ </div>
+
+ <div class="callout success">
+  <div class="callout-title">Adapted to survive the dry</div>
+  <p>Caatinga life runs on a drought-and-renewal rhythm: trees drop their leaves to cut water loss, seeds and roots wait out the dry, and the whole system greens within days of rain. That same resilience is the foundation any restoration must build on &ndash; working <strong>with</strong> the biome's strategies rather than against them.</p>
+ </div>
+</section>
+
+<section id="biodiversity" data-screen-label="Live biodiversity">
+ <h2><span class="kicker">Live biodiversity data</span>The Caatinga, as recorded by its naturalists</h2>
+ <p>The figures above describe a biome; this dashboard shows it being <strong>documented in real time</strong>. It draws live from <a class="inl" href="https://www.inaturalist.org/projects/caatinga-observations?tab=species" target="_blank" rel="noopener">Caatinga Observations</a>, a community-science project on iNaturalist where naturalists across the region upload and identify what they find. Every number here refreshes as new observations come in &ndash; a window onto how much of this &ldquo;overlooked&rdquo; biome is still being discovered.</p>
+
+ <div class="inat" id="inat" data-pid="203554">
+  <div class="stats-grid" id="inatStats">
+   <div class="stat-box"><div class="stat-eyebrow">Observations</div><div class="stat-value" data-k="obs">248,000+</div><div class="stat-label">records uploaded &amp; growing</div></div>
+   <div class="stat-box"><div class="stat-eyebrow">Species</div><div class="stat-value" data-k="spp">11,000+</div><div class="stat-label">distinct taxa recorded</div></div>
+   <div class="stat-box"><div class="stat-eyebrow">Naturalists</div><div class="stat-value" data-k="obsv">5,600+</div><div class="stat-label">people contributing</div></div>
+   <div class="stat-box"><div class="stat-eyebrow">Source</div><div class="stat-value" style="font-size:1.25rem;">iNaturalist</div><div class="stat-label">open community science</div></div>
+  </div>
+
+  <div class="inat-sub">Species recorded, by group</div>
+  <div class="inat-bars" id="inatGroups"><div class="inat-loading">Loading live data from iNaturalist&hellip;</div></div>
+
+  <div class="inat-sub">Most-observed species</div>
+  <div class="inat-species" id="inatSpecies"><div class="inat-loading">Loading live data from iNaturalist&hellip;</div></div>
+
+  <p class="inat-credit">Live data &amp; photographs via the <a href="https://www.inaturalist.org/projects/caatinga-observations?tab=species" target="_blank" rel="noopener">Caatinga Observations</a> project on <a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist</a>. Figures refresh on each visit; seeded values are shown if the live feed cannot be reached. Each photograph is &copy; its observer under the licence shown on iNaturalist.</p>
+ </div>
+</section>
+
+<section id="people" data-screen-label="People">
+ <h2><span class="kicker">People and livelihoods</span>People of the Caatinga</h2>
+ <p>The Caatinga is not a wilderness &ndash; it is <strong>home to around 28 million people</strong>, making it one of the most densely populated semi-arid regions on the planet. The culture of the <em>sertão</em> &ndash; its music, faith, foodways and deep knowledge of drought &ndash; is woven into the land. Most rural families live from <strong>rainfed smallholder farming, goats and sheep, and the gathering of forest products</strong> (Araújo Filho, 2013).</p>
+
+ <p>That culture is unmistakable: the <em>vaqueiro</em> in leather riding the thorn scrub, the rhyming <em>literatura de cordel</em>, the forró and <em>baião</em> of Luiz Gonzaga, and a cuisine built on goat, maize, beans and the umbu. It is also a culture of <strong>resourcefulness under scarcity</strong> &ndash; generations of knowledge about which plant feeds an animal in a drought, where water lingers, and when the mandacaru's bloom says the rains are coming. Any sustainable future for the biome is built on that knowledge, not around it.</p>
+
+ <div class="photo-grid">
+  <figure class="figure"><img src="assets/caatinga/goats-caatinga.jpg" alt="Goats browsing freely in open Caatinga scrub" loading="lazy" decoding="async"><figcaption>Goats raised loose in the Caatinga &ndash; hardy browsers and the backbone of dryland livelihoods. The challenge is grazing that lets the forest renew. <span class="credit">Photo: Vitoriano Jr., <a href="https://commons.wikimedia.org/wiki/File:Bodes_criados_livres_na_caatinga.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/caatinga/carnauba.jpg" alt="A stand of tall carnauba palms" loading="lazy" decoding="async"><figcaption>Carnaúba (<em>Copernicia prunifera</em>), the &ldquo;tree of life&rdquo; &ndash; its wax is a global export and a standing-forest income. <span class="credit">Photo: Tacarijus, <a href="https://commons.wikimedia.org/wiki/File:Carnauba.jpg" target="_blank" rel="noopener">CC BY 2.5</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/caatinga/licuri-palm.jpg" alt="A licuri palm with clusters of small fruit" loading="lazy" decoding="async"><figcaption>Licuri (<em>Syagrus coronata</em>) &ndash; food, oil and craft for people, and the staple food of Lear's macaw. <span class="credit">Photo: David J. Stang, <a href="https://commons.wikimedia.org/wiki/File:Syagrus_coronata_11zz.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+ </div>
+
+ <div class="grid">
+  <div class="card"><h4>Goats, sheep and the dry pasture</h4><p>Small ruminants are the backbone of dryland livelihoods here &ndash; hardy, mobile, and able to browse thorn forest. Managed well, grazing and trees coexist; managed badly, overgrazing strips the land (Araújo Filho, 2013).</p></div>
+  <div class="card"><h4>Forest products and income</h4><p>Umbu fruit, licuri and carnauba palms, native honey, medicinal plants and fibres bring cash from standing forest &ndash; making the living Caatinga worth more than the cleared one (MAPA, 2015).</p></div>
+  <div class="card"><h4>Fundo de Pasto communities</h4><p>In Bahia, traditional <strong>Fundo de Pasto</strong> communities hold and graze land collectively, combining crops, fruit-gathering, forestry and livestock into diverse, productive landscapes &ndash; a home-grown model of integrated dryland management (Araújo Filho, 2013).</p></div>
+  <div class="card"><h4>Drought, water and migration</h4><p>Recurrent drought has long driven hardship and out-migration. Community water harvesting &ndash; above all the rural <strong>cistern</strong> programmes &ndash; has transformed resilience for millions of households.</p></div>
+ </div>
+
+ <div class="callout concept">
+  <div class="callout-title">A landscape of people and trees together</div>
+  <p>Brazil's Fundo de Pasto communities are cited in FAO's own dryland-forestry work as an example of <strong>multifunctional landscape management</strong> &ndash; integrating agriculture, fruit-gathering, forestry and livestock to create diverse, productive landscapes that support biodiversity, maintain soil health and sustain rural livelihoods in the semi-arid. It is exactly the kind of integrated agrosilvopastoral practice the Programme works to scale.</p>
+ </div>
+</section>
+
+<section id="pressures" data-screen-label="Pressures">
+ <h2><span class="kicker">Threats</span>Pressures on the biome</h2>
+ <p>The Caatinga is being lost quietly. Roughly <strong>half of its native vegetation has already been cleared or heavily altered</strong>, and it remains one of Brazil's least-protected biomes (MMA, 2008). The drivers are familiar across the world's drylands &ndash; and they compound one another.</p>
+ <ul class="clean">
+  <li><strong>Deforestation and land conversion</strong> &ndash; for pasture and cropping, often by clearing and burning native dry forest.</li>
+  <li><strong>Fuelwood and charcoal</strong> &ndash; the Caatinga supplies a large share of the Northeast's woodfuel and charcoal, much of it cut unsustainably (MMA, 2008).</li>
+  <li><strong>Overgrazing</strong> &ndash; too many animals on fragile pasture, removing the young trees that would renew the forest.</li>
+  <li><strong>Desertification</strong> &ndash; in the worst-hit areas, degradation tips into near-irreversible land collapse (MMA, 2007).</li>
+  <li><strong>Climate change</strong> &ndash; longer, harsher droughts and rising temperatures push an already water-limited system towards its edge.</li>
+ </ul>
+
+ <h3>The desertification nuclei</h3>
+ <p>Decades of pressure have created recognised <strong>&ldquo;desertification nuclei&rdquo;</strong> (<em>núcleos de desertificação</em>) &ndash; pockets where soils, vegetation and productivity have largely broken down. They are the Brazilian face of a global problem (MMA, 2007).</p>
+ <table>
+  <thead><tr><th style="width:34%;">Desertification nucleus</th><th>State</th></tr></thead>
+  <tbody>
+   <tr><td><strong>Gilbués</strong></td><td>Piauí</td></tr>
+   <tr><td><strong>Irauçuba</strong></td><td>Ceará</td></tr>
+   <tr><td><strong>Seridó</strong></td><td>Rio Grande do Norte &amp; Paraíba</td></tr>
+   <tr><td><strong>Cabrobó</strong></td><td>Pernambuco</td></tr>
+  </tbody>
+ </table>
+ <p class="table-caption">The classic desertification nuclei of the Brazilian semi-arid. Other severely degraded areas exist across the biome; mapping and boundaries vary by study.</p>
+
+ <figure class="figure">
+  <img src="assets/caatinga/desertification.jpg" alt="Bare, eroded ground with sparse vegetation in an area undergoing desertification" loading="lazy" decoding="async">
+  <figcaption>Land in the process of desertification &ndash; where overuse, erosion and drought strip the soil and vegetation past the point of easy recovery. These are the worst-case end of the same pressures acting across the biome.
+   <span class="credit">Photo: A. Duarte, <a href="https://commons.wikimedia.org/wiki/File:Desertification_area_%C3%81rea_em_processo_de_desertifica%C3%A7%C3%A3o_(50619467682).jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a>, via Wikimedia Commons</span></figcaption>
+ </figure>
+
+ <div class="callout warning">
+  <div class="callout-title">Why protection lags</div>
+  <p>Because the Caatinga was long dismissed as low-value scrub, it attracted little conservation investment: only a small fraction sits in strictly protected areas, and much of what remains is fragmented across private land. Closing that gap &ndash; through protected areas, sustainable use and restoration on working land &ndash; is the central challenge.</p>
+ </div>
+</section>
+
+<section id="restoration" data-screen-label="Restoration">
+ <h2><span class="kicker">Restoration and sustainable use</span>Living with the dry &ndash; and bringing it back</h2>
+ <p>The Caatinga does not need to be abandoned to be saved. Its drought-renewal biology makes it <strong>highly regenerable</strong>: protect the soil and the seed source, ease the grazing pressure, and the white forest comes back (Leal et al., 2003). The most effective approaches pay people to keep the forest standing.</p>
+
+ <div class="grid">
+  <div class="card"><h4>Farmer-managed regeneration</h4><p>Protecting and pruning the natural regrowth that sprouts from living stumps and seedbanks &ndash; the cheapest, fastest way to bring back dryland forest, proven across the world's drylands.</p></div>
+  <div class="card"><h4>Agroforestry and agroecology</h4><p>Keeping and planting trees within farms and pastures &ndash; shade, fodder, fruit and soil protection that make production more resilient, not less, under drought.</p></div>
+  <div class="card"><h4>Native value chains</h4><p>Umbu, licuri, carnauba wax, native (stingless-bee) honey and medicinal plants turn a standing Caatinga into income &ndash; the economic case for conservation (MAPA, 2015).</p></div>
+  <div class="card"><h4>Seed networks and nurseries</h4><p>Community seed collection and native-seedling nurseries supply the raw material for restoration at scale, and keep the biome's genetic diversity in local hands.</p></div>
+  <div class="card"><h4>Water harvesting</h4><p>Rooftop and field <strong>cisterns</strong> and small water structures underpin both households and restoration &ndash; the foundation that lets families invest beyond mere survival.</p></div>
+  <div class="card"><h4>Land rights and protected areas</h4><p>Secure collective tenure (Fundo de Pasto) and expanding protected areas &ndash; from <strong>Serra da Capivara National Park</strong> to Catimbau and Boqueirão da Onça &ndash; anchor long-term stewardship.</p></div>
+ </div>
+
+ <div class="callout success">
+  <div class="callout-title">Serra da Capivara &ndash; deep time in the dry forest</div>
+  <p>In Piauí, <strong>Serra da Capivara National Park</strong> &ndash; a UNESCO World Heritage Site &ndash; protects one of the Americas' greatest concentrations of prehistoric rock art amid Caatinga forest. It is a reminder that people and this dry land have shared a story for many thousands of years, and that conservation here protects culture as well as nature.</p>
+ </div>
+
+ <figure class="figure">
+  <img src="assets/caatinga/serra-da-capivara.jpg" alt="Sandstone cliffs and Caatinga vegetation in Serra da Capivara National Park" loading="lazy" decoding="async">
+  <figcaption>Serra da Capivara National Park, Piauí &ndash; canyons and dry forest protected together. Well-managed protected areas anchor the long-term recovery of the biome. <span class="credit">Photo: Thiago Marcel Campi, <a href="https://commons.wikimedia.org/wiki/File:Parque_nacional_serra_da_capivara-THIAGO_CAMPI-03.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span></figcaption>
+ </figure>
+</section>
+
+<section id="management" data-screen-label="Sustainable management">
+ <h2><span class="kicker">Technologies and approaches</span>How to manage the Caatinga sustainably</h2>
+ <p class="lead">Brazil has spent decades building a practical, field-tested toolkit for using the Caatinga <em>without destroying it</em>. The catalogue below is drawn from the technical literature now held in this platform's <a class="inl" href="#sources">evidence base</a> &ndash; the MMA's proposal for sustainable pastoral management (Araújo&nbsp;Filho), Embrapa Semiárido's production systems, the national forest statistics and community forest-management plans, MAPA's good-practice guides for native value chains, and the conservation and desertification atlases. Together they describe seven families of technology and approach.</p>
+
+ <div class="callout definition">
+  <div class="callout-title">The founding principle</div>
+  <p>Sustainable Caatinga management <strong>works the native vegetation &ndash; it does not replace it.</strong> Techniques that swap the biome's biodiversity for an exotic-grass monoculture are explicitly excluded: the goal is to raise the productivity of the <em>standing</em> dry forest for fodder, wood, fruit and water, while keeping its trees, soil and seedbank intact (Araújo Filho, 2013).</p>
+ </div>
+
+ <div class="callout concept">
+  <div class="callout-title">The three golden rules of Caatinga manipulation</div>
+  <p>Whatever the technique, the Brazilian research consensus is that sustainability holds only if three thresholds are respected (Araújo Filho, 2013):</p>
+  <ul class="clean" style="margin-top:.6rem;">
+   <li><strong>Keep the canopy</strong> &ndash; preserve up to <strong>around 400 trees per hectare (≈ 40 percent tree cover)</strong> for biodiversity, shade, rainfall interception, organic matter and erosion control.</li>
+   <li><strong>Leave more than you take</strong> &ndash; harvest at most <strong>60 percent of the available forage</strong>, so ≥ 40 percent stays to protect soil, feed the seedbank and buffer drought.</li>
+   <li><strong>Protect the water lines</strong> &ndash; keep the <strong>riparian vegetation</strong> intact along the whole drainage network, as ecological corridor, wildlife refuge and guardian of springs and water quality.</li>
+  </ul>
+ </div>
+
+ <h3>1 &middot; Manipulating the native vegetation for fodder</h3>
+ <p>The pastoral heart of the toolkit: three low-cost ways to lift forage from a standing Caatinga without clearing it &ndash; chosen according to the site's ecological potential (Araújo Filho, 2013).</p>
+ <div class="grid">
+  <div class="card"><h4>Rebaixamento <span class="sci">coppice and sprout management</span></h4><p>Manually cutting back forage trees and shrubs to bring browse within animals' reach and extend green leaf into the dry season. Best where around 70 percent of the woody species are palatable (sabiá, jurema, mororó, quebra-faca&hellip;). Raises available forage to <strong>around 4&times; native</strong>.</p></div>
+  <div class="card"><h4>Raleamento <span class="sci">selective thinning</span></h4><p>Selectively removing woody plants to cut shade and release the grass-and-herb layer &ndash; <strong>never with fire</strong>, keeping forage, deep-rooted and timber species. Lifts forage to <strong>around 6&times; native</strong> and slashes drought-year losses from around 80 percent to around 22 percent.</p></div>
+  <div class="card"><h4>Enriquecimento <span class="sci">enrichment seeding</span></h4><p>For already-degraded land that has lost its herb layer: minimum-tillage reseeding with adapted native and/or hardy forage species, often with phosphate correction. Delivers the <strong>highest carrying capacity</strong> of any treated Caatinga &ndash; a 1:2.5 cost:benefit at Embrapa Sobral.</p></div>
+ </div>
+ <table>
+  <thead><tr><th style="width:30%;">Treatment</th><th>Available forage</th><th>Carrying capacity</th><th>Indicative outcome</th></tr></thead>
+  <tbody>
+   <tr><td><strong>Native Caatinga</strong> (baseline)</td><td>1&times;</td><td>very low</td><td>cattle lose weight through the long dry season</td></tr>
+   <tr><td><strong>Rebaixada</strong> (coppiced)</td><td>~4&times;</td><td>5.0 ha/head (cattle)</td><td>~60% of biomass from the woody layer; best with goats</td></tr>
+   <tr><td><strong>Raleada</strong> (thinned)</td><td>~6&times;</td><td>3.5 ha/head (cattle)</td><td>up to <strong>+800%</strong> live-weight per ha/yr; drought loss only ~22%</td></tr>
+   <tr><td><strong>Enriquecida</strong> (enriched)</td><td>highest</td><td>1.1 cattle &middot; 10 small-stock /ha/yr</td><td>up to 172 (cattle) / 120 (goats) / 180 (sheep) kg live-weight/ha/yr</td></tr>
+  </tbody>
+ </table>
+ <p class="table-caption">Indicative figures after Araújo&nbsp;Filho et&nbsp;al. (2002), as compiled in the MMA proposal for sustainable pastoral management of the Caatinga. Real responses vary by ecological site &ndash; not every site responds to thinning.</p>
+
+ <h3>2 &middot; Integrated agrosilvopastoral systems</h3>
+ <p>Whole-farm models that combine crops, trees and livestock with the strategic use of the Caatinga &ndash; the integrated landscapes the dryland-forests agenda exists to scale (Araújo Filho, 2013).</p>
+ <div class="grid">
+  <div class="card"><h4>SAF-Sobral</h4><p>Embrapa's flagship agrosilvopastoral layout: <strong>20% cropping (alley farming) &middot; 60% managed pasture &middot; 20% legal reserve</strong> (woodlot or apiary), from 3&nbsp;ha up. Maize yields ran <strong>79% above</strong> the state average with far steadier output (CV 19.8% vs 75.5%) &ndash; on the same plot every year, with no shifting cultivation.</p></div>
+  <div class="card"><h4>CBL system <span class="sci">Caatinga · buffel · leucaena</span></h4><p>Embrapa Semiárido's three-part year: native Caatinga grazed in the rains, a buffel-grass pasture, and a leucaena protein bank for hay/silage and browse &ndash; sequencing feed across the wet and dry seasons.</p></div>
+  <div class="card"><h4>SIPRO system</h4><p>Maximises use of the tree Caatinga in the rains, with dry-season supplementation from sorghum/maize stover and a buffel reserve for ewes/does around lambing &ndash; a production system tuned to the herd's calendar.</p></div>
+  <div class="card"><h4>Recaatingamento <span class="sci">IRPAA · Fundo de Pasto</span></h4><p>A community-led model in Bahia's Fundo de Pasto: conserving and recomposing the Caatinga, contextualised environmental education, income from sustainable agro-extractivism (umbu, passion-fruit), and stocking rates set to cancel overgrazing.</p></div>
+ </div>
+
+ <h3>3 &middot; Sustainable forest management for wood energy</h3>
+ <p>The Northeast runs heavily on Caatinga fuelwood and charcoal &ndash; the issue is not <em>whether</em> the forest is cut but <em>how</em>. Legal, planned management replaces clear-cutting with rotation (MMA, 2008).</p>
+ <ul class="clean">
+  <li><strong>Sustainable Forest Management Plans (PMFS)</strong> &ndash; harvesting on an <strong>approximately 15-year cutting cycle</strong> across rotating plots, so each area regrows before it is cut again; observed sustainable yields ranged around 38&ndash;203 stacked-m³ (st) per hectare (MMA, 2008).</li>
+  <li><strong>Community and family forest management</strong> &ndash; the national programme (PAMFCF) that puts planned wood production, legalised through associations, in the hands of settlements and traditional communities as a source of legal income.</li>
+  <li><strong>Legal-reserve and settlement management</strong> &ndash; managing the mandatory on-farm forest reserve productively rather than leaving it idle or clearing it.</li>
+ </ul>
+
+ <h3>4 &middot; Native value chains and sociobiodiversity</h3>
+ <p>Making the standing Caatinga worth more than the cleared one &ndash; through organic, certified, sustainable harvesting of its native products, governed by Brazil's organic-agriculture law (Brasil, 2003) and the MAPA good-practice guides held in the evidence base (MAPA, 2015).</p>
+ <div class="grid">
+  <div class="card"><h4>Carnaúba <span class="sci">Copernicia prunifera</span></h4><p>The &ldquo;tree of life&rdquo; &ndash; sustainable, organic harvesting of carnaúba <strong>wax</strong> and fibre with good practices that keep the palm stands productive for generations (MAPA, 2015).</p></div>
+  <div class="card"><h4>Licuri <span class="sci">Syagrus coronata</span></h4><p>A keystone palm &ndash; its nut feeds people, livestock and the endangered Lear's macaw alike. Organic extractivism good-practice turns it into oil, food and craft income (MAPA, 2015).</p></div>
+  <div class="card"><h4>Caroá and fibres <span class="sci">Neoglaziovia variegata</span></h4><p>A native bromeliad fibre &ndash; sustainably harvested for cordage, crafts and textiles, a classic non-timber product of the dry forest (MAPA, 2015).</p></div>
+  <div class="card"><h4>Umbu, honey and beekeeping</h4><p>Umbu pulp and jam, native and stingless-bee honey, and apiaries sited in the legal reserve &ndash; fast-return enterprises that reward keeping the forest standing.</p></div>
+ </div>
+
+ <h3>5 &middot; Soil, water and combating desertification</h3>
+ <p>&ldquo;Living with the semi-arid&rdquo; (<em>convivência com o semiárido</em>) rather than fighting it &ndash; the approach that underpins recovery in the desertification nuclei.</p>
+ <ul class="clean">
+  <li><strong>Water harvesting and storage</strong> &ndash; rooftop and field <strong>cisterns</strong> and small structures, and the <em>Programa Água Doce</em> for community desalination &ndash; the foundation that lets families invest beyond survival.</li>
+  <li><strong>Soil and erosion control</strong> &ndash; permanent ground cover, organic-matter return, contour structures and the riparian-buffer rule that keeps water and topsoil on the land.</li>
+  <li><strong>Recovering the desertification nuclei</strong> &ndash; targeted restoration of Gilbués, Irauçuba, Seridó and Cabrobó, guided by the national Atlas of areas susceptible to desertification (MMA, 2007).</li>
+ </ul>
+
+ <h3>6 &middot; Conservation and protected areas</h3>
+ <p>Sustainable use on working land has to be matched by a protected core &ndash; still the Caatinga's weakest link.</p>
+ <ul class="clean">
+  <li><strong>Expanding protected areas</strong> on the priority-area maps &ndash; closing the gaps identified in the SNUC representativeness analysis for the biome.</li>
+  <li><strong>Sustainable-use and community reserves</strong> &ndash; Extractive Reserves (Resex), Sustainable-Development Reserves (RDS), agro-extractivist settlements (PAE) and private reserves (RPPN) that pair conservation with livelihoods.</li>
+  <li><strong>Corridors and riparian networks</strong> &ndash; using the protected riparian strips as the connective tissue that links fragments across private land.</li>
+ </ul>
+
+ <h3>7 &middot; The enabling environment</h3>
+ <p>The technologies exist; the Brazilian workshops are blunt that <strong>adoption</strong> depends on extension, finance and a workable licence. These are the levers that take good practice to scale.</p>
+ <div class="grid">
+  <div class="card"><h4>Participatory extension</h4><p>Revitalised, integrated rural extension; <strong>farmer-to-farmer</strong> (<em>camponês&ndash;camponês</em>) methods, demonstration units and multiplier training &ndash; with traditional knowledge and youth built in.</p></div>
+  <div class="card"><h4>Fit-for-purpose finance</h4><p>Credit lines matched to the long forest cycle &ndash; <strong>PRONAF-Floresta, PRONAF-Agroecologia and FNE-Verde</strong> &ndash; plus Payment for Environmental Services (PSA) and Bolsa Verde to reward stewardship.</p></div>
+  <div class="card"><h4>A workable licence</h4><p>A <strong>single, simplified, declaratory licence</strong> built on the Rural Environmental Registry (CAR), with fee exemptions for family farmers and indigenous, quilombola and traditional communities &ndash; so land is not left idle awaiting permits.</p></div>
+  <div class="card"><h4>Organisation and markets</h4><p>Community associations and cooperatives, sanitary inspection that fits the semi-arid reality, and value-chain support &ndash; integrate the whole approach with <strong>agroecology</strong>.</p></div>
+ </div>
+
+ <div class="callout success">
+  <div class="callout-title">In one line</div>
+  <p>Keep around 40 percent of the trees, take no more than 60 percent of the forage, guard the water lines &ndash; then thin, coppice or enrich the standing Caatinga, fold it into a crop&ndash;tree&ndash;livestock system, add native value chains and water security, and back it with extension, fair credit and a simple licence. That is sustainable management of the white forest.</p>
+ </div>
+</section>
+
+<section id="matters" data-screen-label="Why it matters">
+ <h2><span class="kicker">The DRIP connection</span>Why the Caatinga matters here</h2>
+ <p>The Caatinga sits outside the eleven country projects of the GEF-7 DSL-IP &ndash; but it is, in every other sense, exactly the kind of landscape this platform exists for: a <strong>dryland forest and agrosilvopastoral system</strong> under pressure, where restoration must reconcile trees, livestock and livelihoods. Its lessons travel.</p>
+
+ <figure class="figure">
+  <img src="assets/caatinga/rock-art-capivara.jpg" alt="Prehistoric rock paintings in red ochre on a rock wall at Serra da Capivara" loading="lazy" decoding="async">
+  <figcaption>Millennia-old rock paintings at Serra da Capivara &ndash; among the oldest evidence of human presence in the Americas. People and the Caatinga have shared this dry land for a very long time; safeguarding it is as much cultural as ecological. <span class="credit">Photo: Josias de Melo Xavier, <a href="https://commons.wikimedia.org/wiki/File:Pinturas_Rupestres_Serra_da_Capivara_Piau%C3%AD.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span></figcaption>
+ </figure>
+
+ <div class="flow">
+  <div class="flow-step"><div class="fs-num">01</div><div class="fs-title">A textbook dryland</div><p>Semi-arid, deciduous, fire- and drought-shaped &ndash; the Caatinga is a living case study in dryland forest and agrosilvopastoral management and Land Degradation Neutrality.</p></div>
+  <div class="flow-step"><div class="fs-num">02</div><div class="fs-title">Brazil at the table</div><p>Brazil is a member of the <a class="inl" href="COFO Working Group on Dryland Forests.html">COFO Working Group on Dryland Forests</a> &ndash; and held a Vice-Chair &ndash; bringing Caatinga experience into the global dryland-forests agenda.</p></div>
+  <div class="flow-step"><div class="fs-num">03</div><div class="fs-title">A model worth sharing</div><p>Fundo de Pasto communities feature in FAO dryland-forestry work as an example of integrated, multifunctional landscape management &ndash; ready for South-South exchange.</p></div>
+  <div class="flow-step"><div class="fs-num">04</div><div class="fs-title">South-South learning</div><p>The Caatinga, the Sahel and the Miombo&ndash;Mopane face the same questions &ndash; grazing with trees, native value chains, regeneration &ndash; and can learn from one another.</p></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">The thread to the Programme's methods</div>
+  <p>The approaches that work in the Caatinga &ndash; farmer-managed regeneration, agroforestry, native value chains, sustainable grazing &ndash; are the same ones the Programme codifies in the <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">Sustainable Landscape Production Framework</a> and assesses through the <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">Integrated Landscape Assessment Methodology</a>. The biome is a natural reference case for both.</p>
+ </div>
+</section>
+
+<section id="sources" class="references-section" data-screen-label="Sources">
+ <h2><span class="kicker">Sources</span>Evidence base and a note on figures</h2>
+ <p>This profile is a knowledge and outreach summary compiled for DRIP from widely cited public sources. Figures for the Caatinga &ndash; its area, population, remaining cover and protection &ndash; <strong>vary by source and mapping method</strong>; the values here are rounded approximations meant for orientation, not official statistics.</p>
+
+ <h3>The documents behind the management section</h3>
+ <p>The <a class="inl" href="#management">sustainable-management catalogue</a> is grounded in a library of Brazilian technical references &ndash; from the MMA, Embrapa, MAPA, the National Forest Programme and a UNDP conservation project &ndash; now held with this profile and downloadable below. Each contributes a different piece of the picture.</p>
+ <table>
+  <thead><tr><th style="width:42%;">Document</th><th style="width:20%;">Source</th><th>What it contributes</th></tr></thead>
+  <tbody>
+   <tr><td><a class="inl" href="resources/caatinga/Caatinga-Manejo-Pastoril-Sustentavel-Araujo-Filho-MMA.pdf" target="_blank" rel="noopener">Proposta para a implementação do manejo pastoril sustentável da Caatinga</a> &ndash; J. A. de Araújo&nbsp;Filho</td><td>MMA / SBF</td><td><strong>The core source.</strong> The full silvopastoral toolkit &ndash; CBL, SIPRO, Recaatingamento, rebaixamento, raleamento, enriquecimento, SAF-Sobral &ndash; the three golden rules, and the financing/extension/licensing barriers to scale.</td></tr>
+   <tr><td><a class="inl" href="resources/caatinga/Caatinga-Estatistica-Florestal-MMA-PNF.pdf" target="_blank" rel="noopener">Estatística Florestal da Caatinga</a></td><td>MMA / PNF · APNE</td><td>Sustainable forest management for wood energy &ndash; fuelwood/charcoal yields, cutting cycles and the legal-reserve regime behind community PMFS.</td></tr>
+   <tr><td><a class="inl" href="resources/caatinga/Caatinga-Plano-Anual-Manejo-Florestal-Comunitario-Familiar-2011-MMA.pdf" target="_blank" rel="noopener">Plano Anual de Manejo Florestal Comunitário e Familiar (2011)</a></td><td>MMA / SFB</td><td>The national programme (PAMFCF) for community &amp; family forest management &ndash; Resex, RDS, PAE and settlements as vehicles for legal forest income.</td></tr>
+   <tr><td><a class="inl" href="resources/caatinga/Ecologia-e-Conservacao-da-Caatinga-Leal-Tabarelli-Silva.pdf" target="_blank" rel="noopener">Ecologia e Conservação da Caatinga</a> &ndash; Leal, Tabarelli &amp; Silva (eds.)</td><td>Ed. UFPE</td><td>The authoritative scientific reference on the biome's ecology, biodiversity, endemism and conservation &ndash; the basis for the &ldquo;life&rdquo; and regeneration narrative.</td></tr>
+   <tr><td><a class="inl" href="resources/caatinga/Caatinga-Analise-Variacoes-Biodiversidade-Estrategias-Conservacao-MMA.pdf" target="_blank" rel="noopener">Análise das variações da biodiversidade do bioma Caatinga</a></td><td>MMA</td><td>Regional conservation strategy &ndash; priority areas and biodiversity variation to target protection and restoration.</td></tr>
+   <tr><td><a class="inl" href="resources/caatinga/Representatividade-SNUC-Areas-Prioritarias-Caatinga-PNUD.pdf" target="_blank" rel="noopener">Representatividade do SNUC &amp; áreas prioritárias da Caatinga</a></td><td>UNDP / PROBIO</td><td>The protected-area gap analysis &ndash; how little of the biome is conserved, and where new units should go.</td></tr>
+   <tr><td><a class="inl" href="resources/caatinga/Atlas-Areas-Susceptiveis-Desertificacao-Brasil-MMA-2007.pdf" target="_blank" rel="noopener">Atlas das áreas susceptíveis à desertificação do Brasil (2007)</a></td><td>MMA / SRH</td><td>Maps the desertification nuclei and susceptible drylands &ndash; the geography that the soil-water-desertification approaches respond to.</td></tr>
+   <tr><td><a class="inl" href="resources/caatinga/Boas-Praticas-Extrativismo-Sustentavel-Carnauba-MAPA.pdf" target="_blank" rel="noopener">Carnaúba</a> · <a class="inl" href="resources/caatinga/Boas-Praticas-Extrativismo-Sustentavel-Licuri-MAPA.pdf" target="_blank" rel="noopener">Licuri</a> · <a class="inl" href="resources/caatinga/Boas-Praticas-Extrativismo-Sustentavel-Caroa-MAPA.pdf" target="_blank" rel="noopener">Caroá</a> &ndash; Cadernos de Boas Práticas</td><td>MAPA</td><td>Good-practice guides for organic, sustainable extractivism &ndash; the native value chains that pay people to keep the forest standing.</td></tr>
+   <tr><td>Species dossiers &ndash; <a class="inl" href="resources/caatinga/Especie-Angico-Caatinga.pdf" target="_blank" rel="noopener">Angico</a> · <a class="inl" href="resources/caatinga/Especie-Imburana-de-Cheiro-Caatinga.pdf" target="_blank" rel="noopener">Imburana-de-cheiro</a> · <a class="inl" href="resources/caatinga/Especie-Umburana-de-Cambao-Caatinga.pdf" target="_blank" rel="noopener">Umburana-de-cambão</a></td><td>–</td><td>Single-species profiles of key Caatinga trees &ndash; reference material for enrichment, value chains and restoration species choice.</td></tr>
+  </tbody>
+ </table>
+ <p class="table-caption">Documents added to the DRIP knowledge base for the Caatinga (hosted under <code>resources/caatinga/</code>). Several are in Portuguese.</p>
+
+ <div class="two-col">
+  <div>
+   <h4>Brazilian sources</h4>
+   <ul class="clean">
+    <li><strong>Ministry of the Environment (MMA)</strong> &ndash; <a class="inl" href="https://www.gov.br/mma/pt-br" target="_blank" rel="noopener">gov.br/mma</a></li>
+    <li><strong>ICMBio</strong> (protected areas) &ndash; <a class="inl" href="https://www.gov.br/icmbio/pt-br" target="_blank" rel="noopener">gov.br/icmbio</a></li>
+    <li><strong>Embrapa Semiárido</strong> &ndash; <a class="inl" href="https://www.embrapa.br/semiarido" target="_blank" rel="noopener">embrapa.br/semiarido</a></li>
+    <li><strong>INSA</strong> (National Semi-Arid Institute) &ndash; <a class="inl" href="https://www.gov.br/insa/pt-br" target="_blank" rel="noopener">gov.br/insa</a></li>
+   </ul>
+  </div>
+  <div>
+   <h4>Global and on this platform</h4>
+   <ul class="clean">
+    <li><strong>FAO &middot; drylands and dryland forests</strong> &ndash; <a class="inl" href="https://www.fao.org/forestry-fao/" target="_blank" rel="noopener">fao.org · forestry</a></li>
+    <li><strong>UN Decade on Ecosystem Restoration</strong> &ndash; <a class="inl" href="https://www.decadeonrestoration.org" target="_blank" rel="noopener">decadeonrestoration.org</a></li>
+    <li><strong>COFO Working Group on Dryland Forests</strong> &ndash; <a class="inl" href="COFO Working Group on Dryland Forests.html">on this platform &rarr;</a></li>
+    <li><strong>SLPF</strong> &middot; <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">framework</a> &nbsp;|&nbsp; <strong>ILAM</strong> &middot; <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">methodology</a></li>
+   </ul>
+  </div>
+ </div>
+
+ <h3>Photographs</h3>
+ <p>Photographs on this page are reproduced from <strong>Wikimedia Commons</strong> under the Creative Commons or public-domain licences shown. Each remains the work of its author; no endorsement is implied.</p>
+ <ul class="credits-list">
+  <li><b>The dry sertão</b> (banner) &ndash; Renato Augusto Martins, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Rio_seco_na_Caatinga.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>The Caatinga in flower</b> &ndash; Anchieta França, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Caatinga_em_festa!.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Umbuzeiro</b> &ndash; Fronteira, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Umbuzeiro_no_Boqueir%C3%A3o_de_Regino,_Paratinga,_janeiro_de_2023.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Mandacaru in flower</b> &ndash; Smailtn, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Cereus_jamacaru_flower.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Lear's macaw</b> &ndash; Miguelrangeljr, public domain &middot; <a href="https://commons.wikimedia.org/wiki/File:Anodorhynchus_leari_(3_cropped).jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Spix's macaw</b> &ndash; Evan Centanni, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Spix%27s_Macaw_(Cyanopsitta_spixii)_at_Jurong_Bird_Park_in_Singapore.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Three-banded armadillo</b> &ndash; Reuber Brandão, <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Tolypeutes_tricinctus_466118804.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Goats in the Caatinga</b> &ndash; Vitoriano Jr., <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Bodes_criados_livres_na_caatinga.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Carnaúba palms</b> &ndash; Tacarijus, <a href="https://creativecommons.org/licenses/by/2.5/" target="_blank" rel="noopener">CC BY 2.5</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Carnauba.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Licuri palm</b> &ndash; David J. Stang, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Syagrus_coronata_11zz.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Serra da Capivara N.P.</b> &ndash; Thiago Marcel Campi, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Parque_nacional_serra_da_capivara-THIAGO_CAMPI-03.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Rock art, Serra da Capivara</b> &ndash; Josias de Melo Xavier, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Pinturas_Rupestres_Serra_da_Capivara_Piau%C3%AD.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Land in desertification</b> &ndash; A. Duarte, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Desertification_area_%C3%81rea_em_processo_de_desertifica%C3%A7%C3%A3o_(50619467682).jpg" target="_blank" rel="noopener">source</a></li>
+ </ul>
+
+ <div class="callout concept" style="margin-top:1.4rem;">
+  <div class="callout-title">Related on this platform</div>
+  <p><a class="inl" href="DFSA Campaign.html">Dryland Forest Support Accelerator campaign</a> &middot; <a class="inl" href="When Women Lead.html">When Women Lead</a> &middot; <a class="inl" href="DRIP Map.html">The DRIP Map</a> &middot; <a class="inl" href="Library.html">back to the Library</a></p>
+ </div>
+</section>
+
+<section id="references" data-screen-label="References">
+ <h2><span class="kicker">References</span>References</h2>
+ <p>Sources for this profile (APA, 7th ed.):</p>
+ <ol class="apa-refs">
+  <li>Araújo Filho, J. A. de. (2013). <em>Manejo pastoril sustentável da Caatinga</em>. Projeto Dom Helder Câmara. <a href="resources/caatinga/Caatinga-Manejo-Pastoril-Sustentavel-Araujo-Filho-MMA.pdf" target="_blank" rel="noopener">PDF</a></li>
+  <li>Brasil. (2003). <em>Lei nº 10.831, de 23 de dezembro de 2003: Dispõe sobre a agricultura orgânica e dá outras providências</em>. Diário Oficial da União.</li>
+  <li>Leal, I. R., Tabarelli, M., &amp; Silva, J. M. C. da (Eds.). (2003). <em>Ecologia e conservação da Caatinga</em>. Editora Universitária da UFPE. <a href="resources/caatinga/Ecologia-e-Conservacao-da-Caatinga-Leal-Tabarelli-Silva.pdf" target="_blank" rel="noopener">PDF</a></li>
+  <li>Ministério da Agricultura, Pecuária e Abastecimento [MAPA]. (2015). <em>Cadernos de boas práticas para o extrativismo sustentável orgânico: Carnaúba, caroá e licuri</em>. MAPA. <a href="resources/caatinga/Boas-Praticas-Extrativismo-Sustentavel-Carnauba-MAPA.pdf" target="_blank" rel="noopener">PDF</a></li>
+  <li>Ministério do Meio Ambiente [MMA]. (2007). <em>Atlas das áreas susceptíveis à desertificação do Brasil</em>. MMA. <a href="resources/caatinga/Atlas-Areas-Susceptiveis-Desertificacao-Brasil-MMA-2007.pdf" target="_blank" rel="noopener">PDF</a></li>
+  <li>Ministério do Meio Ambiente [MMA]. (2008). <em>Estatística florestal da Caatinga</em> (Programa Nacional de Florestas). MMA. <a href="resources/caatinga/Caatinga-Estatistica-Florestal-MMA-PNF.pdf" target="_blank" rel="noopener">PDF</a></li>
+ </ol>
+</section>
+</div>
+<footer>
+ <p><strong>The Caatinga Biome</strong> &ndash; Brazil's white forest</p>
+ <p>A Knowledge and outreach profile on the Drylands Restoration Initiatives Platform (DRIP) &middot; the semi-arid dryland forest of north-eastern Brazil</p>
+ <hr class="foot-rule">
+ <p>Exclusively Brazilian &middot; ≈ 845,000 km² &middot; ~28 million people &middot; a true dryland of forest, cactus and people</p>
+ <p style="margin-top:1rem; opacity:.9;">Compiled for DRIP from public sources (MMA · ICMBio · Embrapa · INSA · FAO). Figures are rounded approximations and vary by source.</p>
+</footer>
+<script src="drip-home.js"></script>
+<script>
+/* ---- Live biodiversity dashboard: iNaturalist "Caatinga Observations" ---- */
+(function(){
+  var root = document.getElementById('inat'); if(!root) return;
+  var PID = root.getAttribute('data-pid');
+  var API = 'https://api.inaturalist.org/v1';
+  var esc = function(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  var nf  = function(n){ return (n==null?'–':Number(n).toLocaleString('en-US')); };
+  function getJSON(u){ return fetch(u,{headers:{'Accept':'application/json'}}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }); }
+
+  /* headline totals – overwrite the seeded numbers when live data arrives */
+  Promise.allSettled([
+    getJSON(API+'/observations?per_page=0&verifiable=true&project_id='+PID),
+    getJSON(API+'/observations/species_counts?per_page=0&project_id='+PID),
+    getJSON(API+'/observations/observers?per_page=0&project_id='+PID)
+  ]).then(function(res){
+    ['obs','spp','obsv'].forEach(function(k,i){
+      var r=res[i];
+      if(r.status==='fulfilled' && r.value && typeof r.value.total_results==='number'){
+        var el=root.querySelector('[data-k="'+k+'"]'); if(el) el.textContent=nf(r.value.total_results);
+      }
+    });
+  });
+
+  /* species richness by iconic group */
+  var GROUPS=[['Plantae','Plants'],['Insecta','Insects'],['Aves','Birds'],['Arachnida','Arachnids'],
+    ['Reptilia','Reptiles'],['Fungi','Fungi & lichens'],['Actinopterygii','Fish'],
+    ['Mollusca','Molluscs'],['Mammalia','Mammals'],['Amphibia','Amphibians']];
+  var gbox=document.getElementById('inatGroups');
+  Promise.all(GROUPS.map(function(g){
+    return getJSON(API+'/observations/species_counts?per_page=0&project_id='+PID+'&iconic_taxa='+g[0])
+      .then(function(j){ return {label:g[1], n:(j&&j.total_results)||0}; })
+      .catch(function(){ return {label:g[1], n:-1}; });
+  })).then(function(rows){
+    rows=rows.filter(function(r){ return r.n>0; }).sort(function(a,b){ return b.n-a.n; });
+    if(!rows.length){ gbox.innerHTML='<div class="inat-err">Couldn’t reach the live feed. <a href="https://www.inaturalist.org/projects/caatinga-observations?tab=species" target="_blank" rel="noopener">View the breakdown on iNaturalist →</a></div>'; return; }
+    var max=rows[0].n;
+    gbox.innerHTML=rows.map(function(r){
+      return '<div class="bar"><span class="bl">'+esc(r.label)+'</span><span class="bt"><span class="bf" data-w="'+(r.n/max*100).toFixed(1)+'"></span></span><span class="bv">'+nf(r.n)+'</span></div>';
+    }).join('');
+    requestAnimationFrame(function(){ Array.prototype.forEach.call(gbox.querySelectorAll('.bf'),function(f){ f.style.width=f.getAttribute('data-w')+'%'; }); });
+  }).catch(function(){ gbox.innerHTML='<div class="inat-err">Couldn’t reach the live feed. <a href="https://www.inaturalist.org/projects/caatinga-observations?tab=species" target="_blank" rel="noopener">View it on iNaturalist →</a></div>'; });
+
+  /* most-observed species */
+  var sbox=document.getElementById('inatSpecies');
+  getJSON(API+'/observations/species_counts?per_page=12&project_id='+PID).then(function(j){
+    var rows=(j&&j.results)||[];
+    if(!rows.length) throw new Error('empty');
+    sbox.innerHTML=rows.map(function(r){
+      var t=r.taxon||{}, ph=t.default_photo?(t.default_photo.medium_url||t.default_photo.square_url):'';
+      var common=t.preferred_common_name||'', sci=t.name||'', title=common||sci, sub=common?sci:'';
+      var url='https://www.inaturalist.org/taxa/'+(t.id||'');
+      return '<a class="sp" href="'+url+'" target="_blank" rel="noopener">'+
+        (ph?'<img loading="lazy" decoding="async" src="'+esc(ph)+'" alt="'+esc(sci)+'">':'<img alt="">')+
+        '<div class="spb"><div class="spc">'+esc(title)+'</div>'+(sub?'<div class="spn">'+esc(sub)+'</div>':'')+
+        '<div class="spk">'+nf(r.count)+' obs</div></div></a>';
+    }).join('');
+  }).catch(function(){ sbox.innerHTML='<div class="inat-err">Couldn’t reach the live species feed. <a href="https://www.inaturalist.org/projects/caatinga-observations?tab=species" target="_blank" rel="noopener">View it on iNaturalist →</a></div>'; });
+})();
+</script>
+  <script src="drip-i18n.js"></script>
+</body>
+</html>

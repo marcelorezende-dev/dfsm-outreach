@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Miombo–Mopane" name="The Miombo &amp;amp; Mopane Woodlands – Africa's great dry forest" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Miombo &amp; Mopane Woodlands – Africa's great dry forest | DRIP</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; font-style:italic; src:url('fonts/Poppins-400-italic.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{
+ --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+ --forest:#477E59; --forest-deep:#2F5A41; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+ --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+ --amber:#F8B133; --gold:#E0A23C; --gold-deep:#9A7327; --teal:#33B193; --leaf:#68A260; --bark:#754C29; --water:#3E7CB1;
+ --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+ --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+ --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+ --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{ font-family:var(--serif); line-height:1.7; color:var(--ink-2); background:var(--cream); -webkit-font-smoothing:antialiased; }
+
+/* HEADER */
+header{ background:var(--forest-deep); color:var(--ink-on-dark); padding:3.4rem 2rem 3rem; text-align:left;
+ border-bottom:6px solid var(--gold); position:relative; overflow:hidden; }
+.header-inner{ max-width:1160px; margin:0 auto; position:relative; z-index:2; }
+header .brand-logo{ height:60px; width:auto; filter:brightness(0) invert(1); margin-bottom:1.6rem; opacity:.96; }
+header .eyebrow{ font-family:var(--serif); font-style:italic; font-size:1rem; color:#E8D9A0; margin-bottom:.55rem; }
+header h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.01em;
+ font-size:2.55rem; line-height:1.18; margin:0; color:#fff; max-width:26ch; }
+header h1 span{ color:#E8D9A0; font-weight:400; }
+header .lede{ font-family:var(--serif); font-size:1.14rem; line-height:1.6; color:#E6EFE4; max-width:800px; margin-top:1.5rem; }
+.header-tags{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.7rem; }
+.header-tags span{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem;
+ font-weight:600; color:#fff; background:rgba(251,248,239,.16); padding:.45rem 1rem; border-radius:999px; }
+
+/* NAV */
+nav.secnav{ background:#2c4f3a; padding:.5rem 1rem; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(36,31,27,.18); }
+nav.secnav ul{ list-style:none; display:flex; justify-content:center; flex-wrap:wrap; max-width:1160px; margin:0 auto; gap:.1rem; }
+nav.secnav a{ color:#E7EFE5; text-decoration:none; padding:.65rem 1rem; display:block; transition:background .25s,color .25s;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.09em; font-size:.8rem; border-radius:6px; }
+nav.secnav a:hover{ background:rgba(251,248,239,.14); color:#fff; }
+
+/* CONTAINER + SECTIONS */
+.container{ max-width:1160px; margin:0 auto; padding:2.5rem 2rem; }
+section{ background:var(--surface); margin:2rem 0; padding:2.6rem; border-radius:16px; border:1px solid var(--border); box-shadow:var(--shadow-md); scroll-margin-top:80px; }
+
+/* HEADINGS */
+h2{ font-family:var(--serif); font-weight:900; color:var(--ink); font-size:2rem; line-height:1.12; margin-bottom:1.3rem; padding-bottom:.7rem; border-bottom:1px solid var(--hairline); position:relative; }
+h2::after{ content:""; position:absolute; left:0; bottom:-1px; width:64px; height:3px; background:var(--gold); border-radius:2px; }
+h2 .kicker{ display:block; font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em; font-size:.8rem; color:var(--gold-deep); margin-bottom:.5rem; }
+h3{ font-family:var(--serif); font-weight:700; color:var(--forest); font-size:1.42rem; line-height:1.28; margin:1.9rem 0 1rem; }
+h4{ font-family:var(--serif); font-weight:700; color:var(--forest-deep); font-size:1.14rem; margin:1.1rem 0 .5rem; }
+section > p{ margin:1rem 0; } section > p:first-of-type{ margin-top:0; }
+.lead{ font-size:1.12rem; color:var(--ink); line-height:1.66; }
+
+/* CALLOUTS */
+.callout{ padding:1.5rem 1.6rem; margin:1.7rem 0; border-radius:12px; background:var(--surface); border:1px solid var(--border); border-top:4px solid var(--ink-3); box-shadow:var(--shadow-sm); }
+.callout.concept{ background:#FBF9F2; border-top-color:var(--gold); }
+.callout.definition{ background:rgba(195,218,186,.30); border-top-color:var(--forest); }
+.callout.warning{ background:rgba(248,177,51,.12); border-top-color:var(--amber); }
+.callout.success{ background:rgba(71,126,89,.10); border-top-color:var(--forest); }
+.callout-title{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.1em; font-size:.92rem; margin-bottom:.7rem; color:var(--ink); }
+.callout.concept .callout-title{ color:var(--gold-deep); } .callout.definition .callout-title{ color:var(--forest-deep); }
+.callout.warning .callout-title{ color:#9A6A12; } .callout.success .callout-title{ color:var(--forest-deep); }
+.callout p{ color:var(--ink-2); margin:.5rem 0 0; } .callout p:first-of-type{ margin-top:0; } .callout strong{ color:var(--ink); }
+
+/* CARD GRID */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; margin:2rem 0; }
+.card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.6rem; box-shadow:var(--shadow-md); transition:transform .25s ease, box-shadow .25s ease; }
+.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.card h4{ color:var(--ink); margin-top:0; margin-bottom:.7rem; padding-bottom:.5rem; border-bottom:1px solid var(--hairline); line-height:1.25; }
+.card p{ font-size:.96rem; color:var(--ink-2); }
+.card .num{ font-family:var(--sans); font-weight:700; color:var(--forest); font-size:1.1rem; }
+.card .sci{ font-style:italic; color:var(--ink-3); font-size:.9em; }
+
+/* TABLES */
+table{ width:100%; border-collapse:collapse; margin:1.8rem 0; font-size:.95rem; background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+th{ background:var(--forest-deep); color:var(--ink-on-dark); padding:.95rem 1rem; text-align:left; font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.82rem; }
+td{ padding:.85rem 1rem; border-bottom:1px solid var(--hairline); color:var(--ink-2); vertical-align:top; }
+tr:last-child td{ border-bottom:0; } tbody tr:nth-child(even){ background:rgba(236,231,215,.5); } tbody tr:hover{ background:rgba(195,218,186,.22); }
+td strong{ color:var(--ink); }
+.table-caption{ font-size:.86rem; color:var(--ink-3); font-style:italic; margin:-.6rem 0 1.8rem; }
+
+/* LISTS */
+ul,ol{ margin:1rem 0 1rem 1.5rem; } li{ margin:.5rem 0; line-height:1.7; color:var(--ink-2); } li strong{ color:var(--ink); }
+.clean{ list-style:none; margin-left:0; } .clean li{ padding-left:1.7rem; position:relative; }
+.clean li::before{ content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; border-radius:50%; background:var(--gold); }
+
+/* STATS */
+.stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.3rem; margin:2rem 0; }
+.stat-box{ background:var(--surface); border:1px solid var(--border); padding:1.5rem 1.4rem; border-radius:14px; text-align:left; box-shadow:var(--shadow-sm); border-top:4px solid var(--forest); }
+.stat-box .stat-eyebrow{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--ink-3); }
+.stat-value{ font-family:var(--sans); font-weight:700; font-size:1.9rem; line-height:1.08; margin:.35rem 0 .3rem; color:var(--forest-deep); }
+.stat-label{ font-size:.9rem; color:var(--ink-2); }
+
+/* FLOW */
+.flow{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0; margin:2rem 0; }
+.flow-step{ position:relative; padding:1.3rem 1.2rem; background:#FBF9F2; border:1px solid var(--border); }
+.flow-step:not(:last-child){ border-right:0; }
+.flow-step .fs-num{ font-family:var(--sans); font-weight:700; color:var(--gold-deep); font-size:.9rem; letter-spacing:.05em; }
+.flow-step .fs-title{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.04em; font-weight:600; color:var(--forest-deep); font-size:.92rem; margin:.3rem 0 .4rem; }
+.flow-step p{ font-size:.88rem; color:var(--ink-2); margin:0; }
+
+/* LOCATOR MAP */
+.loc{ max-width:380px; margin:1.6rem auto .6rem; border:1px solid var(--border); border-radius:14px;
+ background:linear-gradient(180deg,#E2ECEC,#D4E4E2); box-shadow:var(--shadow-sm); padding:.7rem .7rem .4rem; }
+.loc-svg{ display:block; width:100%; height:auto; }
+.loc-svg .sa{ fill:#E6D9B4; stroke:rgba(110,84,44,.42); stroke-width:1.4; stroke-linejoin:round; }
+.loc-svg .mio{ fill:var(--forest); stroke:#fff; stroke-width:1.2; opacity:.92; }
+.loc-cap{ font-family:var(--sans); font-size:.8rem; color:var(--ink-2); text-align:center; margin:.45rem 0 .2rem; }
+.loc-cap b{ color:var(--forest-deep); }
+
+/* PHOTOS */
+.figure{ margin:1.8rem 0; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow-md); }
+.figure img{ display:block; width:100%; height:auto; }
+.figure figcaption, .figure .fig-cap{ font-family:var(--sans); font-size:.82rem; color:var(--ink-2); padding:.7rem .95rem; line-height:1.5; }
+.figure figcaption .credit, .figure .fig-cap .credit{ display:block; color:var(--ink-3); font-size:.92em; margin-top:.2rem; }
+.figure figcaption .credit a, .figure .fig-cap .credit a{ color:var(--ink-3); text-decoration:none; border-bottom:1px dotted var(--border-strong); }
+.figure figcaption .credit a:hover{ color:var(--forest-deep); }
+.banner img{ height:clamp(220px,40vw,460px); object-fit:cover; }
+.photo-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.3rem; margin:2rem 0; }
+.photo-grid.duo{ grid-template-columns:1fr 1fr; }
+.photo-grid .figure{ margin:0; }
+.photo-grid .figure img{ aspect-ratio:4/3; object-fit:cover; }
+.credits-list{ list-style:none; margin:1rem 0 0; columns:2; column-gap:2rem; }
+.credits-list li{ break-inside:avoid; padding-left:0; font-size:.84rem; color:var(--ink-3); margin:.35rem 0; }
+.credits-list li b{ color:var(--ink-2); font-weight:600; }
+.credits-list a{ color:var(--ink-3); text-decoration:none; border-bottom:1px dotted var(--border-strong); }
+.credits-list a:hover{ color:var(--forest-deep); }
+
+/* iNATURALIST DASHBOARD */
+.inat{ margin:1.6rem 0; }
+.inat-sub{ font-family:var(--sans); font-weight:700; text-transform:uppercase; letter-spacing:.06em; font-size:.82rem; color:var(--gold-deep); margin:1.9rem 0 .9rem; display:flex; align-items:center; gap:.5rem; }
+.inat-sub::after{ content:""; flex:1; height:1px; background:var(--hairline); }
+.inat-bars{ display:flex; flex-direction:column; gap:.5rem; }
+.bar{ display:grid; grid-template-columns:120px 1fr 60px; align-items:center; gap:.7rem; font-family:var(--sans); font-size:.84rem; }
+.bar .bl{ color:var(--ink-2); text-align:right; }
+.bar .bt{ background:var(--paper-2); border-radius:6px; height:15px; overflow:hidden; }
+.bar .bf{ height:100%; background:linear-gradient(90deg,var(--forest-soft),var(--forest)); border-radius:6px; width:0; transition:width 1s cubic-bezier(.2,.7,.2,1); }
+.bar .bv{ color:var(--ink); font-weight:600; text-align:right; font-variant-numeric:tabular-nums; }
+.inat-species{ display:grid; grid-template-columns:repeat(auto-fill,minmax(146px,1fr)); gap:1rem; }
+.sp{ border:1px solid var(--border); border-radius:12px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow-sm); text-decoration:none; display:block; transition:transform .2s, box-shadow .2s; }
+.sp:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.sp img{ display:block; width:100%; aspect-ratio:1/1; object-fit:cover; background:var(--paper-2); }
+.sp .spb{ padding:.55rem .65rem .7rem; }
+.sp .spc{ font-family:var(--sans); font-weight:600; font-size:.85rem; color:var(--ink); line-height:1.22; }
+.sp .spn{ font-family:var(--serif); font-style:italic; font-size:.8rem; color:var(--ink-2); line-height:1.22; margin-top:.1rem; }
+.sp .spk{ font-family:var(--sans); font-size:.73rem; color:var(--gold-deep); font-weight:600; margin-top:.35rem; }
+.inat-loading{ color:var(--ink-3); font-family:var(--sans); font-size:.88rem; padding:.8rem 0; }
+.inat-loading::before{ content:"\25CD  "; }
+.inat-err{ background:rgba(248,177,51,.12); border:1px solid rgba(248,177,51,.4); border-radius:10px; padding:.9rem 1.1rem; font-family:var(--sans); font-size:.86rem; color:#7a5a12; }
+.inat-err a{ color:#7a5a12; font-weight:600; }
+.inat-credit{ font-family:var(--sans); font-size:.8rem; color:var(--ink-3); margin-top:1.2rem; line-height:1.5; }
+.inat-credit a{ color:var(--forest-deep); }
+
+/* UTILITIES */
+.highlight{ background:rgba(224,162,60,.32); padding:.05rem .3rem; border-radius:3px; }
+.pillar-badge{ display:inline-block; background:var(--forest); color:#fff; padding:.4rem 1rem; border-radius:999px; font-family:var(--sans); text-transform:uppercase; letter-spacing:.07em; font-size:.76rem; font-weight:600; margin:.25rem .25rem .25rem 0; }
+.references-section{ background:#FBF9F2; }
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+a.inl{ color:var(--forest-deep); font-weight:600; text-decoration:none; } a.inl:hover{ text-decoration:underline; }
+
+/* FOOTER */
+footer{ background:#2c4f3a; color:#E7EFE5; text-align:center; padding:2.8rem 2rem; margin-top:3rem; line-height:1.9; }
+footer p{ max-width:900px; margin:0 auto; } footer a{ color:#E8D9A0; text-decoration:none; } footer a:hover{ text-decoration:underline; }
+footer .foot-rule{ width:60px; height:3px; background:var(--gold); margin:1.4rem auto; border:0; border-radius:2px; }
+
+@media (max-width:768px){
+ header{ padding:2.2rem 1.3rem; } header h1{ font-size:1.9rem; }
+ nav.secnav ul{ flex-direction:column; } nav.secnav a{ padding:.55rem 1rem; }
+ .container{ padding:1.3rem; } section{ padding:1.5rem; } h2{ font-size:1.5rem; }
+ .stats-grid,.grid,.two-col,.photo-grid.duo{ grid-template-columns:1fr; }
+ .flow-step{ border-right:1px solid var(--border) !important; }
+ .credits-list{ columns:1; }
+}
+</style>
+
+<style>
+.apa-refs{list-style:none;margin:.3rem 0 0;padding:0;}
+.apa-refs li{padding-left:1.6em;text-indent:-1.6em;margin:0 0 .55rem;}
+</style>
+<link rel="stylesheet" href="drip-harmonize.css">
+  <link rel="icon" type="image/png" href="assets/globe.png">
+  <link rel="stylesheet" href="drip-topbar.css">
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+<header data-screen-label="Header">
+ <div class="header-inner">
+  <img class="brand-logo" src="assets/logo-color.png" alt="DSL-IP — Drylands Sustainable Landscapes Impact Programme">
+  <p class="eyebrow">Knowledge and outreach &middot; Drylands of the world</p>
+  <h1>The Miombo and Mopane <span>Africa's great dry woodlands</span></h1>
+  <p class="lede">Across the heart and south of Africa stretches the largest dry-forest formation on the continent &ndash; the miombo woodlands of <em>Brachystegia</em> and <em>Julbernardia</em>, and the mopane woodlands of the hot, dry valleys. A fire-shaped, seasonally green world of caterpillars and honey, elephants and sable, that feeds and fuels well over a hundred million people &ndash; and where much of this Programme actually works.</p>
+  <div class="header-tags"><span>≈ 3 million km²</span><span>~11 countries · southern Africa</span><span>Dry tropical woodland &amp; savanna</span><span>100–150 million people</span><span>Brachystegia · Colophospermum mopane</span></div>
+ </div>
+</header>
+<nav class="secnav">
+ <ul>
+  <li><a href="#summary">At a glance</a></li>
+  <li><a href="#geography">Where and climate</a></li>
+  <li><a href="#life">Life in the woodland</a></li>
+  <li><a href="#biodiversity">Live data</a></li>
+  <li><a href="#people">People</a></li>
+  <li><a href="#pressures">Pressures</a></li>
+  <li><a href="#restoration">Restoration</a></li>
+  <li><a href="#management">SLM technologies &amp; approaches</a></li>
+  <li><a href="#matters">Why it matters</a></li>
+  <li><a href="#sources">Sources</a></li>
+ </ul>
+</nav>
+<div class="container">
+
+<figure class="figure banner">
+ <img src="assets/miombo-mopane/miombo-woodland.jpg" alt="Open miombo woodland of broad-canopied trees over a grassy understorey on the Niassa Plateau" decoding="async">
+ <div class="fig-cap">Miombo woodland on the Niassa Plateau, Mozambique &ndash; the broad, layered canopy of <em>Brachystegia</em> and <em>Julbernardia</em> over a grassy, fire-swept understorey that defines Africa's largest dry forest.
+  <span class="credit">Photo: Lichinga, <a href="https://commons.wikimedia.org/wiki/File:Miombo_in_Niassa_Plateau.JPG" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span></div>
+</figure>
+
+<section id="summary" data-screen-label="At a glance">
+ <h2><span class="kicker">Biome profile &middot; At a glance</span>What the miombo and mopane are</h2>
+ <p class="lead">The miombo and mopane are the great <strong>dry woodlands of southern Africa</strong> &ndash; together the largest dry-forest formation on the continent and the dominant land cover of the sub-continent. The <strong>miombo</strong> is a broad-leaved, fire-shaped woodland on nutrient-poor soils; the <strong>mopane</strong> is the hotter, lower, drier woodland of a single dominant tree. Both are working landscapes that feed, fuel and shelter tens of millions of people (Frost, 1996; Ryan et al., 2016).</p>
+
+ <div class="stats-grid">
+  <div class="stat-box"><div class="stat-eyebrow">Extent</div><div class="stat-value">≈ 3 M</div><div class="stat-label">km² &ndash; miombo ~2.7M + mopane ~0.5M</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Countries</div><div class="stat-value">~11</div><div class="stat-label">central &amp; southern Africa</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">People</div><div class="stat-value">100–150 M</div><div class="stat-label">depend on these woodlands</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Biome type</div><div class="stat-value">Woodland</div><div class="stat-label">dry tropical woodland &amp; savanna</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Defining trees</div><div class="stat-value">2 groups</div><div class="stat-label"><em>Brachystegia/Julbernardia</em> · <em>C. mopane</em></div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Programme link</div><div class="stat-value">6+</div><div class="stat-label">DSL-IP countries lie within it</div></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">In one sentence</div>
+  <p>The miombo&ndash;mopane is Africa's <strong>great dryland forest</strong> &ndash; a fire- and drought-shaped mosaic of broad-leaved <em>Brachystegia</em> woodland and single-species mopane, spanning a dozen countries, storing vast amounts of carbon, and sustaining over a hundred million people through wood, honey, mushrooms, caterpillars and grazing (Ryan et al., 2016).</p>
+ </div>
+
+ <h3>Keywords</h3>
+ <div>
+  <span class="pillar-badge">Dry woodland</span>
+  <span class="pillar-badge">Seasonally dry tropical forest</span>
+  <span class="pillar-badge">Fire-adapted</span>
+  <span class="pillar-badge">Agrosilvopastoral</span>
+  <span class="pillar-badge">Woodfuel</span>
+  <span class="pillar-badge">Endemic Bird Area</span>
+  <span class="pillar-badge">Land Degradation Neutrality</span>
+ </div>
+</section>
+
+<section id="geography" data-screen-label="Where & climate">
+ <h2><span class="kicker">Place and climate</span>Where they are &ndash; two woodlands, one region</h2>
+ <p>The <strong>miombo belt</strong> sweeps across central-southern Africa &ndash; from Angola and the southern Democratic Republic of the Congo through Tanzania, Zambia, Malawi and Zimbabwe into northern Mozambique. The <strong>mopane</strong> occupies the hotter, lower, drier ground within and below it: the Zambezi and Limpopo valleys, the Caprivi, northern Botswana and Namibia, and southern Angola. Together they form a near-continuous dryland-forest region across roughly a dozen countries (Campbell, 1996; Ryan et al., 2016).</p>
+
+ <div class="loc">
+  <svg class="loc-svg" viewBox="0 0 520 540" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Locator map: the miombo and mopane woodlands of central and southern Africa">
+   <path class="sa" d="M210,21 L140,56 77,70 28,133 21,175 63,231 112,245 168,252 203,252 203,287 224,322 231,371 224,399 245,441 259,483 266,518 315,518 336,511 364,483 371,462 385,434 385,399 420,385 420,350 413,322 420,294 427,273 455,245 497,203 448,203 441,196 420,175 399,154 385,119 378,84 364,63 315,56 280,49 Z"/>
+   <path class="sa" d="M483,364 L490,392 469,455 455,434 448,392 462,371 Z"/>
+   <path class="mio" d="M238,343 L294,315 350,308 385,343 406,392 385,427 343,434 308,420 273,406 245,385 231,357 Z"/>
+  </svg>
+  <div class="loc-cap">The miombo&ndash;mopane belt (<b>in green</b>) across central and southern Africa &ndash; schematic locator.</div>
+ </div>
+
+ <figure class="figure">
+  <img src="assets/miombo-mopane/mopane-tree.jpg" alt="A large mopane tree standing in open dry woodland in Namibia" loading="lazy" decoding="async">
+  <figcaption>A mopane tree (<em>Colophospermum mopane</em>) in Namibia &ndash; in the hotter, drier country, a single species can dominate the woodland from low shrubveld to tall &ldquo;cathedral mopane.&rdquo;
+   <span class="credit">Photo: Tim Brunauer / GIZ, <a href="https://commons.wikimedia.org/wiki/File:Mopane_Tree_in_Namibia.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span></figcaption>
+ </figure>
+
+ <h3>Names from the trees</h3>
+ <p>&ldquo;Miombo&rdquo; is the Swahili and Bemba name for the dominant <em>Brachystegia</em> trees; &ldquo;mopane&rdquo; (or <em>mopani</em>) is the name of the single tree &ndash; <em>Colophospermum mopane</em> &ndash; that defines the second woodland. Both are deciduous: they drop or fold their leaves to survive the long dry season, and flush a brilliant red-and-green canopy in the weeks before the rains.</p>
+
+ <div class="grid">
+  <div class="card"><h4>Miombo &ndash; the wetter, poorer woodland</h4><p>Broad-leaved <em>Brachystegia&ndash;Julbernardia</em> woodland on <strong>dystrophic (nutrient-poor, leached, acidic) soils</strong>, with higher rainfall (broadly <strong>700&ndash;1,400 mm</strong>). Trees fix nitrogen and partner with mycorrhizal fungi to thrive where soils are thin (Frost, 1996).</p></div>
+  <div class="card"><h4>Mopane &ndash; the hotter, richer woodland</h4><p>Dominated by a single tree on <strong>eutrophic (clay-rich, often sodic) soils</strong> in hotter, drier, lower country (broadly <strong>400&ndash;700 mm</strong>). Its butterfly-shaped leaves fold in the heat to cut water loss; elephants and mopane worms depend on it.</p></div>
+  <div class="card"><h4>One wet season, shaped by fire</h4><p>Rainfall is <strong>unimodal</strong> &ndash; a single summer wet season (roughly November&ndash;April) and a long dry season. Fire sweeps through most years; the woodland is <strong>fire-adapted</strong>, and seasonal wetlands (<em>dambos</em>) hold water and dry-season gardens (Frost, 1996).</p></div>
+ </div>
+</section>
+
+<section id="life" data-screen-label="Life in the woodland">
+ <h2><span class="kicker">Biodiversity</span>Life in the woodland</h2>
+ <p>The miombo is far richer than its thin soils suggest &ndash; on the order of <strong>8,500 plant species</strong>, more than half of them found nowhere else (Frost, 1996), alongside a celebrated large-mammal fauna and so many restricted-range birds that it is recognised as an <strong>Endemic Bird Area</strong> (Stattersfield et al., 1998). The mopane, though dominated by one tree, teems with the life that tree supports &ndash; above all the elephant and the mopane worm.</p>
+
+ <div class="photo-grid">
+  <figure class="figure"><img src="assets/miombo-mopane/msasa-brachystegia.jpg" alt="Brachystegia spiciformis, the msasa tree, with its spreading canopy" loading="lazy" decoding="async"><figcaption>Msasa (<em>Brachystegia spiciformis</em>) &ndash; a defining miombo tree. <span class="credit">Photo: SAplants, <a href="https://commons.wikimedia.org/wiki/File:Brachystegia_spiciformis_50D_0633.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/miombo-mopane/mopane-leaves.jpg" alt="The butterfly-shaped paired leaflets of Colophospermum mopane" loading="lazy" decoding="async"><figcaption>Mopane (<em>Colophospermum mopane</em>) &ndash; the &ldquo;butterfly&rdquo; leaves that fold in the heat. <span class="credit">Photo: Roger Culos, <a href="https://commons.wikimedia.org/wiki/File:Colophospermum_mopane_feuilles_MHNT.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/miombo-mopane/sable-antelope.jpg" alt="A male sable antelope with long curved horns" loading="lazy" decoding="async"><figcaption>Sable antelope (<em>Hippotragus niger</em>) &ndash; an emblem of the miombo. <span class="credit">Photo: Charles J. Sharp, <a href="https://commons.wikimedia.org/wiki/File:Sable_antelope_(Hippotragus_niger)_adult_male.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/miombo-mopane/lilac-roller.jpg" alt="A lilac-breasted roller, a vividly coloured bird" loading="lazy" decoding="async"><figcaption>Lilac-breasted roller (<em>Coracias caudatus</em>) &ndash; one of the region's many woodland birds. <span class="credit">Photo: Charles J. Sharp, <a href="https://commons.wikimedia.org/wiki/File:Lilac-breasted_roller_(Coracias_caudatus)_Kruger.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/miombo-mopane/elephant-mopane.jpg" alt="An African savanna elephant among trees" loading="lazy" decoding="async"><figcaption>African elephant (<em>Loxodonta africana</em>) &ndash; mopane is a favourite food and the woodland's great shaper. <span class="credit">Photo: Bernard Gagnon, <a href="https://commons.wikimedia.org/wiki/File:Elephant_in_Chobe_National_Park_03.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+ </div>
+
+ <div class="grid">
+  <div class="card"><h4>The miombo trees <span class="sci">Brachystegia · Julbernardia · Isoberlinia</span></h4><p>A handful of related legume trees dominate the canopy. Most are nitrogen-fixing and mycorrhizal, letting a tall woodland grow on famously poor soils. Their synchronous <strong>red-gold flush</strong> before the rains is one of Africa's great seasonal sights.</p></div>
+  <div class="card"><h4>The mopane tree <span class="sci">Colophospermum mopane</span></h4><p>From low scrub (&ldquo;mopane shrubveld&rdquo;) to tall &ldquo;cathedral mopane,&rdquo; this single species can blanket whole valleys. Its leaves and pods are vital dry-season browse, and its wood is dense, termite-resistant and prized.</p></div>
+  <div class="card"><h4>A great mammal fauna</h4><p>Elephant, sable and roan antelope, hartebeest, eland, buffalo, lion and the endangered African wild dog all range here. The woodland's mix of cover and grazing supports some of Africa's most important large-mammal populations.</p></div>
+  <div class="card"><h4>The mopane worm <span class="sci">Gonimbrasia belina</span></h4><p>The caterpillar of an emperor moth, harvested in millions of kilograms each year. More than wildlife, it is a <strong>food and a livelihood</strong> &ndash; one of the woodland's most valuable products (Nemadodzi et al., 2023; see <a class="inl" href="#people">People</a>).</p></div>
+ </div>
+</section>
+
+<section id="biodiversity" data-screen-label="Live biodiversity">
+ <h2><span class="kicker">Live biodiversity data</span>The woodland, as recorded by its naturalists</h2>
+ <p>This dashboard draws <strong>live</strong> from community-science projects covering the Miombo and Mopane on <a class="inl" href="https://www.inaturalist.org/observations?project_id=77768,203057,294121,241404,203014" target="_blank" rel="noopener">iNaturalist</a> &ndash; spanning the Angolan miombo and mopane, the Namibian mopaneveld and the region's edible miombo mushrooms. Every figure refreshes as naturalists upload and identify what they find.</p>
+
+ <div class="inat" id="inat" data-pid="77768,203057,294121,241404,203014">
+  <div class="stats-grid" id="inatStats">
+   <div class="stat-box"><div class="stat-eyebrow">Observations</div><div class="stat-value" data-k="obs">67,000+</div><div class="stat-label">records &amp; growing</div></div>
+   <div class="stat-box"><div class="stat-eyebrow">Species</div><div class="stat-value" data-k="spp">5,394</div><div class="stat-label">distinct taxa recorded</div></div>
+   <div class="stat-box"><div class="stat-eyebrow">Naturalists</div><div class="stat-value" data-k="obsv">3,147</div><div class="stat-label">people contributing</div></div>
+   <div class="stat-box"><div class="stat-eyebrow">Source</div><div class="stat-value" style="font-size:1.25rem;">iNaturalist</div><div class="stat-label">five community projects</div></div>
+  </div>
+
+  <div class="inat-sub">Species recorded, by group</div>
+  <div class="inat-bars" id="inatGroups"><div class="inat-loading">Loading live data from iNaturalist&hellip;</div></div>
+
+  <div class="inat-sub">Most-observed species</div>
+  <div class="inat-species" id="inatSpecies"><div class="inat-loading">Loading live data from iNaturalist&hellip;</div></div>
+
+  <p class="inat-credit">Live data &amp; photographs via community-science projects on <a href="https://www.inaturalist.org" target="_blank" rel="noopener">iNaturalist</a> (Angolan Miombo &amp; Mopane Woodlands, Ecosystems of the Mopaneveld in Namibia, Edible Miombo Mushrooms). Figures refresh on each visit; seeded values are shown if the live feed cannot be reached. Each photograph is &copy; its observer under the licence shown on iNaturalist.</p>
+ </div>
+</section>
+
+<section id="people" data-screen-label="People">
+ <h2><span class="kicker">People and livelihoods</span>People of the woodlands</h2>
+ <p>The miombo and mopane are <strong>home and larder to well over a hundred million people</strong> &ndash; on the order of 100 million rural and 50 million urban dwellers (Ryan et al., 2016). Rural families farm the better soils, graze livestock in the woodland, and draw a remarkable range of products from the trees themselves &ndash; energy, protein, sweetness and medicine (Dewees et al., 2010). In much of the miombo core, society is <strong>matrilineal</strong>, and rights to land and trees pass through women.</p>
+
+ <div class="photo-grid duo">
+  <figure class="figure"><img src="assets/miombo-mopane/mopane-worm.jpg" alt="Mopane worms, the large spiny caterpillars, on a branch" loading="lazy" decoding="async"><figcaption>The mopane worm (<em>Gonimbrasia belina</em>) &ndash; harvested, dried and traded as a protein staple across the region. <span class="credit">Photo: Bernard Dupont, <a href="https://commons.wikimedia.org/wiki/File:Mopane_Worm_(Gonimbrasia_belina)_(53002541333).jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></span></figcaption></figure>
+  <figure class="figure"><img src="assets/miombo-mopane/termitomyces.jpg" alt="Termitomyces mushrooms, large pale edible fungi" loading="lazy" decoding="async"><figcaption><em>Termitomyces</em> &ndash; one of the prized wild edible mushrooms gathered from the woodland in the rains. <span class="credit">Photo: Daizy John, <a href="https://commons.wikimedia.org/wiki/File:Termitomyces_mushroom.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span></figcaption></figure>
+ </div>
+
+ <div class="grid">
+  <div class="card"><h4>The woodfuel of a region</h4><p>Miombo and mopane supply the <strong>firewood and charcoal</strong> that cook for most of the region's households and cities. It is the woodland's biggest commercial product &ndash; and, cut unsustainably, its biggest threat (Ryan et al., 2016; FAO, 2017).</p></div>
+  <div class="card"><h4>Mopane worms and caterpillars</h4><p>Edible caterpillars &ndash; the mopane worm above all &ndash; are a seasonal <strong>protein harvest</strong> and a cash crop, gathered and traded largely by women (Nemadodzi et al., 2023).</p></div>
+  <div class="card"><h4>Honey, mushrooms and medicine</h4><p>The miombo is famous for its <strong>honey</strong> (the bark-hive belts of Tabora and Zambia), its wild mushrooms (<em>Termitomyces</em>, <em>Cantharellus</em>) and a deep pharmacopoeia of medicinal trees and roots (Dewees et al., 2010).</p></div>
+  <div class="card"><h4>Farming the woodland</h4><p>Families clear and rotate small fields &ndash; the <em>chitemene</em> shifting system of the Zambian miombo among them &ndash; and farm the moist <strong>dambos</strong> in the dry season. Livestock browse the standing woodland year-round (Campbell, 1996).</p></div>
+ </div>
+
+ <div class="callout concept">
+  <div class="callout-title">A landscape of harvest</div>
+  <p>Like the Caatinga in Brazil, the miombo&ndash;mopane is <strong>not a wilderness but a working dryland forest</strong> &ndash; its value to people lies as much in the standing woodland (wood, worms, honey, browse, medicine) as in the land it could be cleared for. That is exactly the balance sustainable management has to strike.</p>
+ </div>
+</section>
+
+<section id="pressures" data-screen-label="Pressures">
+ <h2><span class="kicker">Threats</span>Pressures on the woodlands</h2>
+ <p>The miombo&ndash;mopane is among the <strong>most rapidly cleared and degraded woodland regions on Earth</strong>, losing forest every year to a familiar, compounding set of drivers &ndash; and releasing the carbon it holds as it goes (McNicol et al., 2018).</p>
+ <ul class="clean">
+  <li><strong>Charcoal and fuelwood</strong> &ndash; surging urban demand drives unsustainable cutting around every growing city (FAO, 2017).</li>
+  <li><strong>Agricultural expansion</strong> &ndash; clearing for cropland and, in places, <strong>tobacco curing</strong>, which burns large volumes of wood.</li>
+  <li><strong>Uncontrolled late-season fire</strong> &ndash; hot, late dry-season fires that damage the canopy and the seedbank.</li>
+  <li><strong>Mining and infrastructure</strong> &ndash; especially across the Copperbelt and mineral-rich miombo of the centre.</li>
+  <li><strong>Overgrazing and elephant impact</strong> &ndash; locally heavy pressure on mopane and on regeneration.</li>
+  <li><strong>Climate change</strong> &ndash; hotter, more erratic seasons stress an already drought-shaped system.</li>
+ </ul>
+
+ <figure class="figure">
+  <img src="assets/miombo-mopane/charcoal.jpg" alt="Bags of charcoal stacked for sale along a roadside in Zambia" loading="lazy" decoding="async">
+  <figcaption>Charcoal for sale on a Zambian roadside &ndash; the woodland's largest commercial product and, cut faster than it regrows, its single biggest pressure.
+   <span class="credit">Photo: Thatlowdownwoman, <a href="https://commons.wikimedia.org/wiki/File:Zambia_-Charcoal_for_sale.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>, via Wikimedia Commons</span></figcaption>
+ </figure>
+
+ <div class="callout warning">
+  <div class="callout-title">Why it adds up fast</div>
+  <p>Because miombo regrows slowly on poor soils, and because demand for charcoal rises with every city, clearance easily outpaces regrowth. The result is steady <strong>deforestation, biodiversity loss and carbon emissions</strong> across a region whose woodlands are also one of its greatest assets (McNicol et al., 2018).</p>
+ </div>
+</section>
+
+<section id="restoration" data-screen-label="Management">
+ <h2><span class="kicker">Restoration and sustainable use</span>Managing the woodland &ndash; and bringing it back</h2>
+ <p>The miombo&ndash;mopane does not have to be cleared to be used. Its trees <strong>coppice and regenerate</strong> readily from stumps and roots, so the proven path is to manage the standing woodland on a cycle and to make it pay more alive than dead (Frost, 1996; Dewees et al., 2010). Southern Africa has built some of the world's strongest community-forestry models doing exactly that.</p>
+
+ <div class="grid">
+  <div class="card"><h4>Community-based forest management</h4><p>Tanzania's <strong>Participatory and Community-Based Forest Management (PFM/CBFM)</strong> hands villages the rights and revenue to manage their woodland &ndash; one of Africa's flagship models for keeping miombo standing (Blomley &amp; Iddi, 2009).</p></div>
+  <div class="card"><h4>Farmer-managed natural regeneration</h4><p>Protecting and pruning the coppice and seedlings that resprout across farmland &ndash; the cheapest, fastest way to bring woodland back, proven across the world's drylands.</p></div>
+  <div class="card"><h4>Beekeeping and honey value chains</h4><p>Miombo honey gives a <strong>standing-forest income</strong> that rewards keeping the trees &ndash; the bark-hive and box-hive belts of Tanzania and Zambia are a model NTFP enterprise.</p></div>
+  <div class="card"><h4>Sustainable charcoal and energy</h4><p>Licensed, rotation-based wood supply with <strong>improved kilns and clean cookstoves</strong> &ndash; cutting the wood needed per bag and the pressure on the woodland.</p></div>
+  <div class="card"><h4>Fire and mopane-worm management</h4><p>Planned <strong>early-season burning</strong> to pre-empt destructive late fires, and community rules that keep the mopane-worm harvest within sustainable limits.</p></div>
+  <div class="card"><h4>Carbon, woodlots and restoration</h4><p>REDD+ and restoration finance, plus village <strong>woodlots</strong> of fast-growing and native trees, take pressure off natural woodland and reward regrowth.</p></div>
+ </div>
+
+ <div class="callout success">
+  <div class="callout-title">Tanzania's community forests &ndash; a model that travels</div>
+  <p>Across Tanzania, millions of hectares of miombo are now under <strong>village-managed Community-Based Forest Management</strong>, with communities holding the rights to harvest, sell and protect their woodland (Blomley &amp; Iddi, 2009). It is a working answer to the question every dryland forest faces &ndash; how to let people use the forest while keeping it &ndash; and a natural reference for South&ndash;South exchange.</p>
+ </div>
+</section>
+
+<section id="management" data-screen-label="SLM technologies">
+ <h2><span class="kicker">Technologies and approaches</span>Managing the miombo&ndash;mopane sustainably</h2>
+ <p class="lead">Where the <a class="inl" href="#restoration">restoration toolkit</a> above is the regional state of the art, this catalogue is the <strong>DSL-IP's own programme of work</strong> in the ecoregion &ndash; the SLM and SFM technologies and value-chain approaches it is championing, country by country. It is drawn directly from the Programme's <strong>core themes</strong>: under the <em>&ldquo;one country, one core theme&rdquo;</em> model, each champion country develops a single theme &ndash; identified through <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a> evidence and integrated through the <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">SLPF</a> pillars &ndash; and shares it across a cross-learning group of peers through the <a class="inl" href="REM Regional Exchange Mechanism.html">Regional Exchange Mechanism</a>.</p>
+
+ <div class="callout definition">
+  <div class="callout-title">The founding principle &ndash; one country, one core theme</div>
+  <p>Rather than dispersing effort, each country champions a single, nationally significant theme that is <strong>regionally transferable across the miombo&ndash;mopane</strong>. Together they answer southern Africa's three shared challenges &ndash; <strong>declining productivity under rising pressure on the dryland forest, weak integrated extension, and limited market access and sustainable finance</strong>. Each turns the <em>standing</em> woodland and its drought-hardy crops into income, so the forest is worth more managed than cleared.</p>
+ </div>
+
+ <h3>The country core themes</h3>
+ <p>The southern-African (miombo&ndash;mopane) cluster of the DSL-IP, with each country's championed theme and the income opportunity behind it.</p>
+ <table>
+  <thead><tr><th style="width:22%;">Country champion</th><th>Core theme &ndash; SLM / SFM</th><th>Value chain / income opportunity</th></tr></thead>
+  <tbody>
+   <tr><td><strong>Malawi</strong></td><td>Integrated Energy and Food Systems (IFES)</td><td>Pigeon pea &amp; maize intercropping; fuel-efficient stoves</td></tr>
+   <tr><td><strong>Tanzania</strong></td><td>SLM / SFM &ndash; Miombo honey; sustainable beekeeping</td><td>Bark- and box-hive honey; other NUS</td></tr>
+   <tr><td><strong>Namibia</strong></td><td>SLM / SFM &ndash; FSC charcoal from invasive bush; NUS</td><td>Certified charcoal; pearl millet</td></tr>
+   <tr><td><strong>Zimbabwe</strong></td><td>SFM &ndash; baobab / marula; SLM / NUS</td><td>Baobab &amp; marula products; Bambara groundnut, finger millet</td></tr>
+   <tr><td><strong>Botswana</strong></td><td>Sustainable tourism; SLM / NUS</td><td>Eco-tourism; Morama bean, Bambara, Kwengwe</td></tr>
+   <tr><td><strong>Angola</strong></td><td>SLM / NUS</td><td>Hyacinth bean, African yam bean, jinguenga</td></tr>
+   <tr><td><strong>Mozambique</strong></td><td>Protected areas &amp; buffer-zone management</td><td>Conservation-compatible livelihoods in buffer zones</td></tr>
+  </tbody>
+ </table>
+ <p class="table-caption">After the DSL-IP / REM country core-themes table (selected southern-African entries; some themes to be confirmed through MEL consultations). NUS = neglected and underutilized species; NWFP = non-wood forest products. Full table on the <a class="inl" href="REM Regional Exchange Mechanism.html">Regional Exchange Mechanism</a>.</p>
+
+ <h3>1 &middot; Integrated energy and food systems (IFES)</h3>
+ <p>Malawi's championed theme &ndash; closing the loop between food, soil and household energy on the same plot (the <a class="inl" href="Sisteminha-IFES-Malawi-DSL-IP.html">Sisteminha&ndash;IFES</a> model).</p>
+ <div class="grid">
+  <div class="card"><h4>Pigeon pea &ndash; maize intercropping</h4><p>A nitrogen-fixing legume grown with the staple cereal &ndash; <strong>food, fodder and fertility</strong> from one field, with a second harvest and better soil for the next season.</p></div>
+  <div class="card"><h4>Fuel-efficient stoves &amp; biogas</h4><p>Clean, efficient cooking and on-farm energy that <strong>cut the woodfuel</strong> a household draws from the woodland &ndash; the &ldquo;energy&rdquo; half of IFES.</p></div>
+  <div class="card"><h4>FFPO-led extension</h4><p>Delivered farmer-to-farmer through <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">Farmer Field Schools and producer organisations</a>, so adoption endures past the project.</p></div>
+ </div>
+
+ <h3 id="mio-woodenergy" style="scroll-margin-top:88px">2 &middot; Sustainable forest management for wood energy</h3>
+ <p>The region runs on <a class="inl" href="#people">miombo charcoal and firewood</a>; the issue is not whether the wood is cut but how. Namibia's theme turns a problem &ndash; <strong>encroaching invasive bush</strong> &ndash; into a certified product.</p>
+ <ul class="clean">
+  <li><strong>FSC-certified charcoal from invasive bush</strong> (Namibia) &ndash; harvesting bush-encroaching species under Forest Stewardship Council certification restores rangeland <em>and</em> creates a legal, premium value chain.</li>
+  <li><strong>Licensed, rotation-based wood supply</strong> with <strong>improved kilns and clean cookstoves</strong> &ndash; cutting the wood needed per bag and the pressure on standing woodland.</li>
+  <li><strong>Community-based forest management</strong> &ndash; Tanzania's village CBFM model (see <a class="inl" href="#restoration">Restoration</a>) gives communities the rights and revenue to keep the miombo standing.</li>
+ </ul>
+
+ <h3 id="mio-honey" style="scroll-margin-top:88px">3 &middot; Miombo honey and sustainable beekeeping</h3>
+ <p>Tanzania's championed theme &ndash; a classic <strong>non-wood forest product</strong> that pays for keeping the trees.</p>
+ <div class="grid">
+  <div class="card"><h4>Bark- and box-hive honey</h4><p>The honey belts of Tabora and the Zambian miombo turn flowering woodland into a <strong>standing-forest income</strong> &ndash; the more trees, the more honey.</p></div>
+  <div class="card"><h4>Apiaries as forest guardians</h4><p>Bee forage ties household income directly to canopy cover, aligning livelihoods with conservation and pollinating crops and wild trees alike.</p></div>
+ </div>
+
+ <h3 id="mio-nus" style="scroll-margin-top:88px">4 &middot; Neglected &amp; underutilized species (NUS) and native value chains</h3>
+ <p>Drought-hardy indigenous crops and wild products &ndash; the heart of several country themes &ndash; that diversify diets and income while needing little water (Angola, Botswana, Zimbabwe, Namibia).</p>
+ <div class="grid">
+  <div class="card"><h4>Drought-hardy grains &amp; pulses</h4><p><strong>Bambara groundnut, Morama bean, finger and pearl millet, pigeon pea, hyacinth and African yam bean</strong> &ndash; resilient species adapted to poor rains, anchoring food security in the dry woodland.</p></div>
+  <div class="card"><h4>Baobab and marula <span class="sci">Adansonia &middot; Sclerocarya</span></h4><p>Zimbabwe's SFM theme &ndash; fruit, oil and kernels from iconic standing trees, processed into high-value, certifiable products.</p></div>
+  <div class="card"><h4>Mopane worm and wild harvests</h4><p>The <a class="inl" href="#people">mopane worm</a>, wild mushrooms and medicinal trees &ndash; seasonal protein and cash, gathered and traded largely by women.</p></div>
+ </div>
+
+ <h3 id="mio-rangeland" style="scroll-margin-top:88px">5 &middot; Rangeland, grazing and drought management</h3>
+ <p>Working the woodland with livestock without grazing it bare &ndash; an agro-sylvo-pastoral approach shared with the Programme's drylands cross-learning groups.</p>
+ <ul class="clean">
+  <li><strong>Sustainable grazing and pasture management</strong> &ndash; rotation and rest that let the grass-and-browse layer recover, with the standing woodland as dry-season browse.</li>
+  <li><strong>Drought management and resilient seed systems</strong> &ndash; drought-tolerant varieties and community seed security to buffer the long, single dry season.</li>
+  <li><strong>Agro-sylvo-pastoral value chains</strong> &ndash; integrating trees, grazing and crops, transferable from the REM rangeland cross-learning cluster (Kenya, Burkina Faso).</li>
+ </ul>
+
+ <h3 id="mio-protected" style="scroll-margin-top:88px">6 &middot; Protected areas, buffer zones and connectivity</h3>
+ <p>Mozambique's championed theme &ndash; pairing a protected core with sustainable use in the buffer, the connective tissue of a working landscape.</p>
+ <ul class="clean">
+  <li><strong>Protected-area and buffer-zone management</strong> &ndash; conservation-compatible livelihoods around reserves, so people and wildlife share the woodland.</li>
+  <li><strong>Corridors and transboundary connectivity</strong> &ndash; linking fragments across borders in one of Africa's great large-mammal regions.</li>
+  <li><strong>Fire and harvest rules</strong> &ndash; early-season burning and community limits on the mopane-worm and fuelwood harvest (see <a class="inl" href="#restoration">Restoration</a>).</li>
+ </ul>
+
+ <h3>7 &middot; The enabling environment</h3>
+ <p>The cross-cutting approaches that let any technology scale and endure &ndash; the &ldquo;how&rdquo; behind every theme.</p>
+ <ul class="clean">
+  <li><strong>Integrated land-use planning</strong> &ndash; turning <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a> evidence into village and national land-use plans for Land Degradation Neutrality.</li>
+  <li><strong>Gender-responsive approaches</strong> &ndash; the <a class="inl" href="Global Gender Action Plan.html">Global Gender Action Plan</a> and gender-responsive land-use planning, since women lead much of the woodland harvest.</li>
+  <li><strong>FFPOs and South&ndash;South exchange</strong> &ndash; producer organisations and the <a class="inl" href="REM Regional Exchange Mechanism.html">REM</a> cross-learning groups that move a proven theme from one country to its peers.</li>
+  <li><strong>WOCAT documentation and sustainable finance</strong> &ndash; good practices captured with the <a class="inl" href="https://wocat.net/en/database/slm-practices-technologies-and-approaches/classifications-technologies/" target="_blank" rel="noopener">WOCAT</a> standard, and scaled through the <a class="inl" href="DFSA Campaign.html">Dryland Forest Support Accelerator</a>.</li>
+ </ul>
+
+ <div class="callout concept">
+  <div class="callout-title">From core theme to regional impact</div>
+  <p>Each theme is a working answer to a shared problem &ndash; proven in one country and designed to travel. Captured with WOCAT, integrated through the SLPF and exchanged through the REM, the seven families above are how the DSL-IP turns the miombo&ndash;mopane from a woodland under pressure into a network of <strong>productive, sustainably managed landscapes</strong>.</p>
+ </div>
+</section>
+
+<section id="matters" data-screen-label="Why it matters">
+ <h2><span class="kicker">The DRIP connection</span>Why the miombo and mopane matter here</h2>
+ <p>Unlike the Caatinga, the miombo&ndash;mopane is not outside the Programme &ndash; it is <strong>where much of it works</strong>. Several of the eleven DSL-IP child projects sit squarely within this belt: <strong>Angola, Botswana, Malawi, Mozambique, Tanzania and Zimbabwe</strong>. The biome is, in every sense, the African heartland of the dryland-forests agenda.</p>
+
+ <figure class="figure">
+  <img src="assets/miombo-mopane/miombo-landscape2.jpg" alt="Sunlit open miombo woodland with scattered broad-canopied trees" loading="lazy" decoding="async">
+  <figcaption>Open miombo woodland &ndash; the kind of working dryland forest the Programme exists to keep standing and productive across southern Africa. <span class="credit">Photo: Geoff Gallice, <a href="https://commons.wikimedia.org/wiki/File:Flickr_-_ggallice_-_Miombo_woodland_(1).jpg" target="_blank" rel="noopener">CC BY 2.0</a>, via Wikimedia Commons</span></figcaption>
+ </figure>
+
+ <div class="flow">
+  <div class="flow-step"><div class="fs-num">01</div><div class="fs-title">The Programme's home ground</div><p>Six or more DSL-IP child projects lie in the miombo&ndash;mopane &ndash; the biome where the Programme's methods are applied at scale.</p></div>
+  <div class="flow-step"><div class="fs-num">02</div><div class="fs-title">A textbook dryland forest</div><p>Seasonally dry, fire-shaped, agrosilvopastoral &ndash; a living case study in dryland forest management and Land Degradation Neutrality.</p></div>
+  <div class="flow-step"><div class="fs-num">03</div><div class="fs-title">Africa at COFO</div><p>Its countries sit on the <a class="inl" href="COFO Working Group on Dryland Forests.html">COFO Working Group on Dryland Forests</a>, carrying miombo&ndash;mopane experience into the global agenda.</p></div>
+  <div class="flow-step"><div class="fs-num">04</div><div class="fs-title">South-South learning</div><p>The miombo, the Caatinga and the Sahel face the same questions &ndash; woodfuel, NTFPs, grazing with trees, regeneration &ndash; and can learn from one another.</p></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">The thread to the Programme's methods</div>
+  <p>Community forest management, farmer-managed regeneration, honey and NTFP value chains, sustainable woodfuel &ndash; the approaches that work in the miombo&ndash;mopane are the same ones the Programme codifies in the <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">Sustainable Landscape Production Framework</a> and assesses through the <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">Integrated Landscape Assessment Methodology</a>. It is the natural African companion to the <a class="inl" href="Caatinga Biome.html">Caatinga profile</a>.</p>
+ </div>
+</section>
+
+<section id="sources" class="references-section" data-screen-label="Sources">
+ <h2><span class="kicker">Sources</span>Further reading, data and a note on figures</h2>
+ <p>This profile is a knowledge and outreach summary compiled for DRIP from widely cited public sources. Figures for the miombo&ndash;mopane &ndash; its area, population and species totals &ndash; <strong>vary by source and mapping method</strong>; the values here are rounded approximations meant for orientation, not official statistics.</p>
+ <div class="two-col">
+  <div>
+   <h4>Key sources</h4>
+   <ul class="clean">
+    <li><strong>CIFOR-ICRAF</strong> &ndash; miombo research &ndash; <a class="inl" href="https://www.cifor-icraf.org" target="_blank" rel="noopener">cifor-icraf.org</a></li>
+    <li><strong>FAO &middot; drylands and dryland forests</strong> &ndash; <a class="inl" href="https://www.fao.org/forestry-fao/" target="_blank" rel="noopener">fao.org · forestry</a></li>
+    <li><strong>WWF ecoregions</strong> (miombo and mopane woodlands) &ndash; <a class="inl" href="https://www.worldwildlife.org" target="_blank" rel="noopener">worldwildlife.org</a></li>
+    <li><strong>iNaturalist</strong> &ndash; the live data above &ndash; <a class="inl" href="https://www.inaturalist.org" target="_blank" rel="noopener">inaturalist.org</a></li>
+   </ul>
+  </div>
+  <div>
+   <h4>On this platform</h4>
+   <ul class="clean">
+    <li><strong>The Caatinga Biome</strong> &ndash; <a class="inl" href="Caatinga Biome.html">the companion dryland-forest profile &rarr;</a></li>
+    <li><strong>COFO Working Group on Dryland Forests</strong> &ndash; <a class="inl" href="COFO Working Group on Dryland Forests.html">governance &rarr;</a></li>
+    <li><strong>SLPF</strong> &middot; <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">framework</a> &nbsp;|&nbsp; <strong>ILAM</strong> &middot; <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">methodology</a></li>
+    <li><strong>DFSA campaign</strong> &middot; <a class="inl" href="DFSA Campaign.html">Dryland Forest Support Accelerator &rarr;</a></li>
+   </ul>
+  </div>
+ </div>
+
+ <h3>Photographs</h3>
+ <p>Photographs on this page are reproduced from <strong>Wikimedia Commons</strong> under the Creative Commons licences shown. Each remains the work of its author; no endorsement is implied.</p>
+ <ul class="credits-list">
+  <li><b>Miombo woodland, Niassa</b> (banner) &ndash; Lichinga, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Miombo_in_Niassa_Plateau.JPG" target="_blank" rel="noopener">source</a></li>
+  <li><b>Open miombo woodland</b> &ndash; Geoff Gallice, <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Flickr_-_ggallice_-_Miombo_woodland_(1).jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Msasa (Brachystegia spiciformis)</b> &ndash; SAplants, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Brachystegia_spiciformis_50D_0633.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Mopane tree</b> &ndash; Tim Brunauer / GIZ, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Mopane_Tree_in_Namibia.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Mopane leaves</b> &ndash; Roger Culos, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Colophospermum_mopane_feuilles_MHNT.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Mopane worm</b> &ndash; Bernard Dupont, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Mopane_Worm_(Gonimbrasia_belina)_(53002541333).jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Sable antelope</b> &ndash; Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Sable_antelope_(Hippotragus_niger)_adult_male.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Lilac-breasted roller</b> &ndash; Charles J. Sharp, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Lilac-breasted_roller_(Coracias_caudatus)_Kruger.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>African elephant</b> &ndash; Bernard Gagnon, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Elephant_in_Chobe_National_Park_03.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Termitomyces mushroom</b> &ndash; Daizy John, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Termitomyces_mushroom.jpg" target="_blank" rel="noopener">source</a></li>
+  <li><b>Charcoal for sale, Zambia</b> &ndash; Thatlowdownwoman, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Zambia_-Charcoal_for_sale.jpg" target="_blank" rel="noopener">source</a></li>
+ </ul>
+
+ <div class="callout concept" style="margin-top:1.4rem;">
+  <div class="callout-title">Related on this platform</div>
+  <p><a class="inl" href="Caatinga Biome.html">The Caatinga Biome</a> &middot; <a class="inl" href="DFSA Campaign.html">Dryland Forest Support Accelerator</a> &middot; <a class="inl" href="DRIP Map.html">The DRIP Map</a> &middot; <a class="inl" href="Library.html">back to the Library</a></p>
+ </div>
+
+ <h3>References</h3>
+ <p>Sources for this profile (APA, 7th ed.):</p>
+ <ol class="apa-refs">
+  <li>Blomley, T., &amp; Iddi, S. (2009). <em>Participatory forest management in Tanzania: 1993&ndash;2009. Lessons learned and experiences to date</em>. Ministry of Natural Resources and Tourism, Forestry and Beekeeping Division, United Republic of Tanzania. <a href="https://www.un-redd.org/document-library/tanzania-sept-2009-participatory-forest-management-lessons-learned-blomley-iddi" target="_blank" rel="noopener">https://www.un-redd.org/document-library/tanzania-sept-2009-participatory-forest-management-lessons-learned-blomley-iddi</a></li>
+  <li>Campbell, B. (Ed.). (1996). <em>The miombo in transition: Woodlands and welfare in Africa</em>. Center for International Forestry Research (CIFOR). <a href="https://www.cifor-icraf.org/publications/pdf_files/Books/Miombo.pdf" target="_blank" rel="noopener">https://www.cifor-icraf.org/publications/pdf_files/Books/Miombo.pdf</a></li>
+  <li>Dewees, P. A., Campbell, B. M., Katerere, Y., Sitoe, A., Cunningham, A. B., Angelsen, A., &amp; Wunder, S. (2010). Managing the miombo woodlands of southern Africa: Policies, incentives and options for the rural poor. <em>Journal of Natural Resources Policy Research, 2</em>(1), 57&ndash;73. <a href="https://doi.org/10.1080/19390450903350846" target="_blank" rel="noopener">https://doi.org/10.1080/19390450903350846</a></li>
+  <li>Food and Agriculture Organization of the United Nations. (2017). <em>The charcoal transition: Greening the charcoal value chain to mitigate climate change and improve local livelihoods</em> (J. van Dam, Author). FAO. <a href="https://www.fao.org/3/a-i6935e.pdf" target="_blank" rel="noopener">https://www.fao.org/3/a-i6935e.pdf</a></li>
+  <li>Frost, P. (1996). The ecology of miombo woodlands. In B. Campbell (Ed.), <em>The miombo in transition: Woodlands and welfare in Africa</em> (pp. 11&ndash;57). Center for International Forestry Research (CIFOR). <a href="https://www.cifor-icraf.org/publications/pdf_files/Books/Miombo.pdf" target="_blank" rel="noopener">https://www.cifor-icraf.org/publications/pdf_files/Books/Miombo.pdf</a></li>
+  <li>McNicol, I. M., Ryan, C. M., &amp; Mitchard, E. T. A. (2018). Carbon losses from deforestation and widespread degradation offset by extensive growth in African woodlands. <em>Nature Communications, 9</em>, 3045. <a href="https://doi.org/10.1038/s41467-018-05386-z" target="_blank" rel="noopener">https://doi.org/10.1038/s41467-018-05386-z</a></li>
+  <li>Nemadodzi, L. E., Managa, G. M., &amp; Prinsloo, G. (2023). The use of <em>Gonimbrasia belina</em> (Westwood, 1849) and <em>Cirina forda</em> (Westwood, 1849) caterpillars (Lepidoptera: Saturniidae) as food sources and income generators in Africa. <em>Foods, 12</em>(11), 2184. <a href="https://doi.org/10.3390/foods12112184" target="_blank" rel="noopener">https://doi.org/10.3390/foods12112184</a></li>
+  <li>Ryan, C. M., Pritchard, R., McNicol, I., Owen, M., Fisher, J. A., &amp; Lehmann, C. (2016). Ecosystem services from southern African woodlands and their future under global change. <em>Philosophical Transactions of the Royal Society B: Biological Sciences, 371</em>(1703), 20150312. <a href="https://doi.org/10.1098/rstb.2015.0312" target="_blank" rel="noopener">https://doi.org/10.1098/rstb.2015.0312</a></li>
+  <li>Stattersfield, A. J., Crosby, M. J., Long, A. J., &amp; Wege, D. C. (1998). <em>Endemic bird areas of the world: Priorities for biodiversity conservation</em> (BirdLife Conservation Series No. 7). BirdLife International. <a href="https://portals.iucn.org/library/node/25865" target="_blank" rel="noopener">https://portals.iucn.org/library/node/25865</a></li>
+ </ol>
+</section>
+</div>
+<footer>
+ <p><strong>The Miombo and Mopane Woodlands</strong> &ndash; Africa's great dry forest</p>
+ <p>A Knowledge and outreach profile on the Drylands Restoration Initiatives Platform (DRIP) &middot; the dryland woodlands of central and southern Africa</p>
+ <hr class="foot-rule">
+ <p>≈ 3 million km² &middot; ~11 countries &middot; 100–150 million people &middot; the African heartland of the dryland-forests agenda</p>
+ <p style="margin-top:1rem; opacity:.9;">Compiled for DRIP from public sources (CIFOR-ICRAF · FAO · WWF · iNaturalist). Figures are rounded approximations and vary by source.</p>
+</footer>
+<script src="drip-home.js"></script>
+<script>
+/* ---- Live biodiversity dashboard: combined iNaturalist Miombo & Mopane projects ---- */
+(function(){
+  var root = document.getElementById('inat'); if(!root) return;
+  var PID = root.getAttribute('data-pid');
+  var API = 'https://api.inaturalist.org/v1';
+  var VIEW = 'https://www.inaturalist.org/observations?project_id=' + PID;
+  var esc = function(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+  var nf  = function(n){ return (n==null?'–':Number(n).toLocaleString('en-US')); };
+  function getJSON(u){ return fetch(u,{headers:{'Accept':'application/json'}}).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); }); }
+
+  Promise.allSettled([
+    getJSON(API+'/observations?per_page=0&verifiable=true&project_id='+PID),
+    getJSON(API+'/observations/species_counts?per_page=0&project_id='+PID),
+    getJSON(API+'/observations/observers?per_page=0&project_id='+PID)
+  ]).then(function(res){
+    ['obs','spp','obsv'].forEach(function(k,i){
+      var r=res[i];
+      if(r.status==='fulfilled' && r.value && typeof r.value.total_results==='number'){
+        var el=root.querySelector('[data-k="'+k+'"]'); if(el) el.textContent=nf(r.value.total_results);
+      }
+    });
+  });
+
+  var GROUPS=[['Plantae','Plants'],['Insecta','Insects'],['Aves','Birds'],['Arachnida','Arachnids'],
+    ['Reptilia','Reptiles'],['Fungi','Fungi & lichens'],['Mammalia','Mammals'],
+    ['Amphibia','Amphibians'],['Mollusca','Molluscs'],['Actinopterygii','Fish']];
+  var gbox=document.getElementById('inatGroups');
+  Promise.all(GROUPS.map(function(g){
+    return getJSON(API+'/observations/species_counts?per_page=0&project_id='+PID+'&iconic_taxa='+g[0])
+      .then(function(j){ return {label:g[1], n:(j&&j.total_results)||0}; })
+      .catch(function(){ return {label:g[1], n:-1}; });
+  })).then(function(rows){
+    rows=rows.filter(function(r){ return r.n>0; }).sort(function(a,b){ return b.n-a.n; });
+    if(!rows.length){ gbox.innerHTML='<div class="inat-err">Couldn’t reach the live feed. <a href="'+VIEW+'" target="_blank" rel="noopener">View on iNaturalist →</a></div>'; return; }
+    var max=rows[0].n;
+    gbox.innerHTML=rows.map(function(r){
+      return '<div class="bar"><span class="bl">'+esc(r.label)+'</span><span class="bt"><span class="bf" data-w="'+(r.n/max*100).toFixed(1)+'"></span></span><span class="bv">'+nf(r.n)+'</span></div>';
+    }).join('');
+    requestAnimationFrame(function(){ Array.prototype.forEach.call(gbox.querySelectorAll('.bf'),function(f){ f.style.width=f.getAttribute('data-w')+'%'; }); });
+  }).catch(function(){ gbox.innerHTML='<div class="inat-err">Couldn’t reach the live feed. <a href="'+VIEW+'" target="_blank" rel="noopener">View on iNaturalist →</a></div>'; });
+
+  var sbox=document.getElementById('inatSpecies');
+  getJSON(API+'/observations/species_counts?per_page=12&project_id='+PID).then(function(j){
+    var rows=(j&&j.results)||[];
+    if(!rows.length) throw new Error('empty');
+    sbox.innerHTML=rows.map(function(r){
+      var t=r.taxon||{}, ph=t.default_photo?(t.default_photo.medium_url||t.default_photo.square_url):'';
+      var common=t.preferred_common_name||'', sci=t.name||'', title=common||sci, sub=common?sci:'';
+      var url='https://www.inaturalist.org/taxa/'+(t.id||'');
+      return '<a class="sp" href="'+url+'" target="_blank" rel="noopener">'+
+        (ph?'<img loading="lazy" decoding="async" src="'+esc(ph)+'" alt="'+esc(sci)+'">':'<img alt="">')+
+        '<div class="spb"><div class="spc">'+esc(title)+'</div>'+(sub?'<div class="spn">'+esc(sub)+'</div>':'')+
+        '<div class="spk">'+nf(r.count)+' obs</div></div></a>';
+    }).join('');
+  }).catch(function(){ sbox.innerHTML='<div class="inat-err">Couldn’t reach the live species feed. <a href="'+VIEW+'" target="_blank" rel="noopener">View on iNaturalist →</a></div>'; });
+})();
+</script>
+  <script src="drip-i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Pillars" name="Integrated Landscape Assessment Methodology (ILAM)" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrated Landscape Assessment Methodology (ILAM) | DSL-IP</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; font-style:italic; src:url('fonts/Poppins-400-italic.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{
+ --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+ --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+ --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+ --amber:#F8B133; --gold:#E8C13C; --teal:#33B193; --leaf:#68A260; --bark:#754C29; --water:#3E7CB1;
+ --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+ --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+ --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+ --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{ font-family:var(--serif); line-height:1.7; color:var(--ink-2); background:var(--cream); -webkit-font-smoothing:antialiased; }
+
+/* HEADER */
+header{ background:var(--forest); color:var(--ink-on-dark); padding:3.4rem 2rem 3rem; text-align:left;
+ border-bottom:6px solid var(--amber); position:relative; overflow:hidden; }
+.header-inner{ max-width:1160px; margin:0 auto; position:relative; z-index:2; }
+header .brand-logo{ height:60px; width:auto; filter:brightness(0) invert(1); margin-bottom:1.6rem; opacity:.96; }
+header .eyebrow{ font-family:var(--serif); font-style:italic; font-size:1rem; color:#F2C9A8; margin-bottom:.55rem; }
+header h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.01em;
+ font-size:2.7rem; line-height:1.08; margin:0; color:#fff; max-width:24ch; }
+header h1 span{ color:#F2C9A8; font-weight:400; white-space:nowrap; }
+header .lede{ font-family:var(--serif); font-size:1.16rem; line-height:1.6; color:#EAF1E6; max-width:780px; margin-top:1.7rem; }
+.header-tags{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.7rem; }
+.header-tags span{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem;
+ font-weight:600; color:#fff; background:rgba(251,248,239,.16); padding:.45rem 1rem; border-radius:999px; }
+
+/* NAV */
+nav{ background:var(--forest-deep); padding:.5rem 1rem; position:sticky; top:0; z-index:100;
+ box-shadow:0 2px 8px rgba(36,31,27,.18); }
+nav ul{ list-style:none; display:flex; justify-content:center; flex-wrap:wrap; max-width:1160px; margin:0 auto; gap:.1rem; }
+nav a{ color:#EAF1E6; text-decoration:none; padding:.65rem 1rem; display:block; transition:background .25s,color .25s;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.09em; font-size:.8rem; border-radius:6px; }
+nav a:hover{ background:rgba(251,248,239,.14); color:#fff; }
+
+/* CONTAINER + SECTIONS */
+.container{ max-width:1160px; margin:0 auto; padding:2.5rem 2rem; }
+section{ background:var(--surface); margin:2rem 0; padding:2.6rem; border-radius:16px;
+ border:1px solid var(--border); box-shadow:var(--shadow-md); scroll-margin-top:80px; }
+
+/* HEADINGS */
+h2{ font-family:var(--serif); font-weight:900; color:var(--ink); font-size:2rem; line-height:1.12; margin-bottom:1.3rem;
+ padding-bottom:.7rem; border-bottom:1px solid var(--hairline); position:relative; }
+h2::after{ content:""; position:absolute; left:0; bottom:-1px; width:64px; height:3px; background:var(--clay); border-radius:2px; }
+h2 .kicker{ display:block; font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em;
+ font-size:.8rem; color:var(--clay); margin-bottom:.5rem; }
+h3{ font-family:var(--serif); font-weight:700; color:var(--forest); font-size:1.42rem; line-height:1.28; margin:1.9rem 0 1rem; }
+h4{ font-family:var(--serif); font-weight:700; color:var(--clay-deep); font-size:1.14rem; margin:1.1rem 0 .5rem; }
+section > p{ margin:1rem 0; }
+section > p:first-of-type{ margin-top:0; }
+.lead{ font-size:1.12rem; color:var(--ink); line-height:1.66; }
+
+/* CALLOUTS */
+.callout{ padding:1.5rem 1.6rem; margin:1.7rem 0; border-radius:12px; background:var(--surface);
+ border:1px solid var(--border); border-top:4px solid var(--ink-3); box-shadow:var(--shadow-sm); }
+.callout.concept{ background:#FBF9F2; border-top-color:var(--clay); }
+.callout.definition{ background:rgba(195,218,186,.30); border-top-color:var(--forest); }
+.callout.warning{ background:rgba(248,177,51,.12); border-top-color:var(--amber); }
+.callout.success{ background:rgba(71,126,89,.10); border-top-color:var(--forest); }
+.callout-title{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.1em;
+ font-size:.92rem; margin-bottom:.7rem; color:var(--ink); }
+.callout.concept .callout-title{ color:var(--clay-deep); }
+.callout.definition .callout-title{ color:var(--forest-deep); }
+.callout.warning .callout-title{ color:#9A6A12; }
+.callout.success .callout-title{ color:var(--forest-deep); }
+.callout p{ color:var(--ink-2); margin:.5rem 0 0; }
+.callout p:first-of-type{ margin-top:0; }
+.callout strong{ color:var(--ink); }
+
+/* CARD GRID */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin:2rem 0; }
+.card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.6rem;
+ box-shadow:var(--shadow-md); transition:transform .25s ease, box-shadow .25s ease; }
+.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.card h4{ color:var(--ink); margin-top:0; margin-bottom:.7rem; padding-bottom:.5rem; border-bottom:1px solid var(--hairline); line-height:1.25; }
+.card p{ font-size:.96rem; color:var(--ink-2); }
+.card .num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:1.1rem; }
+
+/* TABLES */
+table{ width:100%; border-collapse:collapse; margin:1.8rem 0; font-size:.95rem;
+ background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+th{ background:var(--forest); color:var(--ink-on-dark); padding:.95rem 1rem; text-align:left;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.82rem; }
+td{ padding:.85rem 1rem; border-bottom:1px solid var(--hairline); color:var(--ink-2); vertical-align:top; }
+tr:last-child td{ border-bottom:0; }
+tbody tr:nth-child(even){ background:rgba(236,231,215,.5); }
+tbody tr:hover{ background:rgba(195,218,186,.22); }
+td strong{ color:var(--ink); }
+.num-cell{ font-family:var(--sans); font-weight:600; text-align:right; white-space:nowrap; }
+.total-row td{ background:var(--sage); font-weight:700; color:var(--ink); border-top:2px solid var(--forest); }
+.table-caption{ font-size:.86rem; color:var(--ink-3); font-style:italic; margin:-.6rem 0 1.8rem; }
+
+/* LISTS */
+ul,ol{ margin:1rem 0 1rem 1.5rem; }
+li{ margin:.5rem 0; line-height:1.7; color:var(--ink-2); }
+li strong{ color:var(--ink); }
+.clean{ list-style:none; margin-left:0; }
+.clean li{ padding-left:1.7rem; position:relative; }
+.clean li::before{ content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; border-radius:50%; background:var(--clay); }
+
+/* TABS */
+.tabs{ display:flex; border-bottom:1px solid var(--border); margin:2rem 0 0; flex-wrap:wrap; gap:.2rem; }
+.tab-button{ background:transparent; border:none; padding:.9rem 1.3rem; cursor:pointer;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.85rem;
+ color:var(--ink-3); transition:all .25s; border-bottom:3px solid transparent; }
+.tab-button:hover{ color:var(--ink); }
+.tab-button.active{ color:var(--forest); border-bottom-color:var(--clay); }
+.tab-button .tnum{ font-weight:700; color:var(--clay); margin-right:.35em; }
+.tab-content{ display:none; padding:1.8rem 0 .5rem; animation:fade .26s ease-out; }
+.tab-content.active{ display:block; }
+@keyframes fade{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+.module-meta{ display:flex; flex-wrap:wrap; gap:.5rem; margin:.4rem 0 1.2rem; }
+.module-meta .chip{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.07em; font-size:.72rem; font-weight:600;
+ color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25); padding:.35rem .85rem; border-radius:999px; }
+
+/* EXPANDABLE */
+.expandable{ margin:1.1rem 0; border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+.expandable-header{ background:var(--paper-2); padding:1rem 1.2rem; cursor:pointer; font-family:var(--sans);
+ font-weight:600; text-transform:uppercase; letter-spacing:.05em; font-size:.86rem; color:var(--forest-deep);
+ display:flex; justify-content:space-between; align-items:center; gap:1rem; transition:background .25s; }
+.expandable-header:hover{ background:var(--sage); }
+.expandable-content{ display:none; padding:1.2rem 1.3rem; background:#FBF9F2; }
+.expandable-content.active{ display:block; }
+.expandable-content p:first-child{ margin-top:0; }
+.expand-icon{ transition:transform .3s; color:var(--clay); font-size:1.2rem; line-height:1; }
+.expandable-header.open .expand-icon{ transform:rotate(45deg); }
+
+/* STATS */
+.stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1.3rem; margin:2rem 0; }
+.stat-box{ background:var(--surface); border:1px solid var(--border); padding:1.5rem 1.4rem; border-radius:14px;
+ text-align:left; box-shadow:var(--shadow-sm); border-top:4px solid var(--forest); }
+.stat-box .stat-eyebrow{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--ink-3); }
+.stat-value{ font-family:var(--sans); font-weight:700; font-size:2rem; line-height:1.08; margin:.35rem 0 .3rem; color:var(--clay); }
+.stat-label{ font-size:.9rem; color:var(--ink-2); }
+
+/* FIGURE PLACEHOLDER */
+.fig{ margin:2rem 0; border:1px solid var(--border); border-radius:14px; overflow:hidden; background:var(--surface); box-shadow:var(--shadow-sm); }
+.fig-frame{ background:
+  repeating-linear-gradient(135deg, rgba(71,126,89,.07) 0 12px, rgba(207,113,93,.06) 12px 24px);
+  min-height:200px; display:flex; align-items:center; justify-content:center; text-align:center; padding:2rem; }
+.fig-frame span{ font-family:"Courier New",monospace; font-size:.82rem; color:var(--ink-3); letter-spacing:.02em; max-width:46ch; line-height:1.6; }
+.fig-cap{ padding:.9rem 1.2rem; font-size:.86rem; color:var(--ink-2); border-top:1px solid var(--hairline); background:#FBF9F2; }
+.fig-cap b{ color:var(--ink); font-family:var(--sans); text-transform:uppercase; letter-spacing:.05em; font-size:.78rem; font-weight:600; }
+
+/* TIMELINE / FLOW */
+.flow{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0; margin:2rem 0; }
+.flow-step{ position:relative; padding:1.3rem 1.2rem; background:#FBF9F2; border:1px solid var(--border); }
+.flow-step:not(:last-child){ border-right:0; }
+.flow-step .fs-num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:.9rem; letter-spacing:.05em; }
+.flow-step .fs-title{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.04em; font-weight:600; color:var(--forest-deep); font-size:.92rem; margin:.3rem 0 .4rem; }
+.flow-step p{ font-size:.88rem; color:var(--ink-2); margin:0; }
+
+/* UTILITIES */
+.highlight{ background:rgba(248,177,51,.32); padding:.05rem .3rem; border-radius:3px; }
+.bold-green{ color:var(--forest); font-weight:bold; }
+.bold-brown{ color:var(--clay-deep); font-weight:bold; }
+.pillar-badge{ display:inline-block; background:var(--forest); color:#fff; padding:.4rem 1rem; border-radius:999px;
+ font-family:var(--sans); text-transform:uppercase; letter-spacing:.07em; font-size:.76rem; font-weight:600; margin:.25rem .25rem .25rem 0; }
+.pillar-badge.clay{ background:var(--clay); }
+.tick{ color:var(--forest); font-weight:bold; }
+.cross{ color:var(--clay-deep); font-weight:bold; }
+.footnote{ font-size:.74rem; vertical-align:super; color:var(--clay); text-decoration:none; }
+.references-section{ background:#FBF9F2; }
+.reference-item{ margin:.85rem 0; padding-left:1.8rem; text-indent:-1.8rem; line-height:1.55; color:var(--ink-2); font-size:.9rem; }
+.reference-item a{ color:var(--clay); text-decoration:none; }
+.reference-item a:hover{ text-decoration:underline; }
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+
+/* FOOTER */
+footer{ background:var(--forest-deep); color:#EAF1E6; text-align:center; padding:2.8rem 2rem; margin-top:3rem; line-height:1.9; }
+footer p{ max-width:900px; margin:0 auto; }
+footer a{ color:#F2C9A8; text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+footer .foot-rule{ width:60px; height:3px; background:var(--amber); margin:1.4rem auto; border:0; border-radius:2px; }
+
+@media (max-width:768px){
+ header{ padding:2.2rem 1.3rem; } header h1{ font-size:1.9rem; }
+ nav ul{ flex-direction:column; } nav a{ padding:.55rem 1rem; }
+ .container{ padding:1.3rem; } section{ padding:1.5rem; } h2{ font-size:1.5rem; }
+ .stats-grid,.grid,.two-col{ grid-template-columns:1fr; }
+ .tabs{ flex-direction:column; } .tab-button{ width:100%; text-align:left; }
+ .flow-step{ border-right:1px solid var(--border) !important; }
+}
+</style>
+<style>
+.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
+.drip-topbar *{box-sizing:border-box;}
+.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+.drip-topbar .db-dm span{color:#F8B133;}
+.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+.drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;text-transform:none;letter-spacing:normal;}
+.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+.drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
+@media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
+</style>
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+<header data-screen-label="Header">
+ <div class="header-inner">
+  <img class="brand-logo" src="assets/logo-color.png" alt="DSL-IP — Drylands Sustainable Landscapes Impact Programme">
+  <p class="eyebrow">Drylands Sustainable Landscapes Impact Programme &middot; Miombo-Mopane Woodlands</p>
+  <h1>The Sustainable Landscape Production Framework <span>(SLPF)</span></h1>
+  <p class="lede">An integrated, systems-based approach to achieving Land Degradation Neutrality in dryland production landscapes &mdash; breaking down the silos between agriculture, forestry and livestock so that interventions generate income, food and energy security, and ecological integrity at the same time.</p>
+  <div class="header-tags"><span>3 Pillars</span><span>One Country, One Core Theme</span><span>Land Degradation Neutrality</span><span>FAO &middot; GEF</span></div>
+ </div>
+</header>
+<nav>
+ <ul>
+  <li><a href="#summary">Summary</a></li>
+  <li><a href="#challenge">The Challenge</a></li>
+  <li><a href="#approach">Core Theme</a></li>
+  <li><a href="#framework">The Framework</a></li>
+  <li><a href="#practice">In Practice</a></li>
+  <li><a href="#scaling">Scaling Out</a></li>
+  <li><a href="#references">References</a></li>
+ </ul>
+</nav>
+<div class="container">
+<section id="summary" data-screen-label="Summary">
+ <h2><span class="kicker">Working Paper &middot; At a Glance</span>What the SLPF is</h2>
+ <p class="lead">The Sustainable Landscape Production Framework is the DSL-IP's operational response to a recurring problem in dryland management: interventions that target one bottleneck at a time and fail to produce systemic change because the complementary constraints stay unaddressed. The SLPF integrates three proven approaches into a single, coordinated package &mdash; so seed systems, advisory services and markets reinforce one another instead of running in parallel.</p>
+ <div class="stats-grid">
+  <div class="stat-box"><div class="stat-eyebrow">Architecture</div><div class="stat-value">3</div><div class="stat-label">interconnected technical pillars</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Strategy</div><div class="stat-value">1</div><div class="stat-label">core theme per country champion</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Drylands</div><div class="stat-value">42%</div><div class="stat-label">of Earth's land; ~60% of food production</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Miombo woodlands</div><div class="stat-value">266M ha</div><div class="stat-label">across ten countries, ~150M people</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Delivered through</div><div class="stat-value">FFPOs</div><div class="stat-label">forest &amp; farm producer organizations</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Applied in</div><div class="stat-value">2</div><div class="stat-label">case studies: Malawi &amp; Zimbabwe</div></div>
+ </div>
+ <div class="callout definition">
+  <div class="callout-title">In one sentence</div>
+  <p>The SLPF combines <strong>Community Seed Banks</strong>, the <strong>Forest &amp; Farm Facility</strong> and <strong>Farmer Field Schools</strong> &mdash; anchored in producer organizations and tailored to each country's evidence-based core theme &mdash; into one coherent system that advances Land Degradation Neutrality while improving livelihoods.</p>
+ </div>
+ <h3>The three pillars</h3>
+ <div class="grid">
+  <div class="card"><h4><span class="num">01</span> &nbsp;Community Seed Banks (CSB)</h4><p>Crop diversification, agrobiodiversity conservation and stronger social networks &mdash; the genetic pool of drought-tolerant options for land management.</p></div>
+  <div class="card"><h4><span class="num">02</span> &nbsp;Forest &amp; Farm Facility (FFF)</h4><p>Business incubation and green value chains that reward sustainable landscape production over degradation and deforestation.</p></div>
+  <div class="card"><h4><span class="num">03</span> &nbsp;Farmer Field Schools (FFS)</h4><p>Participatory, experiential learning for technology transfer in sustainable land and forest management.</p></div>
+  <div class="card" style="background:rgba(71,126,89,.08); border-style:dashed;"><h4 style="color:var(--forest-deep); border:0;">Most powerful integrated</h4><p>Each pillar works alone &mdash; but improved seeds without knowledge, or knowledge without markets, rarely sustains. Their integration is the point.</p></div>
+ </div>
+ <h3>Keywords</h3>
+ <div class="header-tags" style="margin-top:.6rem;">
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Land Degradation Neutrality</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Integrated landscape approach</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Agrobiodiversity</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Green value chains</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Forest &amp; farm producer organizations</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Gender &amp; livelihoods</span>
+  <span style="color:var(--forest-deep); background:rgba(71,126,89,.12); border:1px solid rgba(71,126,89,.25);">Miombo-Mopane</span>
+ </div>
+</section>
+<section id="challenge" data-screen-label="The Dryland Challenge">
+ <h2><span class="kicker">Introduction</span>Land degradation in drylands</h2>
+ <p>Drylands cover about <strong>42 percent</strong> of the Earth's land surface and are home to over <strong>2.5 billion people</strong>, supplying roughly 60 percent of the world's food production (Safriel &amp; Adeel, 2005; Pringle et al., 2020). Yet they are among the most vulnerable ecosystems on the planet, under compounding pressure from climate change, population growth and unsustainable land management (Reynolds et al., 2007; Cherlet et al., 2018). The IPBES Global Assessment estimated that more than <strong>75 percent</strong> of the Earth's land is already substantially degraded, with dryland regions disproportionately affected (IPBES, 2018).</p>
+ <p>In Africa, more than 65 percent of the surface is dryland. Some <strong>266 million hectares</strong> fall within the Miombo woodlands &mdash; one of the world's most significant biodiversity areas, stretching across ten countries and supporting over 150 million people (Ribeiro et al., 2015; Ryan et al., 2016; Campbell et al., 2007).</p>
+ <h3>Drivers and manifestations</h3>
+ <div class="grid">
+  <div class="card"><h4>Direct drivers</h4><p>Forest-to-farm conversion, intensive nutrient-mining agriculture, overgrazing and deforestation for fuelwood and charcoal (Geist &amp; Lambin, 2004; Chidumayo &amp; Gumbo, 2010).</p></div>
+  <div class="card"><h4>Indirect drivers</h4><p>Population pressure and institutional fragmentation that leaves landscapes without coherent management plans.</p></div>
+  <div class="card"><h4>A drying baseline</h4><p>From 1960&ndash;2023, 27.9% of global land became significantly more arid; Southern African rainfall fell ~25.6% (1960&ndash;2007) (Sardans et al., 2024).</p></div>
+  <div class="card"><h4>Productivity loss</h4><p>Rain-fed maize &mdash; a staple across sub-Saharan Africa &mdash; is declining with reduced water retention, topsoil loss and nutrient depletion (Lobell et al., 2011).</p></div>
+ </div>
+ <h3>Barriers to sustainable management</h3>
+ <div class="callout warning">
+  <div class="callout-title">The deepest barrier: silo thinking</div>
+  <p>Agriculture, forestry and livestock are traditionally treated as separate and even competing domains &mdash; producing fragmented land-use planning, an imbalance between income and ecosystem protection, and piecemeal interventions that miss synergies and create trade-offs (Reed et al., 2016).</p>
+ </div>
+ <p>At farm level, constraints are structural rather than just knowledge gaps: access to quality seeds &mdash; especially drought-tolerant, neglected and underutilized species &mdash; is a recurrent bottleneck (Mmbando, 2025; Johnston &amp; Buhrow, 2023); the erosion of traditional knowledge systems has narrowed agrobiodiversity (Boerma &amp; Koohafkan, 2004; Jakes, 2024); weak extension and farmer-to-farmer learning limit social learning; and weak market infrastructure with asymmetric bargaining power denies farmers the price premiums that would justify their investments (Vargas Hill et al., 2021). Gender inequalities further restrict women's access to land, resources and decision-making, even though women hold critical natural-resource knowledge (Meinzen-Dick et al., 2014).</p>
+ <div class="callout concept">
+  <div class="callout-title">The opportunity</div>
+  <p>Holistic, landscape-level approaches are increasingly recognized as essential to reverse degradation and build resilience (Sayer et al., 2013). Land Degradation Neutrality, championed by the UNCCD, provides the policy frame (Cowie et al., 2018) &mdash; but interpreted narrowly as a biophysical target, it risks short-term gains while underlying drivers persist. System-thinking that integrates ecological, social and economic dimensions can transform landscapes for livelihoods and environment at once. The SLPF is one such integrated approach.</p>
+ </div>
+</section>
+<section id="approach" data-screen-label="Core Theme Approach">
+ <h2><span class="kicker">Strategy</span>The DSL-IP and the Core Theme approach</h2>
+ <p>The DSL-IP is a GEF-funded, FAO-led programme (with IUCN and CDE-WOCAT) operating in <strong>11 countries</strong> across three eco-regions &mdash; the Savannas of East and West Africa, the Great Steppes of Central Asia and the Miombo-Mopane landscapes of Southern Africa (GEF, 2020). Regional Exchange Mechanisms (REMs) connect countries to technical hubs and partners such as the SADC Great Green Wall Initiative, ensuring coordination and knowledge exchange.</p>
+ <div class="callout concept">
+  <div class="callout-title">One Country Champion, One Core Theme</div>
+  <p>Rather than dispersing resources across disconnected interventions, each country concentrates on a single high-priority management challenge &mdash; a specific income-generating opportunity or green value chain with high potential for improving landscapes, livelihoods and scalability. Core themes are selected through a rigorous, evidence-based process and are <strong>nationally significant yet regionally transferable</strong>, so each national effort becomes a building block for collective impact.</p>
+ </div>
+ <p>Selection draws on comprehensive baseline assessments &mdash; household surveys, focus group discussions, value-chain assessments, remote sensing and stakeholder mapping &mdash; the <strong>Integrated Landscape Assessment Methodology (ILAM)</strong>. A key diagnostic within ILAM is SHARP+, which produces a resilience gap analysis that pinpoints common deficits (market access, seed diversity, technical extension) across landscapes, serving as the empirical fingerprint that justifies the core theme.</p>
+ <div class="grid">
+  <div class="card"><h4>LDN linkage</h4><p>Themes must contribute to avoiding, reducing and reversing degradation &mdash; preserving the land resource base in line with SDG 15.3 and the UNCCD (Orr et al., 2017; Cowie et al., 2018; UNCCD, 2022).</p></div>
+  <div class="card"><h4>Livelihoods &amp; gender</h4><p>Themes embed gender-responsive approaches and livelihood opportunities; empowering women and marginalized groups unlocks their potential as agents of change (Meinzen-Dick et al., 2014).</p></div>
+  <div class="card"><h4>Upscaling potential</h4><p>Themes demonstrate potential for scaling &mdash; magnitude of benefits, geographic scope and fundamental behavioural or structural change (GEF, 2020).</p></div>
+ </div>
+ <p>Fundamentally, the core theme is the mechanism that <strong>contextualizes the SLPF</strong>: rather than applying a generic template, the identified theme determines how the three pillars are tailored, concentrating financial, technical and institutional resources around one high-leverage entry point &mdash; prioritizing depth over breadth.</p>
+</section>
+<section id="framework" data-screen-label="The Framework">
+ <h2><span class="kicker">The Framework</span>Fostering synergies across land uses</h2>
+ <p>The SLPF's novelty is not new instruments but their <strong>coherent combination</strong>. By intentionally linking seed systems, advisory services and market development within a single operational architecture, it overcomes the fragmentation that has limited previous interventions. It is built on three interconnected technical pillars, each a strategic entry point to restore landscape integrity while responding to documented farm- and landscape-level constraints.</p>
+
+ <div class="callout success">
+  <div class="callout-title">The institutional foundation &middot; FFPOs</div>
+  <p>The framework is delivered through organized land-user groups &mdash; particularly <strong>forest and farm producer organizations (FFPOs)</strong>, systematically mapped, assessed and targeted during contextualization. Research on collective action shows that organized groups with trust, shared norms and local governance manage common-pool resources more effectively than individuals (Ostrom, 1990; Pretty &amp; Ward, 2001; Pretty, 2003). Through the integrated pillars, FFPOs become hubs of integrated knowledge &mdash; anchoring the benefits of integration at community level well beyond the project cycle (FAO &amp; AgriCord, 2016; FAO, 2021).</p>
+ </div>
+
+ <h3>The three pillars in depth</h3>
+ <div class="tab-scope">
+  <div class="tabs">
+   <button class="tab-button active" onclick="openTab(event,'pcsb')"><span class="tnum">01</span>Community Seed Banks</button>
+   <button class="tab-button" onclick="openTab(event,'pfff')"><span class="tnum">02</span>Forest &amp; Farm Facility</button>
+   <button class="tab-button" onclick="openTab(event,'pffs')"><span class="tnum">03</span>Farmer Field Schools</button>
+  </div>
+  <div id="pcsb" class="tab-content active">
+   <h3>Community Seed Banks &mdash; crop diversification &amp; social networks</h3>
+   <div class="module-meta"><span class="chip">Agrobiodiversity</span><span class="chip">Drought-tolerant germplasm</span><span class="chip">Seed sovereignty</span></div>
+   <p>As stable food-crop production (especially maize) declines under climate change and soil degradation, drought-tolerant seed crops and diverse tree seedlings provide the genetic pool of options for land management (Ribeiro et al., 2015). Centuries of crop specialization &mdash; colonial cash-crop monocultures and market-driven promotion of cassava and maize &mdash; have narrowed agrobiodiversity. In Cuchi, Angola, two crops now make up <strong>98 percent</strong> of local output (DSL-IP, 2019).</p>
+   <ul class="clean">
+    <li>Diverse cropping systems are naturally more resilient; monocultures are highly vulnerable to shocks (Lin, 2011).</li>
+    <li>Traditional crops provide a broader range of essential nutrients, countering dietary deficiency (Kahane et al., 2013).</li>
+    <li>Seed banks maintain locally adapted varieties, let communities restart production after disasters, and share knowledge and resources (Vernooy et al., 2017; Vernooy &amp; Otieno, 2021; De Falcis et al., 2022).</li>
+   </ul>
+  </div>
+  <div id="pfff" class="tab-content">
+   <h3>Forest &amp; Farm Facility &mdash; business incubation along green value chains</h3>
+   <div class="module-meta"><span class="chip">Green value chains</span><span class="chip">Enterprise development</span><span class="chip">Market access &amp; finance</span></div>
+   <p>The FFF pillar focuses on business incubation and growth for FFPOs in green value chains &mdash; market-oriented systems that add value to forest and farm products while safeguarding environmental integrity. Rather than primary production alone, it equips communities with enterprise development, business planning, quality upgrading, market intelligence and financial literacy to turn dryland products into bankable, climate-resilient green enterprises.</p>
+   <ul class="clean">
+    <li>Captures more value from NTFPs, sustainable charcoal, bee products, ecotourism and drought-tolerant crops &mdash; creating alternatives to environmentally harmful activities.</li>
+    <li>Strengthens inclusive, gender-responsive green economies and improves FFPO bargaining power and creditworthiness (Kaplinsky, 2000; FAO, 2021).</li>
+    <li>Catalyzes private-sector linkages that reward sustainable landscape production rather than degradation and deforestation.</li>
+   </ul>
+  </div>
+  <div id="pffs" class="tab-content">
+   <h3>Farmer Field Schools &mdash; experiential learning for SLM/SFM</h3>
+   <div class="module-meta"><span class="chip">Participatory learning</span><span class="chip">Farmer-to-farmer</span><span class="chip">Technology transfer</span></div>
+   <p>FFS provide a participatory, experiential platform for technology transfer and sustainable land management (FAO, 2020). Through peer-to-peer exchange, hands-on training and skill development, farmers gain practical techniques to raise productivity while conserving landscape integrity, strengthening community cohesion and adaptive capacity (Waddington &amp; White, 2014).</p>
+   <ul class="clean">
+    <li>Transfers proven and innovative SLM/SFM practices through context-sensitive, participatory methods.</li>
+    <li>Builds farmer capacity to diagnose, analyse and respond to land degradation, linking technical training to landscape objectives.</li>
+    <li>Embeds a robust exit strategy so adoption endures &mdash; knowledge is co-created, not imposed (Bezner Kerr et al., 2021).</li>
+   </ul>
+  </div>
+ </div>
+
+ <h3>Integration: synergizing for a common goal</h3>
+ <p>The true power of the SLPF lies not in its individual pillars but in their integration (Sayer et al., 2013; Reed et al., 2016). It operates along three dimensions:</p>
+ <div class="flow">
+  <div class="flow-step"><div class="fs-num">01</div><div class="fs-title">Functional synergies</div><p>FFS skills + FFF market incentives + CSB germplasm delivered as a coherent package, not disconnected interventions (Plieninger et al., 2020).</p></div>
+  <div class="flow-step"><div class="fs-num">02</div><div class="fs-title">Cross-cutting principles</div><p>Gender equity, social inclusion and resilience addressed across all interventions, not as stand-alone components (Meinzen-Dick et al., 2014).</p></div>
+  <div class="flow-step"><div class="fs-num">03</div><div class="fs-title">Replication across contexts</div><p>A systems approach targeting root causes, with documented methodology other countries can adapt.</p></div>
+ </div>
+
+ <h3>The evidence base &middot; ILAM</h3>
+ <div class="callout concept">
+  <div class="callout-title">A complementary analytical tool</div>
+  <p>The <strong>Integrated Landscape Assessment Methodology (ILAM)</strong> provides the evidence base for the SLPF &mdash; applied to define the baseline and core theme, tailor the ICDIP, and inform integrated land-use plans. It triangulates remote sensing, household surveys, resilience and behaviour-change assessments, value-chain analyses, carbon accounting and participatory consultations (Gonzalez-Roglich et al., 2019). &nbsp;<a href="ILAM Integrated Landscape Assessment Methodology.html" style="color:var(--clay); font-weight:600; text-decoration:none;">Read the ILAM working paper &rarr;</a></p>
+ </div>
+
+ <h3>Contextualization &middot; the ICDIP</h3>
+ <p>The SLPF is adapted through a three-level contextualization process: identifying and verifying the management challenge (core theme); consultation between commissioners and SLPF designers; and detailed planning that operationalizes the pillars into an <strong>Integrated Capacity Development and Implementation Plan (ICDIP)</strong>.</p>
+ <table>
+  <thead><tr><th style="width:16%;">Component</th><th>CSB dimension</th><th>FFF dimension</th><th>FFS dimension</th></tr></thead>
+  <tbody>
+   <tr><td><strong>Assessment</strong></td><td>Agrobiodiversity survey, seed-system mapping</td><td>Value-chain assessment, FFPO capacity review</td><td>Farmer knowledge baseline, behaviour change, SLM/SFM practice inventory</td></tr>
+   <tr><td><strong>Planning</strong></td><td>Seed multiplication plan, species prioritization</td><td>Business-plan development, market-linkage strategy</td><td>Curriculum design, FFS site selection</td></tr>
+   <tr><td><strong>Implementation</strong></td><td>Seed bank establishment, community training</td><td>GVC development, enterprise incubation</td><td>Seasonal FFS cycles, demonstration plots</td></tr>
+   <tr><td><strong>Monitoring</strong></td><td>Diversity indices, adoption tracking</td><td>Income metrics, market-access indicators</td><td>Practice adoption rates, yield comparisons</td></tr>
+   <tr><td><strong>Sustainability</strong></td><td>Seed-bank governance, exchange networks</td><td>FFPO strengthening, exit strategy</td><td>Farmer-to-farmer cascade, institutional embedding</td></tr>
+  </tbody>
+ </table>
+ <p class="table-caption">Table 1. Integrated Capacity Development and Implementation Plan (ICDIP) structure.</p>
+</section>
+<section id="practice" data-screen-label="In Practice">
+ <h2><span class="kicker">Evidence-Based Application</span>The SLPF in practice</h2>
+ <p>Translating the SLPF from framework to reality requires evidence-based application tailored to each country. Two case studies from the Miombo-Mopane eco-region illustrate the methodology in action &mdash; <strong>Zimbabwe</strong> (neglected &amp; underutilized species and non-wood forest product value chains) and <strong>Malawi</strong> (integrated food and energy systems).</p>
+
+ <div class="fig">
+  <img src="slpf-assets/resilience-scores.png" alt="Household resilience scores by country" style="width:100%; display:block;">
+  <div class="fig-cap"><b>Figure 1</b> &nbsp; SHARP+ household resilience scores across five Miombo-Mopane countries reveal common deficits &mdash; access to markets and farm inputs cluster in the low-to-medium band &mdash; the empirical fingerprint that justifies each core theme.</div>
+ </div>
+
+ <h3>Zimbabwe &middot; NUS &amp; NWFP value chains</h3>
+ <p>Across the Save and Runde catchments, more than <strong>70 percent</strong> of land is affected by soil erosion and fertility decline; 80 percent of forest is affected by veld fires and 40 percent by deforestation and invasive species (GEF, 2020). An ILAM resilience and behaviour-change assessment of <strong>514 households</strong> found moderate overall resilience (10.17/20), lowest in the economic domain (8.92), with rain-fed maize cultivated by 86 percent of farmers (Johnston &amp; Buhrow, 2024; Lobell et al., 2011).</p>
+ <div class="expandable">
+  <div class="expandable-header">The core theme &amp; COM-B insight <span class="expand-icon">+</span></div>
+  <div class="expandable-content"><p>Sorghum and millet are already grown by 41% and 31% of respondents; 95% of sorghum growers report positive impacts (drought tolerance, nutrition). A COM-B analysis (Michie et al., 2011) showed barriers are <strong>structural, not attitudinal</strong> &mdash; lack of technical knowledge and finance, not skepticism. NWFP collection is shared or female-led in over 90% of households, confirming the theme's suitability for gender-responsive engagement (Meinzen-Dick et al., 2014).</p></div>
+ </div>
+ <div class="expandable">
+  <div class="expandable-header">Achieved results by mid-term <span class="expand-icon">+</span></div>
+  <div class="expandable-content"><p><strong>FFS:</strong> 14,000+ ha under community forest management, 2,249 ha under assisted natural regeneration, and a <strong>39% reduction in veld-fire incidence</strong> across 4,250 ha of improved fire management. <strong>FFF:</strong> 15 FFPO business plans, 128 Village Savings &amp; Lending groups and nine financial institutions engaged. <strong>Integration:</strong> 74 extension workers trained as Master Trainers and a single FFS/APFS curriculum combining SLM, SFM and business development &mdash; embedding cross-sectoral logic in the national extension system (Bezner Kerr et al., 2021).</p></div>
+ </div>
+ <div class="expandable">
+  <div class="expandable-header">Government ownership &amp; outscaling <span class="expand-icon">+</span></div>
+  <div class="expandable-content"><p>The national LDN Technical Working Group has been reactivated; Provincial Development Committees in three provinces revised their terms of reference to incorporate LDN; and eight districts have mainstreamed Integrated Land Use Plans into statutory district master plans (Cowie et al., 2018; UNCCD, 2022). AGRITEX extension officers integrated catchment restoration, conservation, nurseries and business development into routine delivery &mdash; the institutional embedding that sustains the approach beyond the project cycle (Waddington &amp; White, 2014).</p></div>
+ </div>
+
+ <h3>Malawi &middot; Integrated Food &amp; Energy Systems (IFES)</h3>
+ <p>With over <strong>90 percent</strong> of the population relying on firewood and charcoal (Kambewa &amp; Chiwaula, 2010), and agricultural expansion driving a reinforcing cycle of deforestation and soil degradation (Jumbe &amp; Angelsen, 2006; Davies et al., 2010), Malawi selected IFES as its core theme &mdash; combining nitrogen-fixing pigeon pea with rain-fed maize and livestock in agroforestry configurations that address energy insecurity, food production and land degradation at once.</p>
+ <div class="two-col">
+  <div>
+   <div class="callout concept" style="margin-top:0;">
+    <div class="callout-title">IFES across the three pillars</div>
+    <p><strong>CSB</strong> ensures access to suitable pigeon-pea germplasm (higher-biomass varieties for fuel). <strong>FFF</strong> develops value chains for pigeon-pea products &mdash; value addition, governance, market access, certification. <strong>FFS</strong> trains farmers in IFES establishment, crop-residue energy and efficient cookstoves, with curricula informed by ILAM behavioural diagnostics.</p>
+   </div>
+  </div>
+  <div>
+   <div class="fig" style="margin-top:0;">
+    <img src="slpf-assets/ffpo-map-malawi.png" alt="Map of 70 FFPOs in Malawi" style="width:100%; display:block;">
+    <div class="fig-cap"><b>Figure 2</b> &nbsp; 70 FFPOs identified across Mangochi, Ntcheu and Balaka Districts through the ILAM FFPO assessment &mdash; the social capital through which the SLPF is delivered.</div>
+   </div>
+  </div>
+ </div>
+ <p>By strengthening existing FFPOs rather than building parallel structures, the SLPF embeds benefits in durable local institutions, with a built-in exit strategy: as FFPOs gain capacity to manage value chains, seed banks and training networks independently, the project's direct role diminishes while the institutional legacy endures. A multi-scale monitoring framework links farm-level practice adoption to landscape-level remote sensing of the UNCCD's three LDN sub-indicators (Orr et al., 2017; Gonzalez-Roglich et al., 2019).</p>
+</section>
+
+<section id="scaling" data-screen-label="Scaling Out">
+ <h2><span class="kicker">Sustainability</span>Scaling out the framework</h2>
+ <p>The SLPF's long-term impact depends on integration into broader governance, planning and institutional structures &mdash; through two complementary pathways that ensure the integrated approach outlasts project cycles.</p>
+ <div class="grid">
+  <div class="card"><h4>1 &nbsp;Integrated land-use planning</h4><p>ILUPs and VLUPs informed by ILAM and SLPF principles embed cross-sectoral collaboration into local and national governance, making integrated logic part of the community's own development vision rather than an external requirement (Cowie et al., 2018).</p></div>
+  <div class="card"><h4>2 &nbsp;National extension systems</h4><p>Embedding the framework's logic into extension curricula, procedures and strategy &mdash; with FFPOs as the community-level delivery mechanism &mdash; so continuation no longer depends on project financing (Waddington &amp; White, 2014).</p></div>
+ </div>
+ <div class="callout success">
+  <div class="callout-title">Enabling conditions</div>
+  <p>High-level policy endorsement; strengthened coordination between agriculture and forestry departments to overcome internal silos; monitoring systems that capture cross-sectoral outcomes beyond single-commodity metrics; and documented experiences packaged as practical toolkits extension departments can adopt with minimal additional investment.</p>
+ </div>
+</section>
+
+<section id="conclusion" data-screen-label="Conclusion">
+ <h2><span class="kicker">The Way Forward</span>Conclusion</h2>
+ <p>The SLPF represents a methodological advance in achieving Land Degradation Neutrality in dryland landscapes. By breaking down the silos between agriculture, forestry and livestock, its three pillars create synergies far greater than the sum of their parts. Its emphasis on evidence-based contextualization, participatory engagement and institutional sustainability ensures interventions are relevant, effective and enduring.</p>
+ <div class="callout definition">
+  <div class="callout-title">The core message</div>
+  <p>The SLPF demonstrates that achieving LDN <strong>need not come at the expense of livelihoods</strong>, nor must livelihood improvement come at the expense of the environment. By fostering synergies across land uses, empowering communities with the tools and knowledge they need, and grounding interventions in evidence and local context, it offers a pathway toward resilient, productive and inclusive dryland landscapes.</p>
+ </div>
+ <p>Looking ahead, four priorities will determine broader uptake: continued investment in monitoring and evaluation; integration of SLPF principles into land-use plans and national policy; institutionalization within national extension systems with FFPOs as the delivery mechanism; and the sharing of experiences through the Regional Exchange Mechanisms and Communities of Practice.</p>
+</section>
+<section id="references" class="references-section" data-screen-label="References & Contact">
+ <h2><span class="kicker">References &amp; Resources</span>References</h2>
+ <div class="reference-item">Bezner Kerr, R., et al. (2021). Can agroecology improve food security and nutrition? A review. <em>Global Food Security</em>, 29, 100540. <a href="https://doi.org/10.1016/j.gfs.2021.100540" target="_blank" rel="noopener">doi:10.1016/j.gfs.2021.100540</a></div>
+ <div class="reference-item">Boerma, D., &amp; Koohafkan, P. (2004). <em>Local knowledge systems and the management of dryland agro-ecosystems.</em> FAO, Rome.</div>
+ <div class="reference-item">Campbell, B., et al. (2007). <em>Miombo woodlands &mdash; opportunities and barriers to sustainable forest management.</em> CIFOR, Bogor. <a href="https://www.cifor-icraf.org" target="_blank" rel="noopener">cifor-icraf.org</a></div>
+ <div class="reference-item">Chasek, P., et al. (2019). Operationalizing zero net land degradation. <em>Journal of Arid Environments</em>, 112, 5&ndash;13. <a href="https://doi.org/10.1016/j.jaridenv.2014.05.020" target="_blank" rel="noopener">doi</a></div>
+ <div class="reference-item">Cherlet, M., et al. (Eds.) (2018). <em>World Atlas of Desertification.</em> Publications Office of the European Union, Luxembourg. <a href="https://wad.jrc.ec.europa.eu" target="_blank" rel="noopener">wad.jrc.ec.europa.eu</a></div>
+ <div class="reference-item">Chidumayo, E.N., &amp; Gumbo, D.J. (Eds.) (2010). <em>The Dry Forests and Woodlands of Africa.</em> Earthscan, London.</div>
+ <div class="reference-item">Cowie, A.L., et al. (2018). Land in balance: the scientific conceptual framework for LDN. <em>Environmental Science &amp; Policy</em>, 79, 25&ndash;35. <a href="https://doi.org/10.1016/j.envsci.2017.10.011" target="_blank" rel="noopener">doi:10.1016/j.envsci.2017.10.011</a></div>
+ <div class="reference-item">Davies, G., Pollard, L., &amp; Mwenda, M. (2010). Perceptions of land-degradation, forest restoration and fire management: a case study from Malawi. <em>Land Degradation &amp; Development</em>, 21, 546&ndash;556. <a href="https://doi.org/10.1002/ldr.999" target="_blank" rel="noopener">doi</a></div>
+ <div class="reference-item">De Falcis, E., et al. (2022). Strengthening the economic sustainability of community seed banks. <em>Frontiers in Sustainable Food Systems</em>, 6, 803195. <a href="https://doi.org/10.3389/fsufs.2022.803195" target="_blank" rel="noopener">doi:10.3389/fsufs.2022.803195</a></div>
+ <div class="reference-item">DSL-IP (2019). <em>SHARP+ Resilience Assessment in Angola.</em> FAO, Rome.</div>
+ <div class="reference-item">FAO (2020). <em>Farmer Field Schools Guidance Document.</em> FAO, Rome. <a href="https://www.fao.org/farmer-field-schools" target="_blank" rel="noopener">fao.org</a></div>
+ <div class="reference-item">FAO (2021). <em>Forest and Farm Facility: Phase II Strategic Framework.</em> FAO, Rome. <a href="https://www.fao.org/forest-farm-facility" target="_blank" rel="noopener">fao.org</a></div>
+ <div class="reference-item">FAO (2023). <em>Enhancing Efforts for Productive and Resilient Dryland Landscapes in Southern Africa.</em> FAO, Accra. <a href="https://www.fao.org" target="_blank" rel="noopener">fao.org</a></div>
+ <div class="reference-item">FAO &amp; AgriCord (2016). <em>Forest and farm producer organizations &mdash; operating systems for the SDGs.</em> FAO, Rome. <a href="https://www.fao.org" target="_blank" rel="noopener">fao.org</a></div>
+ <div class="reference-item">Fredenberg, P., et al. (2024). <em>Opportunity crop profiles for the Vision for Adapted Crops and Soils in Africa.</em> AGRA, Nairobi.</div>
+ <div class="reference-item">Geist, H.J., &amp; Lambin, E.F. (2004). Dynamic causal patterns of desertification. <em>BioScience</em>, 54, 817&ndash;829. <a href="https://doi.org/10.1641/0006-3568(2004)054[0817:DCPOD]2.0.CO;2" target="_blank" rel="noopener">doi</a></div>
+ <div class="reference-item">GEF (2020). <em>GEF-7 Programming Directions: Sustainable Forest Management Impact Program.</em> GEF, Washington, DC. <a href="https://www.thegef.org" target="_blank" rel="noopener">thegef.org</a></div>
+ <div class="reference-item">Gonzalez-Roglich, M., et al. (2019). Synergizing global tools to monitor progress towards LDN: Trends.Earth and WOCAT. <em>Environmental Science &amp; Policy</em>, 93, 34&ndash;42. <a href="https://doi.org/10.1016/j.envsci.2018.12.019" target="_blank" rel="noopener">doi:10.1016/j.envsci.2018.12.019</a></div>
+ <div class="reference-item">Grainger, A. (2015). Is Land Degradation Neutrality feasible in dry areas? <em>Journal of Arid Environments</em>, 112, 14&ndash;24. <a href="https://doi.org/10.1016/j.jaridenv.2014.05.014" target="_blank" rel="noopener">doi</a></div>
+ <div class="reference-item">IPBES (2018). <em>The Assessment Report on Land Degradation and Restoration.</em> IPBES, Bonn. <a href="https://www.ipbes.net/assessment-reports/ldr" target="_blank" rel="noopener">ipbes.net</a></div>
+ <div class="reference-item">Jakes, V. (2024). The role of traditional knowledge in sustainable development. <em>Int. J. Humanit. Soc. Sci.</em>, 3(2), 40&ndash;55.</div>
+ <div class="reference-item">Johnston, S., &amp; Buhrow, A. (2023). <em>Resilience and Behavioural Change Assessment in Malawi.</em> FAO, Rome.</div>
+ <div class="reference-item">Johnston, S., &amp; Buhrow, A. (2024). <em>Resilience and Behavioural Change Assessment in Zimbabwe.</em> FAO, Rome.</div>
+ <div class="reference-item">Jumbe, C.B.L., &amp; Angelsen, A. (2006). Do the poor benefit from devolution policies? Evidence from Malawi. <em>Land Economics</em>, 82, 562&ndash;581. <a href="https://doi.org/10.3368/le.82.4.562" target="_blank" rel="noopener">doi</a></div>
+ <div class="reference-item">Kahane, R., et al. (2013). Agrobiodiversity for food security, health and income. <em>Agronomy for Sustainable Development</em>, 33, 671&ndash;693. <a href="https://doi.org/10.1007/s13593-013-0147-8" target="_blank" rel="noopener">doi:10.1007/s13593-013-0147-8</a></div>
+ <div class="reference-item">Kambewa, P., &amp; Chiwaula, L. (2010). <em>Biomass Energy Use in Malawi.</em> IIED, London. <a href="https://www.iied.org" target="_blank" rel="noopener">iied.org</a></div>
+ <div class="reference-item">Kaplinsky, R. (2000). Globalisation and unequalisation: what can be learned from value chain analysis? <em>Journal of Development Studies</em>, 37, 117&ndash;146. <a href="https://doi.org/10.1080/713600071" target="_blank" rel="noopener">doi:10.1080/713600071</a></div>
+ <div class="reference-item">Lin, B.B. (2011). Resilience in agriculture through crop diversification. <em>BioScience</em>, 61, 183&ndash;193. <a href="https://doi.org/10.1525/bio.2011.61.3.4" target="_blank" rel="noopener">doi:10.1525/bio.2011.61.3.4</a></div>
+ <div class="reference-item">Lobell, D.B., Schlenker, W., &amp; Costa-Roberts, J. (2011). Climate trends and global crop production since 1980. <em>Science</em>, 333, 616&ndash;620. <a href="https://doi.org/10.1126/science.1204531" target="_blank" rel="noopener">doi:10.1126/science.1204531</a></div>
+ <div class="reference-item">Meinzen-Dick, R., et al. (2014). <em>Engendering agricultural research, development, and extension.</em> IFPRI, Washington, DC. <a href="https://www.ifpri.org" target="_blank" rel="noopener">ifpri.org</a></div>
+ <div class="reference-item">Michie, S., van Stralen, M.M., &amp; West, R. (2011). The behaviour change wheel. <em>Implementation Science</em>, 6, 42. <a href="https://doi.org/10.1186/1748-5908-6-42" target="_blank" rel="noopener">doi:10.1186/1748-5908-6-42</a></div>
+ <div class="reference-item">Mmbando, G.S. (2025). Utilizing the potential of underutilized and neglected crops for Africa food security. <em>Discover Plants</em>, 2, 163.</div>
+ <div class="reference-item">Nkonya, E., Mirzabaev, A., &amp; von Braun, J. (Eds.) (2016). <em>Economics of Land Degradation and Improvement.</em> Springer, Cham. <a href="https://doi.org/10.1007/978-3-319-19168-3" target="_blank" rel="noopener">doi:10.1007/978-3-319-19168-3</a></div>
+ <div class="reference-item">Okpara, U.T., Stringer, L.C., &amp; Dougill, A.J. (2019). Using a climate&ndash;water conflict vulnerability index. <em>Regional Environmental Change</em>, 17, 351&ndash;366.</div>
+ <div class="reference-item">Orr, B.J., et al. (2017). <em>Scientific Conceptual Framework for Land Degradation Neutrality.</em> UNCCD-SPI, Bonn. <a href="https://www.unccd.int/resources/publications/scientific-conceptual-framework-land-degradation-neutrality-report" target="_blank" rel="noopener">unccd.int</a></div>
+ <div class="reference-item">Ostrom, E. (1990). <em>Governing the Commons.</em> Cambridge University Press, Cambridge. <a href="https://doi.org/10.1017/CBO9780511807763" target="_blank" rel="noopener">doi:10.1017/CBO9780511807763</a></div>
+ <div class="reference-item">Plieninger, T., et al. (2020). Agroforestry for sustainable landscape management. <em>Sustainability Science</em>, 15, 1255&ndash;1266. <a href="https://doi.org/10.1007/s11625-020-00836-4" target="_blank" rel="noopener">doi:10.1007/s11625-020-00836-4</a></div>
+ <div class="reference-item">Pretty, J. (2003). Social capital and the collective management of resources. <em>Science</em>, 302(5652), 1912&ndash;1914. <a href="https://doi.org/10.1126/science.1090847" target="_blank" rel="noopener">doi:10.1126/science.1090847</a></div>
+ <div class="reference-item">Pretty, J., &amp; Ward, H. (2001). Social capital and the environment. <em>World Development</em>, 29(2), 209&ndash;227. <a href="https://doi.org/10.1016/S0305-750X(00)00098-X" target="_blank" rel="noopener">doi:10.1016/S0305-750X(00)00098-X</a></div>
+ <div class="reference-item">Pringle, M.J., et al. (2020). Landscape sustainability science in the drylands. <em>Landscape Ecology</em>, 35, 2207&ndash;2217.</div>
+ <div class="reference-item">Reed, J., et al. (2016). Integrated landscape approaches to managing social and environmental issues in the tropics. <em>Global Change Biology</em>, 22, 2540&ndash;2554. <a href="https://doi.org/10.1111/gcb.13284" target="_blank" rel="noopener">doi:10.1111/gcb.13284</a></div>
+ <div class="reference-item">Reynolds, J.F., et al. (2007). Global desertification: building a science for dryland development. <em>Science</em>, 316, 847&ndash;851. <a href="https://doi.org/10.1126/science.1131634" target="_blank" rel="noopener">doi:10.1126/science.1131634</a></div>
+ <div class="reference-item">Ribeiro, N.S., et al. (2015). Miombo woodlands research towards sustainable use of ecosystem services, in <em>Biodiversity in Ecosystems.</em> IntechOpen, London. <a href="https://doi.org/10.5772/59288" target="_blank" rel="noopener">doi</a></div>
+ <div class="reference-item">Ryan, C.M., et al. (2016). Ecosystem services from southern African woodlands and their future. <em>Phil. Trans. R. Soc. B</em>, 371, 20150312. <a href="https://doi.org/10.1098/rstb.2015.0312" target="_blank" rel="noopener">doi:10.1098/rstb.2015.0312</a></div>
+ <div class="reference-item">Safriel, U.N., &amp; Adeel, Z. (2005). Dryland systems, in <em>Millennium Ecosystem Assessment.</em> Island Press, Washington, DC.</div>
+ <div class="reference-item">Sardans, J., et al. (2024). Growing aridity poses threats to global land surface. <em>Communications Earth &amp; Environment</em>, 5, 776. <a href="https://doi.org/10.1038/s43247-024-01939-x" target="_blank" rel="noopener">doi</a></div>
+ <div class="reference-item">Sayer, J., et al. (2013). Ten principles for a landscape approach. <em>PNAS</em>, 110, 8349&ndash;8356. <a href="https://doi.org/10.1073/pnas.1210595110" target="_blank" rel="noopener">doi:10.1073/pnas.1210595110</a></div>
+ <div class="reference-item">UNCCD (2022). <em>Land Degradation Neutrality Target Setting Programme.</em> UNCCD, Bonn. <a href="https://www.unccd.int" target="_blank" rel="noopener">unccd.int</a></div>
+ <div class="reference-item">Vargas Hill, R., et al. (2021). Strengthening producer organizations to increase market access in Uganda. <em>Agric. Resour. Econ. Rev.</em>, 50(3), 436&ndash;464. <a href="https://doi.org/10.1017/age.2021.6" target="_blank" rel="noopener">doi</a></div>
+ <div class="reference-item">Vernooy, R., Shrestha, P., &amp; Sthapit, B. (Eds.) (2017). <em>Community Seed Banks: Origins, Evolution and Prospects.</em> Routledge, London.</div>
+ <div class="reference-item">Vernooy, R., &amp; Otieno, G. (2021). Strengthening smallholder farmers and climate adaptation: roles of community seedbanks, in <em>Handbook of Climate Change Management.</em> Springer, Cham.</div>
+ <div class="reference-item">Waddington, H., &amp; White, H. (2014). <em>Farmer field schools: from agricultural extension to adult education.</em> 3ie, London. <a href="https://www.3ieimpact.org" target="_blank" rel="noopener">3ieimpact.org</a></div>
+ <div class="reference-item">Zomer, R.J., et al. (2016). Global tree cover and biomass carbon on agricultural land. <em>Scientific Reports</em>, 6, 29987. <a href="https://doi.org/10.1038/srep29987" target="_blank" rel="noopener">doi:10.1038/srep29987</a></div>
+ <p class="table-caption" style="margin-top:1.4rem;">Citations link to the published source (DOI) or the issuing institution. This bibliography reproduces the SLPF working paper reference list.</p>
+ <h3>Contact &amp; resources</h3>
+ <div class="two-col">
+  <div>
+   <h4>For more information</h4>
+   <ul class="clean">
+    <li><strong>FAO DSL-IP</strong> &mdash; <a href="https://www.fao.org/in-action/drylands-sustainable-landscapes" target="_blank" rel="noopener" style="color:var(--clay);">fao.org &middot; DSL-IP</a></li>
+    <li><strong>Forest &amp; Farm Facility</strong> &mdash; <a href="https://www.fao.org/forest-farm-facility" target="_blank" rel="noopener" style="color:var(--clay);">fao.org/forest-farm-facility</a></li>
+    <li><strong>ILAM working paper</strong> &mdash; <a href="ILAM Integrated Landscape Assessment Methodology.html" style="color:var(--clay);">the companion methodology</a></li>
+   </ul>
+  </div>
+  <div>
+   <h4>Standards &amp; partners</h4>
+   <ul class="clean">
+    <li><strong>UNCCD &middot; LDN</strong> &mdash; <a href="https://www.unccd.int" target="_blank" rel="noopener" style="color:var(--clay);">unccd.int</a></li>
+    <li><strong>WOCAT (SLM)</strong> &mdash; <a href="https://www.wocat.net" target="_blank" rel="noopener" style="color:var(--clay);">wocat.net</a></li>
+    <li><strong>GEF</strong> &mdash; <a href="https://www.thegef.org" target="_blank" rel="noopener" style="color:var(--clay);">thegef.org</a></li>
+   </ul>
+  </div>
+ </div>
+ <div class="callout success" style="margin-top:1.6rem;">
+  <div class="callout-title">A framework for adaptation, not a template</div>
+  <p>The SLPF is deliberately flexible. While Southern Africa is used as a practical example, the framework and methodologies are designed to be adapted to context and common management challenges in any landscape setting.</p>
+ </div>
+</section>
+</div>
+<footer>
+ <p><strong>The Sustainable Landscape Production Framework (SLPF)</strong></p>
+ <p>Drylands Sustainable Landscapes Impact Programme (DSL-IP) &middot; A GEF-7 Impact Programme led by FAO</p>
+ <hr class="foot-rule">
+ <p>Applied across the Miombo-Mopane woodlands of Southern Africa: Angola &middot; Botswana &middot; Malawi &middot; Namibia &middot; Tanzania &middot; Zimbabwe</p>
+ <p style="margin-top:1rem; opacity:.9;">&copy; 2026 FAO &middot; DSL-IP Working Paper. Suggested citation: FAO. 2026. <em>The Sustainable Landscape Production Framework (SLPF)</em>. DSL-IP Working Paper. Rome, FAO.</p>
+</footer>
+<script>
+function openTab(evt, tabName){
+ var i, tabcontent, tabbuttons, scope = evt.currentTarget.closest('.tab-scope') || document;
+ tabcontent = scope.getElementsByClassName("tab-content");
+ for(i=0;i<tabcontent.length;i++){ tabcontent[i].classList.remove("active"); }
+ tabbuttons = scope.getElementsByClassName("tab-button");
+ for(i=0;i<tabbuttons.length;i++){ tabbuttons[i].classList.remove("active"); }
+ scope.querySelector('#'+tabName).classList.add("active");
+ evt.currentTarget.classList.add("active");
+}
+document.querySelectorAll('.expandable-header').forEach(header => {
+ header.addEventListener('click', function(){
+  this.classList.toggle('open');
+  this.nextElementSibling.classList.toggle('active');
+ });
+});
+document.querySelectorAll('nav a').forEach(link => {
+ link.addEventListener('click', function(e){
+  e.preventDefault();
+  const target = document.querySelector(this.getAttribute('href'));
+  if(target){ const y = target.getBoundingClientRect().top + window.pageYOffset - 64; window.scrollTo({ top:y, behavior:'smooth' }); }
+ });
+});
+</script>
+<script src="drip-home.js"></script>
+<script src="drip-i18n.js"></script>
+</body>
+</html>

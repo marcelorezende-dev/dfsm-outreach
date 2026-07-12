@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Language switcher" subtitle="Six-language flag switcher, injected into the top bar by drip-i18n.js" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Language switcher — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+<style>
+  .clay-strip{ background:#6E3B2C; padding:16px 22px; display:flex; justify-content:flex-end; }
+  .langsw{display:inline-flex;align-items:center;gap:7px}
+  .langsw .langsw-ic{display:inline-flex;width:16px;height:16px;color:rgba(245,242,232,.6);font-size:14px}
+  .langsw .flag{width:25px;height:17px;padding:0;border:1px solid rgba(251,248,239,.45);border-radius:3px;cursor:pointer;position:relative;overflow:hidden;opacity:.5;transition:opacity .15s,box-shadow .15s}
+  .langsw .flag:hover{opacity:.85}
+  .langsw .flag.is-on{opacity:1;box-shadow:0 0 0 2px rgba(248,177,51,.7)}
+  .langsw .flag-en{background:linear-gradient(0deg,transparent 40%,#fff 40% 60%,transparent 60%),linear-gradient(90deg,transparent 38%,#fff 38% 62%,transparent 62%),linear-gradient(0deg,transparent 44%,#C8102E 44% 56%,transparent 56%),linear-gradient(90deg,transparent 42%,#C8102E 42% 58%,transparent 58%),#012169}
+  .langsw .flag-es{background:linear-gradient(#AA151B 0 25%,#F1BF00 25% 75%,#AA151B 75%)}
+  .langsw .flag-fr{background:linear-gradient(90deg,#0055A4 0 33.34%,#fff 33.34% 66.67%,#EF4135 66.67%)}
+  .langsw .flag-ru{background:linear-gradient(#fff 0 33.34%,#0039A6 33.34% 66.67%,#D52B1E 66.67%)}
+  .langsw .flag-ar{background:#137a45}
+  .langsw .flag-ar::before{content:'';position:absolute;left:50%;top:50%;width:9px;height:1.5px;background:#fff;transform:translate(-50%,-50%);border-radius:2px}
+  .langsw .flag-zh{background:#DE2910}
+  .langsw .flag-zh::before{content:'\2605';position:absolute;left:3px;top:50%;transform:translateY(-50%);color:#FFDE00;font-size:8px;line-height:1}
+  .lang-list{ display:flex; gap:10px; flex-wrap:wrap; }
+  .lang-list .li{ display:flex; align-items:center; gap:9px; font-size:13px; color:var(--ink-2);
+    background:var(--surface); border:1px solid var(--hairline); border-radius:var(--r-pill); padding:6px 13px 6px 8px; }
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">Components</p>
+  <h1 class="ds-title">Language switcher</h1>
+  <p class="ds-lede">A compact six-flag switcher that <span class="inline-code">drip-i18n.js</span> injects into <code>.db-nav</code> on every page. The active flag carries an amber ring. Translation keys on each element's <b>exact English text</b>, so English copy edits must be mirrored into the i18n rows.</p>
+
+  <div class="ds-sec">
+    <h2>In context</h2>
+    <p class="caption">Rendered on the clay bar, right-aligned, as it appears in the top bar. EN is active.</p>
+    <div class="frame">
+      <div class="clay-strip">
+        <div class="langsw" role="group" aria-label="Choose a language">
+          <span class="langsw-ic" aria-hidden="true">🌐</span>
+          <button type="button" class="flag flag-en is-on" title="English" aria-label="English"></button>
+          <button type="button" class="flag flag-es" title="Español" aria-label="Español"></button>
+          <button type="button" class="flag flag-fr" title="Français" aria-label="Français"></button>
+          <button type="button" class="flag flag-ru" title="Русский" aria-label="Русский"></button>
+          <button type="button" class="flag flag-ar" title="العربية" aria-label="العربية"></button>
+          <button type="button" class="flag flag-zh" title="中文" aria-label="中文"></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Supported languages</h2>
+    <div class="lang-list">
+      <span class="li"><span class="flag flag-en is-on" style="opacity:1"></span> English · en</span>
+      <span class="li"><span class="flag flag-es" style="opacity:1"></span> Español · es</span>
+      <span class="li"><span class="flag flag-fr" style="opacity:1"></span> Français · fr</span>
+      <span class="li"><span class="flag flag-ru" style="opacity:1"></span> Русский · ru</span>
+      <span class="li"><span class="flag flag-ar" style="opacity:1"></span> العربية · ar</span>
+      <span class="li"><span class="flag flag-zh" style="opacity:1"></span> 中文 · zh</span>
+    </div>
+    <p class="ds-note"><b>How it works.</b> Flags are pure CSS (no images). <code>drip-i18n.js</code> injects the switcher only if one is not already present, targeting <code>.drip-topbar .db-nav</code>. Add a new label by appending an <code>[EN, ES, FR, RU, AR, ZH]</code> row in <code>drip-i18n.js</code>, keyed on the exact English string.</p>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Components · injected by drip-i18n.js</div>
+</div>
+</body>
+</html>

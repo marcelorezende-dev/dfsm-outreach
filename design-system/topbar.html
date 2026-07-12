@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Top bar" subtitle="The sticky primary navigation — brand + pill nav, deep-clay" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Top bar — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+<style>
+  /* real topbar CSS — kept in sync with every site page's inline copy */
+  .drip-topbar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+   background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
+   font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;border-radius:inherit;}
+  .drip-topbar *{box-sizing:border-box;}
+  .drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+  .drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+  .drip-topbar .db-dm span{color:#F8B133;}
+  .drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+  .drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;background:none;padding:0;margin:0;border:0;box-shadow:none;position:static;}
+  .drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;}
+  .drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+  .drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">Components</p>
+  <h1 class="ds-title">Top bar</h1>
+  <p class="ds-lede">The sticky primary navigation that sits at the top of every site page: the <b>DFSA.</b> wordmark on the left, a pill-style nav on the right, on a deep-clay bar. Identical markup and inline CSS are duplicated into every page (there is no server template).</p>
+
+  <div class="ds-sec">
+    <h2>Default</h2>
+    <p class="caption">Live render. The current-page/home link carries <code>.db-home</code> (pre-lit).</p>
+    <div class="frame">
+      <div class="drip-topbar">
+        <a class="db-brand" href="#"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+        <div class="db-nav" role="navigation" aria-label="Primary">
+          <a class="db-home" href="#">⌂ Home</a>
+          <a href="#">Why Drylands</a>
+          <a href="#">Map</a>
+          <a href="#">Library</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Anatomy &amp; tokens</h2>
+    <div class="tok">
+      <div class="row"><span class="demo" style="width:34px;height:34px;border-radius:8px;background:#6E3B2C;flex:none"></span><div class="info"><div class="nm">Bar fill</div><div class="val">#6E3B2C — deep clay</div></div></div>
+      <div class="row"><span class="demo" style="width:34px;height:34px;border-radius:8px;background:#F5F2E8;flex:none"></span><div class="info"><div class="nm">Wordmark</div><div class="val">#F5F2E8 · 800 · .04em</div></div></div>
+      <div class="row"><span class="demo" style="width:34px;height:34px;border-radius:8px;background:#F8B133;flex:none"></span><div class="info"><div class="nm">Dot accent</div><div class="val">#F8B133 — amber</div></div></div>
+      <div class="row"><span class="demo" style="width:34px;height:20px;border-radius:999px;background:rgba(245,242,232,.12);border:1px solid rgba(245,242,232,.3);flex:none"></span><div class="info"><div class="nm">Nav pill</div><div class="val">radius 999px · 7×11px</div></div></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Rules</h2>
+    <div class="uses">
+      <div class="use-col do"><h3>Do</h3><ul>
+        <li>Keep the four items: <b>⌂ Home · Why Drylands · Map · Library</b> — in that order, on every page.</li>
+        <li>Keep the menu as <code>&lt;div class="db-nav"&gt;</code> — a div, never <code>&lt;nav&gt;</code>.</li>
+        <li>Preserve the <code>../</code> / <code>../../</code> href prefix on sub-folder pages.</li>
+        <li>Let <code>drip-i18n.js</code> inject the language switcher into <code>.db-nav</code>.</li>
+      </ul></div>
+      <div class="use-col dont"><h3>Don't</h3><ul>
+        <li>Use a <code>&lt;nav&gt;</code> element — a page-level <code>nav{}</code> rule bleeds a green box into the bar.</li>
+        <li>Re-add retired items (About, Research, Transparency, Community, MARVEL, partner CTA).</li>
+        <li>Hard-code a second static language switcher (i18n injects one).</li>
+        <li>Swap the clay fill back to the old forest green <code>#1f523a</code>.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Components · duplicated inline on every page</div>
+</div>
+</body>
+</html>

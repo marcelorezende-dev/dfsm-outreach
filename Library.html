@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Core" name="The Library – DFSA knowledge catalogue" -->
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Library – DFSA knowledge catalogue · DSL-IP</title>
+<link rel="stylesheet" href="colors_and_type.css" />
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:var(--font-body);
+    -webkit-font-smoothing:antialiased; }
+  body::before{ content:''; position:fixed; inset:0; z-index:-2; pointer-events:none;
+    background:linear-gradient(180deg, #ece5d5 0%, var(--cream) 24%, var(--cream) 70%, #ece5d5 100%); }
+  body::after{ content:''; position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.32;
+    background-image:url("assets/paper-texture.png"); background-size:520px; }
+  .page{ max-width:1180px; margin:0 auto; padding:0 40px; }
+  section{ padding:62px 0; border-top:1px solid var(--hairline); scroll-margin-top:66px; }
+
+  /* ===== sticky nav banner ===== */
+  .dripnav{ position:sticky; top:0; z-index:60; background:rgba(110,59,44,0.97); backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(251,248,239,.14); }
+  .dripnav .page{ display:flex; align-items:center; justify-content:space-between; gap:18px; height:62px; }
+  .dripnav .brand{ display:flex; align-items:center; gap:11px; text-decoration:none; }
+  .dripnav .brand .dm{ font-family:var(--font-display); font-weight:700; font-size:24px; letter-spacing:.03em; color:#F5F2E8; line-height:1; }
+  .dripnav .brand .dm .dot{ color:var(--amber); }
+  .dripnav .brand small{ font-family:var(--font-sans); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:rgba(245,242,232,.6); }
+  .dripnav nav{ display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+  .dripnav nav a{ font-family:var(--font-sans); font-weight:500; font-size:13.5px; color:rgba(245,242,232,.86);
+    text-decoration:none; padding:8px 13px; border-radius:var(--r-pill); transition:.14s; white-space:nowrap; }
+  .dripnav nav a:hover{ background:rgba(251,248,239,.12); color:#fff; }
+  .dripnav nav a.cta{ background:var(--amber); color:#3a2408; font-weight:600; }
+  .dripnav nav a.cta:hover{ background:#ffc658; }
+  @media(max-width:880px){ .dripnav .brand small{ display:none; } .dripnav .page{ height:auto; padding-top:10px; padding-bottom:10px; flex-wrap:wrap; }
+    .dripnav nav a{ padding:7px 10px; font-size:12.5px; } }
+
+  /* ===== become-a-partner ===== */
+  .partner{ background:linear-gradient(160deg,#3f8f8a 0%,var(--forest) 48%,var(--forest-deep) 100%); color:var(--ink-on-dark);
+    border-radius:var(--r-lg); padding:42px 44px; position:relative; overflow:hidden; }
+  .partner .pgrain{ position:absolute; inset:0; opacity:.14; mix-blend-mode:soft-light; background-image:url("assets/grain-tile.png"); background-size:300px; pointer-events:none; }
+  .partner h3{ font-family:var(--font-serif); font-weight:900; font-size:30px; margin:0 0 12px; color:#fff; position:relative; }
+  .partner p{ font-family:var(--font-body); font-size:17px; line-height:1.6; color:rgba(251,248,239,.94); max-width:64ch; margin:0 0 22px; position:relative; }
+  .partner .pways{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:0 0 26px; position:relative; }
+  .partner .pway{ background:rgba(251,248,239,.1); border:1px solid rgba(251,248,239,.22); border-radius:var(--r-md); padding:16px 18px; }
+  .partner .pway i{ width:20px; height:20px; color:var(--amber); }
+  .partner .pway h4{ font-family:var(--font-serif); font-weight:700; font-size:17px; margin:9px 0 5px; color:#fff; }
+  .partner .pway p{ font-size:13.5px; line-height:1.5; margin:0; color:rgba(251,248,239,.82); }
+  .partner .pbtns{ display:flex; gap:12px; flex-wrap:wrap; position:relative; }
+  .partner .pbtn{ font-family:var(--font-sans); font-weight:600; font-size:14px; text-decoration:none; border-radius:var(--r-pill); padding:11px 20px; }
+  .partner .pbtn.primary{ background:var(--amber); color:#3a2408; }
+  .partner .pbtn.ghost{ background:rgba(251,248,239,.12); color:#fff; border:1px solid rgba(251,248,239,.3); }
+  @media(max-width:760px){ .partner .pways{ grid-template-columns:1fr; } }
+  .kick{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase; font-size:13px; letter-spacing:.14em; color:var(--forest); }
+  .sec-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:30px; }
+  .sec-num{ font-family:var(--font-sans); font-weight:600; font-size:13px; letter-spacing:.16em; color:var(--clay);
+    border:1px solid var(--clay-soft); border-radius:var(--r-pill); padding:4px 12px; }
+  .sec-title{ font-family:var(--font-serif); font-weight:900; font-size:var(--t-h2); line-height:1.12; margin:0; letter-spacing:-.01em; }
+  .lede{ font-family:var(--font-body); font-size:19px; line-height:1.65; color:var(--ink-2); max-width:66ch; }
+  b,strong{ color:var(--ink); font-weight:700; }
+  i[data-lucide]{ width:1em; height:1em; vertical-align:-.125em; }
+
+  /* ===== hero (DSL-IP lockup) ===== */
+  .hero{ position:relative; overflow:hidden; border-top:none; color:var(--ink);
+    background:
+      radial-gradient(1100px 380px at 82% -12%, rgba(110,59,44,.10), transparent 60%),
+      radial-gradient(760px 320px at 6% 8%, rgba(71,126,89,.10), transparent 62%),
+      var(--cream);
+    border-bottom:1px solid var(--hairline); }
+  .hero .page{ position:relative; z-index:2; padding-top:44px; padding-bottom:46px; text-align:center; }
+  .wordmark{ display:flex; align-items:baseline; justify-content:center; gap:16px; }
+  .wordmark h1{ font-family:var(--font-display); font-weight:700; text-transform:uppercase;
+    font-size:clamp(46px,8.4vw,104px); line-height:.9; letter-spacing:.02em; margin:0; color:var(--forest-deep); }
+  .wordmark h1 .dot{ color:var(--amber); }
+  .hero .expand{ font-family:var(--font-serif); font-weight:400; font-style:italic; font-size:clamp(17px,2.4vw,25px);
+    color:var(--clay-deep); margin:12px 0 0; letter-spacing:.01em; }
+  .hero .dslip{ margin:34px 0 0; }
+  .hero .dslip img{ height:clamp(66px,10vw,112px); width:auto; max-width:min(90vw,720px); }
+  .hero .dslip small{ display:block; margin-top:13px; font-family:var(--font-sans); font-size:11.5px;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); }
+  .ataglance{ display:flex; flex-wrap:wrap; gap:10px; margin-top:30px; }
+  .ataglance .g{ display:flex; align-items:center; gap:9px; background:rgba(251,248,239,.1); border:1px solid rgba(251,248,239,.24);
+    border-radius:var(--r-pill); padding:8px 15px; font-family:var(--font-sans); font-size:13px; color:#fff; }
+  .ataglance .g i{ width:15px; height:15px; color:var(--amber); }
+  .ataglance .g b{ color:#fff; } .ataglance .g span{ color:rgba(251,248,239,.7); }
+
+  /* ===== activation tracker ===== */
+  .track{ display:grid; grid-template-columns:repeat(3,1fr); gap:0; position:relative; margin-top:10px; }
+  .track .ph{ position:relative; padding:0 26px; }
+  .track .ph:not(:last-child)::after{ content:''; position:absolute; top:19px; right:-1px; width:2px; height:calc(100% - 19px); }
+  .track .dotrow{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+  .track .pdot{ width:38px; height:38px; border-radius:50%; flex:none; display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-display); font-size:20px; color:#fff; }
+  .track .pdot i{ width:18px; height:18px; }
+  .track .pbar{ height:4px; flex:1; border-radius:3px; }
+  .track .ph1 .pdot{ background:var(--ink-3); } .track .ph1 .pbar{ background:var(--ink-3); }
+  .track .ph2 .pdot{ background:var(--clay); box-shadow:0 0 0 6px rgba(207,113,93,.18); } .track .ph2 .pbar{ background:var(--clay); }
+  .track .ph3 .pdot{ background:var(--surface); border:2px dashed var(--forest-soft); color:var(--forest); } .track .ph3 .pbar{ background:var(--forest-soft); }
+  .track .pstat{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase; font-size:11px; letter-spacing:.1em; }
+  .track .ph1 .pstat{ color:var(--ink-3); } .track .ph2 .pstat{ color:var(--clay-deep); } .track .ph3 .pstat{ color:var(--forest); }
+  .track h3{ font-family:var(--font-serif); font-weight:700; font-size:22px; margin:0 0 8px; }
+  .track p{ font-family:var(--font-body); font-size:14.5px; line-height:1.6; color:var(--ink-2); margin:0; }
+  .track .ph{ border-left:1px solid var(--hairline); } .track .ph:first-child{ border-left:none; }
+
+  /* ===== library ===== */
+  .libgroup{ margin-top:34px; }
+  .libgroup:first-child{ margin-top:0; }
+  .lg-head{ display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+  .lg-head i{ width:18px; height:18px; color:var(--clay); }
+  .lg-head h3{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase; font-size:13px; letter-spacing:.1em; color:var(--ink); margin:0; }
+  .lg-head .ln{ flex:1; height:1px; background:var(--hairline); }
+  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
+  .lcard{ display:flex; flex-direction:column; text-decoration:none; color:inherit; background:var(--surface);
+    border:1px solid var(--border); border-radius:var(--r-lg); padding:17px 18px 15px; box-shadow:var(--shadow-sm);
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; position:relative; overflow:hidden; }
+  .lcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--forest-soft); }
+  .lcard .ic{ width:36px; height:36px; border-radius:var(--r-md); display:flex; align-items:center; justify-content:center;
+    background:var(--sage); color:var(--forest-deep); margin-bottom:11px; }
+  .lcard .ic i{ width:18px; height:18px; }
+  .lcard.tool .ic{ background:rgba(63,143,203,.14); color:var(--water); }
+  .lcard.story .ic{ background:var(--blush); color:var(--clay-deep); }
+  .lcard h4{ font-family:var(--font-serif); font-weight:700; font-size:16.5px; margin:0 0 4px; line-height:1.2; }
+  .lcard .meta{ font-family:var(--font-sans); font-weight:600; font-size:10.5px; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); margin-bottom:8px; }
+  .lcard p{ font-family:var(--font-body); font-size:12.5px; line-height:1.5; color:var(--ink-2); margin:0 0 12px; flex:1; }
+  .lcard .open{ font-family:var(--font-sans); font-weight:600; font-size:12px; color:var(--forest); display:flex; align-items:center; gap:5px; }
+  .lcard.tool .open{ color:var(--water); } .lcard.story .open{ color:var(--clay-deep); }
+  .lcard .open i{ width:14px; height:14px; transition:transform .18s ease; }
+  .lcard:hover .open i{ transform:translateX(3px); }
+  .lcard .badge{ position:absolute; top:14px; right:14px; font-family:var(--font-sans); font-weight:600; font-size:10px;
+    letter-spacing:.06em; text-transform:uppercase; color:#fff; background:var(--amber); color:var(--ink); border-radius:var(--r-pill); padding:3px 9px; }
+
+  /* ===== wiring (KM structure) ===== */
+  .wiring{ display:grid; grid-template-columns:1.1fr .9fr; gap:30px; align-items:center; }
+  .wnote{ font-family:var(--font-body); font-size:16px; line-height:1.7; color:var(--ink-2); }
+  .wnote p{ margin:0 0 16px; } .wnote .pull{ font-family:var(--font-serif); font-weight:700; color:var(--ink); font-size:19px; line-height:1.4; }
+  .wsteps{ display:flex; flex-direction:column; gap:10px; }
+  .wstep{ display:flex; gap:14px; align-items:flex-start; background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--r-md); padding:16px 18px; box-shadow:var(--shadow-sm); }
+  .wstep .wi{ width:34px; height:34px; flex:none; border-radius:50%; background:var(--forest); color:#fff;
+    display:flex; align-items:center; justify-content:center; } .wstep .wi i{ width:17px; height:17px; }
+  .wstep h5{ font-family:var(--font-sans); font-weight:600; font-size:14px; margin:0 0 3px; color:var(--ink); }
+  .wstep p{ font-family:var(--font-body); font-size:13.5px; line-height:1.5; color:var(--ink-2); margin:0; }
+
+  /* ===== 7 pillars ===== */
+  .pillars{ display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  .pcard{ position:relative; text-align:left; cursor:pointer; background:var(--surface); border:1px solid var(--border);
+    border-radius:var(--r-lg); padding:18px 18px 16px; box-shadow:var(--shadow-sm); font:inherit; color:inherit;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; overflow:hidden; }
+  .pcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+  .pcard .pi{ width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; margin-bottom:11px; color:#fff; }
+  .pcard .pi i{ width:19px; height:19px; }
+  .pcard .pn{ font-family:var(--font-serif); font-weight:700; font-size:16px; line-height:1.2; margin:0 0 5px; color:var(--ink); }
+  .pcard .pd{ font-family:var(--font-body); font-size:12px; line-height:1.45; color:var(--ink-2); margin:0 0 13px; }
+  .pcard .pf{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .pcard .cnt{ font-family:var(--font-sans); font-size:11px; font-weight:600; color:var(--ink-3); }
+  .pcard .opn{ font-family:var(--font-sans); font-size:11.5px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:4px; }
+  .pcard .opn i{ width:13px; height:13px; }
+  .pcard .strip{ position:absolute; left:0; top:0; bottom:0; width:4px; }
+  .pcard.active{ border-color:transparent; box-shadow:0 0 0 2px var(--pc), var(--shadow-md); }
+  /* ===== library filter ===== */
+  .filterbar{ display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 26px; }
+  .fchip{ font-family:var(--font-sans); font-weight:600; font-size:12.5px; padding:7px 14px; border-radius:var(--r-pill);
+    border:1.4px solid var(--border-strong); background:transparent; color:var(--ink-2); cursor:pointer; transition:.15s; display:inline-flex; align-items:center; gap:7px; }
+  .fchip:hover{ color:var(--ink); border-color:var(--ink-3); }
+  .fchip .sw{ width:9px; height:9px; border-radius:50%; }
+  .fchip.on{ color:#fff; border-color:transparent; }
+  .libgroup.empty{ display:none; }
+  .hidden{ display:none !important; }
+
+  /* ===== funding ===== */
+  section.fund{ background:var(--bark); background-image:linear-gradient(180deg,#5a3a20,#3f2914); color:var(--ink-on-dark); }
+  .fund .sec-title, .fund .lede{ color:var(--ink-on-dark); } .fund .sec-num{ color:var(--amber); border-color:rgba(248,177,51,.5); }
+  .fgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:30px; }
+  .fcard{ background:rgba(251,248,239,.06); border:1px solid rgba(251,248,239,.16); border-radius:var(--r-lg); padding:22px 22px 18px; }
+  .fcard .fi{ width:40px; height:40px; border-radius:var(--r-md); background:rgba(248,177,51,.18); color:var(--amber);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px; } .fcard .fi i{ width:20px; height:20px; }
+  .fcard h4{ font-family:var(--font-serif); font-weight:700; font-size:19px; margin:0 0 8px; color:#fff; }
+  .fcard p{ font-family:var(--font-body); font-size:13.5px; line-height:1.6; color:rgba(251,248,239,.86); margin:0; }
+  .fcard a{ color:var(--amber); font-weight:600; text-decoration:none; }
+  .fcard.lead{ background:rgba(248,177,51,.12); border-color:rgba(248,177,51,.4); }
+  /* light variant for the Transparency section (cream bg) */
+  #transparency .fcard{ background:var(--paper-2); border-color:var(--border); }
+  #transparency .fcard h4{ color:var(--ink); }
+  #transparency .fcard p{ color:var(--ink-2); }
+  #transparency .fcard .fi{ background:rgba(71,126,89,.12); color:var(--forest); }
+  #transparency .fcard a:not(.grbtn){ color:var(--clay-deep); }
+  #transparency .fgrid{ grid-template-columns:repeat(2,1fr); }
+  #transparency .fcard{ display:flex; flex-direction:column; }
+  #transparency .fcard .grbtn{ align-self:flex-start; margin-top:auto; white-space:nowrap; }
+
+  /* ===== footer / disclaimer ===== */
+  .foot{ padding:40px 0 64px; }
+  .disc{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .disc-col{ background:var(--paper-2); border:1px solid var(--border); border-radius:var(--r-lg); padding:22px 24px; }
+  .disc-col.grievance{ background:var(--surface); border-color:var(--clay-soft); }
+  .disc-col .kick{ display:block; margin-bottom:9px; }
+  .disc-col p{ font-family:var(--font-body); font-size:13.5px; line-height:1.62; color:var(--ink-2); margin:0; }
+  .grbtn{ display:inline-block; margin-top:14px; font-family:var(--font-sans); font-weight:600; font-size:13px;
+    color:var(--ink-on-dark); background:var(--clay); border-radius:var(--r-pill); padding:9px 17px; text-decoration:none; }
+  .grbtn:hover{ background:var(--clay-deep); }
+  .grnote{ font-family:var(--font-body); font-style:italic; font-size:12px; color:var(--ink-3) !important; margin-top:10px !important; }
+  .credits{ display:flex; align-items:center; justify-content:space-between; gap:20px; margin-top:30px; padding-top:24px; border-top:1px solid var(--border); flex-wrap:wrap; }
+  .credits .cred{ display:flex; align-items:center; gap:14px; font-family:var(--font-sans); font-size:15px; color:var(--ink-2); }
+  .credits .cred b{ color:var(--ink); font-weight:700; }
+  .credits .gef{ height:46px; width:auto; }
+  .endnote{ font-family:var(--font-body); font-size:12.5px; color:var(--ink-3); margin:20px 0 0; line-height:1.5; }
+  @media(max-width:600px){ .credits{ justify-content:flex-start; } }
+
+  @media(max-width:980px){ .cards,.fgrid{ grid-template-columns:1fr 1fr; } .track{ grid-template-columns:1fr; }
+    .track .ph{ border-left:none; border-top:1px solid var(--hairline); padding:20px 0 0; margin-top:14px; }
+    .track .ph:first-child{ border-top:none; margin-top:0; padding-top:0; } .wiring{ grid-template-columns:1fr; } }
+  @media(max-width:680px){ .page{ padding:0 22px; } .cards,.fgrid,.disc{ grid-template-columns:1fr; } #transparency .fgrid{ grid-template-columns:1fr; } }
+
+  /* ===== DFSA Network entry modal ===== */
+  .cnmodal{ position:fixed; inset:0; z-index:200; display:none; align-items:center; justify-content:center; padding:24px;
+    background:rgba(12,10,7,0.62); backdrop-filter:blur(4px); }
+  .cnmodal.show{ display:flex; }
+  .cnbox{ position:relative; max-width:520px; width:100%; background:linear-gradient(165deg,#21503a,#16382a);
+    color:var(--ink-on-dark); border:1px solid rgba(248,177,51,.4); border-radius:var(--r-lg);
+    padding:38px 38px 30px; box-shadow:0 30px 80px rgba(0,0,0,.5); overflow:hidden; }
+  .cnbox .cnglow{ position:absolute; right:-60px; top:-60px; width:200px; height:200px; border-radius:50%;
+    background:radial-gradient(circle,rgba(248,177,51,.35),transparent 70%); pointer-events:none; }
+  .cnbox .cnkick{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em;
+    font-size:12px; color:var(--amber); position:relative; }
+  .cnbox h3{ font-family:var(--font-serif); font-weight:900; font-size:27px; line-height:1.15; margin:10px 0 14px; color:#fff; position:relative; }
+  .cnbox p{ font-family:var(--font-body); font-size:15.5px; line-height:1.62; color:rgba(251,248,239,.92); margin:0; position:relative; }
+  .cnbox p b{ color:#fff; }
+  .cnbtns{ display:flex; gap:12px; flex-wrap:wrap; margin-top:24px; position:relative; }
+  .cnbtn{ font-family:var(--font-sans); font-weight:600; font-size:14px; text-decoration:none; border-radius:var(--r-pill); padding:12px 22px; transition:.15s; }
+  .cnbtn.primary{ background:var(--amber); color:#3a2408; } .cnbtn.primary:hover{ background:#ffc658; }
+  .cnbtn.ghost{ background:rgba(251,248,239,.12); color:#fff; border:1px solid rgba(251,248,239,.32); } .cnbtn.ghost:hover{ background:rgba(251,248,239,.2); }
+  .cnx{ position:absolute; top:12px; right:15px; background:none; border:none; color:rgba(251,248,239,.7); font-size:26px; line-height:1; cursor:pointer; }
+  .cnx:hover{ color:#fff; }
+
+  /* ===== content shell + sticky right rail ===== */
+  .shell{ max-width:1180px; margin:0 auto; padding:48px 40px 28px; display:grid;
+    grid-template-columns:minmax(0,1fr); gap:32px; align-items:start; }
+  .mainflow{ display:flex; flex-direction:column; gap:20px; min-width:0; }
+  .mainflow > section{ margin:0; padding:36px 40px; border:1px solid var(--border); border-radius:22px;
+    background:var(--surface); box-shadow:0 1px 3px rgba(44,42,36,.05); scroll-margin-top:80px; }
+  .mainflow > section.fund{ background:linear-gradient(165deg,#5a3a20,#3f2914); border-color:rgba(248,177,51,.22); }
+  .mainflow .page{ max-width:none; padding:0; margin:0; }
+  .mainflow .pillars{ grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); }
+  .mainflow .cards{ grid-template-columns:repeat(auto-fit,minmax(208px,1fr)); }
+
+  .rail{ position:sticky; top:78px; display:flex; flex-direction:column; gap:16px;
+    max-height:calc(100vh - 92px); overflow-y:auto; overflow-x:hidden; scrollbar-width:thin; padding-right:3px; }
+  .rail::-webkit-scrollbar{ width:6px; } .rail::-webkit-scrollbar-thumb{ background:var(--border-strong); border-radius:3px; }
+  .railcard{ background:var(--surface); border:1px solid var(--border); border-radius:18px;
+    padding:19px 20px 17px; box-shadow:0 1px 3px rgba(44,42,36,.05); }
+  .railcard .rlabel{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase; font-size:11px;
+    letter-spacing:.12em; color:var(--ink-3); margin:0 0 13px; display:flex; align-items:center; gap:7px; }
+  .railcard .rlabel i{ width:14px; height:14px; color:var(--clay); }
+  .railcard.spot{ background:linear-gradient(160deg,#3f8f8a,var(--forest-deep)); color:var(--ink-on-dark); border-color:transparent; }
+  .railcard.spot .rlabel{ color:rgba(251,248,239,.72); } .railcard.spot .rlabel i{ color:var(--amber); }
+  .railcard.spot h4{ font-family:var(--font-serif); font-weight:800; font-size:21px; line-height:1.12; margin:0 0 8px; color:#fff; }
+  .railcard.spot p{ font-family:var(--font-body); font-size:13px; line-height:1.5; color:rgba(251,248,239,.9); margin:0 0 15px; }
+  .railcard.spot .rgo{ display:inline-flex; align-items:center; gap:6px; font-family:var(--font-sans); font-weight:600;
+    font-size:12.5px; text-decoration:none; background:var(--amber); color:#3a2408; border-radius:var(--r-pill); padding:8px 15px; }
+  .railcard.spot .rgo i{ width:14px; height:14px; }
+  .railcard.spot .soon{ margin:13px 0 0; font-family:var(--font-sans); font-weight:600; font-size:11.5px;
+    letter-spacing:.04em; color:var(--amber); display:flex; align-items:center; gap:6px; }
+  .railcard.spot .soon::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--amber); flex:none; }
+  .rlinks{ display:flex; flex-direction:column; gap:1px; }
+  .rlinks a{ display:flex; align-items:center; gap:11px; text-decoration:none; color:var(--ink);
+    font-family:var(--font-sans); font-size:13.5px; font-weight:600; padding:9px 10px; border-radius:11px; transition:background .14s; }
+  .rlinks a:hover{ background:var(--paper-2); }
+  .rlinks a > i{ width:17px; height:17px; color:var(--forest); flex:none; }
+  .rlinks a .rtxt{ display:flex; flex-direction:column; line-height:1.25; }
+  .rlinks a .rsub{ font-size:11px; color:var(--ink-3); font-weight:400; margin-top:1px; }
+  .rrecent{ display:flex; flex-direction:column; gap:12px; }
+  .rrecent a{ text-decoration:none; color:inherit; display:block; }
+  .rrecent a .rd{ font-family:var(--font-sans); font-size:10px; font-weight:700; color:var(--clay-deep);
+    letter-spacing:.06em; text-transform:uppercase; }
+  .rrecent a h5{ font-family:var(--font-serif); font-weight:700; font-size:14.5px; margin:2px 0 0; line-height:1.25; color:var(--ink); }
+  .rrecent a:hover h5{ color:var(--forest); }
+  .railcard.rcta{ background:var(--blush); border-color:var(--clay-soft); }
+  .railcard.rcta h4{ font-family:var(--font-serif); font-weight:800; font-size:17px; margin:0 0 6px; color:var(--ink); }
+  .railcard.rcta p{ font-family:var(--font-body); font-size:12.5px; line-height:1.5; color:var(--ink-2); margin:0 0 13px; }
+  .railcard.rcta a{ display:inline-flex; align-items:center; gap:6px; font-family:var(--font-sans); font-weight:600;
+    font-size:12.5px; text-decoration:none; background:var(--clay); color:#fff; border-radius:var(--r-pill); padding:8px 15px; }
+  .railcard.rcta a i{ width:14px; height:14px; }
+  .rmore{ display:inline-flex; align-items:center; gap:5px; margin-top:13px; font-family:var(--font-sans);
+    font-weight:600; font-size:12px; color:var(--forest); text-decoration:none; }
+  .rmore i{ width:13px; height:13px; } .rmore:hover{ color:var(--forest-deep); }
+  @media(max-width:980px){
+    .shell{ grid-template-columns:1fr; padding:32px 22px 18px; gap:20px; }
+    .rail{ position:static; max-height:none; overflow:visible; padding-right:0; }
+    .mainflow > section{ padding:28px 24px; }
+  }
+
+  /* ===== about: lineage + lenses ===== */
+  .story-div{ height:1px; background:var(--hairline); margin:32px 0 26px; }
+  .subhead{ font-family:var(--font-serif); font-weight:800; font-size:21px; color:var(--ink); margin:0 0 12px; }
+  .story-prose p{ font-family:var(--font-body); font-size:15px; line-height:1.7; color:var(--ink-2); margin:0 0 14px; max-width:76ch; }
+  .story-prose p:last-child{ margin-bottom:0; }
+  .story-prose a{ color:var(--forest-deep); font-weight:600; text-decoration:none; border-bottom:1px solid var(--forest-soft); }
+  .story-prose a:hover{ border-bottom-color:var(--forest-deep); }
+  /* connection / cross-reference callout */
+  .xref{ display:flex; gap:18px; align-items:flex-start; background:#F1F6F5; border:1px solid var(--border);
+    border-left:4px solid var(--forest); border-radius:16px; padding:22px 24px; margin:30px 0 4px; }
+  .xref .xic{ width:46px; height:46px; flex:none; border-radius:12px; display:flex; align-items:center; justify-content:center;
+    background:rgba(71,126,89,.12); color:var(--forest-deep); }
+  .xref .xic i{ width:22px; height:22px; }
+  .xref .xk{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase; letter-spacing:.13em; font-size:11px; color:var(--forest-deep); margin-bottom:7px; }
+  .xref h4{ font-family:var(--font-serif); font-weight:800; font-size:19px; color:var(--ink); margin:0 0 9px; line-height:1.25; }
+  .xref p{ font-family:var(--font-body); font-size:14.5px; line-height:1.62; color:var(--ink-2); margin:0 0 13px; max-width:78ch; }
+  .xref .xgo{ display:inline-flex; align-items:center; gap:7px; font-family:var(--font-sans); font-weight:600; font-size:13px; color:var(--forest-deep); text-decoration:none; }
+  .xref .xgo:hover{ text-decoration:underline; }
+  .xref .xgo i{ width:15px; height:15px; }
+  @media(max-width:600px){ .xref{ flex-direction:column; gap:13px; padding:18px 18px; } }
+  .lineage{ position:relative; display:grid; grid-template-columns:repeat(5,1fr); gap:0; margin:26px 0 4px; }
+  .lineage::before{ content:''; position:absolute; top:6px; left:7px; right:calc(20% - 7px); height:2px; background:var(--hairline); }
+  .lineage .mil{ padding:0 12px 0 0; }
+  .lineage .dot{ width:14px; height:14px; border-radius:50%; background:var(--forest-soft);
+    box-shadow:0 0 0 4px var(--surface); margin-bottom:12px; }
+  .lineage .mil.now .dot{ background:var(--amber); box-shadow:0 0 0 4px var(--surface), 0 0 0 7px rgba(248,177,51,.22); }
+  .lineage .yr{ font-family:var(--font-sans); font-weight:700; font-size:12.5px; color:var(--forest-deep); letter-spacing:.02em; }
+  .lineage .ev{ font-family:var(--font-body); font-size:11.5px; line-height:1.4; color:var(--ink-2); margin-top:3px; }
+  .lenses4{ display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:16px; }
+  .lens4{ background:var(--paper-2); border:1px solid var(--border); border-radius:14px; padding:16px 16px 14px; }
+  .lens4 .li{ width:34px; height:34px; border-radius:9px; background:var(--sage); color:var(--forest-deep);
+    display:flex; align-items:center; justify-content:center; margin-bottom:10px; }
+  .lens4 .li i{ width:17px; height:17px; }
+  .lens4 h5{ font-family:var(--font-serif); font-weight:700; font-size:15px; margin:0 0 4px; color:var(--ink); }
+  .lens4 p{ font-family:var(--font-body); font-size:12px; line-height:1.45; color:var(--ink-2); margin:0; }
+  @media(max-width:760px){ .lineage{ grid-template-columns:1fr 1fr; gap:16px 0; } .lineage::before{ display:none; } .lenses4{ grid-template-columns:1fr 1fr; } }
+
+  @media print{
+    body{ background:#fff; } .shell{ display:block; padding:0; max-width:none; }
+    .rail{ display:none; } .mainflow > section{ break-inside:avoid; box-shadow:none; margin-bottom:14px; }
+    .hero, .mainflow > section.fund{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  }
+
+  /* ===== language switcher (flags) ===== */
+  .langsw{ display:flex; align-items:center; gap:7px; margin-left:6px; }
+  .langsw-ic{ width:16px; height:16px; color:rgba(245,242,232,.6); }
+  .flag{ width:25px; height:17px; padding:0; border:1px solid rgba(251,248,239,.45); border-radius:3px;
+    cursor:pointer; position:relative; overflow:hidden; opacity:.5; transition:opacity .15s ease, transform .15s ease, box-shadow .15s ease;
+    background-size:cover; background-position:center; flex:none; }
+  .flag:hover{ opacity:1; transform:translateY(-1px); }
+  .flag.is-on{ opacity:1; border-color:var(--amber); box-shadow:0 0 0 2px rgba(248,177,51,.55); }
+  .flag-en{ background:
+    linear-gradient(#C8102E,#C8102E) center/100% 30% no-repeat,
+    linear-gradient(#C8102E,#C8102E) center/30% 100% no-repeat,
+    linear-gradient(#fff,#fff) center/100% 58% no-repeat,
+    linear-gradient(#fff,#fff) center/58% 100% no-repeat,
+    #012169; }
+  .flag-es{ background:linear-gradient(#AA151B 0 25%, #F1BF00 25% 75%, #AA151B 75%); }
+  .flag-fr{ background:linear-gradient(90deg,#0055A4 0 33.34%,#fff 33.34% 66.67%,#EF4135 66.67%); }
+  .flag-ru{ background:linear-gradient(#fff 0 33.34%,#0039A6 33.34% 66.67%,#D52B1E 66.67%); }
+  .flag-ar{ background:#137a45; }
+  .flag-ar::before{ content:''; position:absolute; left:50%; top:50%; width:9px; height:1.5px; background:#fff; transform:translate(-50%,-50%); border-radius:2px; }
+  .flag-zh{ background:#DE2910; }
+  .flag-zh::before{ content:'\2605'; position:absolute; left:3px; top:50%; transform:translateY(-50%); color:#FFDE00; font-size:8px; line-height:1; }
+  @media(max-width:880px){ .langsw-ic{ display:none; } .langsw{ margin-left:0; } }
+
+  /* ===== auto-translation popup ===== */
+  .trmodal{ position:fixed; inset:0; z-index:240; display:none; align-items:center; justify-content:center; padding:24px;
+    background:rgba(12,10,7,0.6); backdrop-filter:blur(4px); }
+  .trmodal.show{ display:flex; }
+  .trbox{ position:relative; max-width:480px; width:100%; background:var(--surface); color:var(--ink);
+    border:1px solid var(--border); border-radius:var(--r-lg); padding:34px 36px 28px; box-shadow:var(--shadow-lg); text-align:left; }
+  html[dir="rtl"] .trbox{ text-align:right; }
+  .trbox .trglyph{ width:46px; height:46px; border-radius:var(--r-md); background:var(--sage); color:var(--forest-deep);
+    display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+  .trbox .trglyph i{ width:24px; height:24px; }
+  .trkick{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase; letter-spacing:.13em; font-size:11.5px; color:var(--clay-deep); }
+  .trbox h3{ font-family:var(--font-serif); font-weight:800; font-size:22px; line-height:1.22; margin:8px 0 12px; color:var(--ink); }
+  .trbox p{ font-family:var(--font-body); font-size:14.5px; line-height:1.62; color:var(--ink-2); margin:0; }
+  .trok{ margin-top:22px; font-family:var(--font-sans); font-weight:600; font-size:14px; cursor:pointer;
+    background:var(--forest); color:#fff; border:none; border-radius:var(--r-pill); padding:11px 24px; transition:background .15s; }
+  .trok:hover{ background:var(--forest-deep); }
+  .trx{ position:absolute; top:12px; right:15px; background:none; border:none; color:var(--ink-3); font-size:24px; line-height:1; cursor:pointer; }
+  html[dir="rtl"] .trx{ right:auto; left:15px; }
+  .trx:hover{ color:var(--ink); }
+
+  /* ===== non-Latin script fallbacks ===== */
+  body.i18n-ar p, body.i18n-ar h1, body.i18n-ar h2, body.i18n-ar h3, body.i18n-ar h4, body.i18n-ar h5,
+  body.i18n-ar a, body.i18n-ar span, body.i18n-ar div, body.i18n-ar button, body.i18n-ar li{
+    font-family:"Geeza Pro","Noto Naskh Arabic","Segoe UI",Tahoma,Arial,sans-serif !important; }
+  body.i18n-zh p, body.i18n-zh h1, body.i18n-zh h2, body.i18n-zh h3, body.i18n-zh h4, body.i18n-zh h5,
+  body.i18n-zh a, body.i18n-zh span, body.i18n-zh div, body.i18n-zh button, body.i18n-zh li{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",sans-serif !important; }
+  body.i18n-ar .wordmark h1, body.i18n-ar .dm, body.i18n-zh .wordmark h1, body.i18n-zh .dm{ font-family:var(--font-display) !important; }
+  .flag, .flag *{ font-family:inherit !important; }
+</style>
+  <link rel="icon" type="image/png" href="assets/globe.png">
+  <link rel="stylesheet" href="drip-topbar.css">
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#477E59">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#477E59"/>
+    <path d="M600 250 C600 250 735 440 735 535 a135 135 0 1 1 -270 0 C465 440 600 250 600 250 Z"
+      fill="none" stroke="#BFEAF0" stroke-width="22" stroke-linejoin="round"/>
+    <circle cx="600" cy="560" r="46" fill="#F8B133"/>
+  </svg>
+</template>
+
+
+<!-- ============ NAV BANNER ============ -->
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+
+<!-- ============ HERO (DSL-IP lockup) ============ -->
+<header class="hero" id="top">
+  <div class="page">
+    <div class="wordmark">
+      <h1>Library<span class="dot">.</span></h1>
+    </div>
+    <p class="expand">The knowledge library</p>
+    <div class="dslip">
+      <img src="assets/logo-full.png" alt="Sustainable Forest Management Impact Program on Dryland Sustainable Landscapes (DSL-IP)" />
+      <small>Dryland Forest Support Accelerator &middot; built on the GEF-7 DSL-IP</small>
+    </div>
+  </div>
+</header>
+
+<div class="shell">
+<div class="mainflow">
+
+<!-- ============ 2 · THE 7 PILLARS ============ -->
+<section id="pillars-sec">
+  <div class="page">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">The seven pillars</h2></div>
+    <p class="lede" style="margin-bottom:26px;">DFSA organises everything it holds under seven pillars of dryland knowledge. Choose a pillar to filter the library below – or open a pillar to explore its frameworks, modules and programmes.</p>
+    <div class="pillars" id="pillarGrid"></div>
+  </div>
+</section>
+
+<!-- ============ 3 · THE KNOWLEDGE LIBRARY ============ -->
+<section id="library">
+  <div class="page">
+    <div class="sec-head">
+      <span class="sec-num">02</span>
+      <h2 class="sec-title">The knowledge library</h2>
+    </div>
+    <p class="lede" style="margin-bottom:8px;">Everything DFSA brings together, in one place. Each item is a living piece of the Programme’s knowledge – open any one to explore it.</p>
+    <div class="filterbar" id="filterbar"></div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="orbit"></i><h3>Platform and tools</h3><span class="ln"></span></div>
+      <div class="cards">
+        
+                <a class="lcard tool" href="MARVEL.html">
+          <span class="ic"><i data-lucide="activity"></i></span>
+          <div class="meta">MEL · MARVEL dashboard</div>
+          <h4>MARVEL — M&amp;E System</h4>
+          <p>Monitoring, Assessment, Reporting, Verification, Evaluation and Learning — the participatory M&amp;E architecture and live results dashboard.</p>
+          <span class="open">Open MARVEL <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard tool" href="MARVEL.html">
+          <span class="badge">Dashboard</span>
+          <span class="ic"><i data-lucide="gauge"></i></span>
+          <div class="meta">MRV + MEL · dashboard</div>
+          <h4>MARVEL</h4>
+          <p>The Programme's monitoring-and-learning dashboard – knowledge products, projects, best practices, financing, indicators and global environmental benefits in one live view.</p>
+          <span class="open">Open the dashboard <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="file-text"></i><h3>Programme briefs</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="resources/DSL-IP-FFPO-Assessment-Infographic.pdf" target="_blank" rel="noopener">
+          <span class="ic"><i data-lucide="clipboard-list"></i></span>
+          <div class="meta">ILAM Module 3 · assessment · PDF</div>
+          <h4>Forest &amp; Farm Producer Organizations</h4>
+          <p>A 48-parameter framework profiling 226+ producer organizations across five countries – the georeferenced backbone of ILAM Module 3.</p>
+          <span class="open">Open infographic <i data-lucide="arrow-up-right"></i></span>
+        </a>
+        <a class="lcard" href="resources/DSL-IP-Global-Environmental-Benefits.pdf" target="_blank" rel="noopener">
+          <span class="ic"><i data-lucide="globe"></i></span>
+          <div class="meta">GEF-7 Core Indicators · PDF</div>
+          <h4>Global Environmental Benefits</h4>
+          <p>The programme’s environmental return – 46.3M t CO₂e mitigated and 13.1M ha restored or under improved management across 11 countries.</p>
+          <span class="open">Open infographic <i data-lucide="arrow-up-right"></i></span>
+        </a>
+        <a class="lcard" href="resources/DSL-IP-Mobilized-Finance.pdf" target="_blank" rel="noopener">
+          <span class="ic"><i data-lucide="hand-coins"></i></span>
+          <div class="meta">Finance · operational partners · PDF</div>
+          <h4>Mobilized Finance</h4>
+          <p>USD 635M of investment mobilized from a USD 96M GEF seed – a 1:5.6 co-financing leverage across governments and partners.</p>
+          <span class="open">Open infographic <i data-lucide="arrow-up-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="layers"></i><h3>Frameworks and methods</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="drylands.html">
+          <span class="ic"><i data-lucide="globe-2"></i></span>
+          <div class="meta">Concept · reference</div>
+          <h4>What are drylands?</h4>
+          <p>The aridity index, the four aridity zones, and how DFSA reads dryland boundaries – including the presumed drylands the accelerator also counts. With an interactive global map.</p>
+          <span class="open">Open explainer <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="ILAM Integrated Landscape Assessment Methodology.html">
+          <span class="ic"><i data-lucide="layers"></i></span>
+          <div class="meta">Assessment method</div>
+          <h4>ILAM</h4>
+          <p>Integrated Landscape Assessment Methodology – the five-module evidence base, from remote sensing to household surveys.</p>
+          <span class="open">Open framework <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="SLPF Sustainable Landscape Production Framework.html">
+          <span class="ic"><i data-lucide="sprout"></i></span>
+          <div class="meta">Production framework</div>
+          <h4>SLPF</h4>
+          <p>Sustainable Landscape Production Framework – the integrated Farmer Field School, seed bank and green-value-chain approach.</p>
+          <span class="open">Open framework <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="REM Regional Exchange Mechanism.html">
+          <span class="ic"><i data-lucide="git-fork"></i></span>
+          <div class="meta">Coordination model</div>
+          <h4>REM</h4>
+          <p>Regional Exchange Mechanism – the bridge through which the GCP coordinates, pools expertise and docks with child projects.</p>
+          <span class="open">Open framework <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="DSL-IP Financial Architecture.html">
+          <span class="ic"><i data-lucide="landmark"></i></span>
+          <div class="meta">Finance · governance</div>
+          <h4>Financial architecture</h4>
+          <p>How the Programme’s funds and fee distribution are structured across the One-FAO delivery model.</p>
+          <span class="open">Open document <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="building-2"></i><h3>Governance</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="COFO Working Group on Dryland Forests.html">
+          <span class="badge">COFO body</span>
+          <span class="ic"><i data-lucide="gavel"></i></span>
+          <div class="meta">FAO Committee on Forestry · subsidiary body</div>
+          <h4>COFO Working Group on Dryland Forests</h4>
+          <p>The inter-governmental expert group that governs FAO’s dryland work – and called DFSA into being in 2019. Its history, mandate, members, secretariat, maps and how it relates to COFO.</p>
+          <span class="open">Open the governance page <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="sprout"></i><h3>SLPF pillars</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="SLPF_CSB_CommunitySeedBanks.html">
+          <span class="ic"><i data-lucide="bean"></i></span>
+          <div class="meta">SLPF Pillar 01</div>
+          <h4>Community Seed Banks</h4>
+          <p>Crop diversification, agrobiodiversity and the genetic pool of options communities draw on to adapt and recover.</p>
+          <span class="open">Open pillar <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="SLPF_FFF_ForestFarmFacility.html">
+          <span class="ic"><i data-lucide="store"></i></span>
+          <div class="meta">SLPF Pillar 02</div>
+          <h4>Forest &amp; Farm Facility</h4>
+          <p>Business incubation along green value chains, so sustainable landscape production pays better than degradation.</p>
+          <span class="open">Open pillar <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="SLPF_FFS_FarmerFieldSchools.html">
+          <span class="ic"><i data-lucide="graduation-cap"></i></span>
+          <div class="meta">SLPF Pillar 03</div>
+          <h4>Farmer Field Schools</h4>
+          <p>Experiential, farmer-to-farmer learning that transfers sustainable land and forest management on demonstration plots.</p>
+          <span class="open">Open pillar <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="leaf"></i><h3>Sustainable land management (SLM)</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Caatinga Biome.html#management">
+          <span class="badge">SLM</span>
+          <span class="ic"><i data-lucide="trees"></i></span>
+          <div class="meta">Sustainable land management &middot; Caatinga, Brazil</div>
+          <h4>Caatinga &ndash; technologies and approaches</h4>
+          <p>The field-tested toolkit for managing Brazil’s semi-arid dry forest without destroying it &ndash; silvopastoral systems, forest management, native value chains, soil and water, and the enabling environment.</p>
+          <span class="open">Open the SLM catalogue <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="resources/caatinga/Caatinga-Manejo-Pastoril-Sustentavel-Araujo-Filho-MMA.pdf" target="_blank" rel="noopener">
+          <span class="ic"><i data-lucide="file-text"></i></span>
+          <div class="meta">Reference &middot; MMA / Embrapa</div>
+          <h4>Caatinga pastoral management</h4>
+          <p>Araújo Filho’s MMA proposal &ndash; the silvopastoral systems (CBL, SIPRO, SAF-Sobral), thinning, coppicing and enrichment, and the three golden rules behind the Caatinga SLM catalogue.</p>
+          <span class="open">Open document <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="resources/caatinga/Boas-Praticas-Extrativismo-Sustentavel-Carnauba-MAPA.pdf" target="_blank" rel="noopener">
+          <span class="ic"><i data-lucide="package"></i></span>
+          <div class="meta">Reference &middot; MAPA</div>
+          <h4>Native value chains &ndash; organic extractivism</h4>
+          <p>MAPA good-practice guides for sustainable harvesting of carnaúba, licuri and caroá &ndash; the sociobiodiversity enterprises that make a standing Caatinga worth more than a cleared one.</p>
+          <span class="open">Open document <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="book-marked"></i><h3>DRIP Manual Series</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="DRIP Manual 01 - Caatinga Fodder.html">
+          <span class="badge">No. 01</span>
+          <span class="ic"><i data-lucide="leaf"></i></span>
+          <div class="meta">2–3 pager &middot; Silvopastoral</div>
+          <h4>Managing the Caatinga for fodder</h4>
+          <p>Thinning, coppicing and enriching the standing dry forest for fodder &ndash; without clearing it. The three golden rules, step by step.</p>
+          <span class="open">Open the manual <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="DRIP Manual 02 - Caatinga Wood Energy.html">
+          <span class="badge">No. 02</span>
+          <span class="ic"><i data-lucide="flame"></i></span>
+          <div class="meta">2–3 pager &middot; Forest energy</div>
+          <h4>Sustainable wood energy</h4>
+          <p>Firewood and charcoal on a managed cutting cycle &ndash; legal, documented, and letting the Caatinga grow back.</p>
+          <span class="open">Open the manual <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="DRIP Manual 03 - Caatinga Value Chains.html">
+          <span class="badge">No. 03</span>
+          <span class="ic"><i data-lucide="shopping-basket"></i></span>
+          <div class="meta">2–3 pager &middot; Value chains</div>
+          <h4>Native value chains</h4>
+          <p>Sustainable, organic extractivism of carnaúba, licuri, caroá and umbu &ndash; making a standing forest pay.</p>
+          <span class="open">Open the manual <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="DRIP Manual 01 - Annex - WOCAT SLM Technology.html">
+          <span class="badge">WOCAT</span>
+          <span class="ic"><i data-lucide="clipboard-list"></i></span>
+          <div class="meta">Annex · Manual 01 · Technology</div>
+          <h4>WOCAT: Caatinga fodder technology</h4>
+          <p>The silvopastoral fodder technology documented in the WOCAT SLM Technologies questionnaire (2019) – the global standard format.</p>
+          <span class="open">Open the annex <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="DRIP Manual 01 - Annex - WOCAT SLM Approach.html">
+          <span class="badge">WOCAT</span>
+          <span class="ic"><i data-lucide="users-round"></i></span>
+          <div class="meta">Annex · Manual 01 · Approach</div>
+          <h4>WOCAT: participatory extension</h4>
+          <p>The farmer-to-farmer extension Approach that delivers the technology – documented in the WOCAT SLM Approaches questionnaire.</p>
+          <span class="open">Open the annex <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="DRIP Manual 02 - Annex - WOCAT SLM Technology.html">
+          <span class="badge">WOCAT</span>
+          <span class="ic"><i data-lucide="clipboard-list"></i></span>
+          <div class="meta">Annex · Manual 02 · Technology</div>
+          <h4>WOCAT: wood energy (PMFS)</h4>
+          <p>Sustainable Caatinga forest management for fuelwood and charcoal on an approximately 15-year cutting cycle, in WOCAT format.</p>
+          <span class="open">Open the annex <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="DRIP Manual 03 - Annex - WOCAT SLM Technology.html">
+          <span class="badge">WOCAT</span>
+          <span class="ic"><i data-lucide="clipboard-list"></i></span>
+          <div class="meta">Annex · Manual 03 · Technology</div>
+          <h4>WOCAT: native value chains</h4>
+          <p>Sustainable organic extractivism of carnaúba, licuri, caroá and umbu, documented in WOCAT format.</p>
+          <span class="open">Open the annex <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="git-fork"></i><h3>Caatinga SLM technologies and approaches</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Caatinga SLM - Raleamento.html">
+          <span class="ic"><i data-lucide="scissors"></i></span>
+          <div class="meta">Silvopastoral · thinning</div>
+          <h4>Raleamento</h4>
+          <p>Thin the woody layer to ~40% cover so the herb layer comes through – forage up to ~6× native, no fire.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - Rebaixamento.html">
+          <span class="ic"><i data-lucide="scissors"></i></span>
+          <div class="meta">Silvopastoral · coppicing</div>
+          <h4>Rebaixamento</h4>
+          <p>Lower forage trees and shrubs by hand to extend green browse into the dry season – forage up to ~4× native.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - Enriquecimento.html">
+          <span class="ic"><i data-lucide="sprout"></i></span>
+          <div class="meta">Silvopastoral · enrichment</div>
+          <h4>Enriquecimento</h4>
+          <p>Reseed adapted forage with minimum tillage on degraded land – the highest carrying capacity of any treated Caatinga.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - Sistema CBL.html">
+          <span class="ic"><i data-lucide="layers"></i></span>
+          <div class="meta">Silvopastoral · production system</div>
+          <h4>Sistema CBL</h4>
+          <p>Native Caatinga + a buffel-grass pasture + a leucaena protein bank, sequenced across the wet and dry seasons.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - Sistema SIPRO.html">
+          <span class="ic"><i data-lucide="layers"></i></span>
+          <div class="meta">Silvopastoral · production system</div>
+          <h4>Sistema SIPRO</h4>
+          <p>Graze the tree-Caatinga in the rains; supplement with crop stover and a buffel reserve around lambing.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - SAF Sobral.html">
+          <span class="ic"><i data-lucide="layout-grid"></i></span>
+          <div class="meta">Agrosilvopastoral · whole-farm</div>
+          <h4>SAF-Sobral</h4>
+          <p>20% alley cropping · 60% managed pasture · 20% legal reserve – maize 79% above the state average, far steadier.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - Recaatingamento.html">
+          <span class="ic"><i data-lucide="recycle"></i></span>
+          <div class="meta">Approach · community restoration</div>
+          <h4>Recaatingamento</h4>
+          <p>A fundo-de-pasto approach in Bahia: conserve, recompose, educate, earn and influence policy.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - Carnauba.html">
+          <span class="ic"><i data-lucide="trees"></i></span>
+          <div class="meta">Value chain · carnaúba wax</div>
+          <h4>Carnaúba</h4>
+          <p>Harvest leaves from the standing palm for wax and fibre – a global export from a living forest.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - Licuri.html">
+          <span class="ic"><i data-lucide="trees"></i></span>
+          <div class="meta">Value chain · licuri</div>
+          <h4>Licuri</h4>
+          <p>Gather licuri nuts for food, oil and craft – leaving enough for the endangered Lear’s macaw.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - Caroa.html">
+          <span class="ic"><i data-lucide="leaf"></i></span>
+          <div class="meta">Value chain · caroá fibre</div>
+          <h4>Caroá</h4>
+          <p>A native bromeliad fibre, hand-harvested selectively – a classic non-timber product of the dry forest.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Caatinga SLM - Umbu.html">
+          <span class="ic"><i data-lucide="cherry"></i></span>
+          <div class="meta">Value chain · umbu</div>
+          <h4>Umbu</h4>
+          <p>Gather and process the fruit of the umbuzeiro – turning a sertão icon into a growing local economy.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="trees"></i><h3>Miombo &amp; Mopane SLM technologies and approaches</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Miombo SLM - IFES.html">
+          <span class="ic"><i data-lucide="flame"></i></span>
+          <div class="meta">Integrated system · Malawi</div>
+          <h4>IFES</h4>
+          <p>Pigeon pea–maize intercropping with fuel-efficient stoves and biogas – food, fertility and household energy from one plot.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Beekeeping.html">
+          <span class="ic"><i data-lucide="hexagon"></i></span>
+          <div class="meta">Value chain · Tanzania</div>
+          <h4>Miombo honey</h4>
+          <p>Bark- and box-hive honey from the Tabora belt – a non-wood forest product that pays for keeping the trees.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - FSC Charcoal.html">
+          <span class="ic"><i data-lucide="axe"></i></span>
+          <div class="meta">Wood energy · Namibia</div>
+          <h4>FSC charcoal</h4>
+          <p>FSC-certified charcoal from bush-encroaching species – restoring rangeland while creating a legal, premium wood-energy chain.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Baobab and Marula.html">
+          <span class="ic"><i data-lucide="trees"></i></span>
+          <div class="meta">Value chain · Zimbabwe</div>
+          <h4>Baobab &amp; marula</h4>
+          <p>Fruit, oil and kernels from iconic standing trees, processed into high-value, certifiable products.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Traditional Grains.html">
+          <span class="ic"><i data-lucide="wheat"></i></span>
+          <div class="meta">NUS · drought-hardy crops</div>
+          <h4>Traditional grains &amp; pulses</h4>
+          <p>Bambara groundnut, Morama bean, millets and pigeon pea – resilient indigenous crops that anchor food security on poor rains.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Mopane Worm.html">
+          <span class="ic"><i data-lucide="bug"></i></span>
+          <div class="meta">NWFP · women-led harvest</div>
+          <h4>Mopane worm</h4>
+          <p>Seasonal protein and cash from the mopane worm, wild mushrooms and medicinal trees – gathered within community limits.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Ecotourism.html">
+          <span class="ic"><i data-lucide="tent"></i></span>
+          <div class="meta">Value chain · Botswana</div>
+          <h4>Eco-tourism</h4>
+          <p>Community-based tourism that makes an intact woodland and its wildlife worth more standing than cleared.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Community Forest Management.html">
+          <span class="ic"><i data-lucide="users"></i></span>
+          <div class="meta">Approach · Tanzania</div>
+          <h4>Community forest management</h4>
+          <p>Village-held rights and revenue to harvest, sell and protect the woodland – keeping millions of hectares of miombo standing.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Rangeland Management.html">
+          <span class="ic"><i data-lucide="fence"></i></span>
+          <div class="meta">Agro-sylvo-pastoral · rangeland</div>
+          <h4>Rangeland management</h4>
+          <p>Rotational grazing, drought-resilient seed systems and integrated trees–grazing–crops that let the woodland recover.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Miombo SLM - Protected Areas.html">
+          <span class="ic"><i data-lucide="shield"></i></span>
+          <div class="meta">Approach · Mozambique</div>
+          <h4>Protected areas &amp; buffers</h4>
+          <p>A protected core with sustainable use in the buffer – conservation-compatible livelihoods and transboundary corridors.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="sprout"></i><h3>Water harvesting · In-situ moisture conservation</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Water Harvesting - Contour ridges and furrows.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="waves"></i></span>
+          <div class="meta">In-situ · contour tillage</div>
+          <h4>Contour ridges &amp; furrows</h4>
+          <p>Contour ridges and furrows that catch sheet runoff and soak it into the field where it falls.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Stone lines and contour stone bunds.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="rows-3"></i></span>
+          <div class="meta">In-situ · permeable stone lines</div>
+          <h4>Stone lines &amp; contour stone bunds</h4>
+          <p>Permeable stone lines along the contour that slow runoff, trap silt and let water soak in – the Sahel’s land-healer.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Planting pits zai tassa.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="circle-dot"></i></span>
+          <div class="meta">In-situ · planting pits</div>
+          <h4>Planting pits (zaï / tassa)</h4>
+          <p>Hand-dug pits that gather rain, soil and manure to bring crusted, dead land back into production.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="droplets"></i><h3>Water harvesting · Micro-catchment harvesting</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Water Harvesting - Semi-circular Bunds.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="droplets"></i></span>
+          <div class="meta">Micro-catchment · water harvesting</div>
+          <h4>Semi-circular bunds</h4>
+          <p>Crescent earth or stone bunds that pond runoff around trees, shrubs and crops – the workhorse micro-catchment of the drylands.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Negarim micro-catchments.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="diamond"></i></span>
+          <div class="meta">Micro-catchment · tree basins</div>
+          <h4>Negarim micro-catchments</h4>
+          <p>A diamond grid of small basins, each funnelling runoff to a single planted tree.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Trapezoidal bunds.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="triangle"></i></span>
+          <div class="meta">Micro-catchment · field crops</div>
+          <h4>Trapezoidal bunds</h4>
+          <p>Trapezoid earth bunds that flood a block of field crops with harvested runoff.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Runoff strips inter-row catchment.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="columns-3"></i></span>
+          <div class="meta">Micro-catchment · strip cropping</div>
+          <h4>Runoff strips (inter-row catchment)</h4>
+          <p>Bare catchment strips feeding runoff to the cropped strips between them.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Vallerani mechanized micro-catchments.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="tractor"></i></span>
+          <div class="meta">Micro-catchment · mechanized</div>
+          <h4>Vallerani mechanized micro-catchments</h4>
+          <p>A tractor-drawn plough that cuts crescent micro-basins by the hectare to restore degraded rangeland.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="mountain"></i><h3>Water harvesting · Macro-catchment harvesting</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Water Harvesting - Contour bench terraces.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="mountain"></i></span>
+          <div class="meta">Macro-catchment · hillside terraces</div>
+          <h4>Contour bench terraces</h4>
+          <p>Level benches cut into steep slopes, fed by the runoff from the hillside above.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Hillside conduits and wadi-bed cultivation.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="route"></i></span>
+          <div class="meta">Macro-catchment · conveyance</div>
+          <h4>Hillside conduits &amp; wadi-bed cultivation</h4>
+          <p>Channels that gather hillside runoff and lead it to fields, reservoirs or the wadi bed below.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Check dams.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="brick-wall"></i></span>
+          <div class="meta">Macro-catchment · gully control</div>
+          <h4>Check dams</h4>
+          <p>Small barriers across gullies that slow floods, trap sediment and recharge the channel.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Gully plugs and reclamation.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="fence"></i></span>
+          <div class="meta">Macro-catchment · gully repair</div>
+          <h4>Gully plugs &amp; reclamation</h4>
+          <p>Plugs and planting that stop gullies eating the land and turn them into recharge points.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="waves"></i><h3>Water harvesting · Floodwater harvesting &amp; spate</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Water Harvesting - Spate irrigation floodwater diversion.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="waves"></i></span>
+          <div class="meta">Floodwater · spate</div>
+          <h4>Spate irrigation (floodwater diversion)</h4>
+          <p>Diverting brief wadi floods and their fertile silt onto bunded fields – ancient large-scale harvesting.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Jessour wadi-bed terraces.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="mountain"></i></span>
+          <div class="meta">Floodwater · wadi terraces</div>
+          <h4>Jessour (wadi-bed terraces)</h4>
+          <p>Cross-wadi dykes that bank up fertile flood silt into deep orchard terraces – a Tunisian classic.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Marab floodwater harvesting.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="sprout"></i></span>
+          <div class="meta">Floodwater · lowland spreading</div>
+          <h4>Marab floodwater harvesting</h4>
+          <p>Spreading wadi floods over fertile lowland depressions for barley yields 10–50× the open range.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Water-spreading weirs.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="waves"></i></span>
+          <div class="meta">Floodwater · spreading</div>
+          <h4>Water-spreading weirs</h4>
+          <p>Low weirs that fan floods out across the land to recharge soil and aquifers instead of cutting a channel.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="house"></i><h3>Water harvesting · Rooftop, courtyard &amp; domestic</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Water Harvesting - Rooftop and courtyard harvesting.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="house"></i></span>
+          <div class="meta">Domestic · roof &amp; courtyard</div>
+          <h4>Rooftop &amp; courtyard harvesting</h4>
+          <p>Roof and courtyard runoff piped through a first-flush into a tank – water security at the household.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Domestic storage tanks and cellars.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="database"></i></span>
+          <div class="meta">Domestic · storage</div>
+          <h4>Domestic storage tanks &amp; cellars</h4>
+          <p>Covered tanks and underground cellars that hold harvested runoff through the dry season.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="database"></i><h3>Water harvesting · Storage &amp; recharge</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Water Harvesting - Cisterns.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="database"></i></span>
+          <div class="meta">Storage · cisterns</div>
+          <h4>Cisterns</h4>
+          <p>Lined underground tanks – the pear-shaped cistern – storing runoff for the dry season; a million now planned for the Sahel.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Farm ponds, hafir and hill lakes.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="waves"></i></span>
+          <div class="meta">Storage · ponds &amp; hafir</div>
+          <h4>Farm ponds, hafir &amp; hill lakes</h4>
+          <p>Dug or embanked ponds that bank runoff for irrigation and livestock through the dry months.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Earth dams.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="mountain"></i></span>
+          <div class="meta">Storage · embankment dam</div>
+          <h4>Earth dams</h4>
+          <p>Compacted earth embankments that pond a wadi’s seasonal flood into a reservoir.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Sand dams.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="layers"></i></span>
+          <div class="meta">Storage · subsurface</div>
+          <h4>Sand dams</h4>
+          <p>A wall that banks river sand and stores water in it – evaporation-proof storage for ephemeral rivers.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Recharge structures and managed aquifer recharge.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="arrow-down-to-line"></i></span>
+          <div class="meta">Storage · aquifer recharge</div>
+          <h4>Recharge structures &amp; managed aquifer recharge</h4>
+          <p>Ponds and weirs that send runoff underground to refill aquifers and revive springs.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Small tank cascade systems.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="layout-grid"></i></span>
+          <div class="meta">Storage · tank cascade</div>
+          <h4>Small tank cascade systems</h4>
+          <p>Chains of reservoirs where each one’s overflow feeds the next – a whole-valley harvesting heritage.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="route"></i><h3>Water harvesting · Landscape &amp; road-water harvesting</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="Water Harvesting - Road water harvesting.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="route"></i></span>
+          <div class="meta">Landscape · roads as catchment</div>
+          <h4>Road water harvesting</h4>
+          <p>Turning roads and their drains from erosion channels into deliberate water harvesters.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - 3R landscape management and regreening.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="trees"></i></span>
+          <div class="meta">Landscape · 3R &amp; regreening</div>
+          <h4>3R landscape management &amp; regreening</h4>
+          <p>Managing a whole catchment to recharge, retain and reuse its rain – structures plus regreening.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="Water Harvesting - Rock catchments.html">
+          <span class="badge">RWH</span>
+          <span class="ic"><i data-lucide="mountain"></i></span>
+          <div class="meta">Landscape · rock catchment</div>
+          <h4>Rock catchments</h4>
+          <p>Bare rock domes turned into reservoirs – very high runoff where little else yields water.</p>
+          <span class="open">Open the 1-pager <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="microscope"></i><h3>Knowledge modules and methods</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard" href="KL_Mod1_LandProductivity_NDVI.html">
+          <span class="ic"><i data-lucide="satellite-dish"></i></span>
+          <div class="meta">ILAM Mod 1 · land condition</div>
+          <h4>Land productivity (NDVI)</h4>
+          <p>Reading land productivity from satellites – the NDVI Trajectory and State indicators behind land-degradation-neutrality monitoring.</p>
+          <span class="open">Open module <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="KL_Mod1_Fire.html">
+          <span class="ic"><i data-lucide="flame"></i></span>
+          <div class="meta">ILAM Mod 1 · land condition</div>
+          <h4>Fire dynamics</h4>
+          <p>A 25-year, district-level read on burned area across the Miombo–Mopane ecoregion – Trajectory and State logic applied to fire.</p>
+          <span class="open">Open module <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="KL_Mod3_SimplifiedLADA.html">
+          <span class="ic"><i data-lucide="clipboard-check"></i></span>
+          <div class="meta">ILAM Mod 3 · ground-truthing</div>
+          <h4>Simplified LADA</h4>
+          <p>A fast, plot-based field assessment that anchors satellite signals to on-the-ground reality and explains the causes of degradation.</p>
+          <span class="open">Open module <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="KL_Mod3_Stakeholder_Policy.html">
+          <span class="ic"><i data-lucide="scale"></i></span>
+          <div class="meta">ILAM Mod 3 · participatory</div>
+          <h4>Stakeholder and policy</h4>
+          <p>Stakeholder analysis and policy-institutional assessment – the actors, interests and rules that decide whether interventions can work.</p>
+          <span class="open">Open module <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="KL_Mod3_ValueChains.html">
+          <span class="ic"><i data-lucide="coins"></i></span>
+          <div class="meta">ILAM Mod 3 · participatory</div>
+          <h4>Value chains</h4>
+          <p>Rapid sustainable value-chain assessment – the economic entry points that make sustainable land and forest management pay.</p>
+          <span class="open">Open module <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="KL_Mod4_Household_BehaviourChange.html">
+          <span class="ic"><i data-lucide="brain"></i></span>
+          <div class="meta">ILAM Mod 4 · household</div>
+          <h4>Household and behaviour change</h4>
+          <p>SHARP+ resilience paired with the COM-B model – explaining not just whether practices are adopted, but what drives the decision.</p>
+          <span class="open">Open module <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="KL_Mod5_Carbon_EXACT_NEXT.html">
+          <span class="ic"><i data-lucide="leaf"></i></span>
+          <div class="meta">ILAM Mod 5 · carbon</div>
+          <h4>Carbon balance (EX-ACT)</h4>
+          <p>EX-ACT and EX-ACT NEXT – FAO’s carbon-balance tools, turning land-use change into a measurable global environmental benefit.</p>
+          <span class="open">Open module <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="KL_SLM_ScalingStrategy.html">
+          <span class="ic"><i data-lucide="trending-up"></i></span>
+          <div class="meta">Strategy · scaling out</div>
+          <h4>SLM scaling strategy</h4>
+          <p>A strategy for scaling sustainable land management among smallholders – from what works to what spreads, built on a household baseline.</p>
+          <span class="open">Open strategy <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard" href="SNA_Tutume_Mosetse.html">
+          <span class="ic"><i data-lucide="share-2"></i></span>
+          <div class="meta">Method · social network analysis</div>
+          <h4>Knowledge-flow network analysis</h4>
+          <p>A social network analysis of two Botswana producer organizations – who shares SLM knowledge with whom, the real influencers, and where the bottlenecks lie.</p>
+          <span class="open">Open the analysis <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="libgroup">
+      <div class="lg-head"><i data-lucide="book-open"></i><h3>Knowledge and stories</h3><span class="ln"></span></div>
+      <div class="cards">
+        <a class="lcard story" href="When Women Lead.html">
+          <span class="ic"><i data-lucide="users"></i></span>
+          <div class="meta">Field story · gender</div>
+          <h4>When Women Lead</h4>
+          <p>How women’s leadership and the land’s recovery move together – a story from the Programme’s gender stream.</p>
+          <span class="open">Read the story <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard story" href="Global Gender Action Plan.html">
+          <span class="ic"><i data-lucide="scale"></i></span>
+          <div class="meta">Policy · gender</div>
+          <h4>Global Gender Action Plan</h4>
+          <p>The Programme’s gender-responsiveness commitments and the actions that put women’s empowerment at the centre.</p>
+          <span class="open">Open the plan <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard story" href="Sisteminha-IFES-Malawi-DSL-IP.html">
+          <span class="ic"><i data-lucide="wheat"></i></span>
+          <div class="meta">Case · Malawi</div>
+          <h4>Sisteminha · IFES Malawi</h4>
+          <p>Integrated Food and Energy Systems in practice – Malawi’s champion core theme, from pigeon-pea to fuelwood.</p>
+          <span class="open">Open the case <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard story" href="DFSA Campaign.html">
+          <span class="ic"><i data-lucide="trees"></i></span>
+          <div class="meta">Campaign · drylands</div>
+          <h4>DFSA Campaign</h4>
+          <p>Dryland Forest Support Accelerator – the Programme’s outward-facing campaign and its core messages.</p>
+          <span class="open">Open the campaign <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard story" href="Caatinga Biome.html">
+          <span class="ic"><i data-lucide="sun"></i></span>
+          <div class="meta">Knowledge &amp; outreach · Brazil</div>
+          <h4>The Caatinga Biome</h4>
+          <p>Brazil’s semi-arid white forest – the largest seasonally dry tropical forest in the Americas, home to 28 million people and found nowhere else. A dryland the Programme’s methods speak to.</p>
+          <span class="open">Explore the biome <i data-lucide="arrow-right"></i></span>
+        </a>
+        <a class="lcard story" href="Miombo and Mopane Woodlands.html">
+          <span class="ic"><i data-lucide="trees"></i></span>
+          <div class="meta">Knowledge &amp; outreach · Southern Africa</div>
+          <h4>The Miombo and Mopane Woodlands</h4>
+          <p>Africa’s great dry forest – the miombo and mopane woodlands across a dozen countries, home to 100–150 million people, and where six DSL-IP child projects actually work. The African companion to the Caatinga.</p>
+          <span class="open">Explore the biome <i data-lucide="arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /.mainflow -->
+
+</div><!-- /.shell -->
+
+<!-- ============ FOOTER / DISCLAIMER ============ -->
+<section id="footer" class="foot">
+  <div class="page">
+    <div class="disc">
+      <div class="disc-col">
+        <span class="kick">Disclaimer</span>
+        <p>DFSA is a <b>project of the DSL-IP</b> – the Drylands Sustainable Landscapes Impact Programme – and an <b>output of the DSL-IP</b>, <b>not a personal experiment</b>. It is <b>funded by the GEF</b> (Global Environment Facility) and is the <b>first engine of the DFSA</b> (Dryland Forest Support Accelerator). It is <b>actively overseen by a UN Officer</b> with expertise in programme design, complex programme management, artificial intelligence and rural development. The platform relates to the <b>behaviour-change assessments and investigations</b> expected under the Programme’s research. Information gathered is drawn from <b>publicly available sources</b>. <b>DFSA is currently under development</b> and evolving – content and features may change.</p>
+      </div>
+      <div class="disc-col grievance">
+        <span class="kick">Grievance &amp; data removal</span>
+        <p>If any information displayed should be <b>corrected or removed</b>, a grievance mechanism is available. Submit a request and the relevant item will be reviewed and, where warranted, amended or taken down promptly.</p>
+        <a class="grbtn" href="mailto:dsl-ip@fao.org?subject=DFSA%20%E2%80%94%20information%20correction%20or%20removal%20request&amp;body=Please%20describe%20the%20item%20or%20information%20concerned%2C%20and%20the%20correction%20or%20removal%20requested%3A%0A%0A">Request a correction or removal →</a>
+      </div>
+    </div>
+    <div class="credits">
+      <div class="cred"><span>Funded by <b>the GEF</b></span></div>
+      <div class="cred right"><span>Led by <b>FAO Drylands Programme</b></span></div>
+    </div>
+    <p class="endnote">DFSA · Dryland Forest Support Accelerator – hosted under the DSL-IP Knowledge Management structure. A project of the DSL-IP, actively overseen by a UN Officer (programme design · complex programme management · AI · rural development); related to the Programme’s behaviour-change research. Pending institutional sign-off.</p>
+  </div>
+</section>
+
+<script>
+  if (window.lucide) lucide.createIcons();
+
+  // ===== 7 pillars + library filter =====
+  const PILLARS = [
+    { id:'coordination', n:'Coordination &amp; Exchange', ic:'git-fork',    c:'#33B193', d:'How the Programme aligns, pools expertise and docks with countries.' },
+    { id:'assessment',   n:'Assessment &amp; Evidence',   ic:'layers',      c:'#3F8FCB', d:'The evidence base – what a landscape needs, measured.' },
+    { id:'production',   n:'Integrated Management',      ic:'sprout',      c:'#477E59', d:'Managing land, forests and farms as one system — producing without degrading.', page:'pillars/sustainable-production.html' },
+    { id:'gender',       n:'Gender &amp; Inclusion',       ic:'users-round', c:'#CF715D', d:'Women’s leadership and social inclusion at the centre.' },
+    { id:'monitoring',   n:'Monitoring &amp; Learning',    ic:'activity',    c:'#E0A23C', d:'Tracking results and feeding lessons back.' },
+    { id:'knowledge',    n:'Knowledge &amp; Outreach',     ic:'share-2',     c:'#B8862F', d:'Capturing, connecting and sharing what we learn.' },
+    { id:'finance',      n:'Finance &amp; Governance',     ic:'landmark',    c:'#754C29', d:'How the work is funded, governed and sustained.' }
+  ];
+  const pillarOf = {
+    'MARVEL.html':'monitoring',
+    'drylands.html':'assessment',
+    'ILAM Integrated Landscape Assessment Methodology.html':'assessment',
+    'SLPF Sustainable Landscape Production Framework.html':'production',
+    'SLPF_CSB_CommunitySeedBanks.html':'production',
+    'SLPF_FFF_ForestFarmFacility.html':'production',
+    'SLPF_FFS_FarmerFieldSchools.html':'production',
+    'REM Regional Exchange Mechanism.html':'coordination',
+    'COFO Working Group on Dryland Forests.html':'finance',
+    'DSL-IP Financial Architecture.html':'finance',
+    'resources/DSL-IP-FFPO-Assessment-Infographic.pdf':'assessment',
+    'resources/DSL-IP-Global-Environmental-Benefits.pdf':'monitoring',
+    'resources/DSL-IP-Mobilized-Finance.pdf':'finance',
+    'When Women Lead.html':'gender',
+    'Global Gender Action Plan.html':'gender',
+    'Sisteminha-IFES-Malawi-DSL-IP.html':'production',
+    'DFSA Campaign.html':'knowledge',
+    'Caatinga Biome.html':'knowledge',
+    'MARVEL.html':'monitoring',
+    'Miombo and Mopane Woodlands.html':'knowledge',
+    'Miombo SLM - IFES.html':'production',
+    'Miombo SLM - Beekeeping.html':'production',
+    'Miombo SLM - FSC Charcoal.html':'production',
+    'Miombo SLM - Baobab and Marula.html':'production',
+    'Miombo SLM - Traditional Grains.html':'production',
+    'Miombo SLM - Mopane Worm.html':'production',
+    'Miombo SLM - Ecotourism.html':'production',
+    'Miombo SLM - Community Forest Management.html':'production',
+    'Miombo SLM - Rangeland Management.html':'production',
+    'Miombo SLM - Protected Areas.html':'production',
+    'Water Harvesting - Contour ridges and furrows.html':'production',
+    'Water Harvesting - Stone lines and contour stone bunds.html':'production',
+    'Water Harvesting - Planting pits zai tassa.html':'production',
+    'Water Harvesting - Semi-circular Bunds.html':'production',
+    'Water Harvesting - Negarim micro-catchments.html':'production',
+    'Water Harvesting - Trapezoidal bunds.html':'production',
+    'Water Harvesting - Runoff strips inter-row catchment.html':'production',
+    'Water Harvesting - Vallerani mechanized micro-catchments.html':'production',
+    'Water Harvesting - Contour bench terraces.html':'production',
+    'Water Harvesting - Hillside conduits and wadi-bed cultivation.html':'production',
+    'Water Harvesting - Check dams.html':'production',
+    'Water Harvesting - Gully plugs and reclamation.html':'production',
+    'Water Harvesting - Spate irrigation floodwater diversion.html':'production',
+    'Water Harvesting - Jessour wadi-bed terraces.html':'production',
+    'Water Harvesting - Marab floodwater harvesting.html':'production',
+    'Water Harvesting - Water-spreading weirs.html':'production',
+    'Water Harvesting - Rooftop and courtyard harvesting.html':'production',
+    'Water Harvesting - Domestic storage tanks and cellars.html':'production',
+    'Water Harvesting - Cisterns.html':'production',
+    'Water Harvesting - Farm ponds, hafir and hill lakes.html':'production',
+    'Water Harvesting - Earth dams.html':'production',
+    'Water Harvesting - Sand dams.html':'production',
+    'Water Harvesting - Recharge structures and managed aquifer recharge.html':'production',
+    'Water Harvesting - Small tank cascade systems.html':'production',
+    'Water Harvesting - Road water harvesting.html':'production',
+    'Water Harvesting - 3R landscape management and regreening.html':'production',
+    'Water Harvesting - Rock catchments.html':'production',
+    'Caatinga Biome.html#management':'production',
+    'resources/caatinga/Caatinga-Manejo-Pastoril-Sustentavel-Araujo-Filho-MMA.pdf':'production',
+    'resources/caatinga/Boas-Praticas-Extrativismo-Sustentavel-Carnauba-MAPA.pdf':'production',
+    'DRIP Manual 01 - Caatinga Fodder.html':'production',
+    'DRIP Manual 02 - Caatinga Wood Energy.html':'production',
+    'DRIP Manual 03 - Caatinga Value Chains.html':'production',
+    'DRIP Manual 01 - Annex - WOCAT SLM Technology.html':'production',
+    'DRIP Manual 01 - Annex - WOCAT SLM Approach.html':'production',
+    'DRIP Manual 02 - Annex - WOCAT SLM Technology.html':'production',
+    'DRIP Manual 03 - Annex - WOCAT SLM Technology.html':'production',
+    'Caatinga SLM - Raleamento.html':'production',
+    'Caatinga SLM - Rebaixamento.html':'production',
+    'Caatinga SLM - Enriquecimento.html':'production',
+    'Caatinga SLM - Sistema CBL.html':'production',
+    'Caatinga SLM - Sistema SIPRO.html':'production',
+    'Caatinga SLM - SAF Sobral.html':'production',
+    'Caatinga SLM - Recaatingamento.html':'production',
+    'Caatinga SLM - Carnauba.html':'production',
+    'Caatinga SLM - Licuri.html':'production',
+    'Caatinga SLM - Caroa.html':'production',
+    'Caatinga SLM - Umbu.html':'production',
+    'KL_Mod1_LandProductivity_NDVI.html':'assessment',
+    'KL_Mod1_Fire.html':'assessment',
+    'KL_Mod3_SimplifiedLADA.html':'assessment',
+    'KL_Mod3_Stakeholder_Policy.html':'coordination',
+    'KL_Mod3_ValueChains.html':'finance',
+    'KL_Mod4_Household_BehaviourChange.html':'monitoring',
+    'KL_Mod5_Carbon_EXACT_NEXT.html':'monitoring',
+    'KL_SLM_ScalingStrategy.html':'knowledge',
+    'SNA_Tutume_Mosetse.html':'coordination'
+  };
+  document.querySelectorAll('.lcard').forEach(c => { c.dataset.pillar = pillarOf[c.getAttribute('href')] || ''; });
+  const countOf = id => document.querySelectorAll('.lcard[data-pillar="' + id + '"]').length;
+
+  const grid = document.getElementById('pillarGrid');
+  PILLARS.forEach(p => {
+    const card = document.createElement('div');
+    card.className = 'pcard'; card.dataset.pid = p.id; card.style.setProperty('--pc', p.c);
+    const n = countOf(p.id);
+    card.innerHTML =
+      '<span class="strip" style="background:' + p.c + '"></span>' +
+      '<span class="pi" style="background:' + p.c + '"><i data-lucide="' + p.ic + '"></i></span>' +
+      '<div class="pn">' + p.n + '</div><div class="pd">' + p.d + '</div>' +
+      '<div class="pf"><span class="cnt">' + n + ' item' + (n === 1 ? '' : 's') + '</span>' +
+      (p.page
+        ? '<a class="opn" style="color:' + p.c + '" href="' + p.page + '">Open pillar <i data-lucide="arrow-right"></i></a>'
+        : '<span class="opn" style="color:' + p.c + '">Filter <i data-lucide="filter"></i></span>') +
+      '</div>';
+    card.addEventListener('click', e => { if (e.target.closest('a')) return; applyFilter(p.id); document.getElementById('library').scrollIntoView({ behavior:'smooth' }); });
+    grid.appendChild(card);
+  });
+
+  const fb = document.getElementById('filterbar');
+  [{ id:'all', n:'All', c:'#6B5E54' }].concat(PILLARS).forEach(ch => {
+    const b = document.createElement('button'); b.className = 'fchip'; b.dataset.f = ch.id;
+    b.innerHTML = (ch.id === 'all' ? '' : '<span class="sw" style="background:' + ch.c + '"></span>') + ch.n;
+    b.addEventListener('click', () => applyFilter(ch.id));
+    fb.appendChild(b);
+  });
+  function applyFilter(id) {
+    document.querySelectorAll('.fchip').forEach(b => {
+      const on = b.dataset.f === id; b.classList.toggle('on', on);
+      b.style.background = on ? (id === 'all' ? '#6B5E54' : (PILLARS.find(p => p.id === id) || {}).c) : '';
+    });
+    document.querySelectorAll('.pcard').forEach(c => c.classList.toggle('active', c.dataset.pid === id));
+    document.querySelectorAll('.lcard').forEach(c => { c.classList.toggle('hidden', !(id === 'all' || c.dataset.pillar === id)); });
+    document.querySelectorAll('.libgroup').forEach(g => {
+      const any = [...g.querySelectorAll('.lcard')].some(c => !c.classList.contains('hidden'));
+      g.classList.toggle('empty', !any);
+    });
+  }
+  applyFilter('all');
+  if (window.lucide) lucide.createIcons();
+
+  // calm reveal on scroll (earthy – short rises, no theatrics)
+  const obs = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'none'; obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('section .page > *').forEach(el => {
+    el.style.opacity = 0; el.style.transform = 'translateY(14px)';
+    el.style.transition = 'opacity .5s ease-out, transform .5s ease-out';
+    obs.observe(el);
+  });
+</script>
+
+
+
+
+<!-- ============ AUTO-TRANSLATION NOTICE ============ -->
+<div class="trmodal" id="trModal" role="dialog" aria-modal="true" aria-label="Automated translation notice">
+  <div class="trbox">
+    <button class="trx" id="trClose" aria-label="Close">&times;</button>
+    <span class="trglyph"><i data-lucide="languages"></i></span>
+    <div class="trkick" id="trKick">Automated translation</div>
+    <h3 id="trTitle">This page has been translated automatically</h3>
+    <p id="trBody">These translations were generated automatically and are currently under review. They may contain errors or inaccuracies; where in doubt, the original English text prevails.</p>
+    <button class="trok" id="trOk">Got it</button>
+  </div>
+</div>
+
+<script src="drip-i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Hero / DSL-IP lockup" subtitle="The light page banner: name + full DSL-IP logo, centered" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero / DSL-IP lockup — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+<style>
+  .hero{ position:relative; overflow:hidden; color:var(--ink);
+    background:
+      radial-gradient(1100px 380px at 82% -12%, rgba(110,59,44,.10), transparent 60%),
+      radial-gradient(760px 320px at 6% 8%, rgba(71,126,89,.10), transparent 62%),
+      var(--cream);
+    border-bottom:1px solid var(--hairline); }
+  .hero .page{ padding:44px 24px 46px; text-align:center; }
+  .wordmark{ display:flex; align-items:baseline; justify-content:center; gap:16px; }
+  .wordmark h1{ font-family:var(--font-display); font-weight:700; text-transform:uppercase;
+    font-size:clamp(40px,7vw,84px); line-height:.9; letter-spacing:.02em; margin:0; color:var(--forest-deep); }
+  .wordmark h1 .dot{ color:var(--amber); }
+  .hero .expand{ font-family:var(--font-serif); font-weight:400; font-style:italic; font-size:clamp(16px,2.2vw,23px);
+    color:var(--clay-deep); margin:12px 0 0; }
+  .hero .dslip{ margin:30px 0 0; }
+  .hero .dslip img{ height:clamp(60px,9vw,96px); width:auto; max-width:min(90vw,640px); }
+  .hero .dslip small{ display:block; margin-top:12px; font-family:var(--font-sans); font-size:11px;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); }
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">Components</p>
+  <h1 class="ds-title">Hero / DSL-IP lockup</h1>
+  <p class="ds-lede">The light page banner used on Home and the Library. It replaced the old dark-green gradient hero: page name + the full DSL-IP program logo, centered on the cream paper, with no descriptive paragraph. Sits directly under the top bar.</p>
+
+  <div class="ds-sec">
+    <h2>Live render</h2>
+    <div class="frame">
+      <header class="hero">
+        <div class="page">
+          <div class="wordmark"><h1>DFSA<span class="dot">.</span></h1></div>
+          <p class="expand">Dryland Forest Support Accelerator</p>
+          <div class="dslip">
+            <img src="../assets/logo-full.png" alt="Sustainable Forest Management Impact Program on Dryland Sustainable Landscapes (DSL-IP)">
+            <small>Built on the GEF-7 Dryland Sustainable Landscapes Impact Program (DSL-IP)</small>
+          </div>
+        </div>
+      </header>
+    </div>
+    <p class="caption">Background = <code>--cream</code> with faint clay + green radial tints (identical recipe to <span class="inline-code">drylands.html</span>). Wordmark = <code>--font-display</code> in <code>--forest-deep</code>; dot = <code>--amber</code>; tagline serif italic in <code>--clay-deep</code>.</p>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Rules</h2>
+    <div class="uses">
+      <div class="use-col do"><h3>Do</h3><ul>
+        <li>Swap the wordmark to the page's own name (<code>DFSA.</code>, <code>Library.</code>).</li>
+        <li>Keep the full DSL-IP logo (<code>logo-full.png</code>) with its provenance caption.</li>
+        <li>Keep it centered, light, and free of long body copy.</li>
+      </ul></div>
+      <div class="use-col dont"><h3>Don't</h3><ul>
+        <li>Reintroduce the dark-green gradient / globe / grain background.</li>
+        <li>Add a descriptive intro paragraph back into the hero.</li>
+        <li>Use the wordmark-only logo where the emblem lockup is expected.</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Components · used on Home &amp; Library</div>
+</div>
+</body>
+</html>

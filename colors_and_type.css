@@ -1,0 +1,162 @@
+/* TEMPORARY DFSA IDENTITY — DSL-IP foundation adopted as interim base
+   while the Dryland Forest Support Accelerator design language is developed.
+   ==== */
+
+/* ============================================================================
+   DSL-IP — Drylands Sustainable Landscapes Impact Program
+   Colors & Type foundation
+   FAO / GEF program. Source of truth: brand logo lockup + PowerPoint template.
+   ========================================================================== */
+
+/* ---------- Fonts (bundled, offline) -------------------------------------- */
+@font-face{ font-family:"Merriweather"; font-weight:300; font-style:normal;
+  src:url("fonts/Merriweather-300.woff2") format("woff2"); font-display:swap; }
+@font-face{ font-family:"Merriweather"; font-weight:400; font-style:normal;
+  src:url("fonts/Merriweather-400.woff2") format("woff2"); font-display:swap; }
+@font-face{ font-family:"Merriweather"; font-weight:400; font-style:italic;
+  src:url("fonts/Merriweather-400-italic.woff2") format("woff2"); font-display:swap; }
+@font-face{ font-family:"Merriweather"; font-weight:700; font-style:normal;
+  src:url("fonts/Merriweather-700.woff2") format("woff2"); font-display:swap; }
+@font-face{ font-family:"Merriweather"; font-weight:900; font-style:normal;
+  src:url("fonts/Merriweather-900.woff2") format("woff2"); font-display:swap; }
+/* Oswald = SUBSTITUTE for the brand's grunge condensed display face
+   (the real face is baked into the logo art; flag to user). */
+@font-face{ font-family:"Oswald"; font-weight:400; font-style:normal;
+  src:url("fonts/Oswald-400.woff2") format("woff2"); font-display:swap; }
+@font-face{ font-family:"Oswald"; font-weight:500; font-style:normal;
+  src:url("fonts/Oswald-500.woff2") format("woff2"); font-display:swap; }
+@font-face{ font-family:"Oswald"; font-weight:600; font-style:normal;
+  src:url("fonts/Oswald-600.woff2") format("woff2"); font-display:swap; }
+@font-face{ font-family:"Oswald"; font-weight:700; font-style:normal;
+  src:url("fonts/Oswald-700.woff2") format("woff2"); font-display:swap; }
+
+/* DermawanRough = the brand's AUTHENTIC grunge letterpress condensed display face
+   (supplied by the brand owner — supersedes the Oswald substitute for large display). */
+@font-face{ font-family:"DermawanRough"; font-weight:400 700; font-style:normal;
+  src:url("fonts/DermawanRough-Condensed.otf") format("opentype"); font-display:swap; }
+
+/* Poppins = the brand's geometric SANS companion — UI, labels, kickers, data, captions. */
+@font-face{ font-family:"Poppins"; font-weight:400; font-style:normal;
+  src:url("fonts/Poppins-400.ttf") format("truetype"); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; font-style:italic;
+  src:url("fonts/Poppins-400-italic.ttf") format("truetype"); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; font-style:normal;
+  src:url("fonts/Poppins-500.ttf") format("truetype"); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; font-style:normal;
+  src:url("fonts/Poppins-600.ttf") format("truetype"); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; font-style:normal;
+  src:url("fonts/Poppins-700.ttf") format("truetype"); font-display:swap; }
+
+:root{
+  /* ===== BRAND CORE ====================================================== */
+  --clay:        #CF715D;   /* terracotta — primary warm; the program sub-line */
+  --clay-deep:   #B4543F;   /* pressed / on-light text variant of clay        */
+  --clay-soft:   #E3A293;   /* tints, washes                                  */
+  --forest:      #477E59;   /* forest green — primary; the headline display   */
+  --forest-deep: #356046;   /* pressed / deeper green                         */
+  --forest-soft: #8FB59B;   /* tints                                          */
+
+  /* ===== SURFACES / PAPER =============================================== */
+  --cream:       #F5F2E8;   /* the signature speckled paper background        */
+  --paper-2:     #ECE7D7;   /* slightly deeper paper band                     */
+  --blush:       #EDD8CC;   /* warm dry-earth tinted band                     */
+  --sage:        #C3DABA;   /* cool restored-land tinted band                 */
+  --surface:     #FFFFFF;   /* card / panel surface                           */
+
+  /* ===== INK / TEXT ===================================================== */
+  --ink:         #241F1B;   /* primary text (warm near-black)                 */
+  --ink-2:       #6B5E54;   /* secondary text (warm taupe)                    */
+  --ink-3:       #9A8C7E;   /* muted / captions                              */
+  --ink-on-dark: #FBF8EF;   /* text on clay/forest fills                      */
+
+  /* ===== ACCENT — drawn from the split-globe illustration =============== */
+  --amber:       #F8B133;   /* sun / harvest                                  */
+  --gold:        #E8C13C;   /* dryland gold                                   */
+  --teal:        #33B193;   /* water-life / restoration                       */
+  --leaf:        #68A260;   /* canopy mid-green                               */
+  --olive:       #4E8D5D;   /* foliage                                        */
+  --water:       #3F8FCB;   /* water blue                                     */
+  --bark:        #754C29;   /* tree bark / soil                               */
+
+  /* ===== SEMANTIC TOKENS ================================================ */
+  --fg1: var(--ink);
+  --fg2: var(--ink-2);
+  --fg3: var(--ink-3);
+  --bg1: var(--cream);
+  --bg2: var(--surface);
+  --accent: var(--clay);
+  --accent-2: var(--forest);
+
+  --border:        rgba(36,31,27,.14);
+  --border-strong: rgba(36,31,27,.28);
+  --hairline:      rgba(36,31,27,.08);
+
+  /* status (kept on-brand) */
+  --positive: var(--forest);
+  --warning:  var(--amber);
+  --critical: var(--clay-deep);
+
+  /* ===== TYPE FAMILIES ================================================== */
+  /* Three voices: rough condensed CAPS for big display · humanist serif for reading ·
+     geometric sans for UI/labels/data. Use --font-display for LARGE display only
+     (the rough texture is built for scale); use --font-sans for small caps/labels. */
+  --font-serif: "Merriweather", Georgia, "Times New Roman", serif;
+  --font-display: "DermawanRough", "Oswald", "Merriweather", sans-serif; /* condensed, UPPERCASE, large */
+  --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif; /* UI · labels · data */
+  --font-body: "Merriweather", Georgia, serif;
+
+  /* ===== TYPE SCALE (1.250 major-third, 18px base) ====================== */
+  --t-display: clamp(48px, 6vw, 88px); /* @kind font */
+  --t-h1: 54px;
+  --t-h2: 38px;
+  --t-h3: 27px;
+  --t-h4: 21px;
+  --t-body-lg: 20px;
+  --t-body: 17px;
+  --t-small: 14px;
+  --t-eyebrow: 15px;
+
+  /* ===== RADII / SHADOW / SPACING ====================================== */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+  --r-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(36,31,27,.06), 0 1px 3px rgba(36,31,27,.08);
+  --shadow-md: 0 4px 10px rgba(36,31,27,.08), 0 10px 24px rgba(36,31,27,.07);
+  --shadow-lg: 0 12px 28px rgba(36,31,27,.12), 0 28px 60px rgba(36,31,27,.10);
+
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+}
+
+/* ============================================================================
+   SEMANTIC ELEMENT STYLES — opt-in via .dsl-prose or use the classes directly
+   ========================================================================== */
+.dsl-eyebrow{
+  font-family:var(--font-serif); font-weight:400; font-style:italic;
+  font-size:var(--t-eyebrow); letter-spacing:.01em; color:var(--clay);
+}
+.dsl-display{
+  font-family:var(--font-display); font-weight:700; text-transform:uppercase;
+  font-size:var(--t-display); line-height:.94; letter-spacing:.005em;
+  color:var(--forest); text-wrap:balance;
+}
+.dsl-h1{ font-family:var(--font-serif); font-weight:900; font-size:var(--t-h1);
+  line-height:1.08; letter-spacing:-.01em; color:var(--ink); text-wrap:balance; }
+.dsl-h2{ font-family:var(--font-serif); font-weight:700; font-size:var(--t-h2);
+  line-height:1.15; color:var(--ink); text-wrap:balance; }
+.dsl-h3{ font-family:var(--font-serif); font-weight:700; font-size:var(--t-h3);
+  line-height:1.25; color:var(--ink); }
+.dsl-h4{ font-family:var(--font-serif); font-weight:700; font-size:var(--t-h4);
+  line-height:1.3; color:var(--ink); }
+.dsl-body{ font-family:var(--font-body); font-weight:400; font-size:var(--t-body);
+  line-height:1.7; color:var(--ink-2); }
+.dsl-body-lg{ font-family:var(--font-body); font-weight:400; font-size:var(--t-body-lg);
+  line-height:1.65; color:var(--ink-2); }
+.dsl-small{ font-family:var(--font-body); font-weight:400; font-size:var(--t-small);
+  line-height:1.5; color:var(--ink-3); }
+.dsl-kicker{ font-family:var(--font-sans); font-weight:600; text-transform:uppercase;
+  font-size:var(--t-small); letter-spacing:.14em; color:var(--forest); }
+.dsl-label{ font-family:var(--font-sans); font-weight:500; font-size:var(--t-small);
+  letter-spacing:.01em; color:var(--ink-2); }

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Platform &amp; Tools" name="Policy Optimization Tool (PolOpT) &amp;amp; Drylands" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policy Optimization Tool (PolOpT) &amp; Drylands | DSL-IP</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; font-style:italic; src:url('fonts/Poppins-400-italic.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{
+ --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+ --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+ --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+ --amber:#F8B133; --gold:#E8C13C; --teal:#33B193; --leaf:#68A260; --bark:#754C29; --water:#3E7CB1;
+ --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+ --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+ --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+ --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{ font-family:var(--serif); line-height:1.7; color:var(--ink-2); background:var(--cream); -webkit-font-smoothing:antialiased; }
+
+/* HEADER */
+header{ background:var(--forest); color:var(--ink-on-dark); padding:3.4rem 2rem 3rem; text-align:left;
+ border-bottom:6px solid var(--amber); position:relative; overflow:hidden; }
+.header-inner{ max-width:1160px; margin:0 auto; position:relative; z-index:2; }
+header .brand-logo{ height:60px; width:auto; filter:brightness(0) invert(1); margin-bottom:1.6rem; opacity:.96; }
+header .eyebrow{ font-family:var(--serif); font-style:italic; font-size:1rem; color:#F2C9A8; margin-bottom:.55rem; }
+header h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.01em;
+ font-size:2.55rem; line-height:1.18; margin:0; color:#fff; max-width:24ch; }
+header h1 span{ color:#F2C9A8; font-weight:400; }
+header .lede{ font-family:var(--serif); font-size:1.14rem; line-height:1.6; color:#EAF1E6; max-width:760px; margin-top:1.5rem; }
+.header-tags{ display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1.7rem; }
+.header-tags span{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.12em; font-size:.78rem;
+ font-weight:600; color:#fff; background:rgba(251,248,239,.16); padding:.45rem 1rem; border-radius:999px; }
+
+/* NAV */
+nav.secnav{ background:var(--forest-deep); padding:.5rem 1rem; position:sticky; top:0; z-index:100;
+ box-shadow:0 2px 8px rgba(36,31,27,.18); }
+nav.secnav ul{ list-style:none; display:flex; justify-content:center; flex-wrap:wrap; max-width:1160px; margin:0 auto; gap:.1rem; }
+nav.secnav a{ color:#EAF1E6; text-decoration:none; padding:.65rem 1rem; display:block; transition:background .25s,color .25s;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.09em; font-size:.8rem; border-radius:6px; }
+nav.secnav a:hover{ background:rgba(251,248,239,.14); color:#fff; }
+
+/* CONTAINER + SECTIONS */
+.container{ max-width:1160px; margin:0 auto; padding:2.5rem 2rem; }
+section{ background:var(--surface); margin:2rem 0; padding:2.6rem; border-radius:16px;
+ border:1px solid var(--border); box-shadow:var(--shadow-md); scroll-margin-top:80px; }
+
+/* HEADINGS */
+h2{ font-family:var(--serif); font-weight:900; color:var(--ink); font-size:2rem; line-height:1.12; margin-bottom:1.3rem;
+ padding-bottom:.7rem; border-bottom:1px solid var(--hairline); position:relative; }
+h2::after{ content:""; position:absolute; left:0; bottom:-1px; width:64px; height:3px; background:var(--clay); border-radius:2px; }
+h2 .kicker{ display:block; font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em;
+ font-size:.8rem; color:var(--clay); margin-bottom:.5rem; }
+h3{ font-family:var(--serif); font-weight:700; color:var(--forest); font-size:1.42rem; line-height:1.28; margin:1.9rem 0 1rem; }
+h4{ font-family:var(--serif); font-weight:700; color:var(--clay-deep); font-size:1.14rem; margin:1.1rem 0 .5rem; }
+section > p{ margin:1rem 0; }
+section > p:first-of-type{ margin-top:0; }
+.lead{ font-size:1.12rem; color:var(--ink); line-height:1.66; }
+
+/* CALLOUTS */
+.callout{ padding:1.5rem 1.6rem; margin:1.7rem 0; border-radius:12px; background:var(--surface);
+ border:1px solid var(--border); border-top:4px solid var(--ink-3); box-shadow:var(--shadow-sm); }
+.callout.concept{ background:#FBF9F2; border-top-color:var(--clay); }
+.callout.definition{ background:rgba(195,218,186,.30); border-top-color:var(--forest); }
+.callout.warning{ background:rgba(248,177,51,.12); border-top-color:var(--amber); }
+.callout.success{ background:rgba(71,126,89,.10); border-top-color:var(--forest); }
+.callout-title{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.1em;
+ font-size:.92rem; margin-bottom:.7rem; color:var(--ink); }
+.callout.concept .callout-title{ color:var(--clay-deep); }
+.callout.definition .callout-title{ color:var(--forest-deep); }
+.callout.warning .callout-title{ color:#9A6A12; }
+.callout.success .callout-title{ color:var(--forest-deep); }
+.callout p{ color:var(--ink-2); margin:.5rem 0 0; }
+.callout p:first-of-type{ margin-top:0; }
+.callout strong{ color:var(--ink); }
+
+/* CARD GRID */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.5rem; margin:2rem 0; }
+.card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.6rem;
+ box-shadow:var(--shadow-md); transition:transform .25s ease, box-shadow .25s ease; }
+.card:hover{ transform:translateY(-4px); box-shadow:var(--shadow-lg); }
+.card h4{ color:var(--ink); margin-top:0; margin-bottom:.7rem; padding-bottom:.5rem; border-bottom:1px solid var(--hairline); line-height:1.25; }
+.card p{ font-size:.96rem; color:var(--ink-2); }
+.card .num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:1.1rem; }
+
+/* TABLES */
+table{ width:100%; border-collapse:collapse; margin:1.8rem 0; font-size:.95rem;
+ background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+th{ background:var(--forest); color:var(--ink-on-dark); padding:.95rem 1rem; text-align:left;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.06em; font-size:.82rem; }
+td{ padding:.95rem 1rem; border-bottom:1px solid var(--hairline); color:var(--ink-2); vertical-align:top; }
+tr:last-child td{ border-bottom:0; }
+tbody tr:nth-child(even){ background:rgba(236,231,215,.5); }
+tbody tr:hover{ background:rgba(195,218,186,.22); }
+td strong{ color:var(--ink); }
+.table-caption{ font-size:.86rem; color:var(--ink-3); font-style:italic; margin:-.6rem 0 1.8rem; }
+.al-dsl{ width:34%; }
+.al-pol{ width:46%; }
+.al-tag{ display:inline-block; font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.07em;
+ font-size:.66rem; color:var(--forest-deep); background:rgba(71,126,89,.13); border:1px solid rgba(71,126,89,.26);
+ padding:.22rem .6rem; border-radius:999px; margin-bottom:.5rem; }
+.al-tag.eo{ color:#356046; background:rgba(71,126,89,.13); }
+.al-tag.econ{ color:var(--clay-deep); background:rgba(207,113,93,.13); border-color:rgba(207,113,93,.28); }
+
+/* LISTS */
+ul,ol{ margin:1rem 0 1rem 1.5rem; }
+li{ margin:.5rem 0; line-height:1.7; color:var(--ink-2); }
+li strong{ color:var(--ink); }
+.clean{ list-style:none; margin-left:0; }
+.clean li{ padding-left:1.7rem; position:relative; }
+.clean li::before{ content:""; position:absolute; left:0; top:.62em; width:8px; height:8px; border-radius:50%; background:var(--clay); }
+
+/* STATS */
+.stats-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1.3rem; margin:2rem 0; }
+.stat-box{ background:var(--surface); border:1px solid var(--border); padding:1.5rem 1.4rem; border-radius:14px;
+ text-align:left; box-shadow:var(--shadow-sm); border-top:4px solid var(--forest); }
+.stat-box .stat-eyebrow{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; color:var(--ink-3); }
+.stat-value{ font-family:var(--sans); font-weight:700; font-size:2rem; line-height:1.08; margin:.35rem 0 .3rem; color:var(--clay); }
+.stat-label{ font-size:.9rem; color:var(--ink-2); }
+
+/* FLOW */
+.flow{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0; margin:2rem 0; }
+.flow-step{ position:relative; padding:1.3rem 1.2rem; background:#FBF9F2; border:1px solid var(--border); }
+.flow-step:not(:last-child){ border-right:0; }
+.flow-step .fs-num{ font-family:var(--sans); font-weight:700; color:var(--clay); font-size:.9rem; letter-spacing:.05em; }
+.flow-step .fs-title{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.04em; font-weight:600; color:var(--forest-deep); font-size:.92rem; margin:.3rem 0 .4rem; }
+.flow-step p{ font-size:.88rem; color:var(--ink-2); margin:0; }
+
+/* VIZ */
+.viz{ margin:2.2rem 0; }
+.viz-cap{ font-size:.86rem; color:var(--ink-3); font-style:italic; margin-top:.7rem; text-align:center; }
+.viz-cap b{ color:var(--ink); font-family:var(--sans); font-style:normal; font-weight:600; text-transform:uppercase; letter-spacing:.04em; font-size:.76rem; }
+.flow-svg{ width:100%; height:auto; display:block; background:#FBF9F2; border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow-sm); }
+.viz-legend{ display:flex; flex-wrap:wrap; gap:1.2rem; justify-content:center; margin-top:1rem; }
+.viz-legend .lg{ display:flex; align-items:center; gap:.5rem; font-family:var(--sans); font-size:.82rem; color:var(--ink-2); font-weight:500; }
+.viz-legend .sw{ width:16px; height:16px; border-radius:4px; flex-shrink:0; }
+
+/* trade-off bars */
+.tradeoff{ display:grid; grid-template-columns:170px 1fr; gap:1rem; align-items:center; margin:.8rem 0; }
+.tradeoff .to-label{ font-family:var(--sans); font-weight:600; font-size:.85rem; color:var(--forest-deep); text-align:right; line-height:1.2; }
+.to-bars .tb{ display:flex; align-items:center; height:24px; border-radius:5px; margin:3px 0; font-family:var(--sans); font-size:.72rem; font-weight:600; color:#fff; padding-left:.6rem; white-space:nowrap; }
+.tb-conv{ background:var(--clay); }
+.tb-green{ background:var(--forest); }
+
+/* UTILITIES */
+.highlight{ background:rgba(248,177,51,.32); padding:.05rem .3rem; border-radius:3px; }
+.bold-green{ color:var(--forest); font-weight:bold; }
+.bold-brown{ color:var(--clay-deep); font-weight:bold; }
+.pillar-badge{ display:inline-block; background:var(--forest); color:#fff; padding:.4rem 1rem; border-radius:999px;
+ font-family:var(--sans); text-transform:uppercase; letter-spacing:.07em; font-size:.76rem; font-weight:600; margin:.25rem .25rem .25rem 0; }
+.pillar-badge.clay{ background:var(--clay); }
+.references-section{ background:#FBF9F2; }
+.reference-item{ margin:.95rem 0; padding-left:1.8rem; text-indent:-1.8rem; line-height:1.55; color:var(--ink-2); font-size:.92rem; }
+.reference-item a{ color:var(--clay); text-decoration:none; word-break:break-word; }
+.reference-item a:hover{ text-decoration:underline; }
+.two-col{ display:grid; grid-template-columns:1fr 1fr; gap:1.6rem; }
+
+/* learn-more buttons */
+.lm-row{ display:flex; flex-wrap:wrap; gap:.9rem; margin:1.6rem 0 .4rem; }
+.lm-btn{ display:inline-flex; align-items:center; gap:.6rem; text-decoration:none; font-family:var(--sans); font-weight:600;
+ font-size:.92rem; padding:.85rem 1.4rem; border-radius:999px; transition:transform .18s ease, box-shadow .18s ease; }
+.lm-btn.primary{ background:var(--clay); color:#fff; box-shadow:var(--shadow-sm); }
+.lm-btn.primary:hover{ transform:translateY(-2px); box-shadow:var(--shadow-md); }
+.lm-btn.ghost{ background:transparent; color:var(--forest-deep); border:1.6px solid var(--forest-soft); }
+.lm-btn.ghost:hover{ background:rgba(71,126,89,.08); transform:translateY(-2px); }
+.lm-btn .arr{ font-size:1.05em; line-height:1; }
+
+/* FOOTER */
+footer{ background:var(--forest-deep); color:#EAF1E6; text-align:center; padding:2.8rem 2rem; margin-top:3rem; line-height:1.9; }
+footer p{ max-width:900px; margin:0 auto; }
+footer a{ color:#F2C9A8; text-decoration:none; }
+footer a:hover{ text-decoration:underline; }
+footer .foot-rule{ width:60px; height:3px; background:var(--amber); margin:1.4rem auto; border:0; border-radius:2px; }
+
+@media (max-width:768px){
+ header{ padding:2.2rem 1.3rem; } header h1{ font-size:1.9rem; }
+ nav.secnav ul{ flex-direction:column; } nav.secnav a{ padding:.55rem 1rem; }
+ .container{ padding:1.3rem; } section{ padding:1.5rem; } h2{ font-size:1.5rem; }
+ .stats-grid,.grid,.two-col{ grid-template-columns:1fr; }
+ .flow-step{ border-right:1px solid var(--border) !important; }
+ .tradeoff{ grid-template-columns:1fr; } .tradeoff .to-label{ text-align:left; }
+ table, thead, tbody, th, td, tr{ display:block; }
+ thead{ display:none; }
+ td{ border-bottom:1px solid var(--hairline); }
+ .al-dsl,.al-pol{ width:auto; }
+}
+
+/* DFSA TOPBAR (shared across sub-pages) */
+.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
+.drip-topbar *{box-sizing:border-box;}
+.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+.drip-topbar .db-dm span{color:#F8B133;}
+.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+.drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;text-transform:none;letter-spacing:normal;}
+.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+.drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
+@media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
+</style>
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+
+<header data-screen-label="Header">
+ <div class="header-inner">
+  <img class="brand-logo" src="assets/logo-color.png" alt="DSL-IP — Drylands Sustainable Landscapes Impact Programme">
+  <p class="eyebrow">Finance &amp; Governance &middot; Policy analytics for drylands</p>
+  <h1>Policy Optimization Tool <span>(PolOpT)</span></h1>
+  <p class="lede">An FAO decision-support tool that helps governments find the policy and spending mix that delivers the most across competing goals — economic, social and environmental — under a fixed budget. For drylands, it is the analytical bridge between what the DSL-IP proves on the ground and the national policies that can scale it.</p>
+  <div class="header-tags"><span>MAFAP Programme</span><span>Policy simulation</span><span>SLPF aligned</span><span>LDN &amp; UNCCD</span></div>
+ </div>
+</header>
+
+<nav class="secnav">
+ <ul>
+  <li><a href="#summary">At a glance</a></li>
+  <li><a href="#what">What is PolOpT</a></li>
+  <li><a href="#drylands">Supporting drylands</a></li>
+  <li><a href="#alignment">SLPF alignment</a></li>
+  <li><a href="#nigeria">The extension signal</a></li>
+  <li><a href="#commitments">Global commitments</a></li>
+  <li><a href="#entry">Entry points</a></li>
+  <li><a href="#learn">Learn more</a></li>
+ </ul>
+</nav>
+
+<div class="container">
+
+<section id="summary" data-screen-label="At a glance">
+ <h2><span class="kicker">Policy Optimization Tool &middot; At a glance</span>From field evidence to national policy</h2>
+ <p class="lead">The DSL-IP proves what works inside a landscape — community seed banks, green value chains, farmer field schools. The <strong>Policy Optimization Tool (PolOpT)</strong>, developed by FAO's Monitoring and Analysing Food and Agricultural Policies (MAFAP) programme, answers the next question: <strong>which policies and public expenditures should a government choose</strong> so that those proven practices scale — without trading away the environment for growth, or growth for the environment. It does this by <span class="highlight">simulating and optimizing policy scenarios</span> against multiple objectives at once.</p>
+
+ <div class="stats-grid">
+  <div class="stat-box"><div class="stat-eyebrow">Built by</div><div class="stat-value">MAFAP</div><div class="stat-label">FAO food &amp; agricultural policy programme</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Optimises across</div><div class="stat-value">3</div><div class="stat-label">objectives — economic · social · environmental</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">SLPF alignment points</div><div class="stat-value">5</div><div class="stat-label">seed banks · value chains · FFS · LDN · land use</div></div>
+  <div class="stat-box"><div class="stat-eyebrow">Method</div><div class="stat-value">Scenarios</div><div class="stat-label">policy simulation under a budget constraint</div></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">In one sentence</div>
+  <p>PolOpT takes a government's budget and policy options and computes the combination that best advances <strong>economic, social and environmental objectives together</strong> — giving the DSL-IP a way to show that its drylands practices are not just good projects, but <strong>good policy</strong>.</p>
+ </div>
+
+ <div class="grid">
+  <div class="card"><h4><span class="num">01</span> &nbsp;A shared language</h4><p>DSL-IP speaks in landscapes and practices; ministries of finance speak in budgets and returns. PolOpT translates one into the other.</p></div>
+  <div class="card"><h4><span class="num">02</span> &nbsp;Trade-offs made visible</h4><p>It quantifies what is gained and lost when a government shifts spending — for example from fertilizer subsidies toward green value chains.</p></div>
+  <div class="card"><h4><span class="num">03</span> &nbsp;Evidence that scales</h4><p>Practices validated in a few landscapes become scenarios a country can budget for nationally, grounded in practical, scalable solutions.</p></div>
+ </div>
+</section>
+
+<section id="what" data-screen-label="What is PolOpT">
+ <h2><span class="kicker">The tool</span>What PolOpT actually does</h2>
+ <p>PolOpT is a <strong>policy simulation and optimization tool</strong>. Rather than asking a government to guess which interventions to fund, it searches across the available policy levers — subsidies, public investments, extension services, value-chain support — and identifies the mix that maximises a chosen objective, or balances several objectives, given the resources available.</p>
+
+ <div class="viz">
+  <svg class="flow-svg" viewBox="0 0 1120 430" role="img" aria-label="PolOpT optimization flow: policy inputs and a budget constraint feed an optimization engine balancing three objectives, producing an optimized policy mix and outcomes">
+   <g font-family="Poppins, sans-serif">
+    <!-- inputs -->
+    <rect x="35" y="60" width="200" height="60" rx="8" fill="#fff" stroke="#CF715D" stroke-width="2"></rect>
+    <text x="135" y="86" fill="#B4543F" font-size="13" font-weight="700" text-anchor="middle">Policy levers</text>
+    <text x="135" y="105" fill="#6B5E54" font-size="10.5" text-anchor="middle">subsidies · investment · extension</text>
+    <rect x="35" y="185" width="200" height="60" rx="8" fill="#fff" stroke="#CF715D" stroke-width="2"></rect>
+    <text x="135" y="211" fill="#B4543F" font-size="13" font-weight="700" text-anchor="middle">Budget constraint</text>
+    <text x="135" y="230" fill="#6B5E54" font-size="10.5" text-anchor="middle">what the treasury can spend</text>
+    <rect x="35" y="310" width="200" height="60" rx="8" fill="#fff" stroke="#CF715D" stroke-width="2"></rect>
+    <text x="135" y="336" fill="#B4543F" font-size="13" font-weight="700" text-anchor="middle">Evidence base</text>
+    <text x="135" y="355" fill="#6B5E54" font-size="10.5" text-anchor="middle">DSL-IP field data &amp; costs</text>
+    <!-- arrows to engine -->
+    <g stroke="#C3DABA" stroke-width="2.5" fill="none">
+     <path d="M 235,90 C 320,90 320,190 400,205"></path>
+     <path d="M 235,215 L 400,215"></path>
+     <path d="M 235,340 C 320,340 320,240 400,225"></path>
+    </g>
+    <!-- engine -->
+    <rect x="400" y="120" width="230" height="200" rx="12" fill="#356046"></rect>
+    <text x="515" y="158" fill="#F2C9A8" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="1.2">OPTIMIZATION ENGINE</text>
+    <text x="515" y="186" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">Balance the</text>
+    <text x="515" y="206" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">objectives</text>
+    <!-- objective chips -->
+    <rect x="424" y="226" width="182" height="26" rx="6" fill="#CF715D"></rect>
+    <text x="515" y="244" fill="#fff" font-size="11" font-weight="600" text-anchor="middle">Economic — production &amp; income</text>
+    <rect x="424" y="256" width="182" height="26" rx="6" fill="#E0A23C"></rect>
+    <text x="515" y="274" fill="#3a2408" font-size="11" font-weight="600" text-anchor="middle">Social — jobs &amp; food security</text>
+    <rect x="424" y="286" width="182" height="26" rx="6" fill="#477E59"></rect>
+    <text x="515" y="304" fill="#fff" font-size="11" font-weight="600" text-anchor="middle">Environmental — land &amp; carbon</text>
+    <!-- arrow to output -->
+    <path d="M 630,220 L 720,220" stroke="#C3DABA" stroke-width="2.5" fill="none"></path>
+    <polygon points="720,212 738,220 720,228" fill="#8FB59B"></polygon>
+    <!-- outputs -->
+    <rect x="745" y="120" width="200" height="90" rx="9" fill="#477E59"></rect>
+    <text x="845" y="158" fill="#F2C9A8" font-size="10.5" font-weight="600" text-anchor="middle" letter-spacing="1">RESULT</text>
+    <text x="845" y="180" fill="#fff" font-size="14.5" font-weight="700" text-anchor="middle">Optimized</text>
+    <text x="845" y="199" fill="#fff" font-size="14.5" font-weight="700" text-anchor="middle">policy mix</text>
+    <rect x="745" y="230" width="200" height="90" rx="9" fill="#fff" stroke="#477E59" stroke-width="2"></rect>
+    <text x="845" y="266" fill="#356046" font-size="12.5" font-weight="700" text-anchor="middle">Projected outcomes</text>
+    <text x="845" y="286" fill="#6B5E54" font-size="10.5" text-anchor="middle">economic &amp; environmental</text>
+    <text x="845" y="303" fill="#6B5E54" font-size="10.5" text-anchor="middle">gains, side by side</text>
+   </g>
+  </svg>
+  <div class="viz-cap"><b>Figure 1 &middot; How PolOpT works</b> &nbsp; Policy levers, a budget ceiling and a costed evidence base feed an optimization engine that weighs economic, social and environmental objectives — and returns the policy mix that performs best, with its outcomes made explicit. Schematic.</div>
+ </div>
+
+ <div class="callout concept">
+  <div class="callout-title">The environmental objective (EO)</div>
+  <p>What makes PolOpT relevant to drylands is that the <strong>environmental objective is a first-class goal</strong>, not an afterthought. A government can ask PolOpT to prioritise environmental outcomes — biodiversity, resilience, reduced land degradation — and see exactly what policy mix delivers them, and at what cost to the other objectives. That is the same balance the DSL-IP's Sustainable Landscape Production Framework strikes in the field.</p>
+ </div>
+</section>
+
+<section id="drylands" data-screen-label="Supporting drylands">
+ <h2><span class="kicker">Why it matters here</span>How PolOpT supports drylands</h2>
+ <p>The DSL-IP, through its <strong>Sustainable Landscape Production Framework (SLPF)</strong>, is closely aligned with the goals and methods of PolOpT — particularly in how both integrate <strong>community-based and environmentally sustainable agricultural practices</strong>. The DSL-IP generates the evidence; PolOpT turns that evidence into policy options a finance ministry can act on.</p>
+
+ <div class="flow">
+  <div class="flow-step"><div class="fs-num">01</div><div class="fs-title">Prove in the landscape</div><p>DSL-IP demonstrates seed banks, FFS and green value chains, and measures their costs and outcomes.</p></div>
+  <div class="flow-step"><div class="fs-num">02</div><div class="fs-title">Cost the options</div><p>Those measured practices become priced policy levers PolOpT can compare against conventional spending.</p></div>
+  <div class="flow-step"><div class="fs-num">03</div><div class="fs-title">Optimise the mix</div><p>PolOpT finds the combination that best serves economic and environmental goals within budget.</p></div>
+  <div class="flow-step"><div class="fs-num">04</div><div class="fs-title">Inform the policy</div><p>Governments scale what works through coherent national policy and public-expenditure decisions.</p></div>
+ </div>
+
+ <div class="callout success">
+  <div class="callout-title">The synergy, in short</div>
+  <p>DSL-IP optimises land use through <strong>on-the-ground interventions</strong> — agroforestry, soil conservation, crop diversification. PolOpT optimises land use through <strong>policy simulation</strong>. Together they ensure that policy recommendations are grounded in practical, scalable solutions, and that practical solutions reach the scale only policy can give them.</p>
+ </div>
+</section>
+
+<section id="alignment" data-screen-label="SLPF alignment">
+ <h2><span class="kicker">The core alignment</span>SLPF &harr; PolOpT, point by point</h2>
+ <p>Five strands of the DSL-IP's Sustainable Landscape Production Framework map directly onto what PolOpT can model. In each, the DSL-IP supplies a proven practice and PolOpT supplies the policy lens that lets a country weigh it against the alternatives.</p>
+
+ <table>
+  <thead><tr><th class="al-dsl">DSL-IP &middot; SLPF</th><th class="al-pol">PolOpT &middot; policy lens</th></tr></thead>
+  <tbody>
+   <tr>
+    <td><span class="al-tag eo">Environmental objective</span><br><strong>Community Seed Banks.</strong> Conservation and use of local plant genetic resources, supported under the International Treaty on Plant Genetic Resources for Food and Agriculture.</td>
+    <td>Incorporates these seed systems into policy scenarios that prioritise <strong>biodiversity, resilience and reduced dependency on commercial seed systems</strong> — especially under the environmental objective (EO).</td>
+   </tr>
+   <tr>
+    <td><span class="al-tag econ">Economic &amp; environmental</span><br><strong>Green Value Chains.</strong> Value chains that minimise environmental harm and raise income through certification, branding and sustainable practices.</td>
+    <td>Models the <strong>economic and environmental trade-offs</strong> of investing in green value chains versus conventional subsidies (e.g. fertilizer) — showing how such investment can serve both goals.</td>
+   </tr>
+   <tr>
+    <td><span class="al-tag">Knowledge &amp; extension</span><br><strong>Farmer Field Schools (FFS).</strong> A key knowledge hub promoting sustainable land management, agroecology and climate-smart practices.</td>
+    <td>Simulates the <strong>long-term benefits of scaling up FFS-based extension</strong> — as in the Nigeria case, where higher investment in extension correlates with better environmental and economic outcomes.</td>
+   </tr>
+   <tr>
+    <td><span class="al-tag">Global commitments</span><br><strong>Support for LDN &amp; UNCCD.</strong> DSL-IP contributes to Land Degradation Neutrality and supports UNCCD COP decisions.</td>
+    <td>Provides the <strong>analytical backbone</strong> to demonstrate how policy shifts can help countries meet these international commitments.</td>
+   </tr>
+   <tr>
+    <td><span class="al-tag">Integrated land management</span><br><strong>Optimised land use.</strong> Agroforestry, soil conservation and crop diversification delivered through on-the-ground interventions.</td>
+    <td>Optimises land use through <strong>policy simulation</strong>, ensuring recommendations are grounded in practical, scalable solutions — the on-the-ground and the policy levels reinforcing each other.</td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="table-caption">Table 1. Alignment of the DSL-IP Sustainable Landscape Production Framework with the Policy Optimization Tool. Source: PolOpT &amp; DSL-IP SLPF alignment note.</p>
+</section>
+
+<section id="nigeria" data-screen-label="The extension signal">
+ <h2><span class="kicker">A concrete signal</span>The extension finding from Nigeria</h2>
+ <p>One of the clearest illustrations of PolOpT's value for the DSL-IP comes from its <strong>Nigeria application</strong>, where the analysis pointed to a consistent relationship: <span class="highlight">increased investment in extension services correlates with better environmental <em>and</em> economic outcomes</span>. That matters because Farmer Field Schools — the DSL-IP's flagship extension approach — are exactly the kind of service such a finding would justify scaling.</p>
+
+ <div class="two-col">
+  <div class="callout concept" style="margin-top:0;">
+   <div class="callout-title">What it suggests</div>
+   <p>Where a government treats extension as a cost to be trimmed, PolOpT's analysis reframes it as an <strong>investment with a double return</strong> — productivity and the environment moving in the same direction rather than against each other.</p>
+  </div>
+  <div class="callout success" style="margin-top:0;">
+   <div class="callout-title">Why it travels to drylands</div>
+   <p>The DSL-IP already runs FFS across its child projects. A PolOpT scenario that scales FFS-based extension turns that operational choice into a <strong>budgeted national policy</strong>, with the environmental gains made explicit.</p>
+  </div>
+ </div>
+
+ <div class="viz">
+  <div class="tradeoff"><div class="to-label">Conventional input subsidy</div><div class="to-bars">
+   <div class="tb tb-conv" style="width:62%;">Short-term output</div>
+   <div class="tb tb-green" style="width:24%;">Environmental gain</div>
+  </div></div>
+  <div class="tradeoff"><div class="to-label">FFS-based extension &amp; green value chains</div><div class="to-bars">
+   <div class="tb tb-conv" style="width:54%;">Output &amp; income</div>
+   <div class="tb tb-green" style="width:78%;">Environmental gain</div>
+  </div></div>
+  <div class="viz-cap"><b>Figure 2 &middot; The shape of the trade-off</b> &nbsp; Schematic only — illustrating the qualitative pattern PolOpT surfaces: spending that builds knowledge and green value chains can hold economic returns while widening environmental benefit. Magnitudes are indicative, not modelled values.</div>
+ </div>
+ <div class="viz-legend">
+  <div class="lg"><span class="sw" style="background:var(--clay);"></span>Economic return</div>
+  <div class="lg"><span class="sw" style="background:var(--forest);"></span>Environmental benefit</div>
+ </div>
+</section>
+
+<section id="commitments" data-screen-label="Global commitments">
+ <h2><span class="kicker">Policy coherence</span>Meeting global commitments, credibly</h2>
+ <p>Drylands policy does not sit in isolation — it answers to the <strong>Rio Conventions, the Global Forest Goals and UNCCD COP decisions</strong>. The DSL-IP contributes to <strong>Land Degradation Neutrality (LDN)</strong> and supports those commitments; PolOpT gives countries the analytical backbone to show, in budget terms, how a policy shift moves them toward the targets they have signed.</p>
+
+ <div class="grid">
+  <div class="card"><h4>Land Degradation Neutrality</h4><p>PolOpT can demonstrate how reallocating expenditure toward sustainable land and forest management advances LDN targets rather than eroding them.</p></div>
+  <div class="card"><h4>UNCCD &amp; the Rio Conventions</h4><p>Scenario outputs translate convention commitments into concrete, costed policy choices a ministry can defend and report against.</p></div>
+  <div class="card"><h4>Forest &amp; landscape coherence</h4><p>By reducing pressure on Miombo and Mopane forests through SLM and diversified, mixed land-use systems, drylands policy can align agricultural investment with forest goals.</p></div>
+ </div>
+
+ <div class="callout definition">
+  <div class="callout-title">From commitment to coherence</div>
+  <p>International goals are often expressed as intentions; budgets are where they are kept or broken. By putting the environmental objective on the same footing as the economic one, PolOpT helps a government build <strong>policy coherence</strong> — the consistency across ministries and programmes that the Global Forest Goals and the Rio Conventions call for.</p>
+ </div>
+</section>
+
+<section id="entry" data-screen-label="Entry points">
+ <h2><span class="kicker">Where DSL-IP could start</span>Practical entry points</h2>
+ <p>The alignment is not only conceptual — it suggests concrete places to begin. Community Seed Banks and trees-on-farm, in particular, make strong candidates for a first PolOpT scenario, and countries could be clustered to work on shared cases.</p>
+
+ <ul class="clean">
+  <li><strong>Community Seed Banks as a first scenario.</strong> A well-bounded, evidence-rich practice with a clear environmental objective — an ideal candidate for an initial PolOpT scenario and a demonstration of the SLPF-to-policy bridge.</li>
+  <li><strong>Cluster countries around shared cases.</strong> Rather than one scenario per country, child projects facing similar policy questions could be grouped — letting a single modelling effort inform several national dialogues.</li>
+  <li><strong>Green value chains versus conventional subsidies.</strong> A high-visibility trade-off many drylands governments already face, where PolOpT can make the case for reallocation concrete.</li>
+  <li><strong>FFS-based extension at scale.</strong> Building directly on the Nigeria signal, modelling what scaled extension would cost and return across a drylands portfolio.</li>
+ </ul>
+
+ <div class="callout warning">
+  <div class="callout-title">Exploratory framing</div>
+  <p>These entry points are <strong>scoping ideas under discussion</strong>, not committed workstreams. Any PolOpT application would be developed jointly with the relevant FAO divisions, the MAFAP programme and national partners, and validated before use in policy dialogue.</p>
+ </div>
+</section>
+
+<section id="learn" class="references-section" data-screen-label="Learn more">
+ <h2><span class="kicker">Learn more</span>Go to the source</h2>
+ <p>PolOpT is developed and maintained by FAO's MAFAP programme. The primary reference below is the best starting point; the others give the DSL-IP and value-chain context behind this alignment.</p>
+
+ <div class="lm-row">
+  <a class="lm-btn primary" href="https://www.fao.org/in-action/mafap/what-we-do/policy-prioritization/polopt/en" target="_blank" rel="noopener">PolOpT on FAO.org <span class="arr">&rarr;</span></a>
+  <a class="lm-btn ghost" href="https://www.fao.org/in-action/dryland-sustainable-landscapes/knowledge-mgmt/slpf/en" target="_blank" rel="noopener">DSL-IP SLPF overview <span class="arr">&rarr;</span></a>
+ </div>
+
+ <h3>References</h3>
+ <div class="reference-item">FAO &middot; MAFAP. <em>Policy Optimization Tool (PolOpT) — Policy prioritization.</em> Available at: <a href="https://www.fao.org/in-action/mafap/what-we-do/policy-prioritization/polopt/en" target="_blank" rel="noopener">fao.org/in-action/mafap/what-we-do/policy-prioritization/polopt/en</a></div>
+ <div class="reference-item">FAO. <em>FAO showcases the Policy Optimization Tool developed by the MAFAP programme at Global Environment Facility technical advisory meetings.</em> Available at: <a href="https://www.fao.org/in-action/mafap/news-details/fao-showcases-policy-optimization-tool-developed-by-the-mafap-programme-at-global-environment-facility-technical-advisory-meetings/en" target="_blank" rel="noopener">fao.org/in-action/mafap/news-details/…</a></div>
+ <div class="reference-item">FAO. <em>DSL-IP — Sustainable Landscape Production Framework (SLPF), Knowledge Management.</em> Available at: <a href="https://www.fao.org/in-action/dryland-sustainable-landscapes/knowledge-mgmt/slpf/en" target="_blank" rel="noopener">fao.org/in-action/dryland-sustainable-landscapes/knowledge-mgmt/slpf/en</a></div>
+ <div class="reference-item">IIED. <em>Protocol on Forest and Farm Producer Organisations and green value chains.</em> Available at: <a href="https://www.iied.org/sites/default/files/pdfs/2025-01/22602g.pdf" target="_blank" rel="noopener">iied.org/sites/default/files/pdfs/2025-01/22602g.pdf</a></div>
+</section>
+
+</div>
+
+<footer>
+ <p><strong>Policy Optimization Tool (PolOpT) &amp; the DSL-IP.</strong> A knowledge entry in the DFSA library under Finance &amp; Governance, drawn from the PolOpT–DSL-IP SLPF alignment note and FAO public sources.</p>
+ <hr class="foot-rule">
+ <p>PolOpT is a tool of FAO's MAFAP programme. This page summarises its alignment with the Drylands Sustainable Landscapes Impact Program for orientation purposes and is under review. <a href="DFSA.html">Back to DFSA</a></p>
+</footer>
+
+<script src="drip-i18n.js"></script>
+</body>
+</html>

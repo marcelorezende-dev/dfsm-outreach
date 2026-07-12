@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Platform &amp; Tools" name="DSL-IP · Global Gender Action Plan" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DSL-IP · Global Gender Action Plan</title>
+<link rel="stylesheet" href="colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family:var(--font-body); color:var(--ink); background:var(--cream);
+    background-image:url("assets/grain-tile.png");
+    background-size:300px; -webkit-font-smoothing:antialiased;
+  }
+  a{ color:inherit; text-decoration:none; }
+  ::selection{ background:var(--clay-soft); color:var(--ink); }
+
+  .wrap{ max-width:1160px; margin:0 auto; padding:0 32px; }
+
+  /* ----------------------------------------------------------- TOP BAR */
+  .topbar{
+    position:sticky; top:0; z-index:60;
+    background:rgba(245,242,232,.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .topbar .wrap{ display:flex; align-items:center; gap:28px; height:64px; }
+  .brand{ display:flex; align-items:center; gap:12px; margin-right:auto; }
+  .brand img{ height:30px; width:auto; display:block; }
+  .brand .bt{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.07em;
+    font-size:13px; font-weight:600; color:var(--forest); line-height:1; }
+  .brand .bt small{ display:block; color:var(--ink-3); letter-spacing:.04em; font-size:10.5px; margin-top:3px; }
+  .navlinks{ display:flex; gap:4px; }
+  .navlinks a{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.09em;
+    font-size:12px; font-weight:500; color:var(--ink-2); padding:8px 13px; border-radius:var(--r-pill);
+    transition:background .16s ease, color .16s ease; }
+  .navlinks a:hover{ background:rgba(71,126,89,.1); color:var(--forest); }
+  @media(max-width:880px){ .navlinks{ display:none; } }
+
+  /* ----------------------------------------------------------- HERO */
+  .hero{ position:relative; overflow:hidden; }
+  .hero .wrap{ display:grid; grid-template-columns:1.15fr .85fr; gap:24px;
+    align-items:center; padding:62px 32px 56px; }
+  .hero .globe{ position:relative; }
+  .hero .globe img{ width:115%; max-width:560px; display:block; margin-left:-6%;
+    filter:drop-shadow(0 24px 40px rgba(36,31,27,.14)); }
+  .eyebrow{ font-family:var(--font-serif); font-style:italic; color:var(--clay);
+    font-size:17px; margin-bottom:14px; }
+  h1.title{ font-family:var(--font-display); text-transform:uppercase; color:var(--forest);
+    font-weight:700; font-size:clamp(40px,5.4vw,72px); line-height:.92; letter-spacing:.004em; }
+  h1.title .sub2{ display:block; color:var(--ink); font-size:.5em; letter-spacing:.02em;
+    -webkit-text-stroke:0; margin-top:4px; }
+  .lede{ font-size:18px; line-height:1.66; color:var(--ink-2); max-width:50ch; margin-top:20px; }
+  .herometa{ display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; }
+  .herometa .mp{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.06em;
+    font-size:12px; font-weight:600; padding:7px 14px; border-radius:var(--r-pill);
+    background:var(--surface); border:1px solid var(--border); color:var(--ink-2);
+    display:flex; align-items:center; gap:7px; }
+  .herometa .mp i{ width:14px; height:14px; }
+  @media(max-width:820px){
+    .hero .wrap{ grid-template-columns:1fr; padding:40px 32px; }
+    .hero .globe{ order:-1; max-width:360px; }
+  }
+
+  /* ----------------------------------------------------------- STATS STRIP */
+  .stats{ background:var(--forest); color:var(--ink-on-dark); }
+  .stats .wrap{ display:grid; grid-template-columns:repeat(5,1fr); gap:8px; padding:34px 32px; }
+  .stat{ padding:4px 18px; border-left:1px solid rgba(251,248,239,.22); }
+  .stat:first-child{ border-left:0; }
+  .stat .n{ font-family:var(--font-display); font-weight:700; font-size:38px; line-height:1; letter-spacing:.01em; }
+  .stat .n small{ font-size:.5em; font-weight:500; margin-left:2px; }
+  .stat .l{ font-size:12.5px; line-height:1.45; color:rgba(251,248,239,.82); margin-top:9px; }
+  .stat .src{ font-size:10px; color:rgba(251,248,239,.5); margin-top:4px; font-style:italic; }
+  @media(max-width:820px){ .stats .wrap{ grid-template-columns:repeat(2,1fr); gap:18px 8px; } }
+
+  /* ----------------------------------------------------------- SECTIONS */
+  section.band{ padding:72px 0; }
+  .seclabel{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.14em;
+    font-weight:600; font-size:13px; color:var(--clay); display:flex; align-items:center; gap:10px; }
+  .seclabel::before{ content:""; width:26px; height:2px; background:var(--clay); display:inline-block; }
+  h2.sec{ font-family:var(--font-serif); font-weight:900; font-size:clamp(30px,3.5vw,44px);
+    line-height:1.08; letter-spacing:-.01em; margin:14px 0 0; max-width:20ch; text-wrap:balance; }
+  .secintro{ font-size:17px; line-height:1.7; color:var(--ink-2); max-width:64ch; margin-top:18px; }
+
+  /* ----------------------------------------------------------- PILLARS */
+  .pillars{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px; }
+  .pillar{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-lg);
+    box-shadow:var(--shadow-sm); padding:28px; position:relative; overflow:hidden;
+    transition:box-shadow .2s ease, transform .2s ease; }
+  .pillar:hover{ box-shadow:var(--shadow-md); transform:translateY(-2px); }
+  .pillar .pnum{ font-family:var(--font-display); font-weight:700; font-size:14px;
+    width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    color:var(--ink-on-dark); margin-bottom:18px; }
+  .pillar h3{ font-family:var(--font-serif); font-weight:700; font-size:21px; line-height:1.2; }
+  .pillar .abbr{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.1em;
+    font-size:12px; font-weight:600; margin-top:4px; }
+  .pillar p{ font-size:14.5px; line-height:1.62; color:var(--ink-2); margin-top:14px; }
+  .pillar .edge{ position:absolute; left:0; top:0; bottom:0; width:5px; }
+  @media(max-width:820px){ .pillars{ grid-template-columns:1fr; } }
+
+  /* ----------------------------------------------------------- WORK PLAN EXPLORER */
+  .explorer{ background:var(--paper-2); border-top:1px solid var(--hairline); border-bottom:1px solid var(--hairline); }
+  .filterhead{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .filterbar{
+    position:sticky; top:64px; z-index:40; margin-top:30px;
+    background:rgba(236,231,215,.92); backdrop-filter:blur(8px);
+    border:1px solid var(--border); border-radius:var(--r-md); padding:18px 20px;
+    box-shadow:var(--shadow-sm);
+  }
+  .frow{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
+  .frow + .frow{ margin-top:14px; padding-top:14px; border-top:1px dashed var(--border); }
+  .flabel{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.1em;
+    font-size:11px; font-weight:600; color:var(--ink-3); width:74px; flex:none; }
+  .chips{ display:flex; gap:8px; flex-wrap:wrap; }
+  .chip{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.05em;
+    font-size:12px; font-weight:600; padding:7px 14px; border-radius:var(--r-pill); cursor:pointer;
+    background:var(--surface); border:1px solid var(--border); color:var(--ink-2);
+    display:flex; align-items:center; gap:7px; transition:all .15s ease; user-select:none; white-space:nowrap; }
+  .chip:hover{ border-color:var(--border-strong); color:var(--ink); }
+  .chip .sw{ width:9px; height:9px; border-radius:50%; flex:none; }
+  .chip.on{ color:var(--ink-on-dark); border-color:transparent; }
+  .chip.on.c-pre{ background:var(--bark); }
+  .chip.on.c-ta{ background:var(--clay); }
+  .chip.on.c-me{ background:var(--water); }
+  .chip.on.c-kmo{ background:var(--forest); }
+  .chip.on.neutral{ background:var(--ink); }
+  .chip.on .sw{ background:var(--ink-on-dark) !important; }
+
+  .search{ position:relative; margin-left:auto; }
+  .search i{ position:absolute; left:13px; top:50%; transform:translateY(-50%); width:16px; height:16px; color:var(--ink-3); }
+  .search input{ font-family:var(--font-body); font-size:14px; color:var(--ink);
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--r-pill);
+    padding:9px 16px 9px 38px; width:230px; outline:none; transition:border-color .15s, box-shadow .15s; }
+  .search input:focus{ border-color:var(--forest); box-shadow:0 0 0 3px rgba(71,126,89,.14); }
+  .clearbtn{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.07em;
+    font-size:11.5px; font-weight:600; color:var(--clay-deep); cursor:pointer; background:none; border:0;
+    display:flex; align-items:center; gap:6px; padding:7px 6px; opacity:0; pointer-events:none; transition:opacity .15s; }
+  .clearbtn.show{ opacity:1; pointer-events:auto; }
+  .clearbtn i{ width:14px; height:14px; }
+
+  .resultline{ display:flex; align-items:center; gap:18px; flex-wrap:wrap; margin:22px 2px 4px; }
+  .resultcount{ font-family:var(--font-serif); font-weight:700; font-size:15px; color:var(--ink); }
+  .resultcount b{ color:var(--clay-deep); }
+  .legend{ display:flex; gap:16px; flex-wrap:wrap; margin-left:auto; }
+  .legend span{ font-size:12px; color:var(--ink-2); display:flex; align-items:center; gap:6px; }
+  .legend span .sw{ width:9px; height:9px; border-radius:50%; }
+
+  /* action grid */
+  .grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:18px; }
+  @media(max-width:820px){ .grid{ grid-template-columns:1fr; } }
+  .act{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-md);
+    box-shadow:var(--shadow-sm); padding:22px 22px 18px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column; transition:box-shadow .18s ease, transform .18s ease; }
+  .act::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:var(--accentc); }
+  .act:hover{ box-shadow:var(--shadow-md); transform:translateY(-2px); }
+  .act .top{ display:flex; align-items:center; gap:10px; margin-bottom:13px; }
+  .act .code{ font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:.04em;
+    color:var(--ink-on-dark); background:var(--accentc); padding:4px 9px; border-radius:6px; }
+  .act .ptag{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.08em;
+    font-size:10.5px; font-weight:600; color:var(--accentc); }
+  .act .status{ margin-left:auto; font-family:var(--font-display); text-transform:uppercase;
+    letter-spacing:.06em; font-size:10.5px; font-weight:600; padding:4px 11px; border-radius:var(--r-pill);
+    display:flex; align-items:center; gap:6px; }
+  .act .status .sw{ width:8px; height:8px; border-radius:50%; }
+  .st-done{ background:rgba(71,126,89,.13); color:var(--forest-deep); }
+  .st-done .sw{ background:var(--forest); }
+  .st-ongoing{ background:rgba(248,177,51,.16); color:#9a6a06; }
+  .st-ongoing .sw{ background:var(--amber); }
+  .st-todo{ background:rgba(36,31,27,.07); color:var(--ink-3); }
+  .st-todo .sw{ background:var(--ink-3); }
+  .act h4{ font-family:var(--font-serif); font-weight:700; font-size:16.5px; line-height:1.36; color:var(--ink); }
+  .act .leads{ display:flex; gap:6px; flex-wrap:wrap; margin-top:13px; }
+  .act .lead{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.05em;
+    font-size:10.5px; font-weight:600; padding:3px 9px; border-radius:var(--r-pill);
+    border:1px solid var(--border); color:var(--ink-2); display:flex; align-items:center; gap:5px; }
+  .act .lead .d{ width:7px; height:7px; border-radius:50%; }
+  .act .detail{ margin-top:15px; padding-top:14px; border-top:1px solid var(--hairline);
+    display:grid; gap:11px; }
+  .act .dl{ display:grid; grid-template-columns:96px 1fr; gap:12px; align-items:start; }
+  .act .dl .k{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.07em;
+    font-size:10px; font-weight:600; color:var(--ink-3); padding-top:2px; }
+  .act .dl .v{ font-size:13px; line-height:1.5; color:var(--ink-2); }
+  .act .dl .v.rf{ font-size:12px; color:var(--forest-deep); }
+  .timeline{ display:flex; gap:5px; margin-top:16px; }
+  .yr{ flex:1; text-align:center; }
+  .yr .bar{ height:5px; border-radius:3px; background:rgba(36,31,27,.1); }
+  .yr.act-on .bar{ background:var(--accentc); }
+  .yr .yl{ font-family:var(--font-display); font-size:10px; font-weight:600; color:var(--ink-3);
+    letter-spacing:.05em; margin-top:5px; }
+  .yr.act-on .yl{ color:var(--ink); }
+
+  .empty{ text-align:center; padding:60px 20px; color:var(--ink-3); display:none; }
+  .empty.show{ display:block; }
+  .empty i{ width:34px; height:34px; color:var(--ink-3); }
+  .empty p{ font-family:var(--font-serif); font-size:17px; margin-top:12px; color:var(--ink-2); }
+
+  /* ----------------------------------------------------------- PCA / GAPS */
+  .pcagrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:40px; }
+  .pca{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-md);
+    padding:22px; box-shadow:var(--shadow-sm); }
+  .pca .pi{ width:38px; height:38px; border-radius:10px; background:var(--sage); color:var(--forest-deep);
+    display:flex; align-items:center; justify-content:center; margin-bottom:14px; }
+  .pca .pi i{ width:20px; height:20px; }
+  .pca h4{ font-family:var(--font-serif); font-weight:700; font-size:15.5px; line-height:1.4; }
+  @media(max-width:820px){ .pcagrid{ grid-template-columns:1fr; } }
+
+  .gaps{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:24px; }
+  .gap{ background:var(--clay); color:var(--ink-on-dark); border-radius:var(--r-md); padding:24px; }
+  .gap .gn{ font-family:var(--font-display); font-weight:700; font-size:13px; letter-spacing:.1em;
+    text-transform:uppercase; opacity:.7; }
+  .gap h4{ font-family:var(--font-serif); font-weight:700; font-size:18px; line-height:1.28; margin-top:10px; }
+  .gap p{ font-size:13.5px; line-height:1.55; margin-top:9px; color:rgba(251,248,239,.86); }
+  @media(max-width:820px){ .gaps{ grid-template-columns:1fr; } }
+
+  /* GEF requirements */
+  .reqlist{ margin-top:34px; display:grid; gap:0; border:1px solid var(--border);
+    border-radius:var(--r-md); overflow:hidden; background:var(--surface); }
+  .req{ display:grid; grid-template-columns:54px 1fr auto; gap:18px; align-items:center;
+    padding:18px 22px; border-top:1px solid var(--hairline); }
+  .req:first-child{ border-top:0; }
+  .req .rq{ font-family:var(--font-display); font-weight:700; font-size:22px; color:var(--clay-soft); }
+  .req .rt{ font-family:var(--font-serif); font-weight:700; font-size:15.5px; color:var(--ink); }
+  .req .rd{ font-size:13px; line-height:1.5; color:var(--ink-2); margin-top:3px; }
+  .req .met{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.06em;
+    font-size:11px; font-weight:600; padding:5px 12px; border-radius:var(--r-pill);
+    background:rgba(71,126,89,.13); color:var(--forest-deep); display:flex; align-items:center; gap:6px; white-space:nowrap; }
+  .req .met i{ width:14px; height:14px; }
+  @media(max-width:680px){ .req{ grid-template-columns:40px 1fr; } .req .met{ grid-column:2; justify-self:start; } }
+
+  /* ----------------------------------------------------------- FOOTER */
+  footer{ background:var(--ink); color:var(--ink-on-dark); padding:54px 0 40px; }
+  footer .wrap{ display:grid; grid-template-columns:1.4fr 1fr; gap:30px; align-items:end; }
+  footer .fl .ft{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.04em;
+    font-size:22px; font-weight:600; color:var(--forest-soft); line-height:1.1; }
+  footer .fl p{ font-size:13.5px; line-height:1.6; color:rgba(251,248,239,.66); margin-top:14px; max-width:46ch; }
+  footer .partners{ display:flex; gap:14px; flex-wrap:wrap; }
+  footer .partners span{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.08em;
+    font-size:12px; font-weight:600; color:rgba(251,248,239,.8); padding:7px 13px;
+    border:1px solid rgba(251,248,239,.22); border-radius:var(--r-pill); }
+  footer .fr{ text-align:right; }
+  footer .fr .note{ font-size:11.5px; line-height:1.6; color:rgba(251,248,239,.42); font-style:italic; }
+  @media(max-width:680px){ footer .wrap{ grid-template-columns:1fr; } footer .fr{ text-align:left; } }
+
+  /* ====================================================== PRINT =========== */
+  @media print {
+    /* Full-bleed A4 portrait — no white page margins; colour bands run edge to edge */
+    @page { size: A4 portrait; margin: 0; }
+    html, body { width:210mm; }
+    html { scroll-behavior:auto; }
+    *, *::before, *::after {
+      -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important;
+      animation-delay:-99s !important; animation-duration:.001s !important;
+      animation-iteration-count:1 !important; animation-fill-mode:both !important;
+      animation-play-state:running !important; transition-duration:0s !important;
+    }
+    body { background:var(--cream) !important; font-size:12.5px; }
+
+    /* drop interactive chrome */
+    .topbar, .filterbar, .clearbtn, .search, .legend, .empty { display:none !important; }
+    .topbar, .filterbar { position:static !important; }
+
+    /* every band reflows to the portrait content width, padded inside the page */
+    .wrap { max-width:100% !important; margin:0 !important; padding:0 14mm !important; }
+    section.band { padding:11mm 0 !important; }
+    .hero .wrap   { padding:12mm 14mm 9mm !important; }
+    .stats .wrap  { padding:8mm 14mm !important; }
+    footer        { padding:11mm 0 !important; }
+
+    /* hero: keep two-up but tame the oversized globe so nothing clips */
+    .hero .wrap { grid-template-columns:1.25fr .75fr !important; gap:8mm !important; align-items:center !important; }
+    .hero .globe img { width:100% !important; max-width:230px !important; margin-left:0 !important; filter:none !important; }
+    h1.title { font-size:42px !important; }
+    .lede { font-size:13.5px !important; margin-top:14px !important; }
+    .herometa { margin-top:16px !important; }
+
+    /* type + section rhythm */
+    h2.sec { font-size:28px !important; }
+    .secintro { font-size:13.5px !important; }
+    .stat .n { font-size:30px !important; }
+
+    /* major sections start on a fresh page */
+    #workplan, #focus, #gef { break-before:page; }
+
+    /* page-break behaviour */
+    .stat, .pillar, .act, .pca, .gap, .req, .resultline { break-inside:avoid; }
+    .hero, .stats { break-inside:avoid; }
+    h2.sec, .seclabel, .filterhead { break-after:avoid; }
+
+    /* CSS grid fragments badly across printed pages — Chrome slices grid rows
+       at the page edge. Use multi-column flow for the long card lists so each
+       card stays whole and the columns paginate cleanly. */
+    .grid, .pcagrid { display:block !important; column-gap:9px; }
+    .grid    { column-count:2; }
+    .pcagrid { column-count:2; }
+    .act, .pca {
+      display:inline-block; width:100%; margin:0 0 9px; vertical-align:top;
+      break-inside:avoid; -webkit-column-break-inside:avoid;
+    }
+    /* the bordered requirements box can't span a page cleanly — flatten it so
+       only the individual rows carry separation */
+    .reqlist { display:block !important; border:0 !important; border-radius:0 !important;
+      overflow:visible !important; background:transparent !important; }
+    .req { border-top:1px solid var(--hairline) !important; }
+
+    /* flatten interactive lift / shadows for clean ink */
+    .pillar:hover, .act:hover, .pillar, .act { transform:none !important; box-shadow:none !important; }
+    .act, .pillar, .pca { border:1px solid var(--border) !important; }
+    .stats { box-shadow:none !important; }
+    .pillars, .gaps { gap:10px !important; }
+    .resultline { margin-top:8px !important; }
+  }
+</style>
+<style>
+.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
+.drip-topbar *{box-sizing:border-box;}
+.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+.drip-topbar .db-dm span{color:#F8B133;}
+.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+.drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;text-transform:none;letter-spacing:normal;}
+.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+.drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
+@media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
+</style>
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#477E59"/>
+    <circle cx="50" cy="46" r="22" fill="#F5F2E8"/>
+    <path d="M50 24a22 22 0 0 0 0 44z" fill="#CF715D"/>
+    <path d="M50 24a22 22 0 0 1 0 44z" fill="#8FB59B"/>
+    <circle cx="50" cy="46" r="22" fill="none" stroke="#356046" stroke-width="2"/>
+    <path d="M50 70c-10 0-18 3-18 8h36c0-5-8-8-18-8z" fill="#F8B133"/>
+  </svg>
+</template>
+
+<!-- ============================================================ TOP BAR -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="assets/logo-color.png" alt="DSL-IP">
+      <span class="bt">Gender Action Plan<small>Drylands Sustainable Landscapes · DSL-IP</small></span>
+    </a>
+    <nav class="navlinks">
+      <a href="#overview">Overview</a>
+      <a href="#pillars">Action pillars</a>
+      <a href="#workplan">Work plan</a>
+      <a href="#focus">Focus areas</a>
+      <a href="#gef">GEF compliance</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============================================================ HERO -->
+<a id="top"></a>
+<section class="hero" id="overview">
+  <div class="wrap">
+    <div class="herotext">
+      <p class="eyebrow">Implementing &amp; monitoring action pillars from the Global Gender Workshop, Nairobi 2024</p>
+      <h1 class="title">Global Gender<br>Action Plan
+        <span class="sub2">Putting gender at the front line of dryland restoration</span>
+      </h1>
+      <p class="lede">A living roadmap that turns three gender action pillars into a costed, monitored
+        work plan across the 11 countries of the GEF-7 Dryland Sustainable Landscapes Impact Program.</p>
+      <div class="herometa">
+        <span class="mp"><i data-lucide="users"></i>FAO · IUCN · CDE/WOCAT</span>
+        <span class="mp"><i data-lucide="calendar-range"></i>2022 – 2026 · Y1–Y5</span>
+        <span class="mp"><i data-lucide="globe"></i>11 child projects</span>
+      </div>
+    </div>
+    <div class="globe">
+      <img src="assets/globe.png" alt="The split globe — degraded dryland transitioning to restored landscape, cradled in a hand">
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ STATS -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="n">2<small>bn</small></div><div class="l">people live in the world's drylands</div><div class="src">FAO, 2019</div></div>
+    <div class="stat"><div class="n">1<small>bn+</small></div><div class="l">depend on drylands for their livelihoods</div><div class="src">FAO, 2003</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">gender action pillars steering the roadmap</div><div class="src">Nairobi workshop</div></div>
+    <div class="stat"><div class="n">6</div><div class="l">Project Core Areas for gender results</div><div class="src">Component 2 · PCAs</div></div>
+    <div class="stat"><div class="n">25</div><div class="l">key actions tracked in the work plan</div><div class="src">Table 2 · GGAP</div></div>
+  </div>
+</section>
+
+<!-- ============================================================ PILLARS -->
+<section class="band" id="pillars">
+  <div class="wrap">
+    <p class="seclabel">Section 2–3 · The roadmap</p>
+    <h2 class="sec">Three action pillars, applied bottom-up</h2>
+    <p class="secintro">Stakeholders at the global gender workshop defined three pillars that form the
+      roadmap for the DSL-IP Gender Community of Practice (CoP3). They are implemented stepwise — from
+      country-informed technical assistance, through monitoring and evaluation, to knowledge management
+      and outreach — so that gender mainstreaming is a long-term programme commitment, not a one-off.</p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <span class="edge" style="background:var(--clay)"></span>
+        <div class="pnum" style="background:var(--clay)">1</div>
+        <h3>Technical Assistance</h3>
+        <div class="abbr" style="color:var(--clay-deep)">Pillar 1 · TA</div>
+        <p>Gender-specific guidance to child projects — refining country Gender Action Plans and
+          backstopping experts to integrate gender-responsive actions into mainstream project activities,
+          building on ILAM evidence and the core-theme approach.</p>
+      </div>
+      <div class="pillar">
+        <span class="edge" style="background:var(--water)"></span>
+        <div class="pnum" style="background:var(--water)">2</div>
+        <h3>Monitoring &amp; Evaluation</h3>
+        <div class="abbr" style="color:var(--water)">Pillar 2 · M&amp;E</div>
+        <p>Analysing gender inequalities and tracking results across scales. Sex-disaggregated indicators
+          flow into the DSL-IP M&amp;E system and country results frameworks, reported through PIR,
+          Mid-Term and Terminal Evaluations.</p>
+      </div>
+      <div class="pillar">
+        <span class="edge" style="background:var(--forest)"></span>
+        <div class="pnum" style="background:var(--forest)">3</div>
+        <h3>Knowledge Management &amp; Outreach</h3>
+        <div class="abbr" style="color:var(--forest)">Pillar 3 · KMO</div>
+        <p>Documenting and exchanging promising gender-responsive practices from the ground — case studies,
+          human-interest stories and knowledge products — and amplifying women leaders across DSL-IP and
+          partner channels.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ WORK PLAN EXPLORER -->
+<section class="band explorer" id="workplan">
+  <div class="wrap">
+    <div class="filterhead">
+      <div>
+        <p class="seclabel">Section 6 · Table 2 — the living work plan</p>
+        <h2 class="sec">Explore the work plan</h2>
+      </div>
+      <p class="secintro" style="margin-top:0; max-width:46ch; text-align:right;">
+        Filter the retrospective 5-year plan by pillar, lead partner, status, or year. The plan is
+        reviewed annually through the CoP3 workstream and updated under adaptive management.</p>
+    </div>
+
+    <!-- filter bar -->
+    <div class="filterbar" id="filterbar">
+      <div class="frow">
+        <span class="flabel">Pillar</span>
+        <div class="chips" id="f-pillar"></div>
+        <div class="search">
+          <i data-lucide="search"></i>
+          <input id="searchbox" type="text" placeholder="Search actions, outputs…" autocomplete="off">
+        </div>
+      </div>
+      <div class="frow">
+        <span class="flabel">Lead</span>
+        <div class="chips" id="f-lead"></div>
+      </div>
+      <div class="frow">
+        <span class="flabel">Status</span>
+        <div class="chips" id="f-status"></div>
+        <span class="flabel" style="width:auto; margin-left:8px;">Year</span>
+        <div class="chips" id="f-year"></div>
+        <button class="clearbtn" id="clearbtn"><i data-lucide="x"></i>Clear all filters</button>
+      </div>
+    </div>
+
+    <div class="resultline">
+      <div class="resultcount" id="resultcount"></div>
+      <div class="legend">
+        <span><span class="sw" style="background:var(--forest)"></span>Accomplished</span>
+        <span><span class="sw" style="background:var(--amber)"></span>Ongoing</span>
+        <span><span class="sw" style="background:var(--ink-3)"></span>Not started</span>
+      </div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty">
+      <i data-lucide="filter-x"></i>
+      <p>No actions match these filters. Try clearing one.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ FOCUS AREAS -->
+<section class="band" id="focus">
+  <div class="wrap">
+    <p class="seclabel">Section 7 · Where results are generated</p>
+    <h2 class="sec">Six Project Core Areas</h2>
+    <p class="secintro">Component 2 — linked to the Sustainable Landscape Production Framework — is the
+      priority for gender results. Six Project Core Areas (PCAs) focus the refinement of gender plans,
+      the tracking of core indicators, and the reporting of the most relevant results at country level.</p>
+
+    <div class="pcagrid" id="pcagrid"></div>
+
+    <h2 class="sec" style="margin-top:64px;">Closing three overarching gender gaps</h2>
+    <p class="secintro">By building the gender advantage through the PCAs, the action pillars contribute to
+      addressing the three gender gaps of priority to the GEF.</p>
+    <div class="gaps">
+      <div class="gap">
+        <div class="gn">Gap 01</div>
+        <h4>Unequal access to &amp; control of natural resources</h4>
+        <p>Land, water and other productive assets and biological resources.</p>
+      </div>
+      <div class="gap">
+        <div class="gn">Gap 02</div>
+        <h4>Unbalanced participation &amp; leadership in decision-making</h4>
+        <p>Institutions and policymaking, environmental planning, and sustainable management of natural resources.</p>
+      </div>
+      <div class="gap">
+        <div class="gn">Gap 03</div>
+        <h4>Uneven access to socio-economic benefits &amp; services</h4>
+        <p>Income generation, credit, technology, financing, training and information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ GEF COMPLIANCE -->
+<section class="band" id="gef" style="background:var(--paper-2); border-top:1px solid var(--hairline);">
+  <div class="wrap">
+    <p class="seclabel">Annex 1 · Donor requirements</p>
+    <h2 class="sec">GEF's seven minimum requirements on gender</h2>
+    <p class="secintro">The action pillars focus corporate partners on meeting the seven minimum
+      requirements of the GEF policy on gender mainstreaming. Progress to date:</p>
+    <div class="reqlist" id="reqlist"></div>
+  </div>
+</section>
+
+<!-- ============================================================ FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="fl">
+      <div class="ft">Dryland Sustainable Landscapes</div>
+      <p>A GEF-7 Impact Program led by FAO, advancing sustainable forest and land management across the
+        drylands of the Sahel, southern Africa and Central Asia.</p>
+      <div class="partners" style="margin-top:18px;">
+        <span>FAO</span><span>GEF</span><span>IUCN</span><span>CDE / WOCAT</span><span>WeCaN</span><span>UNCCD</span>
+      </div>
+    </div>
+    <div class="fr">
+      <p class="note">Interactive rendering of the DSL-IP Global Gender Action Plan (GGAP).<br>
+        Action status &amp; year timing are illustrative pending the colour-coded source table.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="gap-data.js"></script>
+<script src="gap-app.js"></script>
+<script src="drip-home.js"></script>
+<script src="drip-i18n.js"></script>
+</body>
+</html>

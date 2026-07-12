@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Knowledge Library" name="Social Network Analysis — Tutume-Mosetse" -->
+<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Social Network Analysis — Tutume-Mosetse · DFSA</title>
+<style>
+:root{--terracotta:#CF715D;--forest:#477E59;--cream:#F5F2E8;--amber:#F8B133;--soil:#2C2A24;--ink:#2b2723;--muted:#6b6258;--line:#e2dccc;--paper2:#efe9da;--water:#3F8FCB;}
+*{box-sizing:border-box;}html,body{margin:0;background:#d9d3c4;color:var(--ink);font-family:"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.55;}
+.page{background:var(--cream);width:210mm;min-height:297mm;margin:14px auto;padding:0 0 16mm;box-shadow:0 6px 26px rgba(0,0,0,.22);position:relative;overflow:hidden;}
+.hero{background:var(--soil);color:var(--cream);padding:16mm 18mm 12mm;}
+.hero .kick{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);font-weight:700;}
+.hero h1{font-family:Georgia,serif;font-size:27px;margin:8px 0 8px;color:var(--cream);line-height:1.15;}
+.hero p{margin:0;color:#d8cfb8;font-size:13.5px;max-width:66ch;}
+.hero .by{margin-top:10px;font-size:11px;color:#b6ab93;}
+.band{height:8px;background:linear-gradient(90deg,var(--water) 0 33%,var(--amber) 33% 66%,var(--forest) 66% 100%);}
+.body{padding:12mm 18mm 0;}
+h2{font-family:Georgia,serif;color:var(--forest);font-size:17px;margin:20px 0 7px;}
+h3{color:var(--terracotta);font-size:13px;margin:13px 0 3px;}
+p{margin:0 0 10px;font-size:12.5px;}
+.flow{display:flex;gap:8px;margin:10px 0 6px;flex-wrap:wrap;}
+.flow .s{flex:1;min-width:120px;background:#efe9da;border:1px solid var(--line);border-radius:9px;padding:9px 10px;}
+.flow .s b{display:block;color:var(--forest);font-family:Georgia,serif;font-size:12.5px;}.flow .s span{font-size:10.5px;color:var(--muted);}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.card{background:#efe9da;border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:0 9px 9px 0;padding:11px 14px;}.card h3{margin-top:0;}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0;}
+.po{border:1px solid var(--line);border-radius:12px;padding:14px 16px;}
+.po.g{background:rgba(63,143,203,.08);border-color:rgba(63,143,203,.3);}
+.po.m{background:rgba(207,113,93,.08);border-color:rgba(207,113,93,.3);}
+.po h4{font-family:Georgia,serif;font-size:14px;margin:0 0 2px;color:var(--ink);}
+.po .loc{font-size:10.5px;color:var(--muted);margin-bottom:10px;}
+.po .stat{display:flex;justify-content:space-between;border-bottom:1px dotted var(--line);padding:5px 0;font-size:11.5px;}
+.po .stat b{font-family:Georgia,serif;color:var(--forest);}
+.po.m .stat b{color:var(--terracotta);}
+.cta{margin-top:14px;background:var(--terracotta);color:var(--cream);border-radius:12px;padding:13px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;}
+.cta b{font-family:Georgia,serif;font-size:14px;}.cta .btn{background:var(--cream);color:var(--terracotta);font-weight:700;font-size:12px;border-radius:20px;padding:8px 16px;white-space:nowrap;text-decoration:none;display:inline-block;}
+.foot{font-size:9.5px;color:var(--muted);border-top:1px solid var(--line);margin:14px 18mm 0;padding-top:6px;}
+@media print{body{background:#fff;}.page{margin:0;box-shadow:none;width:auto;min-height:auto;}}
+</style><style>
+.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+ background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
+ font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;}
+.drip-topbar *{box-sizing:border-box;}
+.drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+.drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+.drip-topbar .db-dm span{color:#F8B133;}
+.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+.drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;text-transform:none;letter-spacing:normal;}
+.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+.drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
+@media(max-width:780px){.drip-topbar .db-sub{display:none;}.drip-topbar{padding:9px 16px;}.drip-topbar .db-nav a{padding:6px 9px;font-size:12px;}}
+</style>
+</head><body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+
+<section class="page">
+  <div class="hero">
+    <div class="kick">DFSA Knowledge Library · Methods — Social Network Analysis</div>
+    <h1>How knowledge really flows through a producer organization</h1>
+    <p>A social network analysis of two Botswana producer organizations — mapping who shares farming knowledge with whom, who the real influencers are, and where the bottlenecks lie. The network <em>is</em> the unit of analysis: nodes are people, edges are knowledge flowing between them.</p>
+    <p class="by">Tutume-Mosetse, Botswana · Botswana Sustainable Miombo-Mopane Landscape Management Project (DSL-IP, GCP/GLO/980/GFF) · Annabelle Buhrow, NSP, FAO Rome · August 2024</p>
+  </div>
+  <div class="band"></div>
+  <div class="body">
+    <p>The DSL-IP treats <strong>Forest &amp; Farm Producer Organizations (FFPOs)</strong> as key agents for transforming landscapes and livelihoods. But an FFPO only spreads sustainable land management (SLM) as well as its <strong>knowledge network</strong> allows. This study asks a deceptively simple question — <em>when an extension officer shares a practice, how does it actually travel through the community, and who controls that flow?</em></p>
+
+    <figure style="margin:16px 0;background:#efe9da;border:1px solid #e2dccc;border-radius:12px;padding:14px 16px;">
+      <svg viewBox="0 0 520 196" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="Georgia, serif">
+        <g font-size="10.5" text-anchor="middle">
+          <g stroke="#CF715D" stroke-width="2" fill="none" marker-end="url(#ar)">
+            <path d="M86 40 L200 40"/><path d="M236 48 L300 78"/><path d="M236 32 L300 78"/>
+            <path d="M336 78 L420 30"/><path d="M336 86 L420 70"/><path d="M336 94 L420 110"/><path d="M336 100 L420 150"/>
+            <path d="M455 36 Q480 90 455 144" stroke="#477E59" stroke-dasharray="4 4"/>
+          </g>
+          <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#CF715D"/></marker></defs>
+          <circle cx="60" cy="40" r="22" fill="#3F8FCB"/><text x="60" y="37" fill="#fff" font-size="9">Extension</text><text x="60" y="48" fill="#fff" font-size="9">officer</text>
+          <circle cx="218" cy="40" r="22" fill="#2C2A24"/><text x="218" y="44" fill="#F5F2E8">Chief</text>
+          <circle cx="318" cy="86" r="24" fill="#477E59"/><text x="318" y="83" fill="#fff" font-size="9">PO</text><text x="318" y="94" fill="#fff" font-size="9">Chair</text>
+          <g fill="#6b6258">
+            <circle cx="438" cy="26" r="13" fill="#F8B133"/><text x="438" y="29" fill="#3a2408" font-size="8.5">&#9792; bees</text>
+            <circle cx="438" cy="150" r="13" fill="#F8B133"/><text x="438" y="153" fill="#3a2408" font-size="8">&#9792; orchard</text>
+            <circle cx="440" cy="70" r="11" fill="#cfc7b5"/><circle cx="440" cy="110" r="11" fill="#cfc7b5"/>
+            <text x="476" y="92" text-anchor="start" font-size="9" fill="#9a8f80">farmers</text>
+          </g>
+          <text x="260" y="184" font-size="10.5" fill="#6b6258">Knowledge enters via the extension officer, passes through the Chief and PO Chair, then reaches farmers.</text>
+        </g>
+      </svg>
+      <figcaption style="font-size:11px;color:#6b6258;margin-top:8px;text-align:center;">A stylised view of the centralized knowledge network common to both organizations.</figcaption>
+      <div style="font-size:10.5px;color:#9a8f80;margin-top:6px;text-align:center;font-style:italic;">Suggested figure: the Gephi network graph of the Gulugwe Cluster Fence (Figure 1 of the report) — drop the real image here.</div>
+    </figure>
+
+    <h2>Methodology &amp; approach</h2>
+    <div class="flow">
+      <div class="s"><b>Name-generator + snowball</b><span>Three farmers per organization as starting points (one a woman); each names who shares farming knowledge with them, and the next interviews follow those names.</span></div>
+      <div class="s"><b>What was captured</b><span>Who influences SLM practices (planting, crop varieties, drought, marketing), their role, the type of information, and how it is shared.</span></div>
+      <div class="s"><b>Metrics, in Gephi</b><span>Degree, betweenness and closeness centrality, plus network density — to find influential actors and the main knowledge pathways.</span></div>
+    </div>
+
+    <h2>Where &amp; when</h2>
+    <p>Surveys ran in <strong>Tutume and Mosetse villages in August 2024</strong>, covering the two producer organizations the project targets there: the <strong>Gulugwe Cluster Fence (GCF)</strong> and the <strong>Makuta Dam Association (MDA)</strong>. FFPOs were first assessed and ranked by membership size and gender balance, infrastructure, value chains, seed-bank and field-school experience, and market links — then the most suitable were selected per district.</p>
+
+    <h2>What the networks looked like</h2>
+    <div class="compare">
+      <div class="po g">
+        <h4>Gulugwe Cluster Fence</h4>
+        <div class="loc">Tutume · more advanced SLM adoption</div>
+        <div class="stat"><span>Actors (nodes)</span><b>17</b></div>
+        <div class="stat"><span>Connections (edges)</span><b>21</b></div>
+        <div class="stat"><span>Network density</span><b>8.1%</b></div>
+        <div class="stat"><span>Avg. path length</span><b>1.94</b></div>
+        <div class="stat"><span>Women in network</span><b>17%</b></div>
+        <div class="stat"><span>Top broker</span><b>GCF Chair</b></div>
+      </div>
+      <div class="po m">
+        <h4>Makuta Dam Association</h4>
+        <div class="loc">Mosetse · less advanced SLM adoption</div>
+        <div class="stat"><span>Actors (nodes)</span><b>13</b></div>
+        <div class="stat"><span>Connections (edges)</span><b>22</b></div>
+        <div class="stat"><span>Network density</span><b>14.1%</b></div>
+        <div class="stat"><span>Network diameter</span><b>2</b></div>
+        <div class="stat"><span>Women in network</span><b>~23%</b></div>
+        <div class="stat"><span>Top broker</span><b>Chief (degree 9)</b></div>
+      </div>
+    </div>
+    <p>Both networks are <strong>centralized</strong> — knowledge originates with the extension officer and flows through the Chief and PO Chair before reaching farmers. The difference is what happens next: Gulugwe layers <strong>peer-to-peer exchange</strong> (informal farmer field schools, field visits at the Kgotla) on top of that spine, while Makuta is almost purely <strong>top-down</strong>, with farmers as passive recipients and little lateral feedback.</p>
+
+    <h2>Key findings</h2>
+    <div class="two">
+      <div class="card"><h3>Influence sits with a few</h3><p>The GCF Chair (betweenness 20) and, in Makuta, the Chief (9 connections, betweenness 13) are the gatekeepers. Remove them and connectivity collapses — a real resilience risk. Yet farmers are highly receptive to the extension officer, so <strong>investing in extension capacity has outsized impact</strong>.</p></div>
+      <div class="card"><h3>Peer-to-peer drives adoption</h3><p>Gulugwe's better SLM uptake tracks its peer exchanges; Makuta's purely hierarchical flow correlates with weaker adoption. Structured farmer field schools and demonstration plots are the missing link in Makuta.</p></div>
+      <div class="card"><h3>Women hold under-leveraged expertise</h3><p>In Gulugwe, three women (17%) are recognised influencers — including a beekeeping expert and an orchard specialist. In Makuta women are largely peripheral, with one naming her husband as her information source. Both point to gender-responsive entry points.</p></div>
+      <div class="card"><h3>Channels are narrow</h3><p>Communication runs almost entirely through the Kgotla (village meeting). There is minimal use of mobile or social tools — a clear opportunity to widen and speed up knowledge flow.</p></div>
+    </div>
+
+    <h2>Recommendations</h2>
+    <div class="flow">
+      <div class="s"><b>Build peer learning</b><span>Farmer-led field schools and structured field visits to add lateral exchange to the central spine.</span></div>
+      <div class="s"><b>Elevate women's expertise</b><span>Promote identified female beekeeping &amp; orchard experts into training roles; consider cross-network mentoring into Makuta.</span></div>
+      <div class="s"><b>Support secondary influencers</b><span>Reduce dependency on the Chief/Chair by backing knowledgeable farmers as additional brokers.</span></div>
+      <div class="s"><b>Diversify channels</b><span>Add mobile messaging / WhatsApp groups to the Kgotla for faster, two-way communication.</span></div>
+    </div>
+
+    <h2>Why it sits in DFSA</h2>
+    <div class="two">
+      <div class="card"><h3>Evidence for the levers of change</h3><p>The SNA names the real nodes and channels through which SLM spreads — exactly the "levers of change" DFSA's research is built around. It turns a community into a network you can reason about.</p></div>
+      <div class="card"><h3>A repeatable method</h3><p>A lightweight, snowball-sampled, Gephi-based protocol any landscape can re-run — feeding the platform’s network views with real, ground-truthed knowledge pathways.</p></div>
+    </div>
+
+    <div class="cta"><div><b>Explore in DFSA</b><br/><span style="font-size:11px;color:#f3e7df">See knowledge-flow networks come alive on the Platform Map.</span></div><a class="btn" href="DRIP Map.html">Open the map →</a></div>
+  </div>
+  <div class="foot">Methods · Social Network Analysis of Gulugwe &amp; Makuta producer organizations (Tutume-Mosetse, Botswana) · DSL-IP Botswana Miombo-Mopane project · A DFSA knowledge product — a project of the DSL-IP, funded by the GEF, overseen by a UN Officer; drawn from the August 2024 SNA report (A. Buhrow, FAO). Figures indicative; DFSA is under development.</div>
+</section>
+<script src="drip-i18n.js"></script>
+</body></html>

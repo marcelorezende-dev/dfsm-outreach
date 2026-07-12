@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Components" name="Cards" subtitle="Library card, feature card and rail card patterns" -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cards — DFSA Design System</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="ds-spec.css">
+<style>
+  .lcard{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-md);
+    padding:20px; box-shadow:var(--shadow-sm); transition:transform .15s, box-shadow .15s, border-color .15s; }
+  .lcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:var(--forest-soft); }
+  .lcard .ltag{ display:inline-block; font-family:var(--font-sans); font-weight:600; font-size:11px; text-transform:uppercase;
+    letter-spacing:.08em; padding:4px 10px; border-radius:var(--r-pill); background:var(--sage); color:var(--forest-deep); margin-bottom:13px; }
+  .lcard h4{ font-family:var(--font-serif); font-weight:700; font-size:18px; color:var(--ink); margin:0 0 7px; line-height:1.25; }
+  .lcard p{ font-family:var(--font-body); font-size:14px; color:var(--ink-2); line-height:1.55; margin:0 0 15px; }
+  .lcard .open{ font-family:var(--font-sans); font-weight:600; font-size:12.5px; color:var(--forest); }
+  .fcard{ background:var(--surface); border:1px solid var(--border); border-radius:var(--r-md); padding:22px; box-shadow:var(--shadow-sm); }
+  .fcard .fi{ width:44px; height:44px; border-radius:var(--r-md); background:var(--sage); color:var(--forest-deep);
+    display:flex; align-items:center; justify-content:center; font-size:21px; margin-bottom:14px; }
+  .fcard h4{ font-family:var(--font-serif); font-weight:700; font-size:17px; margin:0 0 6px; color:var(--ink); }
+  .fcard p{ font-family:var(--font-body); font-size:13.5px; color:var(--ink-2); line-height:1.55; margin:0; }
+  .railcard{ border-radius:var(--r-lg); padding:22px; color:var(--ink-on-dark);
+    background:linear-gradient(160deg,#3f8f8a,var(--forest-deep)); }
+  .railcard h4{ font-family:var(--font-serif); font-weight:700; font-size:18px; margin:0 0 8px; }
+  .railcard p{ font-size:13.5px; line-height:1.55; margin:0 0 14px; color:rgba(251,248,239,.9); }
+  .railcard .rbtn{ display:inline-block; background:var(--amber); color:#3a2408; font-family:var(--font-sans);
+    font-weight:600; font-size:13px; text-decoration:none; padding:9px 18px; border-radius:var(--r-pill); }
+  .grid3{ display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:16px; }
+</style>
+</head>
+<body>
+<div class="ds-wrap">
+  <p class="ds-eyebrow">Components</p>
+  <h1 class="ds-title">Cards</h1>
+  <p class="ds-lede">Three recurring surfaces: the <b>library card</b> (a catalogue entry that lifts on hover), the <b>feature card</b> (an icon + short claim), and the <b>rail card</b> (a spotlight in the sidebar, on a green→teal gradient).</p>
+
+  <div class="ds-sec">
+    <h2>Library card <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink-3)">· .lcard</span></h2>
+    <p class="caption">Hover to see the lift + forest-soft border. Tag → title → summary → open affordance.</p>
+    <div class="grid3">
+      <a class="lcard" href="#" style="text-decoration:none;display:block">
+        <span class="ltag">Assessment &amp; Evidence</span>
+        <h4>What are drylands?</h4>
+        <p>The DFSA interpretation of dryland boundaries, its role and its trends.</p>
+        <span class="open">Open ↗</span>
+      </a>
+      <a class="lcard" href="#" style="text-decoration:none;display:block">
+        <span class="ltag">Frameworks</span>
+        <h4>Sustainable Landscape Production Framework</h4>
+        <p>Putting proven SLM/SFM practices to work at landscape scale.</p>
+        <span class="open">Open ↗</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Feature card <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink-3)">· .fcard</span></h2>
+    <div class="grid3">
+      <div class="fcard"><div class="fi">🔎</div><h4>Collect</h4><p>Close critical data gaps on the extent, status and trends of dryland forests.</p></div>
+      <div class="fcard"><div class="fi">🌱</div><h4>Act</h4><p>Put proven SLM/SFM practices to work at landscape scale.</p></div>
+      <div class="fcard"><div class="fi">🔗</div><h4>Connect</h4><p>South–South exchange accelerating uptake across biomes.</p></div>
+    </div>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Rail card <span style="font-weight:400;text-transform:none;letter-spacing:0;color:var(--ink-3)">· .railcard.spot</span></h2>
+    <p class="caption">Sidebar spotlight — the one place the green→teal gradient appears at small scale.</p>
+    <div style="max-width:320px"><div class="railcard">
+      <h4>Explore MARVEL</h4>
+      <p>The monitoring, assessment &amp; results visualisation layer for dryland forest landscapes.</p>
+      <a class="rbtn" href="#">Open MARVEL →</a>
+    </div></div>
+  </div>
+
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Components · tokens in <a href="../colors_and_type.css">colors_and_type.css</a></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* ============================================================================
+   DFSA – shared harmonization layer
+   ----------------------------------------------------------------------------
+   Linked LAST in the <head> of every content/knowledge page, so it re-asserts
+   the canonical design tokens and a few accent-free box/image baselines on top
+   of each page's inline copy of the design system. This removes drift (colours,
+   shadows, radii, type, grid distribution, image treatment) WITHOUT changing
+   any page's accent colour or bespoke components.
+
+   Canonical values match colors_and_type.css and drip-manual.css.
+   ============================================================================ */
+:root{
+  /* ---- palette ---- */
+  --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+  --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+  --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+  --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+  --amber:#F8B133; --gold:#E8C13C; --gold-deep:#9A7327;
+  --teal:#33B193; --leaf:#68A260; --bark:#754C29; --water:#3E7CB1;
+  --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+  /* ---- elevation ---- */
+  --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+  --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+  --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+  /* ---- corner radii ---- */
+  --r-sm:8px; --r-md:12px; --r-lg:16px;
+  /* ---- type (both naming conventions found across pages) ---- */
+  --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif;
+  --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-serif:"Merriweather",Georgia,serif; --font-body:"Merriweather",Georgia,serif;
+  --font-display:"DermawanRough","Oswald",sans-serif;
+}
+
+/* ---- accent-free box & layout baselines (corners, distribution) ----
+   Only geometry/spacing is set here – never accent colours, padding or
+   page-specific structure – so each page keeps its own identity. */
+section{ border-radius:16px; }
+.grid{ grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; align-items:stretch; }
+.stats-grid{ grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.3rem; }
+.card{ border-radius:14px; }
+.stat-box{ border-radius:14px; }
+.callout{ border-radius:12px; }
+table{ border-radius:12px; }
+.two-col{ gap:1.6rem; }
+
+/* ---- images / figures: one consistent treatment everywhere ---- */
+.figure{ border-radius:14px; overflow:hidden; }
+.figure img{ display:block; width:100%; height:auto; }
+.photo-grid{ grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.3rem; align-items:start; }
+.photo-grid .figure{ margin:0; }
+.photo-grid .figure img{ aspect-ratio:4/3; object-fit:cover; }
+.banner img{ object-fit:cover; }
+
+@media (max-width:768px){
+  .grid, .stats-grid, .two-col, .photo-grid{ grid-template-columns:1fr; }
+}

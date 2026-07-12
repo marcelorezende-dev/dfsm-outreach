@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<!-- @dsCard group="Pages · Platform &amp; Tools" name="MARVEL – the DFSA dashboard | MRV + MEL" -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MARVEL – the DFSA dashboard | MRV + MEL</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
+@font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+:root{
+ --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
+ --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
+ --cream:#F5F2E8; --paper-2:#ECE7D7; --blush:#EDD8CC; --sage:#C3DABA; --surface:#FFFFFF;
+ --ink:#241F1B; --ink-2:#6B5E54; --ink-3:#9A8C7E; --ink-on-dark:#FBF8EF;
+ --amber:#F8B133; --gold:#E8C13C; --gold-deep:#9A7327; --teal:#33B193; --leaf:#68A260; --bark:#754C29; --water:#3E7CB1;
+ --slate:#244C54; --slate-2:#2E5E68;
+ --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
+ --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
+ --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
+ --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+body{ font-family:var(--serif); line-height:1.7; color:var(--ink-2); background:var(--cream); -webkit-font-smoothing:antialiased; }
+
+/* HEADER */
+header.page-head{ background:linear-gradient(135deg,var(--slate),var(--slate-2)); color:var(--ink-on-dark); padding:3rem 2rem 2.4rem; text-align:left;
+ border-bottom:6px solid var(--teal); position:relative; overflow:hidden; }
+.header-inner{ max-width:1200px; margin:0 auto; position:relative; z-index:2; }
+header.page-head .brand-logo{ height:54px; width:auto; filter:brightness(0) invert(1); margin-bottom:1.3rem; opacity:.96; }
+header.page-head .eyebrow{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.16em; font-size:.78rem; color:#BFE3DA; margin-bottom:.6rem; }
+header.page-head h1{ font-family:var(--display); font-weight:700; text-transform:uppercase; letter-spacing:.02em; font-size:3rem; line-height:1; margin:0; color:#fff; }
+header.page-head h1 span{ color:#7FD3C0; }
+header.page-head .lede{ font-size:1.1rem; line-height:1.6; color:#DDECEA; max-width:840px; margin-top:1.1rem; }
+.acronym{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.4rem; }
+.acronym span{ font-family:var(--sans); font-size:.74rem; font-weight:600; letter-spacing:.04em; color:#fff; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.18); padding:.4rem .8rem; border-radius:8px; }
+.acronym span b{ color:#7FD3C0; }
+
+/* NAV */
+nav.secnav{ background:var(--slate); padding:.5rem 1rem; position:sticky; top:0; z-index:100; box-shadow:0 2px 8px rgba(36,31,27,.18); }
+nav.secnav ul{ list-style:none; display:flex; justify-content:center; flex-wrap:wrap; max-width:1200px; margin:0 auto; gap:.1rem; }
+nav.secnav a{ color:#DDECEA; text-decoration:none; padding:.6rem 1rem; display:block; transition:background .2s,color .2s;
+ font-family:var(--sans); font-weight:500; text-transform:uppercase; letter-spacing:.08em; font-size:.78rem; border-radius:6px; }
+nav.secnav a:hover{ background:rgba(255,255,255,.12); color:#fff; }
+
+.container{ max-width:1200px; margin:0 auto; padding:2.2rem 2rem; }
+section{ background:var(--surface); margin:1.8rem 0; padding:2.4rem; border-radius:16px; border:1px solid var(--border); box-shadow:var(--shadow-md); scroll-margin-top:76px; }
+h2{ font-family:var(--serif); font-weight:900; color:var(--ink); font-size:1.8rem; line-height:1.12; margin-bottom:1.1rem; padding-bottom:.6rem; border-bottom:1px solid var(--hairline); position:relative; }
+h2::after{ content:""; position:absolute; left:0; bottom:-1px; width:60px; height:3px; background:var(--teal); border-radius:2px; }
+h2 .kicker{ display:block; font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.14em; font-size:.78rem; color:#2E7D6B; margin-bottom:.45rem; }
+h3{ font-family:var(--serif); font-weight:700; color:var(--forest); font-size:1.3rem; margin:1.6rem 0 .9rem; }
+section > p{ margin:.9rem 0; } .lead{ font-size:1.08rem; color:var(--ink); }
+a.inl{ color:var(--slate-2); font-weight:600; text-decoration:none; } a.inl:hover{ text-decoration:underline; }
+
+/* KPI TILES */
+.kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1.1rem; margin:0; }
+.kpi{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.3rem 1.3rem 1.2rem; box-shadow:var(--shadow-sm); border-top:4px solid var(--teal); }
+.kpi.t-clay{ border-top-color:var(--clay); } .kpi.t-forest{ border-top-color:var(--forest); } .kpi.t-gold{ border-top-color:var(--gold); } .kpi.t-water{ border-top-color:var(--water); } .kpi.t-amber{ border-top-color:var(--amber); }
+.kpi .kv{ font-family:var(--sans); font-weight:700; font-size:2rem; line-height:1; color:var(--slate); }
+.kpi .kl{ font-family:var(--sans); font-size:.82rem; font-weight:600; color:var(--ink); margin-top:.45rem; }
+.kpi .ks{ font-size:.8rem; color:var(--ink-3); margin-top:.2rem; }
+.kpi a{ color:inherit; text-decoration:none; }
+/* overview ("The Programme, measured") – centre the KPI boxes as a group */
+#overview .kpis{ grid-template-columns:repeat(auto-fit,minmax(180px,200px)); justify-content:center; }
+#overview .kpi{ text-align:center; }
+
+/* hero KPI strip (in header) */
+.hero-kpis{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:1px; margin-top:1.8rem; background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.16); border-radius:12px; overflow:hidden; }
+.hero-kpis .hk{ background:rgba(11,30,33,.18); padding:1rem 1.1rem; }
+.hero-kpis .hk .v{ font-family:var(--sans); font-weight:700; font-size:1.55rem; color:#fff; line-height:1; }
+.hero-kpis .hk .l{ font-family:var(--sans); font-size:.72rem; letter-spacing:.04em; color:#BFE3DA; margin-top:.35rem; text-transform:uppercase; }
+
+/* FLOW (MARVEL steps) */
+.flow{ display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:0; margin:1.4rem 0; }
+.flow-step{ position:relative; padding:1.1rem 1.1rem; background:#F3F7F6; border:1px solid var(--border); }
+.flow-step .fs-l{ font-family:var(--display); font-weight:700; color:var(--teal); font-size:1.5rem; line-height:1; }
+.flow-step .fs-t{ font-family:var(--sans); text-transform:uppercase; letter-spacing:.04em; font-weight:600; color:var(--slate); font-size:.82rem; margin:.3rem 0 .35rem; }
+.flow-step p{ font-size:.82rem; color:var(--ink-2); margin:0; }
+
+/* BARS */
+.bars{ display:flex; flex-direction:column; gap:.5rem; margin:1rem 0; }
+.bar{ display:grid; grid-template-columns:170px 1fr 78px; align-items:center; gap:.7rem; font-family:var(--sans); font-size:.83rem; }
+.bar .bl{ color:var(--ink-2); text-align:right; }
+.bar .bt{ background:var(--paper-2); border-radius:6px; height:15px; overflow:hidden; }
+.bar .bf{ height:100%; background:linear-gradient(90deg,var(--forest-soft),var(--teal)); border-radius:6px; width:0; transition:width .9s cubic-bezier(.2,.7,.2,1); }
+.bar .bv{ color:var(--ink); font-weight:700; text-align:right; font-variant-numeric:tabular-nums; }
+.bar .bv small{ font-weight:500; color:var(--ink-3); margin-left:.3rem; font-size:.74rem; }
+.cols{ display:flex; align-items:flex-end; gap:.6rem; margin:1.1rem 0 .4rem; }
+.col{ flex:1 1 0; min-width:0; display:flex; flex-direction:column; align-items:center; gap:.45rem; }
+.col .colv{ font-family:var(--sans); font-weight:700; font-size:.8rem; color:var(--ink); text-align:center; line-height:1; font-variant-numeric:tabular-nums; }
+.col .colv small{ display:block; font-weight:500; color:var(--ink-3); font-size:.7rem; margin-top:.12rem; }
+.col .coltrack{ width:100%; max-width:48px; height:150px; display:flex; align-items:flex-end; background:var(--paper-2); border-radius:7px 7px 0 0; overflow:hidden; }
+.col .colfill{ width:100%; border-radius:7px 7px 0 0; min-height:2px; transition:height .9s cubic-bezier(.2,.7,.2,1); }
+.col .coll{ font-family:var(--sans); font-size:.72rem; color:var(--ink-2); text-align:center; line-height:1.15; word-break:break-word; }
+
+/* PRODUCT / NEWS CARDS */
+.feed{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.1rem; margin:1.2rem 0; }
+.fcard{ display:block; text-decoration:none; color:inherit; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.2rem; box-shadow:var(--shadow-sm); transition:transform .2s, box-shadow .2s; }
+.fcard:hover{ transform:translateY(-3px); box-shadow:var(--shadow-md); }
+.fcard .fmeta{ display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; margin-bottom:.5rem; }
+.fcard .badge{ font-family:var(--sans); font-size:.68rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; padding:.2rem .55rem; border-radius:999px; background:rgba(51,177,147,.14); color:#1f6e5c; }
+.fcard .date{ font-family:var(--sans); font-size:.74rem; color:var(--ink-3); }
+.fcard h4{ font-family:var(--serif); font-weight:700; color:var(--ink); font-size:1.02rem; line-height:1.25; margin:0 0 .35rem; }
+.fcard p{ font-size:.86rem; color:var(--ink-2); margin:0; }
+.fcard .pills{ margin-top:.55rem; display:flex; flex-wrap:wrap; gap:.3rem; }
+.fcard .pill{ font-family:var(--sans); font-size:.68rem; color:var(--ink-3); border:1px solid var(--border); border-radius:999px; padding:.12rem .5rem; }
+
+/* GRID / CALLOUT / TABLE (shared) */
+.grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.3rem; margin:1.4rem 0; }
+.card{ background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:1.4rem; box-shadow:var(--shadow-md); }
+.card h4{ color:var(--ink); margin:0 0 .55rem; font-family:var(--serif); font-weight:700; font-size:1.08rem; }
+.card p{ font-size:.92rem; color:var(--ink-2); }
+.card .big{ font-family:var(--sans); font-weight:700; font-size:1.5rem; color:var(--slate); }
+.callout{ padding:1.3rem 1.5rem; margin:1.4rem 0; border-radius:12px; background:#F1F6F5; border:1px solid var(--border); border-top:4px solid var(--teal); box-shadow:var(--shadow-sm); }
+.callout .ct{ font-family:var(--sans); font-weight:600; text-transform:uppercase; letter-spacing:.08em; font-size:.8rem; color:#1f6e5c; margin-bottom:.5rem; }
+.callout p{ font-size:.92rem; margin:.3rem 0; }
+.regions{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.1rem; margin:1.3rem 0; }
+.region{ border:1px solid var(--border); border-radius:12px; padding:1.1rem 1.2rem; background:#FBFAF5; }
+.region h4{ font-family:var(--sans); font-size:.82rem; text-transform:uppercase; letter-spacing:.05em; color:var(--slate-2); margin:0 0 .5rem; }
+.region .cty{ display:flex; flex-wrap:wrap; gap:.35rem; }
+.region .cty span{ font-family:var(--sans); font-size:.8rem; background:var(--paper-2); color:var(--ink-2); border-radius:999px; padding:.2rem .7rem; }
+.loading{ font-family:var(--sans); font-size:.88rem; color:var(--ink-3); padding:.6rem 0; }
+.muted{ font-size:.84rem; color:var(--ink-3); }
+.btnrow{ margin-top:1rem; }
+.btn-inl{ display:inline-block; font-family:var(--sans); font-weight:600; font-size:.84rem; color:#fff; background:var(--slate-2); padding:.55rem 1.1rem; border-radius:999px; text-decoration:none; }
+.btn-inl:hover{ background:var(--slate); }
+
+/* EMBEDDED GEOPORTAL (EarthMap) */
+.geo-frame{ position:relative; width:100%; height:clamp(460px,70vh,780px); margin:1.3rem 0 .9rem;
+ border-radius:14px; overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-md); background:#EEF3F2; }
+.geo-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; display:block; }
+.geo-frame .geo-load{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center;
+ font-family:var(--sans); font-size:.9rem; color:var(--ink-3); padding:1.5rem; pointer-events:none; }
+.geo-bar{ display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; margin-top:.6rem; }
+.geo-bar .muted{ max-width:62ch; }
+@media (max-width:768px){ .geo-frame{ height:clamp(440px,72vh,640px); } }
+
+/* FFPO MAP + FILTERS */
+.ffpo-wrap{ margin:1.3rem 0 .6rem; }
+.ffpo-toolbar{ background:#FBFAF5; border:1px solid var(--border); border-radius:14px; padding:1.1rem 1.2rem; box-shadow:var(--shadow-sm); }
+.ffpo-search-row{ display:flex; gap:.7rem; flex-wrap:wrap; align-items:center; margin-bottom:.4rem; }
+.ffpo-search{ flex:1 1 240px; font-family:var(--sans); font-size:.9rem; color:var(--ink); padding:.6rem .95rem; border:1px solid var(--border-strong); border-radius:999px; background:#fff; }
+.ffpo-search:focus{ outline:none; border-color:var(--teal); box-shadow:0 0 0 3px rgba(51,177,147,.18); }
+.ffpo-reset{ font-family:var(--sans); font-weight:600; font-size:.8rem; color:var(--slate-2); background:#fff; border:1px solid var(--border-strong); border-radius:999px; padding:.55rem 1.05rem; cursor:pointer; transition:background .15s; }
+.ffpo-reset:hover{ background:var(--paper-2); }
+.ffpo-count{ font-family:var(--sans); font-size:.84rem; color:var(--ink-2); white-space:nowrap; }
+.ffpo-count b{ color:var(--slate); font-weight:700; font-variant-numeric:tabular-nums; }
+.filter-group{ margin:.7rem 0 0; }
+.filter-group > .fg-label{ font-family:var(--sans); font-size:.72rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-3); margin-bottom:.42rem; }
+.fchips{ display:flex; flex-wrap:wrap; gap:.4rem; }
+.fchip{ font-family:var(--sans); font-size:.78rem; font-weight:600; color:var(--ink-2); background:#fff; border:1px solid var(--border-strong); border-radius:999px; padding:.34rem .8rem; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem; line-height:1.1; transition:background .15s,color .15s,border-color .15s; }
+.fchip:hover{ border-color:var(--slate-2); }
+.fchip .dot{ width:10px; height:10px; border-radius:50%; flex:none; border:1px solid rgba(36,31,27,.18); }
+.fchip.is-on{ color:#fff; background:var(--slate-2); border-color:var(--slate-2); }
+.fchip.is-on .dot{ box-shadow:0 0 0 2px rgba(255,255,255,.55); }
+.fchip.women.is-on{ background:var(--clay-deep); border-color:var(--clay-deep); }
+
+.ffpo-stats{ display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:.7rem; margin:1rem 0; }
+.ffpo-stat{ background:#fff; border:1px solid var(--border); border-radius:12px; padding:.8rem 1rem; box-shadow:var(--shadow-sm); border-top:3px solid var(--teal); }
+.ffpo-stat .v{ font-family:var(--sans); font-weight:700; font-size:1.5rem; color:var(--slate); line-height:1; font-variant-numeric:tabular-nums; }
+.ffpo-stat .l{ font-family:var(--sans); font-size:.74rem; color:var(--ink-3); margin-top:.3rem; text-transform:uppercase; letter-spacing:.04em; }
+
+.ffpo-map{ width:100%; height:clamp(460px,64vh,680px); border-radius:14px; overflow:hidden; border:1px solid var(--border); box-shadow:var(--shadow-md); background:#EEF3F2; margin:.4rem 0 .8rem; }
+.ffpo-map.leaflet-container{ font-family:var(--sans); background:#EEF3F2; }
+.ffpo-map .leaflet-popup-content-wrapper{ border-radius:12px; box-shadow:var(--shadow-md); }
+.ffpo-map .leaflet-popup-content{ font-family:var(--sans); color:var(--ink-2); margin:.8rem 1rem; line-height:1.5; }
+.pp-name{ font-family:var(--serif); font-weight:700; color:var(--ink); font-size:1rem; margin-bottom:.15rem; }
+.pp-meta{ font-size:.76rem; color:var(--ink-3); margin-bottom:.5rem; }
+.pp-tags{ display:flex; flex-wrap:wrap; gap:.3rem; margin:.35rem 0; }
+.pp-tag{ font-size:.68rem; font-weight:700; padding:.12rem .55rem; border-radius:999px; color:#fff; white-space:nowrap; }
+.pp-row{ font-size:.8rem; margin:.18rem 0; color:var(--ink-2); }
+.pp-women{ display:inline-block; font-size:.68rem; font-weight:700; color:var(--clay-deep); border:1px solid var(--clay-soft); border-radius:999px; padding:.08rem .55rem; margin-top:.35rem; }
+
+.ffpo-legend{ display:flex; flex-wrap:wrap; gap:.4rem 1rem; align-items:center; margin-top:.5rem; font-family:var(--sans); font-size:.78rem; color:var(--ink-2); }
+.ffpo-legend .lg{ display:inline-flex; align-items:center; gap:.42rem; }
+.ffpo-legend .sw{ width:13px; height:13px; border-radius:50%; flex:none; border:1.5px solid rgba(36,31,27,.3); }
+.ffpo-legend .sw.women{ background:#fff; border:2.5px solid var(--ink); }
+.ffpo-note{ font-size:.78rem; color:var(--ink-3); margin-top:.7rem; }
+.ffpo-note code{ font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.92em; background:var(--paper-2); padding:.05rem .35rem; border-radius:4px; }
+.ffpo-fallback{ display:flex; align-items:center; justify-content:center; height:100%; text-align:center; padding:2rem; font-family:var(--sans); font-size:.9rem; color:var(--ink-3); }
+@media (max-width:768px){ .ffpo-map{ height:clamp(380px,60vh,520px); } }
+
+footer{ background:var(--slate); color:#DDECEA; text-align:center; padding:2.6rem 2rem; margin-top:2.6rem; line-height:1.8; }
+footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; height:3px; background:var(--teal); margin:1.2rem auto; border:0; border-radius:2px; }
+
+@media (max-width:768px){
+ header.page-head{ padding:2rem 1.3rem; } header.page-head h1{ font-size:2.1rem; }
+ nav.secnav ul{ flex-direction:column; } .container{ padding:1.3rem; } section{ padding:1.4rem; }
+ .bar{ grid-template-columns:110px 1fr 64px; } .flow-step{ border-right:1px solid var(--border)!important; }
+ .col .coltrack{ height:112px; max-width:40px; } .col .colv{ font-size:.72rem; } .col .coll{ font-size:.64rem; } .cols{ gap:.35rem; }
+}
+</style>
+
+<link rel="stylesheet" href="drip-harmonize.css">
+  <link rel="icon" type="image/png" href="assets/globe.png">
+  <link rel="stylesheet" href="drip-topbar.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+<body>
+<div class="drip-topbar">
+  <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
+  <div class="db-nav" role="navigation" aria-label="Primary">
+    <a class="db-home" href="DFSA.html">⌂ Home</a>
+    <a href="drylands.html">Why Drylands</a>
+    <a href="DRIP Map.html">Map</a>
+    <a href="Library.html">Library</a>
+  </div>
+</div>
+
+<header class="page-head">
+ <div class="header-inner">
+  <img class="brand-logo" src="assets/logo-color.png" alt="DSL-IP — Drylands Sustainable Landscapes Impact Programme">
+  <p class="eyebrow">The DFSA Dashboard · MRV + MEL</p>
+  <h1>MAR<span>VEL</span></h1>
+  <p class="lede">The Programme's results-and-learning layer in one place – <strong>Monitoring, Assessment, Reporting, Verification, Evaluation and Learning</strong>. MARVEL pulls together the knowledge products, projects, best practices, financing, indicators and global environmental benefits of the Drylands Sustainable Landscapes Impact Programme.</p>
+  <div class="acronym">
+   <span><b>M</b>onitoring</span><span><b>A</b>ssessment</span><span><b>R</b>eporting</span><span><b>V</b>erification</span><span><b>E</b>valuation</span><span><b>L</b>earning</span>
+  </div>
+  <div class="hero-kpis">
+   <div class="hk"><div class="v" id="hk-products">53</div><div class="l">Knowledge products</div></div>
+   <div class="hk"><div class="v">11</div><div class="l">Child projects</div></div>
+   <div class="hk"><div class="v">46.3M</div><div class="l">tCO₂e to mitigate</div></div>
+   <div class="hk"><div class="v">13.1M</div><div class="l">ha to restore</div></div>
+   <div class="hk"><div class="v">$635M</div><div class="l">Finance mobilized</div></div>
+  </div>
+ </div>
+</header>
+<nav class="secnav">
+ <ul>
+  <li><a href="#overview">Overview</a></li>
+  <li><a href="#marvel-system">MARVEL System</a></li>
+  <li><a href="#geoportal">Geoportal</a></li>
+  <li><a href="#firehub">FireHub</a></li>
+  <li><a href="#knowledge">Knowledge</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#ffpos">FFPOs map</a></li>
+  <li><a href="#practices">Best practices</a></li>
+  <li><a href="#financing">Financing</a></li>
+  <li><a href="#indicators">Indicators and GEBs</a></li>
+  <li><a href="#newsroom">Newsroom</a></li>
+ </ul>
+</nav>
+
+<div class="container">
+
+<section id="overview">
+ <h2><span class="kicker">At a glance</span>The Programme, measured</h2>
+ <p class="lead">MARVEL is DFSA's monitoring and learning dashboard – a single, living view of what the Programme holds, does and delivers. The headline figures are below; each panel drills down into the data behind it.</p>
+ <div class="kpis" style="margin-top:1.4rem;">
+  <div class="kpi t-water"><div class="kv" id="kpi-products">53</div><div class="kl"><a href="Library.html">Knowledge products</a></div><div class="ks">catalogued across the platform</div></div>
+  <div class="kpi t-forest"><div class="kv">11</div><div class="kl"><a href="DRIP Map.html">Child projects</a></div><div class="ks">across the world's drylands</div></div>
+  <div class="kpi t-clay"><div class="kv" id="kpi-practices">–</div><div class="kl"><a href="Library.html">Best-practice guides</a></div><div class="ks">manuals &amp; SLM one-pagers</div></div>
+  <div class="kpi t-amber"><div class="kv">46.3M</div><div class="kl">tCO₂e mitigation</div><div class="ks">GEF-7 core target</div></div>
+  <div class="kpi t-forest"><div class="kv">13.1M</div><div class="kl">hectares</div><div class="ks">restored / under improved mgmt</div></div>
+  <div class="kpi t-gold"><div class="kv">$635M</div><div class="kl">finance mobilized</div><div class="ks">1:5.6 leverage on GEF seed</div></div>
+ </div>
+
+ <h3>What MARVEL is</h3>
+ <p>MARVEL joins the two faces of results work: <strong>MRV</strong> – Monitoring, Reporting and Verification of environmental results – and <strong>MEL</strong> – Monitoring, Evaluation and Learning that feeds lessons back into delivery. Together they turn the Programme's activity into evidence, accountability and improvement.</p>
+ <div class="flow">
+  <div class="flow-step"><div class="fs-l">M</div><div class="fs-t">Monitoring</div><p>Track results from the community up to GEF reporting.</p></div>
+  <div class="flow-step"><div class="fs-l">A</div><div class="fs-t">Assessment</div><p>Establish the baseline and measure change (ILAM).</p></div>
+  <div class="flow-step"><div class="fs-l">R</div><div class="fs-t">Reporting</div><p>PIRs and core-indicator reporting against targets.</p></div>
+  <div class="flow-step"><div class="fs-l">V</div><div class="fs-t">Verification</div><p>Validate data quality and the environmental benefits claimed.</p></div>
+  <div class="flow-step"><div class="fs-l">E</div><div class="fs-t">Evaluation</div><p>Judge what worked, where and why.</p></div>
+  <div class="flow-step"><div class="fs-l">L</div><div class="fs-t">Learning</div><p>Feed lessons back through the Regional Exchange Mechanism.</p></div>
+ </div>
+ <div class="callout">
+  <div class="ct">Assessment — the baseline behind every number</div>
+  <p>The figures above only mean something against a baseline. That baseline comes from <strong><a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM — the Integrated Landscape Assessment Methodology</a></strong>: a five-module, wall-to-wall reading of each landscape — land-productivity dynamics, fire, land cover, household and value-chain surveys — run through FAO EarthMap. It is the <strong>Assessment</strong> step of MARVEL, and what every restored hectare and tonne of CO₂e is ultimately measured against.</p>
+  <div class="btnrow"><a class="btn-inl" href="ILAM Integrated Landscape Assessment Methodology.html">Open ILAM →</a></div>
+ </div>
+ <div class="btnrow"><a class="btn-inl" href="dsl-ip-monitoring/DSL-IP Monitoring System.html">Open the Monitoring System →</a></div>
+ <div class="callout">
+  <div class="ct">MARVEL in action — the DSL-IP Monitoring &amp; Results Platform</div>
+  <p>The Programme's own MARVEL instance: a live, explorable dashboard of the DSL-IP results-and-learning data — <strong>208 results-framework indicators</strong>, GEF <strong>Global Environmental Benefits</strong> and per-country drill-downs, drawn straight from the monitoring system on Google Drive. It is the first and flagship example of the MARVEL approach applied to a programme.</p>
+  <div class="btnrow"><a class="btn-inl" href="#marvel-system">See the MARVEL platform embedded below →</a></div>
+ </div>
+ <div class="callout">
+  <div class="ct">MARVEL in action — the Global Fire Management Hub (FireHub)</div>
+  <p><strong>FireHub</strong> is a live application of the MARVEL system to a real programme: the FAO–Canada <strong>Integrated Fire Management</strong> work across Latin America (GCP/GLO/1351/CAN). It carries the same <strong>Monitoring · Assessment · Reporting · Verification · Evaluation · Learning</strong> layer — a deliverables catalogue, a results-and-indicators dashboard, a learnings register and a donor terminal executive summary — built on the FAO Global Fire Management Hub visual identity. It is a self-contained instance that shows how MARVEL is assembled and customised to a country/programme context for evidence-based decision-making.</p>
+  <div class="btnrow"><a class="btn-inl" href="#firehub">See FireHub embedded below →</a></div>
+ </div>
+</section>
+
+<section id="marvel-system">
+ <h2><span class="kicker">The MARVEL system · DSL-IP</span>DSL-IP MARVEL — Monitoring &amp; Results Platform</h2>
+ <p class="lead">The flagship instance of MARVEL: the Programme's own results-and-learning platform. It brings the DSL-IP <strong>child-project results frameworks</strong>, GEF <strong>Global Environmental Benefits</strong> and <strong>financial delivery</strong> into one explorable dashboard — with an overview of headline targets, a per-country drill-down, and an honest data-health panel — all built from the monitoring system on Google Drive. Explore it below, or open it full-screen.</p>
+ <div class="geo-frame">
+  <div class="geo-load">Loading the DSL-IP MARVEL platform… if it doesn't appear, use <strong>Open the MARVEL platform</strong> below.</div>
+  <iframe
+   src="MARVEL-System.html"
+   title="DSL-IP MARVEL — Monitoring &amp; Results Platform"
+   loading="lazy"
+   allow="fullscreen"></iframe>
+ </div>
+ <div class="geo-bar">
+  <span class="muted">Embedded view of the <a class="inl" href="MARVEL-System.html" target="_blank" rel="noopener">DSL-IP MARVEL platform</a> — 208 indicators, GEF Core Indicators and country drill-downs from the Programme's monitoring system. Best explored full-screen.</span>
+  <a class="btn-inl" href="MARVEL-System.html" target="_blank" rel="noopener">Open the MARVEL platform ↗</a>
+ </div>
+</section>
+
+<section id="geoportal">
+ <h2><span class="kicker">Geoportal</span>EarthMap – the DSL-IP geospatial window</h2>
+ <p class="lead">The Programme's customized <strong>Open Foris EarthMap</strong> instance, running on Google Earth Engine. It powers the <strong>Assessment</strong> and <strong>Monitoring</strong> steps of MARVEL – wall-to-wall screening of land-productivity dynamics, fire regime, rainfall, land cover and the thematic layers behind <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a>. Pan, zoom and switch layers in the live geoportal below.</p>
+ <div class="geo-frame">
+  <div class="geo-load">Loading the DSL-IP EarthMap geoportal… if it doesn't appear, use <strong>Open full map</strong> below.</div>
+  <iframe
+   src="https://dsl.earthmap.org"
+   title="DSL-IP EarthMap geoportal (dsl.earthmap.org)"
+   loading="lazy"
+   allow="fullscreen; geolocation"
+   referrerpolicy="no-referrer-when-downgrade"></iframe>
+ </div>
+ <div class="geo-bar">
+  <span class="muted">Live embed of <a class="inl" href="https://dsl.earthmap.org" target="_blank" rel="noopener">dsl.earthmap.org</a> – the DSL-IP geoportal on Open Foris EarthMap / Google Earth Engine.</span>
+  <a class="btn-inl" href="https://dsl.earthmap.org" target="_blank" rel="noopener">Open full map ↗</a>
+ </div>
+</section>
+
+<section id="firehub">
+ <h2><span class="kicker">MARVEL applied</span>FireHub — Integrated Fire Management</h2>
+ <p class="lead">A working instance of MARVEL: the <strong>Global Fire Management Hub (FireHub)</strong> applies the same results-and-learning layer to the FAO–Canada Integrated Fire Management programme (GCP/GLO/1351/CAN) across Latin America. Explore the live platform below — the deliverables catalogue, the MARVEL results-and-indicators dashboard, the learnings register and the donor terminal executive summary.</p>
+ <div class="geo-frame">
+  <div class="geo-load">Loading FireHub… if it doesn't appear, use <strong>Open FireHub</strong> below.</div>
+  <iframe
+   src="https://marcelorezende-dev.github.io/firehub/"
+   title="FireHub – Global Fire Management Hub (MARVEL applied to Integrated Fire Management)"
+   loading="lazy"
+   allow="fullscreen"></iframe>
+ </div>
+ <div class="geo-bar">
+  <span class="muted">Embedded view of <a class="inl" href="https://marcelorezende-dev.github.io/firehub/" target="_blank" rel="noopener">FireHub</a> — MARVEL applied to Integrated Fire Management. Independent platform: <a class="inl" href="https://github.com/marcelorezende-dev/firehub" target="_blank" rel="noopener">github.com/marcelorezende-dev/firehub</a>.</span>
+  <a class="btn-inl" href="https://marcelorezende-dev.github.io/firehub/" target="_blank" rel="noopener">Open FireHub ↗</a>
+ </div>
+</section>
+
+<section id="knowledge">
+ <h2><span class="kicker">Knowledge products</span>The living catalogue</h2>
+ <p>Every framework, module, tool, case, story, policy and reference the Programme captures lives in one canonical index. These figures are read <strong>live</strong> from that catalogue.</p>
+ <div class="kpis" style="margin:1.2rem 0;">
+  <div class="kpi t-water"><div class="kv" id="kc-total">53</div><div class="kl">total products</div></div>
+  <div class="kpi t-forest"><div class="kv" id="kc-validated">–</div><div class="kl">validated</div></div>
+  <div class="kpi t-amber"><div class="kv" id="kc-pending">–</div><div class="kl">pending review</div></div>
+  <div class="kpi t-clay"><div class="kv" id="kc-types">–</div><div class="kl">product types</div></div>
+ </div>
+ <h3>By type</h3>
+ <div class="cols" id="bars-type"><div class="loading">Loading from the catalogue…</div></div>
+ <h3>By DFSA pillar</h3>
+ <div class="cols" id="bars-pillar"><div class="loading">Loading from the catalogue…</div></div>
+ <p class="muted" style="margin-top:.4rem;">Counts and the share of all products carrying each label. A product can sit under more than one pillar, so the pillar shares add up to more than 100%.</p>
+ <h3>Recently added and updated</h3>
+ <div class="feed" id="feed-recent"><div class="loading">Loading from the catalogue…</div></div>
+ <div class="btnrow"><a class="btn-inl" href="Library.html">Browse the full Library →</a></div>
+</section>
+
+<section id="projects">
+ <h2><span class="kicker">Projects</span>Eleven child projects, one programme</h2>
+ <p>The DSL-IP delivers through <strong>eleven country (child) projects</strong> coordinated by a Global Coordination Project. They span the dryland forests and rangelands of southern and eastern Africa, the Sahel and the Central Asian steppe.</p>
+ <div class="regions">
+  <div class="region"><h4>Southern Africa · miombo &amp; mopane</h4><div class="cty"><span>Angola</span><span>Botswana</span><span>Malawi</span><span>Mozambique</span><span>Namibia</span><span>Tanzania</span><span>Zimbabwe</span></div></div>
+  <div class="region"><h4>East Africa</h4><div class="cty"><span>Kenya</span></div></div>
+  <div class="region"><h4>Sahel / West Africa</h4><div class="cty"><span>Burkina Faso</span></div></div>
+  <div class="region"><h4>Central Asia · steppe</h4><div class="cty"><span>Kazakhstan</span></div></div>
+ </div>
+ <p class="muted">Countries shown are those documented across this platform; the Programme's official figure is eleven child projects plus the Global Coordination Project. Explore the project network on the <a class="inl" href="DRIP Map.html">DFSA Map</a>.</p>
+ <div class="callout">
+  <div class="ct">A biome in focus</div>
+  <p>Most of the southern-African projects sit in the <a class="inl" href="Miombo and Mopane Woodlands.html">miombo &amp; mopane woodlands</a> – the African companion to Brazil's <a class="inl" href="Caatinga Biome.html">Caatinga</a>, and the heartland of the dryland-forests agenda.</p>
+ </div>
+</section>
+
+<section id="ffpos">
+ <h2><span class="kicker">FFPOs · Miombo &amp; Mopane</span>Forest &amp; Farm Producer Organizations, mapped</h2>
+ <p class="lead">The Programme delivers on the ground through <strong><a class="inl" href="SLPF_FFF_ForestFarmFacility.html">forest and farm producer organizations (FFPOs)</a></strong> – the village-rooted cooperatives and associations that turn standing woodland into livelihoods. This map plots the FFPOs surveyed in the Programme's 2025 FFPO assessment across the <a class="inl" href="Miombo and Mopane Woodlands.html">miombo &amp; mopane belt</a> – in Botswana, Malawi, Namibia, Tanzania and Zimbabwe. Filter by country, value chain, business stage and women's leadership to see where green value chains are taking root.</p>
+
+ <div class="ffpo-wrap">
+  <div class="ffpo-toolbar">
+   <div class="ffpo-search-row">
+    <input type="search" id="ffpoSearch" class="ffpo-search" placeholder="Search FFPOs by name, country or product…" aria-label="Search FFPOs">
+    <button type="button" id="ffpoReset" class="ffpo-reset">Reset filters</button>
+    <span class="ffpo-count" id="ffpoCount">–</span>
+   </div>
+   <div class="filter-group"><div class="fg-label">Country</div><div class="fchips" id="ffpoCountries"></div></div>
+   <div class="filter-group"><div class="fg-label">Value chain / product</div><div class="fchips" id="ffpoChains"></div></div>
+   <div class="filter-group"><div class="fg-label">Business stage</div><div class="fchips" id="ffpoStatuses"></div></div>
+   <div class="filter-group"><div class="fg-label">Leadership</div><div class="fchips"><button type="button" class="fchip women" id="ffpoWomen">&#9792; Women-led only</button></div></div>
+  </div>
+
+  <div class="ffpo-stats" id="ffpoStats"></div>
+
+  <div class="ffpo-map" id="ffpoMap"><div class="ffpo-fallback">Loading the FFPO map…</div></div>
+
+  <div class="ffpo-legend" id="ffpoLegend"></div>
+  <p class="ffpo-note" id="ffpoNote"></p>
+ </div>
+</section>
+
+<section id="practices">
+ <h2><span class="kicker">Best practices</span>Field guides and technologies</h2>
+ <p>The Programme's practical know-how is packaged as short, print-ready guides and a catalogue of named technologies and approaches – ready to use and to exchange South-South.</p>
+ <div class="grid">
+  <div class="card"><h4>DFSA Manual Series</h4><p><span class="big" id="bp-manuals">–</span> 2–3 page good-practice manuals on sustainable dryland forest management, with WOCAT-format annexes. <a class="inl" href="Library.html">See the series →</a></p></div>
+  <div class="card"><h4>Caatinga SLM technologies</h4><p><span class="big" id="bp-slm">–</span> individual technologies and approaches – silvopastoral systems, sustainable wood energy, native value chains. <a class="inl" href="Caatinga Biome.html#management">Explore →</a></p></div>
+  <div class="card"><h4>SLPF and the pillars</h4><p>The <a class="inl" href="SLPF Sustainable Landscape Production Framework.html">Sustainable Landscape Production Framework</a> – Farmer Field Schools, seed banks and green value chains – assessed through <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a>.</p></div>
+ </div>
+</section>
+
+<section id="financing">
+ <h2><span class="kicker">Financing</span>From a GEF seed to mobilized investment</h2>
+ <p>The Programme's pooled, One-FAO financial architecture turns a modest GEF grant into large-scale, leveraged investment in the drylands.</p>
+ <div class="kpis" style="margin:1.2rem 0;">
+  <div class="kpi t-forest"><div class="kv">$96M</div><div class="kl">GEF-7 seed</div><div class="ks">the catalytic grant</div></div>
+  <div class="kpi t-gold"><div class="kv">$635M</div><div class="kl">total mobilized</div><div class="ks">incl. co-financing</div></div>
+  <div class="kpi t-water"><div class="kv">1 : 5.6</div><div class="kl">leverage ratio</div><div class="ks">co-financing per GEF dollar</div></div>
+ </div>
+ <p>This is the foundation the <a class="inl" href="DFSA Campaign.html">Dryland Forest Support Accelerator (DFSA)</a> is designed to scale. See the full model in the <a class="inl" href="DSL-IP Financial Architecture.html">Financial Architecture</a>.</p>
+ <div class="btnrow"><a class="btn-inl" href="resources/DSL-IP-Mobilized-Finance.pdf" target="_blank" rel="noopener">Mobilized-finance brief (PDF) →</a></div>
+</section>
+
+<section id="indicators">
+ <h2><span class="kicker">Indicators and GEBs</span>Global Environmental Benefits</h2>
+ <p>The Programme reports against the <strong>GEF-7 Core Indicators</strong>. Its headline global environmental benefit targets, across the eleven countries, are:</p>
+ <div class="grid">
+  <div class="card"><h4>Climate change mitigation</h4><p><span class="big">46.3M</span> tonnes CO₂e of greenhouse-gas emissions mitigated <span class="muted">(GEF-7 CI-6)</span>.</p></div>
+  <div class="card"><h4>Land restored and managed</h4><p><span class="big">13.1M</span> hectares of land restored or brought under improved management <span class="muted">(GEF-7 CI-3 / CI-4)</span>.</p></div>
+  <div class="card"><h4>Reach</h4><p><span class="big">11</span> countries, with results flowing from communities up to GEF reporting through the shared monitoring system.</p></div>
+ </div>
+ <div class="callout">
+  <div class="ct">How the numbers are assured</div>
+  <p>Targets are tracked through the participatory <a class="inl" href="dsl-ip-monitoring/DSL-IP Monitoring System.html">Monitoring System</a> (the MRV engine), baselined with <a class="inl" href="ILAM Integrated Landscape Assessment Methodology.html">ILAM</a>, and reported in annual PIRs – the Verification step before benefits are claimed.</p>
+ </div>
+ <div class="btnrow"><a class="btn-inl" href="resources/DSL-IP-Global-Environmental-Benefits.pdf" target="_blank" rel="noopener">Global Environmental Benefits brief (PDF) →</a></div>
+</section>
+
+<section id="newsroom">
+ <h2><span class="kicker">Newsroom</span>What's new on the platform</h2>
+ <p>The latest additions and milestones – the live feed below is drawn from the most recently added and updated catalogue entries.</p>
+ <h3>Highlights</h3>
+ <div class="feed">
+  <a class="fcard" href="COFO Working Group on Dryland Forests.html"><div class="fmeta"><span class="badge">Governance</span><span class="date">2025</span></div><h4>COFO Working Group · 4th Session, Ulaanbaatar</h4><p>The inter-governmental expert group that governs FAO's dryland work convenes; the body that called DFSA into being in 2019.</p></a>
+  <a class="fcard" href="Miombo and Mopane Woodlands.html"><div class="fmeta"><span class="badge">Knowledge</span><span class="date">New</span></div><h4>The Miombo &amp; Mopane Woodlands profile</h4><p>Africa's great dry forest – a live biodiversity dashboard and the biome where six DSL-IP projects work.</p></a>
+  <a class="fcard" href="DFSA Campaign.html"><div class="fmeta"><span class="badge">Finance</span><span class="date">COP30</span></div><h4>Dryland Forest Support Accelerator (DFSA)</h4><p>From Belém to Antalya – the case for a dedicated FAO support accelerator for the forests climate finance forgot.</p></a>
+ </div>
+ <h3>Latest from the catalogue</h3>
+ <div class="feed" id="feed-news"><div class="loading">Loading from the catalogue…</div></div>
+</section>
+
+</div>
+<footer>
+ <p><strong>MARVEL</strong> – the DFSA dashboard · Monitoring · Assessment · Reporting · Verification · Evaluation · Learning</p>
+ <hr class="foot-rule">
+ <p>A monitoring &amp; learning view of the Drylands Sustainable Landscapes Impact Programme · figures are programme targets and live catalogue counts · <a href="DFSA.html">back to DFSA</a></p>
+</footer>
+
+<script src="drip-archive.js"></script>
+<script src="drip-home.js"></script>
+<script>
+(function(){
+  var A = (window.DRIP_ARCHIVE||[]).slice();
+  var META = window.DRIP_ARCHIVE_META||{types:{}};
+  var PILLAR = { coordination:'Coordination & Exchange', assessment:'Assessment & Evidence', production:'Integrated Management',
+    gender:'Gender & Inclusion', monitoring:'Monitoring & Learning', knowledge:'Knowledge & Outreach', finance:'Finance & Governance' };
+  /* per-category bar colours (page palette) */
+  var TYPE_COLORS = { reference:'#33B193', framework:'#3E7CB1', tool:'#E8C13C', story:'#CF715D',
+    programme:'#477E59', case:'#754C29', module:'#68A260', policy:'#B4543F', dataset:'#244C54' };
+  var PILLAR_COLORS = { production:'#477E59', knowledge:'#33B193', assessment:'#3E7CB1', coordination:'#CF715D',
+    finance:'#9A7327', gender:'#B4543F', monitoring:'#F8B133' };
+  var TYPE_SHORT = { reference:'Reference', framework:'Framework', tool:'Tool', story:'Story', programme:'Programme', case:'Case', module:'Module', policy:'Policy', dataset:'Dataset' };
+  var PILLAR_SHORT = { coordination:'Coordination', assessment:'Assessment', production:'Production', gender:'Gender', monitoring:'Monitoring', knowledge:'Knowledge', finance:'Finance' };
+  var $ = function(id){ return document.getElementById(id); };
+  var set = function(id,v){ var e=$(id); if(e) e.textContent=v; };
+  if(!A.length){ ['feed-recent','feed-news','bars-type','bars-pillar'].forEach(function(id){ var e=$(id); if(e) e.innerHTML='<div class="loading">Catalogue unavailable.</div>'; }); return; }
+
+  /* KPIs */
+  set('kpi-products', A.length); set('hk-products', A.length); set('kc-total', A.length);
+  var validated = A.filter(function(e){return e.status==='validated';}).length;
+  set('kc-validated', validated); set('kc-pending', A.length-validated);
+  var bp = A.filter(function(e){ return (e.tags||[]).some(function(t){ return /manual|1-pager|good practice|field guide/i.test(t); }); }).length;
+  set('kpi-practices', bp);
+  set('bp-manuals', A.filter(function(e){ return /^manual-|drip-manual/.test(e.id); }).length);
+  set('bp-slm', A.filter(function(e){ return /^slm-/.test(e.id); }).length);
+
+  /* counts helper */
+  function tally(key){ var c={}; A.forEach(function(e){ var v=e[key]; (Array.isArray(v)?v:[v]).forEach(function(x){ if(x) c[x]=(c[x]||0)+1; }); }); return c; }
+  function renderCols(id, counts, labels, total, colors){
+    var rows = Object.keys(counts).map(function(k){ return {k:k, n:counts[k], label:(labels&&labels[k])||k}; }).sort(function(a,b){ return b.n-a.n; });
+    var max = rows.length?rows[0].n:1, box=$(id);
+    if(!box) return;
+    box.innerHTML = rows.map(function(r){
+      var pct = total ? Math.round(r.n/total*100) : 0;
+      var h = (r.n/max*100).toFixed(1);
+      var col = (colors && colors[r.k]) || '#477E59';
+      /* height + colour set inline so the columns always render (no reliance on an animation callback) */
+      return '<div class="col"><span class="colv">'+r.n+'<small>'+pct+'%</small></span><span class="coltrack"><span class="colfill" style="height:'+h+'%;background:'+col+'"></span></span><span class="coll">'+r.label+'</span></div>';
+    }).join('');
+  }
+  var typeCounts = tally('type');
+  set('kc-types', Object.keys(typeCounts).length);
+  renderCols('bars-type', typeCounts, TYPE_SHORT, A.length, TYPE_COLORS);
+  renderCols('bars-pillar', tally('pillars'), PILLAR_SHORT, A.length, PILLAR_COLORS);
+
+  /* recent feed + newsroom */
+  function dt(e){ return e.updated||e.added||''; }
+  var recent = A.slice().sort(function(a,b){ return (dt(b)).localeCompare(dt(a)); });
+  function card(e){
+    var t = (META.types[e.type]||e.type||'').toString();
+    var pills = (e.pillars||[]).slice(0,3).map(function(p){ return '<span class="pill">'+((PILLAR[p]||p).split(' ')[0])+'</span>'; }).join('');
+    var ext = /^https?:/.test(e.url||'') || /\.pdf$/i.test(e.url||'');
+    return '<a class="fcard" href="'+(e.url||'#')+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+
+      '<div class="fmeta"><span class="badge">'+t+'</span><span class="date">'+(dt(e)||'')+'</span></div>'+
+      '<h4>'+(e.title||'')+'</h4><p>'+((e.summary||'').slice(0,150))+((e.summary||'').length>150?'…':'')+'</p>'+
+      '<div class="pills">'+pills+'</div></a>';
+  }
+  $('feed-recent').innerHTML = recent.slice(0,8).map(card).join('');
+  $('feed-news').innerHTML   = recent.slice(0,6).map(card).join('');
+})();
+</script>
+
+<!-- FFPO map: Leaflet (free, no API key) over CartoDB Positron tiles -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function(){
+  var mapEl = document.getElementById('ffpoMap');
+  if(!mapEl) return;
+  if(!window.L){ mapEl.innerHTML = '<div class="ffpo-fallback">The map library could not be loaded (you may be offline). The FFPO filters below still work once the map is available.</div>'; return; }
+
+  /* ───────────────────────────────────────────────────────────────
+     FFPO DATASET · Miombo & Mopane forest & farm producer orgs
+     ----------------------------------------------------------------
+     Replace the objects below with the Programme's real FFPO data,
+     then set  DATA_IS_SAMPLE = false  to hide the "sample" notice.
+     Each FFPO:
+       name     {string}   organization name
+       country  {string}   miombo–mopane country (drives the Country filter)
+       locality {string}   town / district  (optional, shown in popup)
+       lat,lng  {number}   decimal degrees, WGS84
+       chains   {string[]} value chains / products, 1+  (drives the chain
+                           filter & marker colour; colours from CHAIN_META,
+                           unknown chains fall back to grey)
+       status   {string}   business stage: Emerging | Established | Consolidated
+       members  {number}   member count  (drives marker size; optional)
+       womenLed {boolean}  women-led / women-majority organization
+       note     {string}   one-line description (optional, popup)
+       link     {string}   internal page or URL (optional, popup)
+     ─────────────────────────────────────────────────────────────── */
+  var DATA_IS_SAMPLE = false;
+
+  var FFPOS = [
+    { name:'Chobe East Marketing Agricultural Management Association', country:'Botswana', locality:'Chobe', lat:-17.985, lng:24.649,
+      chains:['Poultry','Piggery','Horticulture'], status:'Established', members:10, womenLed:false, note:'Vegetables and fruits; Beef and small stock.' },
+    { name:'Chobe Enclave Conservation Trust', country:'Botswana', locality:'Chobe', lat:-17.9414, lng:24.70932,
+      chains:['Eco-tourism & wildlife','Grains & legumes'], status:'Consolidated', members:0, womenLed:false, note:'Leased lodge; Leased camp-site' },
+    { name:'Chobe Enclave Poultry Marketing Agricultural Management Association', country:'Botswana', locality:'Chobe', lat:-18.01667, lng:24.6,
+      chains:['NTFPs (wild products)','Poultry','Livestock & beef'], status:'Established', members:9, womenLed:true, note:'Supply of broilers and eggs; Collection of veld products' },
+    { name:'Chobe Horticultural Farmers\' Association', country:'Botswana', locality:'Chobe', lat:-17.906, lng:25.237,
+      chains:['Horticulture','Livestock & beef'], status:'Established', members:15, womenLed:false, note:'Horticulture; Small-scale agriculture-livestock + crop production' },
+    { name:'Chobe Pork Masters', country:'Botswana', locality:'Chobe', lat:-18.01667, lng:24.6,
+      chains:['Piggery','Livestock & beef'], status:'Emerging', members:16, womenLed:false, note:'Piggery; Small-scale agriculture-livestock + crop production' },
+    { name:'Itsoseng Dryland Farming Agricultural Management Association', country:'Botswana', locality:'Chobe', lat:-19.96341, lng:24.96843,
+      chains:['NTFPs (wild products)','Poultry','Horticulture'], status:'Established', members:82, womenLed:false, note:'Dryland farming; Horticulture' },
+    { name:'Voochi beekeeping Association', country:'Botswana', locality:'Chobe', lat:-17.906, lng:25.237,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Livestock & beef'], status:'Emerging', members:14, womenLed:true, note:'Beekeeping; Small-scale agriculture-livestock + crop production' },
+    { name:'Vuchevuche basket weavers', country:'Botswana', locality:'Chobe', lat:-17.99545, lng:24.64533,
+      chains:['Crafts & baskets'], status:'Established', members:12, womenLed:true, note:'Basket and bags; Traditional clay pots' },
+    { name:'Gulugwe Cluster Field Fence', country:'Botswana', locality:'Tutume-Mosetse', lat:-20.6606, lng:27.00436,
+      chains:['NTFPs (wild products)','Poultry','Horticulture'], status:'Established', members:34, womenLed:false, note:'Arable farming; Horticulture' },
+    { name:'Kgomokhumo Beef Producer\'s Association', country:'Botswana', locality:'Tutume-Mosetse', lat:-20.78779, lng:27.18426,
+      chains:['Poultry','Piggery','Horticulture'], status:'Established', members:20, womenLed:true, note:'Vegetables and fruits; Beef and small stock.' },
+    { name:'Makuta Dam Association', country:'Botswana', locality:'Tutume-Mosetse', lat:-20.15543, lng:26.15074,
+      chains:['Mopane worms','Eco-tourism & wildlife','NTFPs (wild products)'], status:'Established', members:120, womenLed:false, note:'Beef and small stock.; Dryland arable agriculture.' },
+    { name:'Totuma Arable commercial farmers association', country:'Botswana', locality:'Tutume-Mosetse', lat:-20.44236, lng:25.9398,
+      chains:['Mopane worms','NTFPs (wild products)','Poultry'], status:'Established', members:12, womenLed:false, note:'Vegetables and fruits; Beef and small stock.' },
+    { name:'Apatsa Olimbika', country:'Malawi', locality:'Balaka', lat:-14.94353, lng:35.04207,
+      chains:['Horticulture'], status:'Established', members:30, womenLed:true, note:'Horticultural production and selling the products locally' },
+    { name:'Chichiri Farmer Business School', country:'Malawi', locality:'Balaka', lat:-15.04594, lng:35.19581,
+      chains:['Grains & legumes'], status:'Established', members:27, womenLed:true, note:'Legumes' },
+    { name:'Chikondi Nutrition', country:'Malawi', locality:'Balaka', lat:-14.56592, lng:34.54159,
+      chains:['Grains & legumes'], status:'Established', members:30, womenLed:true, note:'Legumes' },
+    { name:'Chingale Honey Producer', country:'Malawi', locality:'Balaka', lat:-14.81744, lng:35.12523,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:11, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Dailesi club', country:'Malawi', locality:'Balaka', lat:-14.81711, lng:35.09888,
+      chains:['Mixed farming'], status:'Established', members:22, womenLed:true, note:'Processing and selling behive products' },
+    { name:'Gambe Irrigation scheme', country:'Malawi', locality:'Balaka', lat:-15.12054, lng:34.8719,
+      chains:['Horticulture'], status:'Established', members:53, womenLed:true, note:'horticultural production' },
+    { name:'Khumbolathu VSL Group', country:'Malawi', locality:'Balaka', lat:-14.94353, lng:35.04207,
+      chains:['Grains & legumes','Savings & lending'], status:'Established', members:20, womenLed:true, note:'Legumes' },
+    { name:'Luwani Irrigation', country:'Malawi', locality:'Balaka', lat:-14.94267, lng:35.04754,
+      chains:['Horticulture'], status:'Consolidated', members:47, womenLed:true, note:'Horticultural Crops' },
+    { name:'Makwinja Honey', country:'Malawi', locality:'Balaka', lat:-14.81958, lng:35.11513,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:18, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Maluja Poultry Production Group', country:'Malawi', locality:'Balaka', lat:-15.04693, lng:35.19581,
+      chains:['Poultry'], status:'Established', members:15, womenLed:true, note:'Poultry' },
+    { name:'Mjigo COMSIP', country:'Malawi', locality:'Balaka', lat:-14.56592, lng:34.54157,
+      chains:['Savings & lending'], status:'Established', members:34, womenLed:true, note:'Farming' },
+    { name:'Mudzi Irrigation group', country:'Malawi', locality:'Balaka', lat:-15.09287, lng:35.02237,
+      chains:['Horticulture'], status:'Established', members:25, womenLed:true, note:'Horticultural production' },
+    { name:'Nkasi Honey Producer', country:'Malawi', locality:'Balaka', lat:-14.84444, lng:35.17265,
+      chains:['Honey & beekeeping'], status:'Established', members:33, womenLed:true, note:'Beekeeping' },
+    { name:'Tilitonse Cluster', country:'Malawi', locality:'Balaka', lat:-15.05256, lng:34.93188,
+      chains:['Bakery'], status:'Consolidated', members:29, womenLed:true, note:'Baking and selling baking products as well buying and selling produce' },
+    { name:'Timvane COMSIP', country:'Malawi', locality:'Balaka', lat:-15.02215, lng:34.99007,
+      chains:['Livestock & beef','Savings & lending'], status:'Established', members:31, womenLed:true, note:'Livestock' },
+    { name:'Timvane Farmers club', country:'Malawi', locality:'Balaka', lat:-14.5932, lng:34.57349,
+      chains:['Livestock & beef'], status:'Established', members:36, womenLed:true, note:'Crops, Livestock' },
+    { name:'Tiyese Mushroom Group', country:'Malawi', locality:'Balaka', lat:-14.94353, lng:35.04207,
+      chains:['NTFPs (wild products)'], status:'Established', members:16, womenLed:true, note:'Mushroom production and packaging ready for sell' },
+    { name:'Umali Jiya (Individual)', country:'Malawi', locality:'Balaka', lat:-14.8595, lng:35.09778,
+      chains:['Mixed farming'], status:'Established', members:1, womenLed:false, note:'Processing and selling behive products' },
+    { name:'Umodzi Bakery', country:'Malawi', locality:'Balaka', lat:-14.94355, lng:35.04207,
+      chains:['Bakery'], status:'Established', members:40, womenLed:true, note:'Bakery and Crop Aggregation' },
+    { name:'Umodzi Poultry group', country:'Malawi', locality:'Balaka', lat:-14.59279, lng:34.57344,
+      chains:['Poultry'], status:'Established', members:10, womenLed:true, note:'Poultry' },
+    { name:'Umphawi Toto COMSIP', country:'Malawi', locality:'Balaka', lat:-15.00912, lng:34.98022,
+      chains:['Horticulture','Savings & lending'], status:'Established', members:36, womenLed:true, note:'Horticultural Crops' },
+    { name:'Bamusi Youth Club', country:'Malawi', locality:'Mangochi', lat:-14.70431, lng:35.01892,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Emerging', members:45, womenLed:false, note:'Beekeeping; NRM' },
+    { name:'Binali Club', country:'Malawi', locality:'Mangochi', lat:-14.48889, lng:34.81141,
+      chains:['Grains & legumes'], status:'Emerging', members:22, womenLed:true, note:'Soya; groundnuts' },
+    { name:'Chibwelera Cooperative Ltd', country:'Malawi', locality:'Mangochi', lat:-14.21031, lng:34.91145,
+      chains:['Grains & legumes'], status:'Consolidated', members:92, womenLed:true, note:'Maize; soya' },
+    { name:'Kamenya Club', country:'Malawi', locality:'Mangochi', lat:-14.68538, lng:34.9431,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Emerging', members:15, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Kanama Cooperative', country:'Malawi', locality:'Mangochi', lat:-14.44202, lng:34.78663,
+      chains:['Grains & legumes'], status:'Emerging', members:19, womenLed:true, note:'Maize; soya' },
+    { name:'Masakasa Club', country:'Malawi', locality:'Mangochi', lat:-14.77409, lng:35.03403,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Emerging', members:22, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Mpando Club', country:'Malawi', locality:'Mangochi', lat:-14.67999, lng:34.95471,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Emerging', members:15, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Mpasa fish club', country:'Malawi', locality:'Mangochi', lat:-14.71243, lng:35.00164,
+      chains:['Aquaculture'], status:'Established', members:23, womenLed:true, note:'Fish farming' },
+    { name:'Mpeya Club', country:'Malawi', locality:'Mangochi', lat:-14.74439, lng:34.9892,
+      chains:['Honey & beekeeping','Forestry & woodfuel','Grains & legumes'], status:'Emerging', members:22, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Mpinji Fish Farming Club', country:'Malawi', locality:'Mangochi', lat:-14.65438, lng:34.9322,
+      chains:['Aquaculture'], status:'Emerging', members:30, womenLed:true, note:'Fish processing' },
+    { name:'Msangu Cooperative', country:'Malawi', locality:'Mangochi', lat:-14.95738, lng:34.91788,
+      chains:['Forestry & woodfuel'], status:'Established', members:40, womenLed:true, note:'Briquettes making; NRM' },
+    { name:'Msonthi Fish Farming', country:'Malawi', locality:'Mangochi', lat:-14.68451, lng:34.96481,
+      chains:['Aquaculture'], status:'Established', members:12, womenLed:true, note:'Fish processing' },
+    { name:'Mthiramanja Cooperative', country:'Malawi', locality:'Mangochi', lat:-14.31549, lng:35.01463,
+      chains:['Grains & legumes'], status:'Consolidated', members:97, womenLed:true, note:'Groundnuts; pigeon peas' },
+    { name:'Muthe 2 Club', country:'Malawi', locality:'Mangochi', lat:-14.73456, lng:34.97499,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Emerging', members:15, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Mvumba Farmers’ Cooperative Ltd', country:'Malawi', locality:'Mangochi', lat:-14.36453, lng:34.81653,
+      chains:['Grains & legumes'], status:'Consolidated', members:86, womenLed:true, note:'Soya; maize' },
+    { name:'Thema Honey Cooperative', country:'Malawi', locality:'Mangochi', lat:-14.43842, lng:34.85498,
+      chains:['Honey & beekeeping'], status:'Established', members:64, womenLed:true, note:'Honey processing' },
+    { name:'Titukulane Club', country:'Malawi', locality:'Mangochi', lat:-14.41745, lng:34.81977,
+      chains:['Seeds & nurseries'], status:'Established', members:34, womenLed:true, note:'Seed multiplication' },
+    { name:'Tsekwere Cooperative', country:'Malawi', locality:'Mangochi', lat:-14.47078, lng:34.79483,
+      chains:['Grains & legumes'], status:'Established', members:80, womenLed:true, note:'Soya; maize' },
+    { name:'Wokha Cooperative', country:'Malawi', locality:'Mangochi', lat:-14.10046, lng:34.91436,
+      chains:['NTFPs (wild products)','Horticulture'], status:'Consolidated', members:20, womenLed:true, note:'Fruit processing (Baobab; Bwemba)' },
+    { name:'Zofewa Cooperative', country:'Malawi', locality:'Mangochi', lat:-14.28864, lng:34.95331,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:20, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Zokoma Cooperative', country:'Malawi', locality:'Mangochi', lat:-14.35519, lng:34.81341,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Forestry & woodfuel'], status:'Established', members:42, womenLed:true, note:'Beekeeping/ Malambe/NRM' },
+    { name:'Cheuka Honey Club', country:'Malawi', locality:'Ntcheu', lat:-15.7078, lng:34.8343,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:15, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Chisomo Club', country:'Malawi', locality:'Ntcheu', lat:-15.2693, lng:34.7128,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Emerging', members:17, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Gongolo Honey Club', country:'Malawi', locality:'Ntcheu', lat:-15.1291, lng:34.708,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:33, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Kachere Club', country:'Malawi', locality:'Ntcheu', lat:-15.269, lng:34.7856,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Emerging', members:15, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Kainga Women Club', country:'Malawi', locality:'Ntcheu', lat:-15.266, lng:34.7916,
+      chains:['Forestry & woodfuel'], status:'Emerging', members:11, womenLed:true, note:'Stove making/ NRM' },
+    { name:'Mayera Fish Club', country:'Malawi', locality:'Ntcheu', lat:-15.1078, lng:35.0385,
+      chains:['Aquaculture'], status:'Established', members:20, womenLed:false, note:'Fish farming' },
+    { name:'Mlambe Youth Club', country:'Malawi', locality:'Ntcheu', lat:-15.342, lng:34.9862,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:27, womenLed:false, note:'Beekeeping; NRM' },
+    { name:'Mpoza Beekeeping Club', country:'Malawi', locality:'Ntcheu', lat:-15.1062, lng:35.0565,
+      chains:['Honey & beekeeping','Grains & legumes'], status:'Established', members:18, womenLed:true, note:'Pigeon peas, soya, maize, groundnuts' },
+    { name:'Mtendere Youth Club', country:'Malawi', locality:'Ntcheu', lat:-14.7516, lng:34.824,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:26, womenLed:false, note:'Beekeeping; NRM' },
+    { name:'Mthunzi Youth Organization', country:'Malawi', locality:'Ntcheu', lat:-14.7358, lng:34.8181,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:54, womenLed:false, note:'Human Rights; Beekeeping' },
+    { name:'Namilazi Irrigation Club', country:'Malawi', locality:'Ntcheu', lat:-15.1885, lng:34.9702,
+      chains:['Horticulture'], status:'Established', members:30, womenLed:true, note:'Horticultural crops' },
+    { name:'Nankhono Irrigation', country:'Malawi', locality:'Ntcheu', lat:-15.1823, lng:34.991,
+      chains:['Horticulture'], status:'Established', members:11, womenLed:true, note:'Horticultural crops' },
+    { name:'Nansale Cooperative', country:'Malawi', locality:'Ntcheu', lat:-15.0187, lng:34.6358,
+      chains:['Horticulture'], status:'Emerging', members:43, womenLed:true, note:'Cabbage, onions, tommatoes' },
+    { name:'Pheza Fish Club', country:'Malawi', locality:'Ntcheu', lat:-15.2319, lng:34.8739,
+      chains:['Aquaculture'], status:'Emerging', members:16, womenLed:true, note:'Fish farming' },
+    { name:'Tigwirizane Club', country:'Malawi', locality:'Ntcheu', lat:-15.2004, lng:34.8102,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Emerging', members:22, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Tikondane Club', country:'Malawi', locality:'Ntcheu', lat:-14.9994, lng:34.6403,
+      chains:['Horticulture'], status:'Emerging', members:55, womenLed:true, note:'Horticulture crops' },
+    { name:'Tikondane Honey Club', country:'Malawi', locality:'Ntcheu', lat:-14.7519, lng:34.8236,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Emerging', members:14, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Timasukilane Beekeeping Club', country:'Malawi', locality:'Ntcheu', lat:-15.2692, lng:34.9327,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:9, womenLed:false, note:'Beekeeping; NRM' },
+    { name:'Tithokoze Irrigation Club', country:'Malawi', locality:'Ntcheu', lat:-15.2688, lng:34.7056,
+      chains:['Horticulture'], status:'Emerging', members:10, womenLed:true, note:'Horticultural crops' },
+    { name:'Titukulane Club', country:'Malawi', locality:'Ntcheu', lat:-15.3066, lng:34.8767,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Established', members:16, womenLed:true, note:'Beekeeping; goat rearing' },
+    { name:'Tiyanjane Stove Club', country:'Malawi', locality:'Ntcheu', lat:-15.0941, lng:34.6907,
+      chains:['Forestry & woodfuel'], status:'Emerging', members:35, womenLed:true, note:'NRM; Stove making' },
+    { name:'Tukuyu Irrigation Club', country:'Malawi', locality:'Ntcheu', lat:-15.1321, lng:35.0373,
+      chains:['Horticulture'], status:'Established', members:22, womenLed:true, note:'Horticultural crops' },
+    { name:'Zokoma Honey Club', country:'Malawi', locality:'Ntcheu', lat:-15.1876, lng:34.9756,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Established', members:15, womenLed:true, note:'Beekeeping; NRM' },
+    { name:'Eden Project Werner Tulongeni Support Group', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.1533, lng:16.252,
+      chains:['Mixed farming'], status:'Established', members:28, womenLed:false, note:'None' },
+    { name:'Eengodi Farmers and seed growers association', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.11118, lng:16.81788,
+      chains:['Seeds & nurseries'], status:'Consolidated', members:11, womenLed:false, note:'No' },
+    { name:'Ekondjo Farmers Cooperative', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-17.96417, lng:17.21455,
+      chains:['Mixed farming'], status:'Established', members:0, womenLed:false, note:'None' },
+    { name:'King Nehale Communal Conservancy', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.39617, lng:16.61958,
+      chains:['Eco-tourism & wildlife'], status:'Consolidated', members:3000, womenLed:false, note:'Nothing' },
+    { name:'Mangetti Farmers Association', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.28197, lng:17.20216,
+      chains:['NTFPs (wild products)'], status:'Consolidated', members:600, womenLed:false, note:'Nothing' },
+    { name:'Nehale lya Mpingana Farmers Association', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.50083, lng:16.99417,
+      chains:['Mixed farming'], status:'Emerging', members:54, womenLed:false, note:'Biomass utilization (animall feed)' },
+    { name:'Nyangadhala-Onyulae Association', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.0516, lng:16.67041,
+      chains:['NTFPs (wild products)'], status:'Consolidated', members:40, womenLed:false, note:'Ximenia nuts and Kalahali seeds, marula kernels' },
+    { name:'Omuntele Association', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.24044, lng:16.23959,
+      chains:['Mixed farming'], status:'Consolidated', members:130, womenLed:false, note:'Yes' },
+    { name:'Omuthiya Farmers Association', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.35486, lng:16.57338,
+      chains:['Forestry & woodfuel'], status:'Emerging', members:94, womenLed:false, note:'fire wood, poles, woody biomass utilization (animal feed)' },
+    { name:'Onankali Mahangu Paper Making Projects', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.20371, lng:16.39548,
+      chains:['Crafts & baskets'], status:'Consolidated', members:20, womenLed:false, note:'Papers, Envelops, Book covers from Mahangu stalk' },
+    { name:'Onyaanya Constituency Youth Farmers Structure', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.20371, lng:16.39548,
+      chains:['Mixed farming'], status:'Emerging', members:45, womenLed:false, note:'Nothing' },
+    { name:'Oshikoto Livestock Marketing Cooperative', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.28804, lng:16.49571,
+      chains:['Livestock & beef'], status:'Consolidated', members:150, womenLed:false, note:'None' },
+    { name:'Tulongeni Twahangana Cooperative', country:'Namibia', locality:'Etosha (Oshikoto)', lat:-18.05026, lng:16.80495,
+      chains:['NTFPs (wild products)'], status:'Consolidated', members:11, womenLed:false, note:'Add value to Marula and Mangenti kernels, Ximenia and Kalahali seeds to make oil, cosmetics and animal feed' },
+    { name:'Basket Weaver', country:'Namibia', locality:'Kavango-East', lat:-18.04639, lng:20.70639,
+      chains:['Crafts & baskets'], status:'Established', members:0, womenLed:false, note:'Production and sale of traditional baskets' },
+    { name:'Firewood Collectors Group', country:'Namibia', locality:'Kavango-East', lat:-18.02394, lng:20.898,
+      chains:['Forestry & woodfuel'], status:'Emerging', members:10, womenLed:true, note:'Sale and aggregation of firewood' },
+    { name:'George Mukoya Conservancy and Community Forest', country:'Namibia', locality:'Kavango-East', lat:-18.28504, lng:20.84891,
+      chains:['Eco-tourism & wildlife','Forestry & woodfuel'], status:'Consolidated', members:1780, womenLed:true, note:'Sale of quotas for hunting' },
+    { name:'Kangweru Farmers Club - FFS', country:'Namibia', locality:'Kavango-East', lat:-18.0135, lng:20.68311,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:7, womenLed:false, note:'Horticulture producte (spinanch, beans, onions, carrots, etc)' },
+    { name:'Kanteture Farmers Club - FFS', country:'Namibia', locality:'Kavango-East', lat:-17.95528, lng:21.05886,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:45, womenLed:true, note:'Cabbages, beans, onions, carrots, green pepper, spinach, beetroot, pumpkin, black berry' },
+    { name:'Karuci Community Project', country:'Namibia', locality:'Kavango-East', lat:-18.00475, lng:20.64654,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:36, womenLed:true, note:'Production, distribution and transportation of horticulture produce (local spinach, cabbages, beans, onions, peppers, tomatoes, maize etc)' },
+    { name:'Kashira Farmers Club - FFS', country:'Namibia', locality:'Kavango-East', lat:-18.04741, lng:20.80301,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:26, womenLed:true, note:'Cabbages, beans, onions, carrots, green pepper, spinach' },
+    { name:'Katere Farmers Club - FFS', country:'Namibia', locality:'Kavango-East', lat:-18.02167, lng:20.76712,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:20, womenLed:true, note:'Cabbages, beans, onions, carrots, green pepper, spinach' },
+    { name:'Kavango Livestock Marketing Cooperative', country:'Namibia', locality:'Kavango-East', lat:-18.04688, lng:20.71644,
+      chains:['Livestock & beef'], status:'Consolidated', members:120, womenLed:false, note:'Production, transportation, processing and sale of livestock and fresh meat.' },
+    { name:'Khaudum North Complex', country:'Namibia', locality:'Kavango-East', lat:-18.13055, lng:20.98751,
+      chains:['Mixed farming'], status:'Emerging', members:0, womenLed:false, note:'None' },
+    { name:'Korokoko Manketti Collectors Group', country:'Namibia', locality:'Kavango-East', lat:-18.00267, lng:20.9469,
+      chains:['NTFPs (wild products)'], status:'Emerging', members:9, womenLed:false, note:'production and sale of mangetti oil' },
+    { name:'Ligcere Project', country:'Namibia', locality:'Kavango-East', lat:-18.01279, lng:20.66879,
+      chains:['Horticulture','Grains & legumes'], status:'Emerging', members:10, womenLed:true, note:'Production, distribution and transportation of horticulture produce (spinach, peppers, tomatoes, maize etc)' },
+    { name:'Likorere Cooperative', country:'Namibia', locality:'Kavango-East', lat:-18.04557, lng:20.69694,
+      chains:['Grains & legumes'], status:'Consolidated', members:50, womenLed:true, note:'Production, distribution, transportation, processing and packaging of high value seeds of grains such as mahangu, sorghum, maize, peanuts, groundnut…' },
+    { name:'Makena Farmers wood club', country:'Namibia', locality:'Kavango-East', lat:-18.03915, lng:20.8439,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:33, womenLed:true, note:'Cabbages, beans, onions, carrots, green pepper, spinach, beetroot' },
+    { name:'Mbangura Wood Carvers based in Rundu,', country:'Namibia', locality:'Kavango-East', lat:-18.04508, lng:20.70361,
+      chains:['Crafts & baskets'], status:'Consolidated', members:81, womenLed:false, note:'Production and sale of woody materials (beds, motars, chairs, and others' },
+    { name:'Muduva Nyangana Conservancy and Community Forest', country:'Namibia', locality:'Kavango-East', lat:-18.13055, lng:20.98751,
+      chains:['Eco-tourism & wildlife','NTFPs (wild products)','Forestry & woodfuel'], status:'Consolidated', members:600, womenLed:false, note:'Sale of Devils claws and hunting quotas' },
+    { name:'Mukuvi Farmers Club - FFS', country:'Namibia', locality:'Kavango-East', lat:-17.9753, lng:20.99717,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:26, womenLed:true, note:'Cabbages, beans, onions, carrots, green pepper, spinach' },
+    { name:'Ndiyona Basket Weavers Group', country:'Namibia', locality:'Kavango-East', lat:-18.04541, lng:20.6799,
+      chains:['Crafts & baskets'], status:'Established', members:13, womenLed:true, note:'Production and sale of traditional baskets, necklaces and toy cars' },
+    { name:'Ndiyona Mangetti Collector Group', country:'Namibia', locality:'Kavango-East', lat:-18.04474, lng:20.09988,
+      chains:['NTFPs (wild products)'], status:'Emerging', members:16, womenLed:true, note:'production, processing, sale and aggregation of mangetti oil' },
+    { name:'Ndiyona Youth Forum (NYF)', country:'Namibia', locality:'Kavango-East', lat:-18.04444, lng:20.70694,
+      chains:['Horticulture'], status:'Established', members:20, womenLed:false, note:'Production and sale of horticulture products, community outreach programmes, youth empowerment' },
+    { name:'Ndonga Linena Farmers Association', country:'Namibia', locality:'Kavango-East', lat:-17.97556, lng:20.51501,
+      chains:['Horticulture','Livestock & beef'], status:'Established', members:60, womenLed:false, note:'Production and sale of crops e.g mahangu and horticulture products including livestock' },
+    { name:'Sharuwanda Farmers Club - FFS', country:'Namibia', locality:'Kavango-East', lat:-18.03403, lng:20.79482,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:12, womenLed:true, note:'Cabbages, beans, onions, carrots, green pepper, spinach' },
+    { name:'Shikoro Wood Carving Group', country:'Namibia', locality:'Kavango-East', lat:-18.01353, lng:20.68312,
+      chains:['Crafts & baskets'], status:'Emerging', members:10, womenLed:false, note:'Production and sale of woody art and materials (e.g beds, chairs, doors,)' },
+    { name:'Wangu Wangu Thatch Grass Supply', country:'Namibia', locality:'Kavango-East', lat:-18.05145, lng:20.95004,
+      chains:['Forestry & woodfuel'], status:'Established', members:8, womenLed:false, note:'Sale, processing and transporation of thatch grass' },
+    { name:'Alishi Irrigation Project', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.47007, lng:14.82929,
+      chains:['Horticulture'], status:'Established', members:5, womenLed:true, note:'Horticulture production and selling of products locally, packaging of produces eg tomatoes' },
+    { name:'Ekango/Ekondjo Farmers Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.89305, lng:15.06647,
+      chains:['Livestock & beef','Grains & legumes'], status:'Consolidated', members:245, womenLed:false, note:'Crop produces (sourghum, pearl millet, cowpeas) and livestock related products' },
+    { name:'Etoto Farmers Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.0333, lng:14.1167,
+      chains:['Livestock & beef','Grains & legumes'], status:'Consolidated', members:103, womenLed:false, note:'Livestock related products, Crops produces (pearl millet, maize, cowpeas, melon, pumpkin, sorghurm; wooden household utensils' },
+    { name:'Eudafano Women Cooperative', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.8959, lng:15.9567,
+      chains:['NTFPs (wild products)','Oilseeds & processing'], status:'Consolidated', members:27, womenLed:true, note:'Processing, packaging and selling of oil from marula and melon seeds' },
+    { name:'gwaNamene San\'s Project', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-18.11915, lng:15.4535,
+      chains:['Horticulture'], status:'Established', members:31, womenLed:false, note:'Horticultural produces (spinach, onions, green peppers, carrots, chillies)' },
+    { name:'Iipumbu ya Tshilongo Conservancy', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-18.11887, lng:15.54464,
+      chains:['Eco-tourism & wildlife','NTFPs (wild products)'], status:'Consolidated', members:500, womenLed:false, note:'Devil claws' },
+    { name:'Iiyambo Kashire Katumba San\'s Project', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-18.03685, lng:15.37401,
+      chains:['Horticulture'], status:'Established', members:28, womenLed:false, note:'Horticultural produces (cabbage, carrots, tomatoes, spinach)' },
+    { name:'Inamutonyala Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.73141, lng:14.78555,
+      chains:['NTFPs (wild products)'], status:'Established', members:60, womenLed:true, note:'Production of marula kernel and melon seeds' },
+    { name:'Kunene River Conservancy', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.4675, lng:14.8154,
+      chains:['Eco-tourism & wildlife','Horticulture','Grains & legumes'], status:'Consolidated', members:600, womenLed:false, note:'maize, tomatoes, onion, sweet potatoes, banana, eembe (berchemia discolor)' },
+    { name:'Mangundu Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.89305, lng:15.06647,
+      chains:['NTFPs (wild products)'], status:'Consolidated', members:66, womenLed:true, note:'Production of marula kernel and melon seeds' },
+    { name:'Mwaala gwaNashilongo Farmers Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-18.00003, lng:15.34385,
+      chains:['Livestock & beef'], status:'Consolidated', members:150, womenLed:false, note:'Selling of livestock (on-hoof) and meat, as well as crop fields produces' },
+    { name:'Ndeshimona Community Garden', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-18.00005, lng:15.34383,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:18, womenLed:false, note:'Horticultural production (tomatoes, spinach, butternut, bambala nuts, maize' },
+    { name:'Ngatuuane Farmers Union', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.4436, lng:14.0704,
+      chains:['Horticulture'], status:'Established', members:50, womenLed:false, note:'horticultural fresh produces, lucern' },
+    { name:'Northern Namibia Farmers Seed Growers Cooperative (NNFSGC)', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.75, lng:14.75,
+      chains:['Seeds & nurseries'], status:'Consolidated', members:198, womenLed:false, note:'Production, processing, packaging and selling of crop seeds' },
+    { name:'Nyeka yEpumba Farmers Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.3904, lng:14.5164,
+      chains:['Horticulture'], status:'Emerging', members:43, womenLed:false, note:'Horticultural produces and fruits' },
+    { name:'Olushandja Horticultural Association Producers', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.43714, lng:14.6356,
+      chains:['Horticulture'], status:'Consolidated', members:121, womenLed:false, note:'Horticulture production and selling of products to local markets' },
+    { name:'Omunyekatunga Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.68421, lng:14.90619,
+      chains:['NTFPs (wild products)'], status:'Established', members:50, womenLed:true, note:'Production of marula kernel and melon seeds' },
+    { name:'Omuwatusindanitha Farmers Association- Onesi Constituency', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.59039, lng:14.68348,
+      chains:['Mixed farming'], status:'Emerging', members:50, womenLed:false, note:'No' },
+    { name:'Oshiputu-Omahokwe Community Garden', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.46799, lng:14.83388,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:15, womenLed:false, note:'Production and sale of water melons, sweet potatoes, potatoes, groundnuts, tomatoes, maize, beans)' },
+    { name:'Otjiurunga Farmers Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.4436, lng:14.0704,
+      chains:['Livestock & beef'], status:'Emerging', members:437, womenLed:false, note:'Sale of livestock and related prodcts' },
+    { name:'Ruhakana Farmers Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.4146, lng:14.43602,
+      chains:['Horticulture','Grains & legumes'], status:'Consolidated', members:125, womenLed:false, note:'Crops production (tomatoes, onios, carrots, cabbages, beetroots, water melons, maize, sweet potatoes, butternuts, groundnuts, potatoes, papayas, man…' },
+    { name:'Tunetu Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.67916, lng:14.90713,
+      chains:['NTFPs (wild products)'], status:'Consolidated', members:62, womenLed:true, note:'Production of marula kernel and melon seeds' },
+    { name:'Uukolonkadhi Community Forestry', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.5902, lng:14.68385,
+      chains:['Forestry & woodfuel'], status:'Consolidated', members:41167, womenLed:false, note:'Policy advocacy on natural resources management, share information on illegal harvest of natural resources and fire management' },
+    { name:'Uukolonkadhi conservancy', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.4392, lng:14.3633,
+      chains:['Eco-tourism & wildlife','Horticulture'], status:'Consolidated', members:3700, womenLed:false, note:'Horticultural products (onions, tomatoes, green peppers, cabbage)' },
+    { name:'Uukualuudhi Conservancy', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-17.4512, lng:14.3801,
+      chains:['Eco-tourism & wildlife','Livestock & beef'], status:'Consolidated', members:2830, womenLed:false, note:'Hospitality (lodge), trophy hunting, game meat sale' },
+    { name:'Uuvudhiya Farmers Association', country:'Namibia', locality:'Kunene-Cuvelai (Kunene, Omusati and Oshana)', lat:-18.03361, lng:15.37301,
+      chains:['Livestock & beef','Grains & legumes'], status:'Established', members:87, womenLed:false, note:'Livestock related products, Crops produces (pearl millet, maize, cowpeas, melon, pumpkin, sorghurm)' },
+    { name:'Igombe Sagara Community Wildlife Management Area', country:'Tanzania', locality:'Kaliua District', lat:-5.05309, lng:31.76587,
+      chains:['Honey & beekeeping','Eco-tourism & wildlife','Forestry & woodfuel'], status:'Consolidated', members:15, womenLed:false, note:'Beekeeping/honey production; Wildlife management' },
+    { name:'Mizinga Nsabo', country:'Tanzania', locality:'Kaliua District', lat:-5.42973, lng:31.57865,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Seeds & nurseries'], status:'Established', members:33, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Muungano Agricultural Marketing Cooperative Society', country:'Tanzania', locality:'Kaliua District', lat:-6.73273, lng:31.98866,
+      chains:['Seeds & nurseries','Forestry & woodfuel','Livestock & beef'], status:'Established', members:127, womenLed:false, note:'Seedlings production for; tree-planting/restoration' },
+    { name:'Nyuki ni Mali', country:'Tanzania', locality:'Kaliua District', lat:-5.42973, lng:31.57865,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Consolidated', members:20, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Nyuki ni Mkombozi', country:'Tanzania', locality:'Kaliua District', lat:-5.42914, lng:31.57872,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Established', members:20, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Sega ni Dhahabu', country:'Tanzania', locality:'Kaliua District', lat:-5.42973, lng:31.57865,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Established', members:20, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Square Youths', country:'Tanzania', locality:'Kaliua District', lat:-5.12973, lng:31.34447,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Established', members:5, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Tunza Mazingira Nyuki Aishi', country:'Tanzania', locality:'Kaliua District', lat:-5.49712, lng:31.51339,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Emerging', members:250, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Wazee Wafuga Nyuki Kijiji Cha ZugiMlole', country:'Tanzania', locality:'Kaliua District', lat:-5.38148, lng:31.62605,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Established', members:15, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Harakati', country:'Tanzania', locality:'Mlele District', lat:-5.63715, lng:30.35977,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Livestock & beef'], status:'Established', members:10, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Imala Upina', country:'Tanzania', locality:'Mlele District', lat:-6.4019, lng:31.7871,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Seeds & nurseries'], status:'Established', members:10, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Kumila Nsao na Kutuga Nsao', country:'Tanzania', locality:'Mlele District', lat:-6.39797, lng:31.2526,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Established', members:30, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Mkwajuni', country:'Tanzania', locality:'Mlele District', lat:-6.79817, lng:32.13037,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Established', members:11, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Mlele Honey Processing Center (Run by two Youth FFPOs: Kilimo Nyuki & Nyuki ni Uhai )', country:'Tanzania', locality:'Mlele District', lat:-6.7317, lng:32.05972,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Livestock & beef'], status:'Established', members:30, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Mwana Mkwavi', country:'Tanzania', locality:'Mlele District', lat:-6.65657, lng:32.00059,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Livestock & beef'], status:'Established', members:12, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Tokomeza Umasikini', country:'Tanzania', locality:'Mlele District', lat:-6.4019, lng:31.7871,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Livestock & beef'], status:'Established', members:632, womenLed:false, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Umoja ni Nguvu', country:'Tanzania', locality:'Mlele District', lat:-6.8279, lng:32.04296,
+      chains:['Honey & beekeeping','Livestock & beef'], status:'Established', members:21, womenLed:true, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Utende Agricultural Marketing Cooperative Society', country:'Tanzania', locality:'Mlele District', lat:-6.72342, lng:31.34447,
+      chains:['Seeds & nurseries','Forestry & woodfuel','Livestock & beef'], status:'Established', members:176, womenLed:false, note:'Seedlings production for; tree-planting/restoration' },
+    { name:'Uyoga Mgombe', country:'Tanzania', locality:'Mlele District', lat:-6.65657, lng:32.00059,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Livestock & beef'], status:'Established', members:24, womenLed:true, note:'Beekeeping/honey production; Subsistence agriculture' },
+    { name:'Changamoto Group', country:'Tanzania', locality:'Sikonge District', lat:-5.84465, lng:32.95533,
+      chains:['Honey & beekeeping'], status:'Established', members:10, womenLed:true, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'Chapakazi', country:'Tanzania', locality:'Sikonge District', lat:-5.80201, lng:32.88786,
+      chains:['Honey & beekeeping'], status:'Established', members:10, womenLed:true, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'Kiluva Group - Mibono mpya village, Sikonge', country:'Tanzania', locality:'Sikonge District', lat:-5.84465, lng:32.95533,
+      chains:['Honey & beekeeping'], status:'Established', members:10, womenLed:false, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'Kiluva group-Kipanga Village, Sikonge', country:'Tanzania', locality:'Sikonge District', lat:-5.8162, lng:33.4655,
+      chains:['Honey & beekeeping'], status:'Emerging', members:15, womenLed:true, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'Kipanga Beekeepers Group', country:'Tanzania', locality:'Sikonge District', lat:-5.8162, lng:33.4655,
+      chains:['Honey & beekeeping','Grains & legumes'], status:'Established', members:16, womenLed:true, note:'Beekeeping/honey production + commercial rice cultivation; Subsistence and commercial agriculture' },
+    { name:'KIWANU (Kijiji cha wafugaji nyuki Ugunda)', country:'Tanzania', locality:'Sikonge District', lat:-5.76988, lng:32.73171,
+      chains:['Honey & beekeeping'], status:'Emerging', members:20, womenLed:true, note:'Beekeeping/honey and wax production; Subsistence and commercial agriculture' },
+    { name:'Mapambano', country:'Tanzania', locality:'Sikonge District', lat:-5.80201, lng:32.88786,
+      chains:['Honey & beekeeping'], status:'Established', members:10, womenLed:true, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'Mapigano Group', country:'Tanzania', locality:'Sikonge District', lat:-5.84465, lng:32.95533,
+      chains:['Honey & beekeeping'], status:'Established', members:10, womenLed:false, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'Miyombo Group - Sikonge', country:'Tanzania', locality:'Sikonge District', lat:-5.6683, lng:32.5218,
+      chains:['Honey & beekeeping','NTFPs (wild products)'], status:'Consolidated', members:57, womenLed:true, note:'Beekeeping/honey and wax + mushroom production + wildfruit and medicinal foods collection and processing; Subsistence and commercial agriculture' },
+    { name:'Mkombozi', country:'Tanzania', locality:'Sikonge District', lat:-5.76988, lng:32.73171,
+      chains:['Honey & beekeeping','NTFPs (wild products)'], status:'Established', members:30, womenLed:true, note:'Beekeeping/honey and wax + mushroom production; Subsistence and commercial agriculture' },
+    { name:'Mshikamano-Sikonge', country:'Tanzania', locality:'Sikonge District', lat:-5.76988, lng:32.73171,
+      chains:['Honey & beekeeping','NTFPs (wild products)'], status:'Established', members:20, womenLed:true, note:'Beekeeping/honey and wax + mushroom production; Subsistence and commercial agriculture' },
+    { name:'Nguvu Kazi', country:'Tanzania', locality:'Sikonge District', lat:-5.84839, lng:32.91464,
+      chains:['Honey & beekeeping'], status:'Established', members:10, womenLed:false, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'Nta Group', country:'Tanzania', locality:'Sikonge District', lat:-5.84839, lng:32.91464,
+      chains:['Honey & beekeeping'], status:'Established', members:10, womenLed:true, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'NYH/B/G (Nyahua Beekeepers Group)', country:'Tanzania', locality:'Sikonge District', lat:-5.33333, lng:32.9511,
+      chains:['Honey & beekeeping','NTFPs (wild products)'], status:'Consolidated', members:8, womenLed:true, note:'Beekeeping/honey production + medicinal diets/alternative medicine; Subsistence and commercial agriculture' },
+    { name:'Nyuki Family Group', country:'Tanzania', locality:'Sikonge District', lat:-5.8162, lng:33.4655,
+      chains:['Honey & beekeeping'], status:'Established', members:10, womenLed:false, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'SINYUSA (Sikonge, Nyuki, Samaki)', country:'Tanzania', locality:'Sikonge District', lat:-5.49121, lng:32.67782,
+      chains:['Honey & beekeeping','Aquaculture'], status:'Established', members:50, womenLed:true, note:'Beekeeping/honey production + Fishing (fish ponds); Subsistence and commercial agriculture' },
+    { name:'Ulelema', country:'Tanzania', locality:'Sikonge District', lat:-5.78333, lng:32.73333,
+      chains:['Honey & beekeeping','NTFPs (wild products)'], status:'Established', members:30, womenLed:true, note:'Beekeeping/honey and wax + mushroom production; Subsistence and commercial agriculture' },
+    { name:'Umoja ni Nguvu', country:'Tanzania', locality:'Sikonge District', lat:-5.8162, lng:33.4655,
+      chains:['Honey & beekeeping'], status:'Established', members:15, womenLed:true, note:'Beekeeping/honey production; Subsistence and commercial agriculture' },
+    { name:'UWANI (Umoja wa Wafugaji Nyuki Ipole)', country:'Tanzania', locality:'Sikonge District', lat:-5.78333, lng:32.73333,
+      chains:['Honey & beekeeping'], status:'Emerging', members:17, womenLed:true, note:'Beekeeping/honey and wax production; Subsistence and commercial agriculture' },
+    { name:'Amka', country:'Tanzania', locality:'Urambo District', lat:-5.175, lng:32.1315,
+      chains:['Honey & beekeeping','Seeds & nurseries'], status:'Established', members:6, womenLed:true, note:'Beekeeping/honey production + tree-planting & tree seedlings; Subsistence and commercial agriculture' },
+    { name:'CCUN (Chama Cha Ufugaji Nyuki Urambo)', country:'Tanzania', locality:'Urambo District', lat:-5.17501, lng:32.13148,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Consolidated', members:60, womenLed:true, note:'Beekeeping, filtering & packaging for sale + bees wax products +; Managing woodlot +treeplanting' },
+    { name:'Ilela Group', country:'Tanzania', locality:'Urambo District', lat:-5.20607, lng:32.08354,
+      chains:['Honey & beekeeping'], status:'Established', members:15, womenLed:true, note:'Beekeeping, just started - not yet harvested; Subsistence and commercial agriculture' },
+    { name:'Ituka', country:'Tanzania', locality:'Urambo District', lat:-5.0715, lng:32.1139,
+      chains:['Honey & beekeeping','Forestry & woodfuel'], status:'Consolidated', members:20, womenLed:true, note:'Beekeeping, filtering & packaging for sale + beeswax products; +' },
+    { name:'Lunyeta Miyombo Group', country:'Tanzania', locality:'Urambo District', lat:-5.3639, lng:32.3816,
+      chains:['Honey & beekeeping'], status:'Established', members:20, womenLed:true, note:'Beekeeping, honey; selling' },
+    { name:'Miyombo Nsabo', country:'Tanzania', locality:'Urambo District', lat:-5.20607, lng:32.08354,
+      chains:['Honey & beekeeping'], status:'Established', members:6, womenLed:true, note:'Beekeeping, honey; selling + beeswax products (candle & oil)' },
+    { name:'Mkombozi - Urambo', country:'Tanzania', locality:'Urambo District', lat:-5.1842, lng:32.08343,
+      chains:['Honey & beekeeping'], status:'Established', members:20, womenLed:true, note:'Beekeeping, honey; selling' },
+    { name:'Mshikamano-Urambo', country:'Tanzania', locality:'Urambo District', lat:-5.0667, lng:31.9297,
+      chains:['Honey & beekeeping','Aquaculture','Forestry & woodfuel'], status:'Established', members:9, womenLed:true, note:'Beekeeping, filtering & packaging for sale +; tree planting/woodlot + fish dam' },
+    { name:'Mwanzo Mgumu', country:'Tanzania', locality:'Urambo District', lat:-5.30538, lng:32.40728,
+      chains:['Honey & beekeeping'], status:'Consolidated', members:13, womenLed:false, note:'Beekeeping, honey packaging for sale; Subsistence and commercial agriculture' },
+    { name:'Umoja Nyuki Group', country:'Tanzania', locality:'Urambo District', lat:-5.1122, lng:32.074,
+      chains:['Honey & beekeeping','Oilseeds & processing'], status:'Consolidated', members:12, womenLed:true, note:'Beekeeping, filtering & packaging for sale +production of beeswax products (candles and cosmetic oil); Subsistence and commercial agriculture' },
+    { name:'Ushirika Group', country:'Tanzania', locality:'Urambo District', lat:-5.3849, lng:31.9395,
+      chains:['Honey & beekeeping','Poultry'], status:'Consolidated', members:5, womenLed:true, note:'Beekeeping/honey production + beeswax production +chicken feed production; Subsistence and commercial agriculture' },
+    { name:'UV CCM Urambo Beekeeprs (Umoja wa Vijana Chama Cha Mapinduz Urambo Beekeepers)', country:'Tanzania', locality:'Urambo District', lat:-5.0659, lng:32.0471,
+      chains:['Honey & beekeeping','Oilseeds & processing'], status:'Emerging', members:7, womenLed:true, note:'Beekeeping, processing & packaging for sale +; sunflower planting' },
+    { name:'Ziwa la mama', country:'Tanzania', locality:'Urambo District', lat:-5.17992, lng:31.89449,
+      chains:['Honey & beekeeping','Seeds & nurseries'], status:'Established', members:12, womenLed:false, note:'Beekeeping/honey production + tree-planting & tree seedlings; Subsistence and commercial agriculture' },
+    { name:'Hazvidi Hope Group', country:'Zimbabwe', locality:'Runde-Chivi', lat:-20.3164, lng:30.51945,
+      chains:['NTFPs (wild products)','Oilseeds & processing'], status:'Established', members:68, womenLed:true, note:'NTFPs - resurrection bush, sourplum & marula nuts oil processing (Kaza Natural Oils)' },
+    { name:'Kudzanai', country:'Zimbabwe', locality:'Runde-Chivi', lat:-20.8099, lng:30.78832,
+      chains:['NTFPs (wild products)','Poultry','Grains & legumes'], status:'Established', members:17, womenLed:true, note:'NTFPs, Poultry, Small grains & Groundnuts' },
+    { name:'Kuguta Kushanda', country:'Zimbabwe', locality:'Runde-Chivi', lat:-20.8376, lng:30.73578,
+      chains:['NTFPs (wild products)'], status:'Emerging', members:18, womenLed:true, note:'NTFPs - marula nuts, sourplum, resurrection bush & zumbani herbal tea' },
+    { name:'Marula Zimbabwe', country:'Zimbabwe', locality:'Runde-Chivi', lat:-20.3089, lng:30.52017,
+      chains:['NTFPs (wild products)','Oilseeds & processing'], status:'Consolidated', members:35, womenLed:true, note:'NTFPs - resurrection bush, zumbani herbal tea, sourplum, marula nuts butter, wax & oil processing' },
+    { name:'Mavambo Ebudiriro Citrus Group', country:'Zimbabwe', locality:'Runde-Chivi', lat:-20.3048, lng:30.50182,
+      chains:['Aquaculture','Seeds & nurseries','Poultry'], status:'Established', members:196, womenLed:false, note:'Forestry, Poultry & Aquaculture (nursery, demo plot, orchard, poultry & aquaculture)' },
+    { name:'Chebvute Cooperative', country:'Zimbabwe', locality:'Runde-Masvingo', lat:-20.5031, lng:30.6748,
+      chains:['Aquaculture','Poultry','Horticulture'], status:'Established', members:92, womenLed:false, note:'Horticulture, Forestry, Aquaculture, Poultry & Small Ruminants (production & processing, orchard, aquaculture, poultry, incubator & small ruminants)' },
+    { name:'Mukosi Seed and Nursery', country:'Zimbabwe', locality:'Runde-Masvingo', lat:-20.4827, lng:30.61576,
+      chains:['Seeds & nurseries','Forestry & woodfuel','Grains & legumes'], status:'Emerging', members:394, womenLed:true, note:'Forestry & Small Grains - land restoration, nursery, seed bank (small grains) & orchard' },
+    { name:'Shashe Small Farmer Organisation', country:'Zimbabwe', locality:'Runde-Masvingo', lat:-19.9831, lng:30.5576,
+      chains:['Aquaculture','Poultry','Oilseeds & processing'], status:'Consolidated', members:500, womenLed:false, note:'Horticulture, Poultry, Aquaculture, Small Grains, Groundnuts (agroecology, horticulture, poultry , aquaculture, small grains, groundnuts & processin…' },
+    { name:'Kuvimbika Kushanda Poultry Group', country:'Zimbabwe', locality:'Runde-Shurugwi', lat:-19.7233, lng:30.20312,
+      chains:['Poultry'], status:'Emerging', members:10, womenLed:true, note:'Poultry (production & marketing)' },
+    { name:'Living Livestock Smart Village', country:'Zimbabwe', locality:'Runde-Shurugwi', lat:-19.6875, lng:30.03059,
+      chains:['Poultry','Horticulture','Livestock & beef'], status:'Established', members:57, womenLed:true, note:'Poultry, Beef and Horticulture' },
+    { name:'Tongogara Dairy Cooperative', country:'Zimbabwe', locality:'Runde-Shurugwi', lat:-19.72253, lng:30.21033,
+      chains:['Dairy'], status:'Consolidated', members:30, womenLed:true, note:'Dairy (production, processing & marketing - selling of Fresh milk, Amasi & Yoghurt)' },
+    { name:'Tongogara Oil Processors', country:'Zimbabwe', locality:'Runde-Shurugwi', lat:-19.72253, lng:30.21033,
+      chains:['Oilseeds & processing','Grains & legumes'], status:'Established', members:23, womenLed:true, note:'Groundnut (production, peanut butter & oil processing)' },
+    { name:'Zama Zama Group', country:'Zimbabwe', locality:'Runde-Shurugwi', lat:-19.6702, lng:30.0006,
+      chains:['NTFPs (wild products)','Seeds & nurseries','Bakery'], status:'Established', members:100, womenLed:true, note:'Horticulture & NTFPs (nutrition garden, ISAL, nursery, value addition, dried mangoes, dried guavas; Zumbani' },
+    { name:'Fushai Cash Group', country:'Zimbabwe', locality:'Runde-Zaka', lat:-20.4086, lng:31.44901,
+      chains:['Savings & lending'], status:'Established', members:260, womenLed:true, note:'ISAL (ISAL, bulk purchase of agricultural inputs & sales)' },
+    { name:'Kubudirira', country:'Zimbabwe', locality:'Runde-Zaka', lat:-20.4755, lng:31.33718,
+      chains:['Horticulture'], status:'Emerging', members:56, womenLed:true, note:'Horticulture (nutrition garden, production & processing)' },
+    { name:'Vanyoro Community Group', country:'Zimbabwe', locality:'Runde-Zaka', lat:-20.4925, lng:31.3236,
+      chains:['Seeds & nurseries'], status:'Emerging', members:200, womenLed:true, note:'Forestry (nursery, community seed bank & demo plot)' },
+    { name:'First Class Group', country:'Zimbabwe', locality:'Save-Bikita', lat:-20.24131, lng:31.945,
+      chains:['Poultry','Bakery','Savings & lending'], status:'Emerging', members:15, womenLed:true, note:'ISAL, Poultry & Confectionery (ISAL, layer poultry & bakery)' },
+    { name:'Kufaranevhu Garden', country:'Zimbabwe', locality:'Save-Bikita', lat:-20.05656, lng:31.60781,
+      chains:['Horticulture'], status:'Established', members:67, womenLed:true, note:'Horticulture (cabbages, onions, rape, sugar loaf, butternuts, carrots, tomatoes)' },
+    { name:'Kumboedza ISALs Cluster', country:'Zimbabwe', locality:'Save-Bikita', lat:-19.95732, lng:32.01052,
+      chains:['Horticulture','Savings & lending'], status:'Established', members:263, womenLed:true, note:'ISALs & Horticulture (ISALs & nutrition garden)' },
+    { name:'Tabudirira Group', country:'Zimbabwe', locality:'Save-Bikita', lat:-20.08513, lng:31.9896,
+      chains:['Honey & beekeeping','NTFPs (wild products)','Horticulture'], status:'Established', members:88, womenLed:false, note:'Horticulture & NFTPs (nutrition garden, bee keeping & Marula nuts)' },
+    { name:'Buhera Livestock Association', country:'Zimbabwe', locality:'Save-Buhera', lat:-19.71313, lng:32.05542,
+      chains:['Livestock & beef'], status:'Established', members:71, womenLed:true, note:'Beef & Small Ruminants (buy & sell livestock, sell stockfeeds, pen fattening, promoting fodder production, feed formulation, breed improvement & ani…' },
+    { name:'Chanyada Cooperative', country:'Zimbabwe', locality:'Save-Buhera', lat:-19.58437, lng:31.96113,
+      chains:['Grains & legumes'], status:'Established', members:12, womenLed:true, note:'Groundnut (production, bulking, aggregation, processing, packaging, labelling, marketing & toll processing)' },
+    { name:'Nehumambi Young Farmers Club', country:'Zimbabwe', locality:'Save-Buhera', lat:-19.75528, lng:32.1174,
+      chains:['Aquaculture'], status:'Emerging', members:849, womenLed:false, note:'Aquaculture (fish farming)' },
+    { name:'Boa Mix', country:'Zimbabwe', locality:'Save-Chimanimani', lat:-19.8658, lng:32.40352,
+      chains:['NTFPs (wild products)'], status:'Consolidated', members:5, womenLed:false, note:'NTFPs - baobab processing into powdered pulp, cool drinks & bio oils.' },
+    { name:'Chimani Delights', country:'Zimbabwe', locality:'Save-Chimanimani', lat:-19.78472, lng:32.42339,
+      chains:['Honey & beekeeping','NTFPs (wild products)'], status:'Consolidated', members:1500, womenLed:false, note:'NTFPs - apiculture (processing & marketing of both raw & processed honey)' },
+    { name:'Tonhorai Irrigation Scheme Association', country:'Zimbabwe', locality:'Save-Chimanimani', lat:-19.93718, lng:32.37229,
+      chains:['Horticulture','Grains & legumes'], status:'Established', members:90, womenLed:true, note:'Wheat, Horticulture, Groundnuts & Small Grains (wheat & horticulture in winter, & maize, groundnuts & small grains in summer)' },
+    { name:'Chipinge Macadamia Association', country:'Zimbabwe', locality:'Save-Chipinge', lat:-20.1936, lng:32.61778,
+      chains:['Macadamia'], status:'Consolidated', members:600, womenLed:false, note:'Macademia (production & marketing, agroforestry)' },
+    { name:'Musikavanhu A Growers & Marketers Trust', country:'Zimbabwe', locality:'Save-Chipinge', lat:-20.25297, lng:32.18231,
+      chains:['Oilseeds & processing','Horticulture'], status:'Established', members:312, womenLed:false, note:'Horticulture & Oilseeds (production & marketing - chilli, paprika, green millies, tomato, onion, leafy vegetables, wheat & seed sunflower).' },
+    { name:'Rusitu Small Scale Dairy Cooperative', country:'Zimbabwe', locality:'Save-Chipinge', lat:-20.1936, lng:32.61778,
+      chains:['Dairy'], status:'Consolidated', members:116, womenLed:true, note:'Dairy (production & marketing)' }
+  ];
+
+  /* value-chain colours (page palette); unknown chains → grey */
+  var CHAIN_META = {
+    'Honey & beekeeping': '#E8C13C',
+    'Horticulture': '#68A260',
+    'NTFPs (wild products)': '#33B193',
+    'Forestry & woodfuel': '#356046',
+    'Grains & legumes': '#C9A227',
+    'Livestock & beef': '#B4543F',
+    'Poultry': '#F8B133',
+    'Seeds & nurseries': '#477E59',
+    'Aquaculture': '#3E7CB1',
+    'Eco-tourism & wildlife': '#2E5E68',
+    'Oilseeds & processing': '#CF715D',
+    'Crafts & baskets': '#9A7327',
+    'Savings & lending': '#7E6B8F',
+    'Bakery': '#D98E73',
+    'Piggery': '#E3A293',
+    'Mopane worms': '#8C5A2B',
+    'Dairy': '#6FA8C7',
+    'Macadamia': '#6B8E23',
+    'Mixed farming': '#9A8C7E'
+  };
+  var DEFAULT_COLOR = '#244C54';
+  var STATUS_ORDER = ['Emerging','Established','Consolidated'];
+
+  function chainColor(c){ return CHAIN_META[c] || DEFAULT_COLOR; }
+  function primaryChain(f){ return (f.chains && f.chains[0]) || 'Other'; }
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function uniq(arr){ var seen={},out=[]; arr.forEach(function(x){ if(x!=null && !seen[x]){ seen[x]=1; out.push(x); } }); return out; }
+  function $(id){ return document.getElementById(id); }
+
+  var state = { countries:new Set(), chains:new Set(), statuses:new Set(), women:false, q:'' };
+
+  /* ── map ── */
+  mapEl.innerHTML = '';
+  var map = L.map(mapEl, { scrollWheelZoom:false, zoomControl:true, minZoom:3, maxZoom:12 })
+             .setView([-13, 26], 4);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    subdomains:'abcd', maxZoom:19,
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+  }).addTo(map);
+  /* let the page scroll over the map until it is clicked/focused */
+  map.on('focus', function(){ map.scrollWheelZoom.enable(); });
+  map.on('blur',  function(){ map.scrollWheelZoom.disable(); });
+
+  var markerLayer = L.layerGroup().addTo(map);
+
+  function radiusFor(m){ m = m||0; return Math.max(6, Math.min(20, 5 + Math.sqrt(m)/2.6)); }
+
+  function popupHTML(f){
+    return '<div class="pp-name">'+esc(f.name)+'</div>'+
+      '<div class="pp-meta">'+esc(f.country)+(f.locality?' &middot; '+esc(f.locality):'')+' &middot; '+esc(f.status)+'</div>'+
+      '<div class="pp-tags">'+f.chains.map(function(c){ return '<span class="pp-tag" style="background:'+chainColor(c)+'">'+esc(c)+'</span>'; }).join('')+'</div>'+
+      (f.members?'<div class="pp-row"><b>'+f.members.toLocaleString()+'</b> members</div>':'')+
+      (f.note?'<div class="pp-row">'+esc(f.note)+'</div>':'')+
+      (f.womenLed?'<div class="pp-women">&#9792; Women-led</div>':'')+
+      (f.link?'<div class="pp-row" style="margin-top:.45rem"><a href="'+esc(f.link)+'">Open profile &rarr;</a></div>':'');
+  }
+
+  function passes(f){
+    if(state.countries.size && !state.countries.has(f.country)) return false;
+    if(state.chains.size && !f.chains.some(function(c){ return state.chains.has(c); })) return false;
+    if(state.statuses.size && !state.statuses.has(f.status)) return false;
+    if(state.women && !f.womenLed) return false;
+    if(state.q){
+      var hay = (f.name+' '+f.country+' '+(f.locality||'')+' '+f.chains.join(' ')).toLowerCase();
+      if(hay.indexOf(state.q) < 0) return false;
+    }
+    return true;
+  }
+
+  function renderStats(shown){
+    var members = shown.reduce(function(s,f){ return s+(f.members||0); }, 0);
+    var countries = uniq(shown.map(function(f){ return f.country; })).length;
+    var women = shown.filter(function(f){ return f.womenLed; }).length;
+    $('ffpoStats').innerHTML =
+      '<div class="ffpo-stat"><div class="v">'+shown.length+'</div><div class="l">FFPOs shown</div></div>'+
+      '<div class="ffpo-stat"><div class="v">'+members.toLocaleString()+'</div><div class="l">Members</div></div>'+
+      '<div class="ffpo-stat"><div class="v">'+countries+'</div><div class="l">Countries</div></div>'+
+      '<div class="ffpo-stat"><div class="v">'+women+'</div><div class="l">Women-led</div></div>';
+    $('ffpoCount').innerHTML = 'Showing <b>'+shown.length+'</b> of <b>'+FFPOS.length+'</b> FFPOs';
+  }
+
+  function render(fit){
+    var shown = FFPOS.filter(passes);
+    markerLayer.clearLayers();
+    var pts = [];
+    shown.forEach(function(f){
+      var col = chainColor(primaryChain(f));
+      var m = L.circleMarker([f.lat, f.lng], {
+        radius: radiusFor(f.members),
+        fillColor: col, fillOpacity:.85,
+        color: f.womenLed ? '#241F1B' : col,
+        weight: f.womenLed ? 2.6 : 1.4
+      });
+      m.bindTooltip(f.name, { direction:'top', offset:[0,-4] });
+      m.bindPopup(popupHTML(f));
+      markerLayer.addLayer(m);
+      pts.push([f.lat, f.lng]);
+    });
+    renderStats(shown);
+    if(fit && pts.length){ map.fitBounds(pts, { padding:[40,40], maxZoom:7 }); }
+  }
+
+  /* ── filter chips ── */
+  function buildChips(containerId, values, set, colorFn){
+    var box = $(containerId);
+    box.innerHTML = values.map(function(v){
+      var dot = colorFn ? '<span class="dot" style="background:'+colorFn(v)+'"></span>' : '';
+      return '<button type="button" class="fchip" data-v="'+esc(v)+'">'+dot+esc(v)+'</button>';
+    }).join('');
+    box.addEventListener('click', function(e){
+      var b = e.target.closest('.fchip'); if(!b) return;
+      var v = b.getAttribute('data-v');
+      if(set.has(v)){ set.delete(v); b.classList.remove('is-on'); }
+      else { set.add(v); b.classList.add('is-on'); }
+      render(true);
+    });
+  }
+
+  var countries = uniq(FFPOS.map(function(f){ return f.country; })).sort();
+  var chains    = uniq(FFPOS.reduce(function(a,f){ return a.concat(f.chains); }, [])).sort();
+  var statuses  = STATUS_ORDER.filter(function(s){ return FFPOS.some(function(f){ return f.status===s; }); });
+
+  buildChips('ffpoCountries', countries, state.countries, null);
+  buildChips('ffpoChains',    chains,    state.chains,    chainColor);
+  buildChips('ffpoStatuses',  statuses,  state.statuses,  null);
+
+  $('ffpoWomen').addEventListener('click', function(){
+    state.women = !state.women;
+    this.classList.toggle('is-on', state.women);
+    render(true);
+  });
+  $('ffpoSearch').addEventListener('input', function(){ state.q = this.value.trim().toLowerCase(); render(false); });
+  $('ffpoReset').addEventListener('click', function(){
+    state.countries.clear(); state.chains.clear(); state.statuses.clear();
+    state.women = false; state.q = '';
+    $('ffpoSearch').value = '';
+    document.querySelectorAll('#ffpos .fchip.is-on').forEach(function(b){ b.classList.remove('is-on'); });
+    render(true);
+  });
+
+  /* ── legend ── */
+  $('ffpoLegend').innerHTML =
+    chains.map(function(c){ return '<span class="lg"><span class="sw" style="background:'+chainColor(c)+'"></span>'+esc(c)+'</span>'; }).join('')+
+    '<span class="lg"><span class="sw women"></span>Women-led (bold outline)</span>'+
+    '<span class="lg" style="color:var(--ink-3)">Marker size &asymp; membership</span>';
+
+  /* ── notice ── */
+  if(DATA_IS_SAMPLE){
+    $('ffpoNote').innerHTML = '<strong>Sample data.</strong> These FFPO points are illustrative placeholders across the miombo&ndash;mopane countries, shown so the map and filters are live. Replace the <code>FFPOS</code> array in this page’s source with the Programme’s real dataset (schema documented above the array), then set <code>DATA_IS_SAMPLE = false</code>.';
+  } else {
+    $('ffpoNote').innerHTML = 'Source: the 2025 DSL-IP FFPO assessment (Botswana, Malawi, Namibia, Tanzania &amp; Zimbabwe). Value chain, business stage and women-led flags are derived from the assessment; positions are indicative (markers sit at each organization’s home locality). A further 8 surveyed FFPOs without coordinates are not shown.';
+  }
+
+  render(true);
+  /* Leaflet needs a size recalc if the section was laid out before tiles loaded */
+  setTimeout(function(){ map.invalidateSize(); render(true); }, 200);
+})();
+</script>
+  <script src="drip-i18n.js"></script>
+</body>
+</html>
