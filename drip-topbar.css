@@ -2,43 +2,43 @@
    DFSA – shared top banner (canonical)
    ----------------------------------------------------------------------------
    ONE source of truth for the platform banner. Linked LAST in <head> on every
-   content page so it wins over any older inline / dfsa-manual.css copy.
-   Markup is generated identically on every page (see the .dfsa-topbar block):
+   content page so it wins over any older inline / drip-manual.css copy.
+   Markup is generated identically on every page (see the .drip-topbar block):
    brand · Home · About · Map · Library · MARVEL · Water · Transparency · CTA,
    each link carrying an inline-SVG icon (no external icon library required).
    ============================================================================ */
-.dfsa-topbar{ position:sticky; top:0; z-index:9999; display:flex; align-items:center; justify-content:space-between;
+.drip-topbar{ position:sticky; top:0; z-index:9999; display:flex; align-items:center; justify-content:space-between;
   gap:16px; flex-wrap:wrap; background:#6E3B2C; border-bottom:1px solid rgba(245,242,232,.16); padding:11px 24px;
   font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; -webkit-font-smoothing:antialiased; }
-.dfsa-topbar *{ box-sizing:border-box; }
+.drip-topbar *{ box-sizing:border-box; }
 
 /* brand: DFSA wordmark (wordmark-only treatment, identical on every page). */
-.dfsa-topbar .db-brand{ display:flex; align-items:center; gap:11px; text-decoration:none; }
-.dfsa-topbar .db-dm{ font-weight:800; font-size:23px; letter-spacing:.04em; color:#F5F2E8; line-height:1; }
-.dfsa-topbar .db-dm span{ color:#F8B133; }
-.dfsa-topbar .db-sub{ font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:rgba(245,242,232,.6); }
+.drip-topbar .db-brand{ display:flex; align-items:center; gap:11px; text-decoration:none; }
+.drip-topbar .db-dm{ font-weight:800; font-size:23px; letter-spacing:.04em; color:#F5F2E8; line-height:1; }
+.drip-topbar .db-dm span{ color:#F8B133; }
+.drip-topbar .db-sub{ font-size:10.5px; letter-spacing:.07em; text-transform:uppercase; color:rgba(245,242,232,.6); }
 
 /* links */
-.dfsa-topbar .db-nav{ display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
-.dfsa-topbar .db-nav a{ display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500;
+.drip-topbar .db-nav{ display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+.drip-topbar .db-nav a{ display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:500;
   color:rgba(245,242,232,.86); text-decoration:none; padding:7px 11px; border-radius:999px; white-space:nowrap; transition:.14s; }
-.dfsa-topbar .db-nav a:hover{ background:rgba(245,242,232,.12); color:#fff; }
-.dfsa-topbar .db-nav a.db-home{ background:rgba(245,242,232,.12); color:#fff; }
-.dfsa-topbar .db-nav a.db-cta{ background:#F8B133; color:#3a2408; font-weight:600; }
-.dfsa-topbar .db-nav a.db-cta:hover{ background:#ffc658; }
-.dfsa-topbar .db-nav a.is-active{ background:#33B193; color:#06231d; font-weight:600; }
+.drip-topbar .db-nav a:hover{ background:rgba(245,242,232,.12); color:#fff; }
+.drip-topbar .db-nav a.db-home{ background:rgba(245,242,232,.12); color:#fff; }
+.drip-topbar .db-nav a.db-cta{ background:#F8B133; color:#3a2408; font-weight:600; }
+.drip-topbar .db-nav a.db-cta:hover{ background:#ffc658; }
+.drip-topbar .db-nav a.is-active{ background:#33B193; color:#06231d; font-weight:600; }
 
 /* icons – stroke inherits link colour, so hover/active states carry through */
-.dfsa-topbar .db-ic{ width:15px; height:15px; flex:none; stroke:currentColor; }
+.drip-topbar .db-ic{ width:15px; height:15px; flex:none; stroke:currentColor; }
 
 /* language switcher — replaces the old CTA; present on every page */
-.dfsa-topbar .langsw{ display:inline-flex; align-items:center; gap:7px; margin-left:8px; }
-.dfsa-topbar .langsw-ic{ width:16px; height:16px; flex:none; stroke:rgba(245,242,232,.6); }
-.dfsa-topbar .flag{ width:25px; height:17px; padding:0; border:1px solid rgba(251,248,239,.45); border-radius:3px;
+.drip-topbar .langsw{ display:inline-flex; align-items:center; gap:7px; margin-left:8px; }
+.drip-topbar .langsw-ic{ width:16px; height:16px; flex:none; stroke:rgba(245,242,232,.6); }
+.drip-topbar .flag{ width:25px; height:17px; padding:0; border:1px solid rgba(251,248,239,.45); border-radius:3px;
   cursor:pointer; position:relative; overflow:hidden; opacity:.5; transition:opacity .15s ease, transform .15s ease, box-shadow .15s ease;
   background-size:cover; background-position:center; flex:none; }
-.dfsa-topbar .flag:hover{ opacity:1; transform:translateY(-1px); }
-.dfsa-topbar .flag.is-on{ opacity:1; border-color:#F8B133; box-shadow:0 0 0 2px rgba(248,177,51,.55); }
+.drip-topbar .flag:hover{ opacity:1; transform:translateY(-1px); }
+.drip-topbar .flag.is-on{ opacity:1; border-color:#F8B133; box-shadow:0 0 0 2px rgba(248,177,51,.55); }
 .flag-en{ background:
   linear-gradient(#C8102E,#C8102E) center/100% 30% no-repeat,
   linear-gradient(#C8102E,#C8102E) center/30% 100% no-repeat,
@@ -53,7 +53,7 @@
 .flag-zh::before{ content:'\2605'; position:absolute; left:3px; top:50%; transform:translateY(-50%); color:#FFDE00; font-size:8px; line-height:1; }
 .flag, .flag *{ font-family:inherit !important; }
 
-/* auto-translation notice modal — created by dfsa-i18n.js if the page lacks it */
+/* auto-translation notice modal — created by drip-i18n.js if the page lacks it */
 .trmodal{ position:fixed; inset:0; z-index:2400; display:none; align-items:center; justify-content:center; padding:24px;
   background:rgba(12,10,7,.6); backdrop-filter:blur(4px); font-family:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif; }
 .trmodal.show{ display:flex; }
@@ -72,10 +72,10 @@ html[dir="rtl"] .trx{ right:auto; left:15px; }
 .trx:hover{ color:#241F1B; }
 
 @media(max-width:780px){
-  .dfsa-topbar{ padding:9px 16px; }
-  .dfsa-topbar .db-sub{ display:none; }
-  .dfsa-topbar .db-nav a{ padding:6px 9px; font-size:12px; }
-  .dfsa-topbar .db-ic{ width:14px; height:14px; }
-  .dfsa-topbar .langsw-ic{ display:none; }
-  .dfsa-topbar .langsw{ margin-left:2px; }
+  .drip-topbar{ padding:9px 16px; }
+  .drip-topbar .db-sub{ display:none; }
+  .drip-topbar .db-nav a{ padding:6px 9px; font-size:12px; }
+  .drip-topbar .db-ic{ width:14px; height:14px; }
+  .drip-topbar .langsw-ic{ display:none; }
+  .drip-topbar .langsw{ margin-left:2px; }
 }

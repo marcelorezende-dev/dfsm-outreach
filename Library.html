@@ -20,21 +20,21 @@
   section{ padding:62px 0; border-top:1px solid var(--hairline); scroll-margin-top:66px; }
 
   /* ===== sticky nav banner ===== */
-  .dfsanav{ position:sticky; top:0; z-index:60; background:rgba(110,59,44,0.97); backdrop-filter:blur(10px);
+  .dripnav{ position:sticky; top:0; z-index:60; background:rgba(110,59,44,0.97); backdrop-filter:blur(10px);
     border-bottom:1px solid rgba(251,248,239,.14); }
-  .dfsanav .page{ display:flex; align-items:center; justify-content:space-between; gap:18px; height:62px; }
-  .dfsanav .brand{ display:flex; align-items:center; gap:11px; text-decoration:none; }
-  .dfsanav .brand .dm{ font-family:var(--font-display); font-weight:700; font-size:24px; letter-spacing:.03em; color:#F5F2E8; line-height:1; }
-  .dfsanav .brand .dm .dot{ color:var(--amber); }
-  .dfsanav .brand small{ font-family:var(--font-sans); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:rgba(245,242,232,.6); }
-  .dfsanav nav{ display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
-  .dfsanav nav a{ font-family:var(--font-sans); font-weight:500; font-size:13.5px; color:rgba(245,242,232,.86);
+  .dripnav .page{ display:flex; align-items:center; justify-content:space-between; gap:18px; height:62px; }
+  .dripnav .brand{ display:flex; align-items:center; gap:11px; text-decoration:none; }
+  .dripnav .brand .dm{ font-family:var(--font-display); font-weight:700; font-size:24px; letter-spacing:.03em; color:#F5F2E8; line-height:1; }
+  .dripnav .brand .dm .dot{ color:var(--amber); }
+  .dripnav .brand small{ font-family:var(--font-sans); font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:rgba(245,242,232,.6); }
+  .dripnav nav{ display:flex; align-items:center; gap:4px; flex-wrap:wrap; justify-content:flex-end; }
+  .dripnav nav a{ font-family:var(--font-sans); font-weight:500; font-size:13.5px; color:rgba(245,242,232,.86);
     text-decoration:none; padding:8px 13px; border-radius:var(--r-pill); transition:.14s; white-space:nowrap; }
-  .dfsanav nav a:hover{ background:rgba(251,248,239,.12); color:#fff; }
-  .dfsanav nav a.cta{ background:var(--amber); color:#3a2408; font-weight:600; }
-  .dfsanav nav a.cta:hover{ background:#ffc658; }
-  @media(max-width:880px){ .dfsanav .brand small{ display:none; } .dfsanav .page{ height:auto; padding-top:10px; padding-bottom:10px; flex-wrap:wrap; }
-    .dfsanav nav a{ padding:7px 10px; font-size:12.5px; } }
+  .dripnav nav a:hover{ background:rgba(251,248,239,.12); color:#fff; }
+  .dripnav nav a.cta{ background:var(--amber); color:#3a2408; font-weight:600; }
+  .dripnav nav a.cta:hover{ background:#ffc658; }
+  @media(max-width:880px){ .dripnav .brand small{ display:none; } .dripnav .page{ height:auto; padding-top:10px; padding-bottom:10px; flex-wrap:wrap; }
+    .dripnav nav a{ padding:7px 10px; font-size:12.5px; } }
 
   /* ===== become-a-partner ===== */
   .partner{ background:linear-gradient(160deg,#3f8f8a 0%,var(--forest) 48%,var(--forest-deep) 100%); color:var(--ink-on-dark);
@@ -387,7 +387,7 @@
   .flag, .flag *{ font-family:inherit !important; }
 </style>
   <link rel="icon" type="image/png" href="assets/globe.png">
-  <link rel="stylesheet" href="dfsa-topbar.css">
+  <link rel="stylesheet" href="drip-topbar.css">
 </head>
 <body>
 <template id="__bundler_thumbnail" data-bg-color="#477E59">
@@ -401,7 +401,7 @@
 
 
 <!-- ============ NAV BANNER ============ -->
-<div class="dfsa-topbar">
+<div class="drip-topbar">
   <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
   <div class="db-nav" role="navigation" aria-label="Primary">
     <a class="db-home" href="DFSA.html">⌂ Home</a>
@@ -608,7 +608,7 @@
     <div class="libgroup">
       <div class="lg-head"><i data-lucide="book-marked"></i><h3>DFSA Manual Series</h3><span class="ln"></span></div>
       <div class="cards">
-        <a class="lcard" href="DFSA Manual 01 - Caatinga Fodder.html">
+        <a class="lcard" href="DRIP Manual 01 - Caatinga Fodder.html">
           <span class="badge">No. 01</span>
           <span class="ic"><i data-lucide="leaf"></i></span>
           <div class="meta">2–3 pager &middot; Silvopastoral</div>
@@ -616,7 +616,7 @@
           <p>Thinning, coppicing and enriching the standing dry forest for fodder &ndash; without clearing it. The three golden rules, step by step.</p>
           <span class="open">Open the manual <i data-lucide="arrow-right"></i></span>
         </a>
-        <a class="lcard" href="DFSA Manual 02 - Caatinga Wood Energy.html">
+        <a class="lcard" href="DRIP Manual 02 - Caatinga Wood Energy.html">
           <span class="badge">No. 02</span>
           <span class="ic"><i data-lucide="flame"></i></span>
           <div class="meta">2–3 pager &middot; Forest energy</div>
@@ -624,7 +624,7 @@
           <p>Firewood and charcoal on a managed cutting cycle &ndash; legal, documented, and letting the Caatinga grow back.</p>
           <span class="open">Open the manual <i data-lucide="arrow-right"></i></span>
         </a>
-        <a class="lcard" href="DFSA Manual 03 - Caatinga Value Chains.html">
+        <a class="lcard" href="DRIP Manual 03 - Caatinga Value Chains.html">
           <span class="badge">No. 03</span>
           <span class="ic"><i data-lucide="shopping-basket"></i></span>
           <div class="meta">2–3 pager &middot; Value chains</div>
@@ -632,7 +632,7 @@
           <p>Sustainable, organic extractivism of carnaúba, licuri, caroá and umbu &ndash; making a standing forest pay.</p>
           <span class="open">Open the manual <i data-lucide="arrow-right"></i></span>
         </a>
-        <a class="lcard" href="DFSA Manual 01 - Annex - WOCAT SLM Technology.html">
+        <a class="lcard" href="DRIP Manual 01 - Annex - WOCAT SLM Technology.html">
           <span class="badge">WOCAT</span>
           <span class="ic"><i data-lucide="clipboard-list"></i></span>
           <div class="meta">Annex · Manual 01 · Technology</div>
@@ -640,7 +640,7 @@
           <p>The silvopastoral fodder technology documented in the WOCAT SLM Technologies questionnaire (2019) – the global standard format.</p>
           <span class="open">Open the annex <i data-lucide="arrow-right"></i></span>
         </a>
-        <a class="lcard" href="DFSA Manual 01 - Annex - WOCAT SLM Approach.html">
+        <a class="lcard" href="DRIP Manual 01 - Annex - WOCAT SLM Approach.html">
           <span class="badge">WOCAT</span>
           <span class="ic"><i data-lucide="users-round"></i></span>
           <div class="meta">Annex · Manual 01 · Approach</div>
@@ -648,7 +648,7 @@
           <p>The farmer-to-farmer extension Approach that delivers the technology – documented in the WOCAT SLM Approaches questionnaire.</p>
           <span class="open">Open the annex <i data-lucide="arrow-right"></i></span>
         </a>
-        <a class="lcard" href="DFSA Manual 02 - Annex - WOCAT SLM Technology.html">
+        <a class="lcard" href="DRIP Manual 02 - Annex - WOCAT SLM Technology.html">
           <span class="badge">WOCAT</span>
           <span class="ic"><i data-lucide="clipboard-list"></i></span>
           <div class="meta">Annex · Manual 02 · Technology</div>
@@ -656,7 +656,7 @@
           <p>Sustainable Caatinga forest management for fuelwood and charcoal on an approximately 15-year cutting cycle, in WOCAT format.</p>
           <span class="open">Open the annex <i data-lucide="arrow-right"></i></span>
         </a>
-        <a class="lcard" href="DFSA Manual 03 - Annex - WOCAT SLM Technology.html">
+        <a class="lcard" href="DRIP Manual 03 - Annex - WOCAT SLM Technology.html">
           <span class="badge">WOCAT</span>
           <span class="ic"><i data-lucide="clipboard-list"></i></span>
           <div class="meta">Annex · Manual 03 · Technology</div>
@@ -1303,13 +1303,13 @@
     'Caatinga Biome.html#management':'production',
     'resources/caatinga/Caatinga-Manejo-Pastoril-Sustentavel-Araujo-Filho-MMA.pdf':'production',
     'resources/caatinga/Boas-Praticas-Extrativismo-Sustentavel-Carnauba-MAPA.pdf':'production',
-    'DFSA Manual 01 - Caatinga Fodder.html':'production',
-    'DFSA Manual 02 - Caatinga Wood Energy.html':'production',
-    'DFSA Manual 03 - Caatinga Value Chains.html':'production',
-    'DFSA Manual 01 - Annex - WOCAT SLM Technology.html':'production',
-    'DFSA Manual 01 - Annex - WOCAT SLM Approach.html':'production',
-    'DFSA Manual 02 - Annex - WOCAT SLM Technology.html':'production',
-    'DFSA Manual 03 - Annex - WOCAT SLM Technology.html':'production',
+    'DRIP Manual 01 - Caatinga Fodder.html':'production',
+    'DRIP Manual 02 - Caatinga Wood Energy.html':'production',
+    'DRIP Manual 03 - Caatinga Value Chains.html':'production',
+    'DRIP Manual 01 - Annex - WOCAT SLM Technology.html':'production',
+    'DRIP Manual 01 - Annex - WOCAT SLM Approach.html':'production',
+    'DRIP Manual 02 - Annex - WOCAT SLM Technology.html':'production',
+    'DRIP Manual 03 - Annex - WOCAT SLM Technology.html':'production',
     'Caatinga SLM - Raleamento.html':'production',
     'Caatinga SLM - Rebaixamento.html':'production',
     'Caatinga SLM - Enriquecimento.html':'production',
@@ -1400,6 +1400,6 @@
   </div>
 </div>
 
-<script src="dfsa-i18n.js"></script>
+<script src="drip-i18n.js"></script>
 </body>
 </html>
