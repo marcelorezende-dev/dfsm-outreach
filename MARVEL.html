@@ -196,13 +196,13 @@ footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; 
 }
 </style>
 
-<link rel="stylesheet" href="drip-harmonize.css">
+<link rel="stylesheet" href="dfsa-harmonize.css">
   <link rel="icon" type="image/png" href="assets/globe.png">
-  <link rel="stylesheet" href="drip-topbar.css">
+  <link rel="stylesheet" href="dfsa-topbar.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 <body>
-<div class="drip-topbar">
+<div class="dfsa-topbar">
   <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
   <div class="db-nav" role="navigation" aria-label="Primary">
     <a class="db-home" href="DFSA.html">⌂ Home</a>
@@ -457,12 +457,12 @@ footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; 
  <p>A monitoring &amp; learning view of the Drylands Sustainable Landscapes Impact Programme · figures are programme targets and live catalogue counts · <a href="DFSA.html">back to DFSA</a></p>
 </footer>
 
-<script src="drip-archive.js"></script>
-<script src="drip-home.js"></script>
+<script src="dfsa-archive.js"></script>
+<script src="dfsa-home.js"></script>
 <script>
 (function(){
-  var A = (window.DRIP_ARCHIVE||[]).slice();
-  var META = window.DRIP_ARCHIVE_META||{types:{}};
+  var A = (window.DFSA_ARCHIVE||[]).slice();
+  var META = window.DFSA_ARCHIVE_META||{types:{}};
   var PILLAR = { coordination:'Coordination & Exchange', assessment:'Assessment & Evidence', production:'Integrated Management',
     gender:'Gender & Inclusion', monitoring:'Monitoring & Learning', knowledge:'Knowledge & Outreach', finance:'Finance & Governance' };
   /* per-category bar colours (page palette) */
@@ -482,7 +482,7 @@ footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; 
   set('kc-validated', validated); set('kc-pending', A.length-validated);
   var bp = A.filter(function(e){ return (e.tags||[]).some(function(t){ return /manual|1-pager|good practice|field guide/i.test(t); }); }).length;
   set('kpi-practices', bp);
-  set('bp-manuals', A.filter(function(e){ return /^manual-|drip-manual/.test(e.id); }).length);
+  set('bp-manuals', A.filter(function(e){ return /^manual-|dfsa-manual/.test(e.id); }).length);
   set('bp-slm', A.filter(function(e){ return /^slm-/.test(e.id); }).length);
 
   /* counts helper */
@@ -1153,6 +1153,6 @@ footer a{ color:#7FD3C0; text-decoration:none; } footer .foot-rule{ width:60px; 
   setTimeout(function(){ map.invalidateSize(); render(true); }, 200);
 })();
 </script>
-  <script src="drip-i18n.js"></script>
+  <script src="dfsa-i18n.js"></script>
 </body>
 </html>

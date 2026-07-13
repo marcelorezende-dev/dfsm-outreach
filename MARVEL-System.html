@@ -152,12 +152,12 @@ footer .big{ font-family:var(--display); font-size:1.4rem; color:#fff; letter-sp
  section{ padding:1.4rem; }
 }
 </style>
-<link rel="stylesheet" href="drip-harmonize.css">
+<link rel="stylesheet" href="dfsa-harmonize.css">
 <link rel="icon" type="image/png" href="assets/globe.png">
-<link rel="stylesheet" href="drip-topbar.css">
+<link rel="stylesheet" href="dfsa-topbar.css">
 </head>
 <body>
-<div class="drip-topbar">
+<div class="dfsa-topbar">
   <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
   <div class="db-nav" role="navigation" aria-label="Primary">
     <a class="db-home" href="DFSA.html">⌂ Home</a>
@@ -424,7 +424,7 @@ footer .big{ font-family:var(--display); font-size:1.4rem; color:#fff; letter-sp
   `Built from the ${esc(D.source)} · data as entered up to ${esc(D.generated)}. Generated dashboard — figures reflect the source sheets at build time.`;
 
  // keep the in-page nav docked just below the global DFSA topbar (if present)
- function setTBH(){ const tb=document.querySelector('.drip-topbar'); document.documentElement.style.setProperty('--tbh',(tb?tb.offsetHeight:0)+'px'); }
+ function setTBH(){ const tb=document.querySelector('.dfsa-topbar'); document.documentElement.style.setProperty('--tbh',(tb?tb.offsetHeight:0)+'px'); }
  setTBH(); window.addEventListener('resize',setTBH); window.addEventListener('load',setTBH);
 
  // nav active state
@@ -433,6 +433,6 @@ footer .big{ font-family:var(--display); font-size:1.4rem; color:#fff; letter-sp
  window.addEventListener('scroll',()=>{ const off=(parseInt(getComputedStyle(document.documentElement).getPropertyValue('--tbh'))||0)+96; let i=secs.length-1; for(;i>0;i--){ if(secs[i] && secs[i].getBoundingClientRect().top<off) break; } links.forEach((a,k)=>a.classList.toggle('on',k===i)); },{passive:true});
 })();
 </script>
-<script src="drip-i18n.js"></script>
+<script src="dfsa-i18n.js"></script>
 </body>
 </html>

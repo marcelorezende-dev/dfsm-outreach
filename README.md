@@ -22,10 +22,10 @@ Monitoring system, the Publication & funding plan, and the knowledge stories.
 
 ### Notes
 - **Multilingual.** The DFSA hub (`DFSA.html`) auto-translates into Spanish, French,
-  Russian, Arabic and Chinese via `drip-i18n.js` — small flag icons in the top banner
+  Russian, Arabic and Chinese via `dfsa-i18n.js` — small flag icons in the top banner
   switch language (Arabic flips to RTL); a notice flags the translations as automated
   and under review. English is the source of truth; switching back restores it exactly.
-  Translations live in `drip-i18n.js` as one row per phrase — edit there to refine wording.
+  Translations live in `dfsa-i18n.js` as one row per phrase — edit there to refine wording.
 - `.nojekyll` is included so GitHub Pages serves all files verbatim (no Jekyll build).
 - Filenames contain spaces; GitHub Pages serves these (URL-encoded as `%20`). Links
   already match, so they resolve. If you prefer clean URLs, rename files to hyphens

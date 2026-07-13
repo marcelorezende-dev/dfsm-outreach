@@ -792,7 +792,7 @@
   }
 
   /* ---- language switching ---------------------------------------------- */
-  var STORE = "drip-lang";
+  var STORE = "dfsa-lang";
   function setLang(lang, fromUser) {
     apply(lang);
     var root = document.documentElement;
@@ -817,7 +817,7 @@
   /* ---- self-injected UI (switcher + notice) for pages without it -------- */
   var LANG_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>';
   function injectStyles() {
-    if (document.getElementById("dripI18nCss")) return;
+    if (document.getElementById("dfsaI18nCss")) return;
     var css =
       ".langsw{display:inline-flex;align-items:center;gap:7px;margin-left:8px}" +
       ".langsw .langsw-ic{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;color:rgba(245,242,232,.6);flex:none}" +
@@ -846,7 +846,7 @@
       ".trbox .trok{margin-top:22px;font-weight:600;font-size:14px;cursor:pointer;background:#477E59;color:#fff;border:none;border-radius:999px;padding:11px 24px}" +
       ".trbox .trx{position:absolute;top:10px;right:14px;background:none;border:none;font-size:24px;line-height:1;color:#9a8f80;cursor:pointer}" +
       "html[dir=rtl] .trbox .trx{right:auto;left:14px}";
-    var st = document.createElement("style"); st.id = "dripI18nCss"; st.textContent = css;
+    var st = document.createElement("style"); st.id = "dfsaI18nCss"; st.textContent = css;
     document.head.appendChild(st);
   }
   function injectUI() {
@@ -854,7 +854,7 @@
     var needModal = !document.getElementById("trModal");
     if (needSw || needModal) injectStyles();
     if (needSw) {
-      var host = document.querySelector(".drip-topbar .db-nav") || document.querySelector(".dripnav nav");
+      var host = document.querySelector(".dfsa-topbar .db-nav") || document.querySelector(".dfsanav nav");
       var sw = document.createElement("div");
       sw.className = "langsw"; sw.id = "langsw"; sw.setAttribute("role", "group"); sw.setAttribute("aria-label", "Choose a language");
       sw.innerHTML = '<span class="langsw-ic">' + LANG_SVG + '</span>' +

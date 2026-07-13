@@ -1,5 +1,5 @@
 /* ============================================================================
-   DRIP MANUAL SERIES – shared stylesheet
+   DFSA MANUAL SERIES – shared stylesheet
    Linked by the template and every manual in the series. Set the per-manual
    accent by overriding :root{ --accent / --accent-deep } inline in each file.
    ============================================================================ */
@@ -24,18 +24,18 @@
 body{ font-family:var(--serif); line-height:1.6; color:var(--ink-2); background:var(--paper-2); -webkit-font-smoothing:antialiased; }
 
 /* ---- SCREEN CHROME (hidden in print) ---- */
-.drip-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+.dfsa-topbar{position:sticky;top:0;z-index:9999;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
  background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;font-family:var(--sans);}
-.drip-topbar .db-brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none;}
-.drip-topbar .db-dm{font-weight:800;font-size:22px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
-.drip-topbar .db-dm span{color:#F8B133;}
-.drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
-.drip-topbar .db-nav{display:flex;gap:4px;flex-wrap:wrap;}
-.drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;}
-.drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
-.drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
-.drip-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
-.drip-topbar .db-nav a.db-cta:hover{background:#ffc658;}
+.dfsa-topbar .db-brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-decoration:none;}
+.dfsa-topbar .db-dm{font-weight:800;font-size:22px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+.dfsa-topbar .db-dm span{color:#F8B133;}
+.dfsa-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+.dfsa-topbar .db-nav{display:flex;gap:4px;flex-wrap:wrap;}
+.dfsa-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;}
+.dfsa-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+.dfsa-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+.dfsa-topbar .db-nav a.db-cta{background:#F8B133;color:#3a2408;font-weight:600;}
+.dfsa-topbar .db-nav a.db-cta:hover{background:#ffc658;}
 
 .printbar{ position:sticky; top:0; z-index:50; display:flex; justify-content:flex-end; gap:.6rem; max-width:900px; margin:14px auto -4px; padding:0 16px; }
 .btn{ font-family:var(--sans); font-weight:600; font-size:.82rem; letter-spacing:.02em; border:1px solid var(--border-strong);
@@ -150,7 +150,7 @@ a.inl{ color:var(--accent-deep); font-weight:600; text-decoration:none; } a.inl:
 @media print{
  @page{ size:A4; margin:13mm 14mm 15mm; }
  body{ background:#fff; color:#000; font-size:10pt; line-height:1.4; }
- .drip-topbar,.printbar,.authoring{ display:none !important; }
+ .dfsa-topbar,.printbar,.authoring{ display:none !important; }
  .manual{ max-width:none; margin:0; border:0; border-radius:0; box-shadow:none; }
  .masthead,.colophon,.body{ padding-left:0; padding-right:0; }
  .masthead{ -webkit-print-color-adjust:exact; print-color-adjust:exact; }
@@ -205,7 +205,7 @@ table.w tbody tr:nth-child(even){ background:rgba(236,231,215,.45); }
 .figure .fig-cap .credit a{ color:var(--ink-3); }
 @media print{ .figure{ break-inside:avoid; } }
 
-/* ---- APA reference list (static; strings kept in sync with drip-references.js) ---- */
+/* ---- APA reference list (static; strings kept in sync with dfsa-references.js) ---- */
 .apa-refs{ list-style:none; margin:.3rem 0 0; padding:0; font-size:.86rem; line-height:1.5; }
 .apa-refs li{ padding-left:1.6em; text-indent:-1.6em; margin:0 0 .55rem; color:var(--ink-2); }
 .apa-refs li:last-child{ margin-bottom:0; }
@@ -213,7 +213,7 @@ table.w tbody tr:nth-child(even){ background:rgba(236,231,215,.45); }
 @media print{ .apa-refs{ font-size:.8rem; break-inside:avoid; } }
 
 
-/* ===== WOCAT classification block (harmonized with the DRIP app) ===== */
+/* ===== WOCAT classification block (harmonized with the DFSA app) ===== */
 .m-section.wocat{ background:var(--surface); border-top:1px solid var(--border); margin:0; padding:1.2rem 2.1rem 1.4rem; }
 .wocat-cl{ margin:.5rem 0 0; display:flex; flex-direction:column; gap:.55rem; }
 .wocat-row{ display:grid; grid-template-columns:10rem 1fr; gap:.7rem; align-items:start; }

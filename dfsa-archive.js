@@ -30,7 +30,7 @@
    }
    ============================================================================ */
 
-window.DRIP_ARCHIVE_META = {
+window.DFSA_ARCHIVE_META = {
   version: 1,
   updated: '2026-06-13',
   channels: {
@@ -45,7 +45,7 @@ window.DRIP_ARCHIVE_META = {
   }
 };
 
-window.DRIP_ARCHIVE = [
+window.DFSA_ARCHIVE = [
   { id:'marvel', title:'MARVEL — Monitoring & Results dashboard', type:'tool', pillars:['monitoring'],
     source:'direct', origin:'DFSA / GCP MEL working group', status:'validated',
     url:'MARVEL.html',
