@@ -4,10 +4,25 @@ The expression-of-interest form in `DFSA.html` (`#partner`) posts to a **Google 
 which writes every submission to a **Google Sheet** in Drive. The visitor never sees
 Google: the page posts in the background and shows its own "Thank you" panel.
 
-The form is live: `GFORM.FORM_ID` and the seven `entry.*` ids are wired in `DFSA.html`. If the request ever fails (offline, endpoint blocked) the handler falls back to `mailto:DSL-IP@fao.org`, so a submission is never silently lost.
-mail client (`mailto:DSL-IP@fao.org`) — the page is never broken, just not collecting.
+The form is **live**. `GFORM.FORM_ID` and the seven `entry.*` ids are wired into
+`DFSA.html`. If a request ever fails (offline, endpoint blocked) the handler falls
+back to `mailto:DSL-IP@fao.org`, so a submission is never silently lost.
 
-## One-time setup
+## Live configuration
+
+Form: `1FAIpQLSfB7oyEJmndBZd9XyoxfGk4mRHdciAReuQsshHiQ8JahnjJJw`
+
+| Page field     | Google question               | Entry id             |
+|----------------|-------------------------------|----------------------|
+| `name`         | Full name                     | `entry.575034493`    |
+| `email`        | Email                         | `entry.27342489`     |
+| `organisation` | Organisation                  | `entry.826833287`    |
+| `country`      | Country / region              | `entry.1362536633`   |
+| `partnerType`  | I am reaching out as a        | `entry.69474079`     |
+| `interest`     | Area of interest              | `entry.228082095`    |
+| `message`      | How would you like to engage? | `entry.1626428202`   |
+
+## How it was set up (for reference / rebuilding)
 
 1. Create a Google Form (forms.new) titled e.g. *DFSA — Expression of interest*.
 2. Add these questions, **in this order and of these types**:
