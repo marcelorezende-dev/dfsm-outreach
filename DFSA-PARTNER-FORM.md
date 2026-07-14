@@ -4,7 +4,7 @@ The expression-of-interest form in `DFSA.html` (`#partner`) posts to a **Google 
 which writes every submission to a **Google Sheet** in Drive. The visitor never sees
 Google: the page posts in the background and shows its own "Thank you" panel.
 
-Until `GFORM.FORM_ID` is filled in, the handler falls back to opening the visitor's
+The form is live: `GFORM.FORM_ID` and the seven `entry.*` ids are wired in `DFSA.html`. If the request ever fails (offline, endpoint blocked) the handler falls back to `mailto:DSL-IP@fao.org`, so a submission is never silently lost.
 mail client (`mailto:DSL-IP@fao.org`) — the page is never broken, just not collecting.
 
 ## One-time setup
