@@ -610,6 +610,25 @@
     #partner .pform .fnote{ font-size:13px; color:rgba(251,248,239,.72); margin:0; }
     #partner .pform .hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
     #partner .pform button[disabled]{ opacity:.6; cursor:progress; }
+
+    /* thank-you pop-up — mirrors the site's .trmodal/.trbox language notice */
+    .pmodal{ position:fixed; inset:0; z-index:10000; display:none; align-items:center; justify-content:center;
+      padding:24px; background:rgba(12,10,7,.6); }
+    .pmodal.show{ display:flex; }
+    .pbox{ position:relative; max-width:480px; width:100%; background:#FBF8EF; color:#2b2723;
+      border:1px solid #e2dccc; border-radius:16px; padding:34px 36px 28px; text-align:left;
+      box-shadow:0 24px 60px rgba(20,16,12,.4);
+      font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+    .pbox .pglyph{ display:flex; align-items:center; justify-content:center; width:46px; height:46px;
+      border-radius:12px; background:#C3DABA; color:#356046; margin-bottom:16px; }
+    .pbox .pglyph svg{ width:24px; height:24px; }
+    .pbox .pkick{ font-weight:600; text-transform:uppercase; letter-spacing:.13em; font-size:11.5px; color:#a8553f; }
+    .pbox h3{ font-family:Georgia,serif; font-weight:800; font-size:22px; line-height:1.22; margin:8px 0 12px; color:#2b2723; }
+    .pbox p{ font-size:14.5px; line-height:1.62; color:#514a42; margin:0; }
+    .pbox .pok{ margin-top:22px; font-weight:600; font-size:14px; cursor:pointer; background:#477E59; color:#fff;
+      border:none; border-radius:999px; padding:11px 24px; }
+    .pbox .px{ position:absolute; top:10px; right:14px; background:none; border:none; font-size:24px; line-height:1;
+      color:#9a8f80; cursor:pointer; }
     #partner .pform .fok{ display:none; background:rgba(251,248,239,.14); border:1px solid rgba(251,248,239,.3);
       border-radius:var(--r-md); padding:14px 16px; font-family:var(--font-body); font-size:15px; color:#fff; }
     #partner .partner{ background:linear-gradient(160deg,#a9613f 0%,var(--clay,#8a4a2c) 48%,var(--clay-deep,#5f3319) 100%); }
@@ -667,6 +686,19 @@
         </div>
         <div class="fok" id="dfsaFormOk">Thank you. Your expression of interest has been recorded and the DFSA team will be in touch.</div>
       </form>
+
+      <div class="pmodal" id="dfsaThanks" role="dialog" aria-modal="true" aria-labelledby="dfsaThanksTitle">
+        <div class="pbox">
+          <button class="px" type="button" id="dfsaThanksX" aria-label="Close">&times;</button>
+          <div class="pglyph" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <p class="pkick" id="dfsaThanksKick">Expression of interest</p>
+          <h3 id="dfsaThanksTitle">Thank you — we have your details</h3>
+          <p id="dfsaThanksBody">Your expression of interest has been submitted successfully. The DFSA team will review it and be in touch.</p>
+          <button class="pok" type="button" id="dfsaThanksOk">Close</button>
+        </div>
+      </div>
     </div>
   </div>
   <script>
@@ -690,17 +722,51 @@
 
     var f = document.getElementById('dfsaInterestForm');
     if(!f) return;
-    var ok  = document.getElementById('dfsaFormOk');
-    var btn = f.querySelector('button[type="submit"]');
+    var ok    = document.getElementById('dfsaFormOk');
+    var btn   = f.querySelector('button[type="submit"]');
+    var modal = document.getElementById('dfsaThanks');
+    var mTtl  = document.getElementById('dfsaThanksTitle');
+    var mBody = document.getElementById('dfsaThanksBody');
+    var mOk   = document.getElementById('dfsaThanksOk');
+    var lastFocus = null;
 
-    function succeed(){ f.style.display='none'; ok.style.display='block'; }
+    function openModal(title, body){
+      mTtl.textContent  = title;
+      mBody.textContent = body;
+      lastFocus = document.activeElement;
+      modal.classList.add('show');
+      mOk.focus();
+    }
+    function closeModal(){
+      modal.classList.remove('show');
+      if(lastFocus && lastFocus.focus) lastFocus.focus();
+    }
+    mOk.addEventListener('click', closeModal);
+    document.getElementById('dfsaThanksX').addEventListener('click', closeModal);
+    modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+    });
 
+    /* Recorded in the Google Sheet. */
+    function succeed(){
+      f.style.display='none';
+      ok.style.display='block';
+      openModal('Thank you — we have your details',
+        'Your expression of interest has been submitted successfully. The DFSA team will review it and be in touch.');
+    }
+
+    /* Fallback: nothing has reached us yet — the visitor must still send the mail.
+       Do not tell them it was "recorded". */
     function viaMailto(d){
       var body = [];
       d.forEach(function(v,k){ if(v && k.charAt(0)!=='_') body.push(k+': '+v); });
       var subject = 'DFSA — Expression of interest'+(d.get('organisation')?(' ('+d.get('organisation')+')'):'');
       window.location.href = 'mailto:DSL-IP@fao.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body.join('\n'));
-      succeed();
+      f.style.display='none';
+      ok.style.display='block';
+      openModal('One more step — please send the email',
+        'We could not submit the form directly, so your details have been placed in a draft email to DSL-IP@fao.org. Please press send in your mail client to complete your expression of interest.');
     }
 
     f.addEventListener('submit', function(e){
