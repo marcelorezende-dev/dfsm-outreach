@@ -665,6 +665,7 @@
       "استبدل العنوان أعلاه بجهة اتصال خاضعة لمتابعتك قبل النشر.",
       "发布前，请将上方地址替换为您所监控的联系方式。"],
     ["Funded by the GEF", "Financiado por el GEF", "Financé par le FEM", "Финансируется ГЭФ", "بتمويل من مرفق البيئة العالمية (GEF)", "由全球环境基金（GEF）资助"],
+    ["Led by FAO", "Dirigido por la FAO", "Dirigé par la FAO", "Под руководством ФАО", "بقيادة منظمة الأغذية والزراعة (الفاو)", "由粮农组织牵头"],
     ["Led by FAO Drylands Programme", "Dirigido por el Programa de Tierras Secas de la FAO", "Dirigé par le Programme des terres arides de la FAO", "Под руководством Программы ФАО по засушливым землям", "بقيادة برنامج الفاو للأراضي الجافة", "由粮农组织旱地项目牵头"],
     ["DFSA · Dryland Forest Support Accelerator — hosted under the DSL-IP Knowledge Management structure. A project of the DSL-IP, actively overseen by a UN Officer (programme design · complex programme management · AI · rural development); related to the Programme's behaviour-change research. Pending institutional sign-off.",
       "DFSA · Aceleradora de Apoyo a los Bosques de Tierras Secas — alojada bajo la estructura de Gestión del Conocimiento del DSL-IP. Un proyecto del DSL-IP, supervisado activamente por un funcionario de la ONU (diseño de programas · gestión de programas complejos · IA · desarrollo rural); relacionado con la investigación del Programa sobre cambio de comportamiento. A la espera de la aprobación institucional.",
