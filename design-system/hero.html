@@ -46,24 +46,20 @@
         </div>
       </header>
     </div>
-    <p class="caption">The name is spelled out in full and carries the banner alone — no tagline, no logo. Because the string is long, the wordmark steps down to <code>clamp(32px,5.4vw,68px)</code> with <code>line-height:1.02</code> and a <code>16ch</code> measure so it breaks onto two balanced lines. Used on <span class="inline-code">DFSA.html</span>.</p>
+    <p class="caption">The name is spelled out in full and carries the banner alone — no tagline, no logo. The line break is explicit (<code>Dryland Forest</code> / <code>Support Accelerator.</code>) so the name always sets on exactly two lines rather than rewrapping with the viewport. Wordmark steps down to <code>clamp(28px,5.4vw,68px)</code>. Used on <span class="inline-code">DFSA.html</span>.</p>
   </div>
 
   <div class="ds-sec">
-    <h2>Variant B — name + DSL-IP lockup (interior)</h2>
+    <h2>Variant B — page name + tagline (interior)</h2>
     <div class="frame">
       <header class="hero">
         <div class="page">
           <div class="wordmark"><h1>Library<span class="dot">.</span></h1></div>
-          <p class="expand">Dryland Forest Support Accelerator</p>
-          <div class="dslip">
-            <img src="../assets/logo-full.png" alt="Sustainable Forest Management Impact Program on Dryland Sustainable Landscapes (DSL-IP)">
-            <small>Built on the GEF-7 Dryland Sustainable Landscapes Impact Program (DSL-IP)</small>
-          </div>
+          <p class="expand">The knowledge library</p>
         </div>
       </header>
     </div>
-    <p class="caption">A short page name, the accelerator's name as a serif-italic tagline, then the full DSL-IP logo with its provenance caption. Used on <span class="inline-code">Library.html</span>.</p>
+    <p class="caption">A short page name at the full wordmark scale, with a one-line serif-italic tagline describing the page. No DSL-IP logo — the programme lockup lives in the footer, not the hero. Used on <span class="inline-code">Library.html</span>.</p>
   </div>
 
   <div class="ds-sec">
@@ -76,12 +72,13 @@
     <div class="uses">
       <div class="use-col do"><h3>Do</h3><ul>
         <li>Use variant A on Home, where the full name is the whole message.</li>
-        <li>Use variant B on interior pages: page name + the DSL-IP logo and its provenance caption.</li>
+        <li>Use variant B on interior pages: short page name + a one-line tagline.</li>
         <li>Keep the amber trailing dot on the wordmark in both variants.</li>
         <li>Keep it centered, light, and free of long body copy.</li>
       </ul></div>
       <div class="use-col dont"><h3>Don't</h3><ul>
         <li>Reintroduce the dark-green gradient / globe / grain background.</li>
+        <li>Put the DSL-IP logo in the hero — it belongs in the footer.</li>
         <li>Add a descriptive intro paragraph back into the hero.</li>
         <li>Set the full name at the short-wordmark scale — it will overflow.</li>
         <li>Repeat the name as a tagline underneath when variant A already spells it out.</li>
