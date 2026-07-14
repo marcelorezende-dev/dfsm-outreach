@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- @dsCard group="Components" name="Hero / DSL-IP lockup" subtitle="The light page banner: name + full DSL-IP logo, centered" -->
+<!-- @dsCard group="Components" name="Hero / page banner" subtitle="Two variants: full-name wordmark (Home) and name + DSL-IP lockup (Library)" -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -25,20 +25,36 @@
   .hero .dslip img{ height:clamp(60px,9vw,96px); width:auto; max-width:min(90vw,640px); }
   .hero .dslip small{ display:block; margin-top:12px; font-family:var(--font-sans); font-size:11px;
     letter-spacing:.08em; text-transform:uppercase; color:var(--ink-3); }
+  /* Home variant: the full name carries the banner on its own */
+  .hero.full .page{ padding:52px 24px 54px; }
+  .hero.full .wordmark h1{ font-size:clamp(32px,5.4vw,68px); line-height:1.02;
+    max-width:16ch; margin:0 auto; text-wrap:balance; }
 </style>
 </head>
 <body>
 <div class="ds-wrap">
   <p class="ds-eyebrow">Components</p>
-  <h1 class="ds-title">Hero / DSL-IP lockup</h1>
-  <p class="ds-lede">The light page banner used on Home and the Library. It replaced the old dark-green gradient hero: page name + the full DSL-IP program logo, centered on the cream paper, with no descriptive paragraph. Sits directly under the top bar.</p>
+  <h1 class="ds-title">Hero / page banner</h1>
+  <p class="ds-lede">The light page banner that sits directly under the top bar. It replaced the old dark-green gradient hero: a centered name on the cream paper, with no descriptive body copy. Two variants — the <strong>full-name wordmark</strong> on Home, and the <strong>name + DSL-IP lockup</strong> on interior pages such as the Library.</p>
 
   <div class="ds-sec">
-    <h2>Live render</h2>
+    <h2>Variant A — full-name wordmark (Home)</h2>
+    <div class="frame">
+      <header class="hero full">
+        <div class="page">
+          <div class="wordmark"><h1>Dryland Forest Support Accelerator<span class="dot">.</span></h1></div>
+        </div>
+      </header>
+    </div>
+    <p class="caption">The name is spelled out in full and carries the banner alone — no tagline, no logo. Because the string is long, the wordmark steps down to <code>clamp(32px,5.4vw,68px)</code> with <code>line-height:1.02</code> and a <code>16ch</code> measure so it breaks onto two balanced lines. Used on <span class="inline-code">DFSA.html</span>.</p>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Variant B — name + DSL-IP lockup (interior)</h2>
     <div class="frame">
       <header class="hero">
         <div class="page">
-          <div class="wordmark"><h1>DFSA<span class="dot">.</span></h1></div>
+          <div class="wordmark"><h1>Library<span class="dot">.</span></h1></div>
           <p class="expand">Dryland Forest Support Accelerator</p>
           <div class="dslip">
             <img src="../assets/logo-full.png" alt="Sustainable Forest Management Impact Program on Dryland Sustainable Landscapes (DSL-IP)">
@@ -47,26 +63,33 @@
         </div>
       </header>
     </div>
-    <p class="caption">Background = <code>--cream</code> with faint clay + green radial tints (identical recipe to <span class="inline-code">drylands.html</span>). Wordmark = <code>--font-display</code> in <code>--forest-deep</code>; dot = <code>--amber</code>; tagline serif italic in <code>--clay-deep</code>.</p>
+    <p class="caption">A short page name, the accelerator's name as a serif-italic tagline, then the full DSL-IP logo with its provenance caption. Used on <span class="inline-code">Library.html</span>.</p>
+  </div>
+
+  <div class="ds-sec">
+    <h2>Shared foundations</h2>
+    <p class="caption">Both variants: background = <code>--cream</code> with faint clay + green radial tints (identical recipe to <span class="inline-code">drylands.html</span>). Wordmark = <code>--font-display</code>, uppercase, in <code>--forest-deep</code>; the trailing dot = <code>--amber</code>. Tagline (variant B only) = serif italic in <code>--clay-deep</code>.</p>
   </div>
 
   <div class="ds-sec">
     <h2>Rules</h2>
     <div class="uses">
       <div class="use-col do"><h3>Do</h3><ul>
-        <li>Swap the wordmark to the page's own name (<code>DFSA.</code>, <code>Library.</code>).</li>
-        <li>Keep the full DSL-IP logo (<code>logo-full.png</code>) with its provenance caption.</li>
+        <li>Use variant A on Home, where the full name is the whole message.</li>
+        <li>Use variant B on interior pages: page name + the DSL-IP logo and its provenance caption.</li>
+        <li>Keep the amber trailing dot on the wordmark in both variants.</li>
         <li>Keep it centered, light, and free of long body copy.</li>
       </ul></div>
       <div class="use-col dont"><h3>Don't</h3><ul>
         <li>Reintroduce the dark-green gradient / globe / grain background.</li>
         <li>Add a descriptive intro paragraph back into the hero.</li>
-        <li>Use the wordmark-only logo where the emblem lockup is expected.</li>
+        <li>Set the full name at the short-wordmark scale — it will overflow.</li>
+        <li>Repeat the name as a tagline underneath when variant A already spells it out.</li>
       </ul></div>
     </div>
   </div>
 
-  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Components · used on Home &amp; Library</div>
+  <div class="ds-foot"><span class="dot"></span> DFSA Design System · Components · Home (A) &amp; Library (B)</div>
 </div>
 </body>
 </html>
