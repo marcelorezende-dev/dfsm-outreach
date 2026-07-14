@@ -608,6 +608,8 @@
     #partner .pform button{ font-family:var(--sans); font-weight:700; font-size:14.5px; border:0; cursor:pointer;
       background:var(--amber); color:#3a2408; border-radius:var(--r-pill); padding:12px 26px; }
     #partner .pform .fnote{ font-size:13px; color:rgba(251,248,239,.72); margin:0; }
+    #partner .pform .hp{ position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+    #partner .pform button[disabled]{ opacity:.6; cursor:progress; }
     #partner .pform .fok{ display:none; background:rgba(251,248,239,.14); border:1px solid rgba(251,248,239,.3);
       border-radius:var(--r-md); padding:14px 16px; font-family:var(--font-body); font-size:15px; color:#fff; }
     #partner .partner{ background:linear-gradient(160deg,#a9613f 0%,var(--clay,#8a4a2c) 48%,var(--clay-deep,#5f3319) 100%); }
@@ -658,6 +660,7 @@
           </div>
         </div>
         <div class="field full"><label for="pf-msg">How would you like to engage?</label><textarea id="pf-msg" name="message" placeholder="Tell us about your organisation and what you'd like to contribute or explore."></textarea></div>
+        <div class="hp" aria-hidden="true"><label for="pf-hp">Leave this field empty</label><input id="pf-hp" name="_hp" type="text" tabindex="-1" autocomplete="off"></div>
         <div class="fsubmit">
           <button type="submit">Express interest →</button>
           <p class="fnote">Or email <a href="mailto:DSL-IP@fao.org?subject=DFSA%20%E2%80%94%20Expression%20of%20interest" style="color:var(--amber);">DSL-IP@fao.org</a> directly.</p>
@@ -668,18 +671,60 @@
   </div>
   <script>
   (function(){
+    /* Responses are collected in a Google Form, which writes them to a Sheet in
+       Drive. Fill in FORM_ID and the entry.* field ids from that form (see
+       DFSA-PARTNER-FORM.md). While FORM_ID is blank the handler falls back to
+       the mailto behaviour, so the page is never left broken. */
+    var GFORM = {
+      FORM_ID: '',                  // the 1FAIpQLSc... id from the form's /viewform URL
+      FIELDS: {
+        name:         '',           // entry.XXXXXXXXX
+        email:        '',
+        organisation: '',
+        country:      '',
+        partnerType:  '',
+        interest:     '',
+        message:      ''
+      }
+    };
+
     var f = document.getElementById('dfsaInterestForm');
     if(!f) return;
-    f.addEventListener('submit', function(e){
-      e.preventDefault();
-      if(!f.checkValidity()){ f.reportValidity(); return; }
-      var d = new FormData(f);
+    var ok  = document.getElementById('dfsaFormOk');
+    var btn = f.querySelector('button[type="submit"]');
+
+    function succeed(){ f.style.display='none'; ok.style.display='block'; }
+
+    function viaMailto(d){
       var body = [];
-      d.forEach(function(v,k){ if(v) body.push(k+': '+v); });
+      d.forEach(function(v,k){ if(v && k.charAt(0)!=='_') body.push(k+': '+v); });
       var subject = 'DFSA — Expression of interest'+(d.get('organisation')?(' ('+d.get('organisation')+')'):'');
       window.location.href = 'mailto:DSL-IP@fao.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body.join('\n'));
-      f.style.display='none';
-      document.getElementById('dfsaFormOk').style.display='block';
+      succeed();
+    }
+
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(f._hp && f._hp.value) return;               // honeypot: silently drop bots
+      if(!f.checkValidity()){ f.reportValidity(); return; }
+
+      var d = new FormData(f);
+      if(!GFORM.FORM_ID){ viaMailto(d); return; }    // not configured yet
+
+      var payload = new FormData();
+      Object.keys(GFORM.FIELDS).forEach(function(k){
+        var entry = GFORM.FIELDS[k];
+        if(entry && d.get(k)) payload.append(entry, d.get(k));
+      });
+
+      btn.disabled = true;
+      /* no-cors: Google Forms sends no CORS headers, so the reply is opaque —
+         we cannot read status. The POST still records the response. */
+      fetch('https://docs.google.com/forms/d/e/'+GFORM.FORM_ID+'/formResponse',
+            { method:'POST', mode:'no-cors', body:payload })
+        .then(succeed)
+        .catch(function(){ viaMailto(d); })          // offline / blocked → mail client
+        .then(function(){ btn.disabled = false; });
     });
   })();
   </script>
