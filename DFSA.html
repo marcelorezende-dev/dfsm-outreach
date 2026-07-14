@@ -586,6 +586,105 @@
   </div>
 </section>
 
+<!-- ============ 4 · EXPRESS INTEREST / PARTNER WITH DFSA ============ -->
+<section id="partner">
+  <style>
+    #partner .pform{ margin:26px 0 0; position:relative; display:grid; gap:14px; }
+    #partner .pform .frow{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    #partner .pform .field{ display:flex; flex-direction:column; gap:6px; }
+    #partner .pform .field.full{ grid-column:1 / -1; }
+    #partner .pform label{ font-family:var(--sans); font-weight:600; font-size:12.5px; letter-spacing:.02em;
+      text-transform:uppercase; color:rgba(251,248,239,.86); }
+    #partner .pform label .req{ color:var(--amber); }
+    #partner .pform input, #partner .pform select, #partner .pform textarea{
+      font-family:var(--font-body); font-size:15px; color:#fff; background:rgba(251,248,239,.1);
+      border:1px solid rgba(251,248,239,.26); border-radius:var(--r-md); padding:11px 13px; width:100%; }
+    #partner .pform input::placeholder, #partner .pform textarea::placeholder{ color:rgba(251,248,239,.5); }
+    #partner .pform input:focus, #partner .pform select:focus, #partner .pform textarea:focus{
+      outline:none; border-color:var(--amber); background:rgba(251,248,239,.16); }
+    #partner .pform select option{ color:#1c2a20; }
+    #partner .pform textarea{ resize:vertical; min-height:96px; }
+    #partner .pform .fsubmit{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+    #partner .pform button{ font-family:var(--sans); font-weight:700; font-size:14.5px; border:0; cursor:pointer;
+      background:var(--amber); color:#3a2408; border-radius:var(--r-pill); padding:12px 26px; }
+    #partner .pform .fnote{ font-size:13px; color:rgba(251,248,239,.72); margin:0; }
+    #partner .pform .fok{ display:none; background:rgba(251,248,239,.14); border:1px solid rgba(251,248,239,.3);
+      border-radius:var(--r-md); padding:14px 16px; font-family:var(--font-body); font-size:15px; color:#fff; }
+    #partner .partner{ background:linear-gradient(160deg,#a9613f 0%,var(--clay,#8a4a2c) 48%,var(--clay-deep,#5f3319) 100%); }
+    #partner .pform button{ background:rgba(251,248,239,.16); color:#fff; border:1px solid rgba(251,248,239,.34); }
+    @media(max-width:680px){ #partner .pform .frow{ grid-template-columns:1fr; } }
+  </style>
+  <div class="page">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Partner with the DFSA</h2></div>
+    <div class="partner">
+      <div class="pgrain"></div>
+      <p>The Dryland Forest Support Accelerator grows through its network of partners. Member countries, donors, research institutions, and communities of practice are invited to express their interest in contributing to the mechanism through co-financing, knowledge sharing, or by linking a Regional Exchange or knowledge hub to the network.</p>
+      <div class="pways">
+        <div class="pway"><i data-lucide="landmark"></i><h4>Member countries</h4><p>Advance country-led priorities and integrate dryland forests into national targets.</p></div>
+        <div class="pway"><i data-lucide="hand-coins"></i><h4>Donors and IFIs</h4><p>Provide programmatic, multi-year financing and help de-risk private capital.</p></div>
+        <div class="pway"><i data-lucide="git-fork"></i><h4>Partners and hubs</h4><p>Contribute knowledge, tools and technical capacity to the network.</p></div>
+      </div>
+
+      <form class="pform" id="dfsaInterestForm" novalidate>
+        <div class="frow">
+          <div class="field"><label for="pf-name">Full name <span class="req">*</span></label><input id="pf-name" name="name" type="text" placeholder="Your name" required></div>
+          <div class="field"><label for="pf-email">Email <span class="req">*</span></label><input id="pf-email" name="email" type="email" placeholder="you@organisation.org" required></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="pf-org">Organisation <span class="req">*</span></label><input id="pf-org" name="organisation" type="text" placeholder="Ministry, agency, institution" required></div>
+          <div class="field"><label for="pf-country">Country / region</label><input id="pf-country" name="country" type="text" placeholder="e.g. Kenya, Sahel"></div>
+        </div>
+        <div class="frow">
+          <div class="field"><label for="pf-type">I am reaching out as a <span class="req">*</span></label>
+            <select id="pf-type" name="partnerType" required>
+              <option value="" selected disabled>Select one…</option>
+              <option>Member country</option>
+              <option>Donor / IFI</option>
+              <option>Research institution</option>
+              <option>Community of practice / hub</option>
+              <option>Private sector</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field"><label for="pf-interest">Area of interest</label>
+            <select id="pf-interest" name="interest">
+              <option value="" selected disabled>Select one…</option>
+              <option>Co-financing / investment</option>
+              <option>Technical assistance</option>
+              <option>Knowledge exchange</option>
+              <option>Connect an exchange / hub</option>
+              <option>General enquiry</option>
+            </select>
+          </div>
+        </div>
+        <div class="field full"><label for="pf-msg">How would you like to engage?</label><textarea id="pf-msg" name="message" placeholder="Tell us about your organisation and what you'd like to contribute or explore."></textarea></div>
+        <div class="fsubmit">
+          <button type="submit">Express interest →</button>
+          <p class="fnote">Or email <a href="mailto:DSL-IP@fao.org?subject=DFSA%20%E2%80%94%20Expression%20of%20interest" style="color:var(--amber);">DSL-IP@fao.org</a> directly.</p>
+        </div>
+        <div class="fok" id="dfsaFormOk">Thank you. Your expression of interest has been recorded and the DFSA team will be in touch.</div>
+      </form>
+    </div>
+  </div>
+  <script>
+  (function(){
+    var f = document.getElementById('dfsaInterestForm');
+    if(!f) return;
+    f.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!f.checkValidity()){ f.reportValidity(); return; }
+      var d = new FormData(f);
+      var body = [];
+      d.forEach(function(v,k){ if(v) body.push(k+': '+v); });
+      var subject = 'DFSA — Expression of interest'+(d.get('organisation')?(' ('+d.get('organisation')+')'):'');
+      window.location.href = 'mailto:DSL-IP@fao.org?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body.join('\n'));
+      f.style.display='none';
+      document.getElementById('dfsaFormOk').style.display='block';
+    });
+  })();
+  </script>
+</section>
+
 <section id="footer" class="foot">
   <div class="page">
     <div class="credits">
