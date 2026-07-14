@@ -408,15 +408,17 @@
       #whatis .whatis-fig{ margin:0; border-radius:var(--r-lg); overflow:hidden; box-shadow:var(--shadow-md); border:1px solid var(--border); }
       #whatis .whatis-fig img{ display:block; width:100%; height:640px; object-fit:cover; }
       #whatis .whatis-cap{ margin-top:9px; font-family:var(--sans); font-size:11px; color:var(--ink-3); line-height:1.5; }
+      #whatis .whatis-cap .credit{ white-space:nowrap; font-weight:600; color:var(--ink-2); }
       @media(max-width:760px){ #whatis .whatis-lede{ font-size:23px; } #whatis .whatis-fig img{ height:280px; } }
     </style>
     <p class="subhead">What is the DFSA?</p>
     <div class="whatis-grid">
       <p class="whatis-lede">The <b>Dryland Forest Support Accelerator</b> is a country-driven mechanism that assists governments and partners turn dryland forest knowledge into coordinated policy, investable programmes, and measurable action.</p>
-      <!-- TODO figure: assets/dryland-baobab.jpg is not in the repo yet (the design
-           project holds it, but it exceeds the 256 KiB DesignSync read cap). The photo
-           is EXIF-tagged "©FAO. Editorial use only. Photo credit must be given" — the
-           caption must carry that credit before it is published. -->
+      <!-- Photo is FAO editorial-use-only; the credit below is required by its licence. -->
+      <figure class="whatis-fig">
+        <img src="assets/dryland-baobab.jpg" alt="Baobab woodland in the Senegalese drylands, with a farmer and cart passing between the trees" loading="lazy" width="1280" height="816" />
+        <figcaption class="whatis-cap">Baobab parklands, Senegal. Dryland forests sustain over a billion people across 48% of the Earth&rsquo;s land surface. <span class="credit">&copy;FAO</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
