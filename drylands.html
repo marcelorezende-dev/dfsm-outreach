@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>What are drylands? · DFSA</title>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="assets/leaflet/leaflet.css" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
 @font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
@@ -414,14 +414,22 @@ footer a{ color:var(--gold); }
 </footer>
 
 <script src="https://unpkg.com/lucide@latest"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/leaflet/leaflet.js"></script>
 <script src="assets/drylands-data.js"></script>
 <script src="assets/dryland-map.js"></script>
 <script>
   if (window.lucide) lucide.createIcons();
   (function(){
+    var t0 = Date.now();
     function init(){
-      if(!window.L || !window.DRYLANDS_GEO || !window.DFSADrylandMap){ return setTimeout(init, 120); }
+      if(!window.L || !window.DRYLANDS_GEO || !window.DFSADrylandMap){
+        if(Date.now() - t0 > 15000){
+          var el = document.getElementById('drymapFull');
+          if(el) el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;padding:24px;text-align:center;font-family:system-ui,sans-serif;font-size:13px;color:#6B5E54">The interactive map could not load. Please refresh the page to try again.</div>';
+          return;
+        }
+        return setTimeout(init, 120);
+      }
       DFSADrylandMap({ el:'drymapFull', center:[20,10], zoom:1.7, minZoom:1, maxZoom:7, scrollZoom:false, legend:true, compact:false });
     }
     init();

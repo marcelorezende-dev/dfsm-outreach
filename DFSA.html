@@ -361,7 +361,7 @@
   body.i18n-ar .wordmark h1, body.i18n-ar .dm, body.i18n-zh .wordmark h1, body.i18n-zh .dm{ font-family:var(--font-display) !important; }
   .flag, .flag *{ font-family:inherit !important; }
 </style>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="assets/leaflet/leaflet.css" />
 </head>
 <body>
 <template id="__bundler_thumbnail" data-bg-color="#477E59">
@@ -953,13 +953,21 @@
   </div>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="assets/leaflet/leaflet.js"></script>
 <script src="assets/drylands-data.js"></script>
 <script src="assets/dryland-map.js"></script>
 <script>
   (function(){
+    var t0 = Date.now();
     function init(){
-      if(!window.L || !window.DRYLANDS_GEO || !window.DFSADrylandMap){ return setTimeout(init, 120); }
+      if(!window.L || !window.DRYLANDS_GEO || !window.DFSADrylandMap){
+        if(Date.now() - t0 > 15000){
+          var el = document.getElementById('drymapHome');
+          if(el) el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;padding:24px;text-align:center;font-family:system-ui,sans-serif;font-size:13px;color:#6B5E54">The interactive map could not load. Please refresh the page to try again.</div>';
+          return;
+        }
+        return setTimeout(init, 120);
+      }
       DFSADrylandMap({ el:'drymapHome', center:[18,12], zoom:1.4, minZoom:1, maxZoom:6, scrollZoom:false, legend:true, compact:false });
     }
     init();
