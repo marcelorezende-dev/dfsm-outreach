@@ -9,18 +9,18 @@
 <link rel="stylesheet" href="ds-spec.css">
 <style>
   /* real topbar CSS — kept in sync with every site page's inline copy */
-  .drip-topbar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  .dfsa-topbar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
    background:#6E3B2C;border-bottom:1px solid rgba(245,242,232,.16);padding:11px 24px;
    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;border-radius:inherit;}
-  .drip-topbar *{box-sizing:border-box;}
-  .drip-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
-  .drip-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
-  .drip-topbar .db-dm span{color:#F8B133;}
-  .drip-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
-  .drip-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;background:none;padding:0;margin:0;border:0;box-shadow:none;position:static;}
-  .drip-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;}
-  .drip-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
-  .drip-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
+  .dfsa-topbar *{box-sizing:border-box;}
+  .dfsa-topbar .db-brand{display:flex;align-items:center;gap:11px;text-decoration:none;}
+  .dfsa-topbar .db-dm{font-weight:800;font-size:23px;letter-spacing:.04em;color:#F5F2E8;line-height:1;}
+  .dfsa-topbar .db-dm span{color:#F8B133;}
+  .dfsa-topbar .db-sub{font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(245,242,232,.6);}
+  .dfsa-topbar .db-nav{display:flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:flex-end;background:none;padding:0;margin:0;border:0;box-shadow:none;position:static;}
+  .dfsa-topbar .db-nav a{font-size:13px;font-weight:500;color:rgba(245,242,232,.86);text-decoration:none;padding:7px 11px;border-radius:999px;white-space:nowrap;transition:.14s;}
+  .dfsa-topbar .db-nav a:hover{background:rgba(245,242,232,.12);color:#fff;}
+  .dfsa-topbar .db-nav a.db-home{background:rgba(245,242,232,.12);color:#fff;}
 </style>
 </head>
 <body>
@@ -33,7 +33,7 @@
     <h2>Default</h2>
     <p class="caption">Live render. The current-page/home link carries <code>.db-home</code> (pre-lit).</p>
     <div class="frame">
-      <div class="drip-topbar">
+      <div class="dfsa-topbar">
         <a class="db-brand" href="#"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
         <div class="db-nav" role="navigation" aria-label="Primary">
           <a class="db-home" href="#">⌂ Home</a>
@@ -61,7 +61,7 @@
         <li>Keep the three items: <b>⌂ Home · Why Drylands · Library</b> — in that order, on every page.</li>
         <li>Keep the menu as <code>&lt;div class="db-nav"&gt;</code> — a div, never <code>&lt;nav&gt;</code>.</li>
         <li>Preserve the <code>../</code> / <code>../../</code> href prefix on sub-folder pages.</li>
-        <li>Let <code>drip-i18n.js</code> inject the language switcher into <code>.db-nav</code>.</li>
+        <li>Let <code>dfsa-i18n.js</code> inject the language switcher into <code>.db-nav</code>.</li>
       </ul></div>
       <div class="use-col dont"><h3>Don't</h3><ul>
         <li>Use a <code>&lt;nav&gt;</code> element — a page-level <code>nav{}</code> rule bleeds a green box into the bar.</li>

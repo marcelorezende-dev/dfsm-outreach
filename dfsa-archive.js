@@ -118,11 +118,11 @@ window.DRIP_ARCHIVE = [
     summary:'A social network analysis of two Botswana producer organizations — mapping how SLM knowledge flows, who the influencers are, and where the bottlenecks lie.',
     tags:['SNA','knowledge flow','Botswana','FFPO','gender','Gephi'], added:'2026-06-14', updated:'2026-06-14' },
 
-  { id:'dfsm-campaign', title:'DFSM Campaign', type:'story', pillars:['knowledge'],
+  { id:'dfsa-campaign', title:'DFSA Campaign', type:'story', pillars:['knowledge'],
     source:'direct', origin:'DSL-IP communications', status:'validated',
-    url:'DFSM Campaign.html',
-    summary:'Dryland Forest & Sustainable Management — the Programme’s outward-facing campaign and its core messages.',
-    tags:['campaign','communications','drylands','outreach'], added:'2025-10-01', updated:'2025-10-01' },
+    url:'DFSA Campaign.html',
+    summary:'The Dryland Forest Support Accelerator — the Programme’s outward-facing campaign and its core messages, from Belém to Antalya.',
+    tags:['campaign','communications','drylands','outreach'], added:'2025-10-01', updated:'2026-09-26' },
 
   { id:'cofo-working-group', title:'COFO Working Group on Dryland Forests & Agrosilvopastoral Systems', type:'programme', pillars:['finance'],
     source:'reference', origin:'FAO · Committee on Forestry (COFO)', status:'validated',

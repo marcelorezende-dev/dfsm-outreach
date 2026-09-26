@@ -200,26 +200,26 @@ h2.sec{ font-family:var(--font-display); text-transform:uppercase; font-weight:7
 @media(max-width:880px){ .vs{ grid-template-columns:1fr; gap:18px; } }
 .vscard{ border-radius:var(--r-lg); padding:38px 34px; position:relative; box-shadow:var(--shadow-md); }
 .vscard.tfff{ background:linear-gradient(160deg,#10623B,#1E7D4F); color:var(--ink-on-dark); }
-.vscard.dfsm{ background:var(--surface); border:1px solid var(--border); }
+.vscard.dfsa{ background:var(--surface); border:1px solid var(--border); }
 .vscard .tag{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.12em; font-weight:600;
   font-size:12px; display:inline-flex; align-items:center; gap:9px; padding:7px 14px; border-radius:var(--r-pill); }
 .vscard.tfff .tag{ background:rgba(251,248,239,.16); color:#fff; }
-.vscard.dfsm .tag{ background:rgba(200,132,60,.16); color:var(--bark); }
+.vscard.dfsa .tag{ background:rgba(200,132,60,.16); color:var(--bark); }
 .vscard .tag i{ width:14px; height:14px; }
 .vscard h3{ font-family:var(--font-display); text-transform:uppercase; font-weight:700; font-size:30px;
   line-height:.98; margin:18px 0 4px; }
-.vscard.dfsm h3{ color:var(--bark); }
+.vscard.dfsa h3{ color:var(--bark); }
 .vscard .full{ font-family:var(--font-serif); font-style:italic; font-size:15px; }
-.vscard.tfff .full{ color:rgba(251,248,239,.85); } .vscard.dfsm .full{ color:var(--ink-3); }
+.vscard.tfff .full{ color:rgba(251,248,239,.85); } .vscard.dfsa .full{ color:var(--ink-3); }
 .vscard dl{ margin-top:24px; display:grid; gap:0; }
 .vscard .r{ padding:15px 0; border-top:1px solid; display:grid; grid-template-columns:96px 1fr; gap:16px; align-items:start; }
 .vscard.tfff .r{ border-color:rgba(251,248,239,.2); }
-.vscard.dfsm .r{ border-color:var(--hairline); }
+.vscard.dfsa .r{ border-color:var(--hairline); }
 .vscard .k{ font-family:var(--font-display); text-transform:uppercase; letter-spacing:.07em; font-weight:600;
   font-size:11px; padding-top:2px; }
-.vscard.tfff .k{ color:var(--amber); } .vscard.dfsm .k{ color:var(--clay); }
+.vscard.tfff .k{ color:var(--amber); } .vscard.dfsa .k{ color:var(--clay); }
 .vscard .v{ font-size:14.5px; line-height:1.55; }
-.vscard.tfff .v{ color:rgba(251,248,239,.94); } .vscard.dfsm .v{ color:var(--ink); }
+.vscard.tfff .v{ color:rgba(251,248,239,.94); } .vscard.dfsa .v{ color:var(--ink); }
 .vscard .v b{ font-weight:700; }
 .vsmid{ display:flex; align-items:center; justify-content:center; }
 .vsmid .eq{ width:60px; height:60px; border-radius:50%; background:var(--cream); border:2px solid var(--border);
@@ -330,12 +330,12 @@ footer .fine{ font-size:11.5px; line-height:1.6; color:rgba(251,248,239,.4); fon
 .apa-refs a:hover{ text-decoration:underline; }
 </style>
 
-<link rel="stylesheet" href="drip-harmonize.css">
+<link rel="stylesheet" href="dfsa-harmonize.css">
   <link rel="icon" type="image/png" href="assets/globe.png">
-  <link rel="stylesheet" href="drip-topbar.css">
+  <link rel="stylesheet" href="dfsa-topbar.css">
 </head>
 <body>
-<div class="drip-topbar">
+<div class="dfsa-topbar">
   <a class="db-brand" href="DFSA.html"><span class="db-dm">DFSA<span>.</span></span><span class="db-sub">Dryland Forest Support Accelerator</span></a>
   <div class="db-nav" role="navigation" aria-label="Primary">
     <a class="db-home" href="DFSA.html">⌂ Home</a>
@@ -524,7 +524,7 @@ footer .fine{ font-size:11.5px; line-height:1.6; color:rgba(251,248,239,.4); fon
 
       <div class="vsmid"><div class="eq rv">for<br>drylands</div></div>
 
-      <div class="vscard dfsm rv">
+      <div class="vscard dfsa rv">
         <span class="tag"><i data-lucide="sun"></i>The dryland answer</span>
         <h3>DFSA</h3>
         <div class="full">Dryland Forest Support Accelerator · FAO-anchored</div>
@@ -716,6 +716,6 @@ footer .fine{ font-size:11.5px; line-height:1.6; color:rgba(251,248,239,.4); fon
   document.querySelectorAll('.rv').forEach((el,i)=>{ el.style.transitionDelay=(Math.min(i%4,3)*60)+'ms'; io.observe(el); });
   if(window.lucide) lucide.createIcons();
 </script>
-  <script src="drip-i18n.js"></script>
+  <script src="dfsa-i18n.js"></script>
 </body>
 </html>
