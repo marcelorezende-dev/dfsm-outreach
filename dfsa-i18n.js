@@ -205,7 +205,7 @@
       "قاعدة الأدلة — ما يحتاجه المنظر الطبيعي، مقيسًا.",
       "证据基础——以量化方式衡量景观所需。"],
     ["Integrated Management", "Gestión integrada", "Gestion intégrée", "Комплексное управление", "الإدارة المتكاملة", "综合管理"],
-    ["Managing land, forests and farms as one system — producing without degrading.",
+    ["Managing land, forests and farms as one system – producing without degrading.",
       "Gestionar tierras, bosques y fincas como un solo sistema: producir sin degradar.",
       "Gérer terres, forêts et exploitations comme un seul système — produire sans dégrader.",
       "Управлять землёй, лесами и хозяйствами как единой системой — производить без деградации.",

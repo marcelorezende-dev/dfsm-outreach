@@ -1,4 +1,4 @@
-/* DFSA interactive dryland map — Leaflet overlay of the UNEP-WCMC (2007) global drylands.
+/* DFSA interactive dryland map – Leaflet overlay of the UNEP-WCMC (2007) global drylands.
    Depends on Leaflet (window.L) and the drylands data (window.DRYLANDS_GEO).
    Usage:  DFSADrylandMap({ el:'map', zoom:1.6, legend:true });                       */
 (function () {
@@ -6,10 +6,10 @@
 
   var CLASSES = [
     { key: 'presumed', label: 'Presumed drylands', ai: 'AI ≥ 0.65 with dryland features',
-      color: '#4E7C59', desc: 'Wetter than the aridity threshold, yet dry-forest, savanna and woodland in character — the Cerrado, Miombo–Mopane and Qinghai–Tibetan Plateau. DFSA counts these as drylands.',
+      color: '#4E7C59', desc: 'Wetter than the aridity threshold, yet dry-forest, savannah and woodland in character – the Cerrado, Miombo–Mopane and Qinghai–Tibetan Plateau. DFSA counts these as drylands.',
       unccd: false, cbd: 'presumed' },
     { key: 'drysubhumid', label: 'Dry sub-humid', ai: 'AI 0.50 – 0.65',
-      color: '#E7C878', desc: 'The least dry zone — Sudanian savanna, tree steppes and prairie. Most dryland forests occur here.',
+      color: '#E7C878', desc: 'The least dry zone – Sudanian savannah, tree steppes and prairie. Most dryland forests occur here.',
       unccd: true, cbd: true },
     { key: 'semiarid', label: 'Semi-arid', ai: 'AI 0.20 – 0.50',
       color: '#DDA14A', desc: 'Grasslands and open woodlands where rainfall is low and highly seasonal.',
@@ -18,7 +18,7 @@
       color: '#C87039', desc: 'Sparse vegetation, long dry seasons and a high risk of desertification.',
       unccd: true, cbd: true },
     { key: 'hyperarid', label: 'Hyper-arid', ai: 'AI < 0.05',
-      color: '#9B3B2E', desc: 'True desert — the Sahara and Arabian deserts. Excluded from the UNCCD definition but part of the CBD map.',
+      color: '#9B3B2E', desc: 'True desert – the Sahara and Arabian deserts. Excluded from the UNCCD definition but part of the CBD map.',
       unccd: false, cbd: true }
   ];
   var BY_KEY = {}; CLASSES.forEach(function (c) { BY_KEY[c.key] = c; });
