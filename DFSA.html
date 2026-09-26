@@ -542,7 +542,7 @@
       <span class="sec-num">03</span>
       <h2 class="sec-title">The approach &ndash; Collect · Act · Track · Scale</h2>
     </div>
-    <p class="lede" style="font-size:15px; margin:0 0 8px; max-width:76ch;">Four verbs carry the whole method: collect the evidence, act on it, track what changes, and scale what works &ndash; a people-centred cycle of evidence to action to learning, and the direct operational response to the Call to Action on Dryland Forests.</p>
+    <p class="lede" style="margin:0 0 8px;">Four verbs carry the whole method: collect the evidence, act on it, track what changes, and scale what works &ndash; a people-centred cycle of evidence to action to learning, and the direct operational response to the Call to Action on Dryland Forests.</p>
     <div class="lenses4">
       <div class="lens4"><span class="li"><i data-lucide="search"></i></span><h5>Collect</h5><p>Close critical data gaps on the extent, status and trends of dryland forests – evidence that improves decisions and targets investment.</p></div>
       <div class="lens4"><span class="li"><i data-lucide="sprout"></i></span><h5>Act</h5><p>Put proven SLM/SFM practices to work at landscape scale, with South–South exchange and the REMs accelerating uptake across biomes.</p></div>
@@ -689,7 +689,7 @@
     .pbox{ position:relative; max-width:480px; width:100%; background:#FBF8EF; color:#2b2723;
       border:1px solid #e2dccc; border-radius:16px; padding:34px 36px 28px; text-align:left;
       box-shadow:0 24px 60px rgba(20,16,12,.4);
-      font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+      font-family:var(--sans); }
     .pbox .pglyph{ display:flex; align-items:center; justify-content:center; width:46px; height:46px;
       border-radius:12px; background:#C3DABA; color:#356046; margin-bottom:16px; }
     .pbox .pglyph svg{ width:24px; height:24px; }
@@ -914,7 +914,7 @@
       if(!window.L || !window.DRYLANDS_GEO || !window.DFSADrylandMap){
         if(Date.now() - t0 > 15000){
           var el = document.getElementById('drymapHome');
-          if(el) el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;padding:24px;text-align:center;font-family:system-ui,sans-serif;font-size:13px;color:#6B5E54">The interactive map could not load. Please refresh the page to try again.</div>';
+          if(el) el.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;padding:24px;text-align:center;font-family:var(--sans, system-ui), sans-serif;font-size:13px;color:#6B5E54">The interactive map could not load. Please refresh the page to try again.</div>';
           return;
         }
         return setTimeout(init, 120);

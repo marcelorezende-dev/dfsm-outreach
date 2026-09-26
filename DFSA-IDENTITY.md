@@ -15,6 +15,10 @@ The DFSA does not yet have its own design language. Until it does, the project r
   cream paper `#F5F2E8`, ink `#241F1B`, forest `#477E59`, clay `#CF715D`/`#B4543F`,
   amber `#F8B133`; display face DermawanRough (Oswald fallback), Merriweather serif body,
   Poppins sans for UI/labels.
+  `colors_and_type.css` also defines the short aliases `--sans`, `--serif` and
+  `--display` used by page-level styles: new components must take their type from
+  these tokens (family AND size scale), never from raw `system-ui` stacks or
+  one-off pixel sizes; section ledes use the standard `.lede` size.
 - **DFSA marks**: wordmark `DFSA` + amber dot (`DFSA<span>.</span>`); subtitle
   "Dryland Forest Support Accelerator".
 - **DFSA accent**: the platform top bar is deep clay `#6E3B2C` (the DSL-IP forest green

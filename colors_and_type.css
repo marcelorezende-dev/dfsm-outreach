@@ -103,7 +103,7 @@
   --font-serif: "Merriweather", Georgia, "Times New Roman", serif;
   --font-display: "DermawanRough", "Oswald", "Merriweather", sans-serif; /* condensed, UPPERCASE, large */
   --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif; /* UI · labels · data */
-  --font-body: "Merriweather", Georgia, serif;
+  --font-body: "Merriweather", Georgia, serif;  --serif: var(--font-serif);  --sans: var(--font-sans);  --display: var(--font-display);
 
   /* ===== TYPE SCALE (1.250 major-third, 18px base) ====================== */
   --t-display: clamp(48px, 6vw, 88px); /* @kind font */
