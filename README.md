@@ -7,8 +7,20 @@ Monitoring system, the Publication & funding plan, and the knowledge stories.
 > Internal test deployment. A project of the DSL-IP, actively overseen by a UN Officer
 > (programme design, complex programme management, AI, rural development); related to the
 > Programme's behaviour-change research. Information is drawn from publicly available
-> sources. A grievance / data-removal mechanism is built into the pages (replace the placeholder contact
-> address before any wider sharing).
+> sources. A grievance / data-removal mechanism is built into the pages (generic contact:
+> dsl-ip@fao.org).
+
+## Hosting on fao.org (destination)
+
+The platform will be hosted under **www.fao.org/dryland-forestry/en/** (FAO "Dryland
+forests and agrosilvopastoral systems"). It is subpath-ready: every internal link and
+asset reference is **relative** (verified: no absolute self-URLs), so the site works
+unchanged under any base path. All script and style dependencies are self-hosted
+(bundled fonts in `fonts/`, Leaflet in `assets/leaflet/`, Lucide in `assets/lucide/`);
+the only remaining external requests are Google Fonts on a handful of campaign-style
+pages (each declares local fallbacks) and the live data feeds (iNaturalist, EarthMap,
+CARTO basemaps, Data Studio). The home page links back to the host section (footer and
+Useful links). GitHub Pages (below) remains the staging deployment.
 
 ## Publish on GitHub Pages
 
@@ -33,5 +45,5 @@ Monitoring system, the Publication & funding plan, and the knowledge stories.
 - The Monitoring and When Women Lead pages are self-contained
   single-file builds. The other pages load shared `fonts/`, `assets/` and
   `colors_and_type.css`, plus Google Fonts / Lucide from their CDNs (online).
-- Before any audience beyond an internal test: replace `your-contact@example.org`
-  in the grievance links, and confirm FAO communications sign-off on branding/affiliation.
+- Grievance links use the generic `dsl-ip@fao.org` address (FAOSTYLE-compliant). Before
+  going live on fao.org, confirm FAO communications sign-off on branding/affiliation.

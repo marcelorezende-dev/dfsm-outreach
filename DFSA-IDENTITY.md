@@ -52,6 +52,15 @@ The DFSA does not yet have its own design language. Until it does, the project r
   The superseded `DFSM Campaign.html` was removed (its successor is
   `DFSA Campaign.html`; the old page survives in git history).
 
+## Hosting
+
+The platform's destination is **www.fao.org/dryland-forestry/en/** (FAO Dryland forests
+and agrosilvopastoral systems). Keep every internal link and asset reference RELATIVE -
+no absolute self-URLs - so the site works under any base path. Dependencies stay
+self-hosted (fonts/, assets/leaflet/, assets/lucide/ pinned at lucide@1.48.0); do not
+reintroduce CDN script tags. New pages should use the bundled fonts via
+colors_and_type.css rather than adding Google Fonts requests.
+
 ## Editorial style (FAOSTYLE) – applies to ALL copy, existing and forthcoming
 
 The platform follows **FAOSTYLE: English** (FAO house style, revised November 2024).
