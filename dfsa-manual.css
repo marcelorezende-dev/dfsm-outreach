@@ -1,3 +1,9 @@
+/* Open Sans = the platform sans, aligned with the fao.org theme (variable font). */
+@font-face{ font-family:"Open Sans"; font-style:normal; font-weight:300 800;
+  src:url("fonts/OpenSans-var.woff2") format("woff2"); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-style:italic; font-weight:300 800;
+  src:url("fonts/OpenSans-var-italic.woff2") format("woff2"); font-display:swap; }
+
 /* ============================================================================
    DFSA MANUAL SERIES – shared stylesheet
    Linked by the template and every manual in the series. Set the per-manual
@@ -5,10 +11,10 @@
    ============================================================================ */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
 @font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
-@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
-@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
-@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
-@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-weight:400; src:url('fonts/OpenSans-var.woff2') format('woff2'); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-weight:500; src:url('fonts/OpenSans-var.woff2') format('woff2'); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-weight:600; src:url('fonts/OpenSans-var.woff2') format('woff2'); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-weight:700; src:url('fonts/OpenSans-var.woff2') format('woff2'); font-display:swap; }
 *{ margin:0; padding:0; box-sizing:border-box; }
 :root{
  --clay:#CF715D; --clay-deep:#B4543F; --forest:#477E59; --forest-deep:#356046; --forest-soft:#8FB59B;
@@ -18,7 +24,7 @@
  --border:rgba(36,31,27,.14); --border-strong:rgba(36,31,27,.28); --hairline:rgba(36,31,27,.08);
  --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
  --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
- --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
  --accent:var(--forest); --accent-deep:var(--forest-deep);   /* change per manual theme */
 }
 body{ font-family:var(--serif); line-height:1.6; color:var(--ink-2); background:var(--paper-2); -webkit-font-smoothing:antialiased; }

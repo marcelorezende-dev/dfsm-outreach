@@ -14,7 +14,9 @@ The DFSA does not yet have its own design language. Until it does, the project r
 - **Foundation tokens** live in `colors_and_type.css` (root) and `DRIP/colors_and_type.css`:
   cream paper `#F5F2E8`, ink `#241F1B`, forest `#477E59`, clay `#CF715D`/`#B4543F`,
   amber `#F8B133`; display face DermawanRough (Oswald fallback), Merriweather serif body,
-  Poppins sans for UI/labels.
+  Open Sans for UI/labels &ndash; adopted 2026-09-26 to match the fao.org theme
+  (Open Sans body + Merriweather editorial), bundled as a variable font in `fonts/`.
+  Poppins is retired; do not reintroduce it.
   `colors_and_type.css` also defines the short aliases `--sans`, `--serif` and
   `--display` used by page-level styles: new components must take their type from
   these tokens (family AND size scale), never from raw `system-ui` stacks or

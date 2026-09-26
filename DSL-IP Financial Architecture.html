@@ -8,11 +8,11 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap');
 @font-face{ font-family:"DermawanRough"; src:url('fonts/DermawanRough-Condensed.otf') format('opentype'); font-weight:400 700; font-display:swap; }
-@font-face{ font-family:"Poppins"; font-weight:400; src:url('fonts/Poppins-400.ttf') format('truetype'); font-display:swap; }
-@font-face{ font-family:"Poppins"; font-weight:400; font-style:italic; src:url('fonts/Poppins-400-italic.ttf') format('truetype'); font-display:swap; }
-@font-face{ font-family:"Poppins"; font-weight:500; src:url('fonts/Poppins-500.ttf') format('truetype'); font-display:swap; }
-@font-face{ font-family:"Poppins"; font-weight:600; src:url('fonts/Poppins-600.ttf') format('truetype'); font-display:swap; }
-@font-face{ font-family:"Poppins"; font-weight:700; src:url('fonts/Poppins-700.ttf') format('truetype'); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-weight:400; src:url('fonts/OpenSans-var.woff2') format('woff2'); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-weight:400; font-style:italic; src:url('fonts/OpenSans-var-italic.woff2') format('woff2'); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-weight:500; src:url('fonts/OpenSans-var.woff2') format('woff2'); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-weight:600; src:url('fonts/OpenSans-var.woff2') format('woff2'); font-display:swap; }
+@font-face{ font-family:"Open Sans"; font-weight:700; src:url('fonts/OpenSans-var.woff2') format('woff2'); font-display:swap; }
 *{ margin:0; padding:0; box-sizing:border-box; }
 :root{
  --clay:#CF715D; --clay-deep:#B4543F; --clay-soft:#E3A293;
@@ -24,7 +24,7 @@
  --shadow-sm:0 1px 2px rgba(36,31,27,.06),0 1px 3px rgba(36,31,27,.08);
  --shadow-md:0 4px 10px rgba(36,31,27,.08),0 10px 24px rgba(36,31,27,.07);
  --shadow-lg:0 12px 28px rgba(36,31,27,.12),0 28px 60px rgba(36,31,27,.10);
- --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+ --serif:"Merriweather",Georgia,serif; --display:"DermawanRough","Oswald",sans-serif; --sans:"Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 body{ font-family:var(--serif); line-height:1.7; color:var(--ink-2); background:var(--cream); -webkit-font-smoothing:antialiased; }
 
@@ -383,7 +383,7 @@ footer .foot-rule{ width:60px; height:3px; background:var(--amber); margin:1.4re
    <path d="M 630,236 C 782.5,236 782.5,282 935,282 L 935,352 C 782.5,352 782.5,300 630,300 Z" fill="#356046" opacity="0.34"></path>
    <path d="M 630,300 C 782.5,300 782.5,372 935,372 L 935,452 C 782.5,452 782.5,372 630,372 Z" fill="#754C29" opacity="0.26"></path>
    <!-- source nodes -->
-   <g font-family="Poppins, sans-serif">
+   <g font-family="Open Sans, sans-serif">
     <rect x="35" y="70" width="150" height="120" rx="8" fill="#CF715D"></rect>
     <text x="110" y="120" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">Child Project</text>
     <text x="110" y="138" fill="#fff" font-size="14" font-weight="600" text-anchor="middle">LTO Fees</text>
@@ -496,8 +496,8 @@ footer .foot-rule{ width:60px; height:3px; background:var(--amber); margin:1.4re
   </g>
  <rect x="320" y="215" width="260" height="140" rx="12" fill="#477E59"></rect>
  <text x="450" y="253" fill="#F2C9A8" font-size="11" font-weight="600" text-anchor="middle" letter-spacing="1.2">ONE-FAO</text>
- <text x="450" y="279" fill="#fff" font-size="19" font-weight="700" text-anchor="middle" font-family="Poppins">One Lead</text>
- <text x="450" y="303" fill="#fff" font-size="19" font-weight="700" text-anchor="middle" font-family="Poppins">Technical Officer</text>
+ <text x="450" y="279" fill="#fff" font-size="19" font-weight="700" text-anchor="middle" font-family="Open Sans">One Lead</text>
+ <text x="450" y="303" fill="#fff" font-size="19" font-weight="700" text-anchor="middle" font-family="Open Sans">Technical Officer</text>
  <text x="450" y="329" fill="#E4EFE7" font-size="11.5" text-anchor="middle">one integrated workplan</text>
 </svg>
   <div class="viz-cap"><b>Figure 3 &middot; The One-FAO constellation</b> &nbsp; Seven technical divisions orbit a single Lead Technical Officer (SFS Forestry), each providing focal-point oversight in its discipline. The LTO fuses them into one integrated technical-support and oversight plan.</div>
@@ -542,11 +542,11 @@ footer .foot-rule{ width:60px; height:3px; background:var(--amber); margin:1.4re
    <!-- hub -->
    <rect x="350" y="140" width="300" height="160" rx="14" fill="#356046"></rect>
    <text x="500" y="178" fill="#F2C9A8" font-size="12" font-weight="600" text-anchor="middle" letter-spacing="1.4">FAO SFS &middot; SUBREGIONAL OFFICE</text>
-   <text x="500" y="210" fill="#fff" font-size="17" font-weight="700" text-anchor="middle" font-family="Poppins">Lead Technical Officer</text>
+   <text x="500" y="210" fill="#fff" font-size="17" font-weight="700" text-anchor="middle" font-family="Open Sans">Lead Technical Officer</text>
    <text x="500" y="236" fill="#E4EFE7" font-size="13" text-anchor="middle">+ REM Regional Coordinator</text>
    <text x="500" y="266" fill="#F2C9A8" font-size="12" text-anchor="middle" font-style="italic">co-located &middot; one hub</text>
    <!-- left: countries -->
-   <g font-family="Poppins">
+   <g font-family="Open Sans">
     <rect x="20" y="62" width="200" height="56" rx="8" fill="#fff" stroke="#CF715D" stroke-width="2"></rect>
     <text x="120" y="86" fill="#B4543F" font-size="12.5" font-weight="700" text-anchor="middle">11 Child Projects</text>
     <text x="120" y="104" fill="#6B5E54" font-size="10.5" text-anchor="middle">country docking &amp; support</text>

@@ -23,7 +23,7 @@
     '#dfsaHomeBtn{position:fixed;left:18px;bottom:18px;z-index:99999;display:inline-flex;align-items:center;gap:10px;' +
     'text-decoration:none;padding:9px 16px 9px 14px;border-radius:999px;' +
     'background:rgba(28,22,14,.92);box-shadow:0 8px 26px rgba(36,31,27,.34);backdrop-filter:blur(6px);' +
-    'font-family:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif;transition:transform .15s ease,box-shadow .15s ease;}' +
+    'font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",sans-serif;transition:transform .15s ease,box-shadow .15s ease;}' +
     '#dfsaHomeBtn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(36,31,27,.42);}' +
     '#dfsaHomeBtn .dh-mark{font-weight:800;font-size:16px;letter-spacing:.02em;color:#F5F2E8;line-height:1;}' +
     '#dfsaHomeBtn .dh-dot{color:#F8B133;}' +
